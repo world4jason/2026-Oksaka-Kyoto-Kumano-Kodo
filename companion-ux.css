@@ -463,23 +463,31 @@
   min-height: 58px;
   padding-block: var(--space-3);
 }
-/* Short floating-item categories must not inherit a tight, circular Storybook
-   border when other Style Packs opt into that base. Keep readable intrinsic
-   width at Android text scaling and preserve each pack's colors/border. */
-.companion-floating-list .type-pill {
-  display: inline-block;
+/* Compact category eyebrow for Now floating items. This intentionally avoids
+   the global .type-pill class because optional Style Packs own its borders. */
+.companion-floating-list .companion-kind-label {
+  display: block;
   box-sizing: border-box;
-  width: fit-content;
   max-width: 100%;
+  width: fit-content;
   min-height: 0;
-  padding: 4px 9px;
-  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
   background: transparent;
-  font-size: .72rem;
-  line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--muted);
+  font-family: var(--font-utility);
+  font-size: .75rem;
+  line-height: 1.4;
+  font-weight: 750;
+  letter-spacing: .025em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-transform: none;
+}
+.companion-floating-list .companion-kind-label + h3 {
+  margin-top: 5px;
 }
 .companion-reminders > div > span {
   border-radius: var(--radius-sm);
