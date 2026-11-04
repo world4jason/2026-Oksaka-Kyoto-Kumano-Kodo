@@ -523,13 +523,17 @@
   }
   .companion-window {
     grid-template-columns: 1fr;
+    /* Framed Style Packs need separation between adjacent mobile cards. */
+    gap: var(--space-2);
   }
   .companion-window-card,
   .companion-window-card + .companion-window-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-1) var(--space-3);
-    padding: var(--space-4) 0;
+    /* Match all three card insets; zero inline padding put Current/Next
+       text directly against Vintage Watercolor's bordered card edges. */
+    padding: var(--space-4);
     border-left: 0;
   }
   .companion-window-card.current::before {
