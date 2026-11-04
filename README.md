@@ -25,6 +25,10 @@
 
 交通快照是 Excel 既有資料，不是即時班次。`trip.json.days[].mobility` 是網站顯示的唯一共用交通資料；詳細舊版來源仍留在 `reference.html`。
 
+## 共用日期導航（2026/11/05）
+
+Trip、Transport、Places 使用同一個手機日期下拉與前後一天箭頭，共用選定日期。Trip 保留11天摘要總覽、Places 保留所有景點總覽、Transport 只切單日；切分頁、瀏覽器 Back/Forward、重新整理仍維持最後選定日期。程式依上游 [Template #129](https://github.com/world4jason/Travel-lite-Template/issues/129) 與 [PR #130](https://github.com/world4jason/Travel-lite-Template/pull/130) 套用；仍需 Owner 真機與三位真人後續審查。
+
 ## 11/05 伊勢・鳥羽更新（2026/11/05）
 
 - **主案**：伊勢市站直接搭09:40 51號巴士至內宮，不去外宮；11:50–13:20托福橫丁／午餐；13:34 CAN 往二見夫婦岩；14:42 CAN 往鳥羽，御木本珍珠島首選、水族館備案。
