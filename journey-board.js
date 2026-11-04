@@ -54,13 +54,23 @@
   function uniqueModes(legs) {
     return [...new Set(legs.map((leg) => leg.mode).filter((m) => ["train","subway","bus","walk","boat","flight"].includes(m)))];
   }
-  function journeyStages(legs) {
+  function journeyStages(legs, stageLegIds) {
     if (legs.length < 2) return [];
+    // Optional ordering of already-published leg IDs, never duplicate a time
+    // or invent a stage. Long routes need to show the critical interchange,
+    // not just the first five steps from an early-only slice.
+    if (Array.isArray(stageLegIds) && stageLegIds.length >= 2 && stageLegIds.length <= 5) {
+      const byId = new Map(legs.map((leg) => [leg.id, leg]));
+      const selected = stageLegIds.map((id) => byId.get(id)).filter(Boolean);
+      if (selected.length === stageLegIds.length && new Set(selected).size === selected.length)
+        return selected;
+    }
     const picked = [legs[0], ...legs.filter((leg) => leg.critical), legs[legs.length - 1]];
-    return [...new Set(picked)].slice(0, 5);
+    const unique = [...new Set(picked)];
+    return unique.length <= 5 ? unique : [...unique.slice(0, 4), unique.at(-1)];
   }
-  function stageRail(legs) {
-    const stages = journeyStages(legs);
+  function stageRail(legs, stageLegIds) {
+    const stages = journeyStages(legs, stageLegIds);
     if (!stages.length) return "";
     return '<div class="tl-stage-rail" aria-label="關鍵交通節點">' + stages.map((leg, i) =>
       '<div class="tl-stage">' +
@@ -211,7 +221,7 @@
       : "";
     const boardTitle = context === "map" ? "交通步驟" : "交通快覽";
     const referenceLink = '<a href="./reference.html#' +
-      (day.date === '2026-11-11' ? 'kumano' : 'details') +
+      (day.date === '2026-11-05' ? 'ise-primary' : day.date === '2026-11-11' ? 'kumano' : 'days') +
       '" class="tl-source-link" target="_blank" rel="noopener noreferrer">完整來源時刻 <span aria-hidden="true">↗</span></a>';
     return '<section class="tl-board" aria-label="' + esc(day.date) + ' 行程與交通">' +
       '<header class="tl-board-head">' +
@@ -223,7 +233,7 @@
       '<div class="tl-route-frame"><div><small>START</small><strong>' + esc(m.from) + '</strong></div>' +
         '<span class="tl-route-arrow" aria-hidden="true">→</span>' +
         '<div><small>FINISH</small><strong>' + esc(m.to) + '</strong></div></div>' +
-      stageRail(legs) + alert + credentialPickupCard(day) +
+      stageRail(legs, m.stageLegIds) + alert + credentialPickupCard(day) +
       (m.attentionLevel === 'neutral' && m.attention
         ? '<p class="tl-neutral-line">' + esc(m.attention) + '</p>' : '') +
       '<div class="tl-list-head"><h3>' + boardTitle + '</h3><span>' +
