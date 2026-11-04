@@ -29,6 +29,23 @@
   })[c]);
   const mapHandoff = (name) =>
     "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || "") + " 日本");
+  // Directions URLs accept textual names. Do not geocode or invent pins/timetables.
+  // Multi-stop or ambiguous names are handed to Maps Search instead.
+  const routeModes = new Set(["train", "subway", "bus", "walk"]);
+  const singleStop = (value) => typeof value === "string" && value.trim() &&
+    !/[→／\/]/.test(value);
+  function navigationForLeg(leg) {
+    const from = leg.mapOrigin || leg.from;
+    const to = leg.mapDestination || leg.to;
+    if (routeModes.has(leg.mode) && singleStop(from) && singleStop(to)) {
+      const params = new URLSearchParams({
+        api: "1", origin: from.trim() + " 日本", destination: to.trim() + " 日本",
+        travelmode: leg.mode === "walk" ? "walking" : "transit"
+      });
+      return { url: "https://www.google.com/maps/dir/?" + params.toString(), label: "路線", kind: "directions" };
+    }
+    return { url: mapHandoff(to || from), label: "地點", kind: "search" };
+  }
   const icons = {
     train: '<path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M4 11h16M7 21l2-3m8 3-2-3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/>',
     subway: '<rect x="5" y="3" width="14" height="16" rx="3"/><path d="M5 10h14M8 22l3-3m5 3-3-3"/>',
@@ -77,10 +94,11 @@
     return "";
   }
   function legRow(leg, i) {
-    const query = (leg.mode === "stay" || leg.mode === "event") ? leg.to : leg.from;
-    const map = '<a class="tl-map-link" href="' + esc(mapHandoff(query)) +
-      '" target="_blank" rel="noopener noreferrer" aria-label="在 Google Maps 搜尋 ' +
-      esc(query) + '，非即時導航" title="Google Maps 地點搜尋">⌖</a>';
+    const nav = navigationForLeg(leg);
+    const map = '<a class="tl-map-link" href="' + esc(nav.url) +
+      '" target="_blank" rel="noopener noreferrer" aria-label="在 Google Maps 開啟' +
+      esc(leg.from + " 到 " + leg.to) + '的' + (nav.kind === "directions" ? '路線' : '地點') +
+      '，班次請另外確認" title="Google Maps ' + nav.label + '">⌖</a>';
     const hidden = leg.hint
       ? '<details class="tl-leg-extra"><summary aria-label="展開此段乘車細節" title="乘車細節">···</summary><p>' + esc(leg.hint) + '</p></details>'
       : "";
@@ -154,6 +172,29 @@
       alternativeCards(m.alternatives, day) +
       '<footer class="tl-board-foot"><span>行程快照 · 非即時交通</span>' + referenceLink + '</footer>' +
       '</section>';
+  }
+  function namedMapHandoff(day) {
+    const legs = day.mobility?.legs || [];
+    const options = day.mobility?.options || [];
+    const links = legs.map((leg, i) => {
+      const nav = navigationForLeg(leg);
+      return '<li class="tl-named-link">' +
+        '<span class="tl-named-icon">' + icon(leg.mode) + '</span>' +
+        '<span class="tl-named-place"><small>' + esc(leg.depart) + ' · ' + esc(leg.service) + '</small>' +
+        '<strong>' + esc(leg.from) + ' <b aria-hidden="true">→</b> ' + esc(leg.to) + '</strong></span>' +
+        '<a href="' + esc(nav.url) + '" target="_blank" rel="noopener noreferrer"' +
+        ' aria-label="Google Maps ' + nav.label + '：' + esc(leg.from + " 到 " + leg.to) + '">' +
+        nav.label + ' ↗</a></li>';
+    });
+    if (!links.length) options.forEach((opt) => links.push(
+      '<li class="tl-named-link"><span class="tl-named-icon">' + icon("walk") + '</span>' +
+      '<span class="tl-named-place"><strong>' + esc(opt.title) + '</strong><small>' +
+      esc(opt.line) + '</small></span><a href="' + esc(mapHandoff(opt.title)) +
+      '" target="_blank" rel="noopener noreferrer">地點 ↗</a></li>'
+    ));
+    return '<div class="tl-named-map"><p class="tl-named-caption">' +
+      '依地名開啟 Google Maps · 路線與班次需再確認</p>' +
+      '<ol class="tl-named-route-list">' + links.join("") + '</ol></div>';
   }
   function foldPublicationWarning() {
     const notice = viewRoot.querySelector(".trip-trust-notice");
@@ -240,9 +281,20 @@
     tabs.insertAdjacentHTML("afterend", board(day, "map"));
     const extra = document.createElement("details");
     extra.className = "tl-map-optional";
-    extra.innerHTML = '<summary><strong>地圖與站點</strong><span>位置參考 · 非交通時刻</span><b>＋</b></summary>';
-    panel.before(extra);
-    extra.appendChild(panel);
+    const hasCoordinates = (day.items || []).some((item) =>
+      item.lat != null && item.lng != null &&
+      Number.isFinite(Number(item.lat)) && Number.isFinite(Number(item.lng)));
+    if (hasCoordinates) {
+      extra.innerHTML = '<summary><strong>地圖與站點</strong><span>已標註位置 · 非即時班次</span><b>＋</b></summary>';
+      panel.before(extra);
+      extra.appendChild(panel);
+    } else {
+      extra.classList.add("tl-map-named");
+      extra.innerHTML = '<summary><strong>Google Maps 路線</strong><span>直接以站名導航</span><b>＋</b></summary>' +
+        namedMapHandoff(day);
+      panel.before(extra);
+      panel.remove(); // Replace the empty coordinate map; never pretend to plot pins.
+    }
     foldPublicationWarning();
     scrollOnScreenChange("map:" + day.date);
     extra.addEventListener("toggle", () => {

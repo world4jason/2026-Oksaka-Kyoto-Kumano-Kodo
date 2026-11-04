@@ -250,3 +250,22 @@
  .trip-overview-day.tl-overview-card>.tl-day-index{flex:0 0 35px}
  .trip-overview-day.tl-overview-card>.tl-day-signals{flex:0 0 63px}
 }
+
+/* When the source has no coordinates, show actual Maps handoffs instead of a blank pin map. */
+.tl-named-map{padding:5px 15px 15px;border-top:1px solid var(--line)}
+.tl-named-caption{font-size:.74rem;color:var(--muted);margin:11px 0;line-height:1.45}
+.tl-named-route-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl-named-link{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;
+  padding:12px 2px;border-top:1px solid color-mix(in srgb,var(--line) 60%,transparent);min-width:0}
+.tl-named-link:first-child{border-top:0}
+.tl-named-icon{display:grid;place-items:center;color:var(--accent);background:var(--accent-soft);border-radius:6px;width:28px;height:28px}
+.tl-named-icon svg{width:17px;height:17px}
+.tl-named-place{display:flex;flex-direction:column;gap:4px;min-width:0;line-height:1.35}
+.tl-named-place small{font-size:.7rem;color:var(--muted);overflow-wrap:anywhere}
+.tl-named-place strong{font-size:.82rem;font-weight:700;overflow-wrap:anywhere}
+.tl-named-place strong b{color:var(--accent);font-weight:700}
+.tl-named-link>a{color:var(--accent);font-weight:750;font-size:.78rem;text-decoration:none;
+  border:1px solid var(--line);border-radius:8px;min-height:38px;padding:8px 9px;display:flex;align-items:center;white-space:nowrap}
+.tl-named-link>a:hover,.tl-named-link>a:focus-visible{background:var(--accent-soft);outline-offset:2px}
+@media(max-width:360px){.tl-named-map{padding:5px 10px 12px}.tl-named-link{grid-template-columns:23px minmax(0,1fr) auto;gap:6px}
+ .tl-named-icon{width:23px;height:25px}.tl-named-link>a{font-size:.74rem;padding:7px 6px}.tl-named-place strong{font-size:.78rem}}
