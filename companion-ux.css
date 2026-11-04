@@ -463,9 +463,23 @@
   min-height: 58px;
   padding-block: var(--space-3);
 }
+/* Short floating-item categories must not inherit a tight, circular Storybook
+   border when other Style Packs opt into that base. Keep readable intrinsic
+   width at Android text scaling and preserve each pack's colors/border. */
 .companion-floating-list .type-pill {
+  display: inline-block;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  padding: 4px 9px;
+  border-radius: 8px;
   background: transparent;
-  padding-inline: 0;
+  font-size: .72rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .companion-reminders > div > span {
   border-radius: var(--radius-sm);
