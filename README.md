@@ -25,6 +25,12 @@
 
 交通快照是 Excel 既有資料，不是即時班次。`trip.json.days[].mobility` 是網站顯示的唯一共用交通資料；詳細舊版來源仍留在 `reference.html`。
 
+## 熊野古道集章手冊
+
+- [11/10 田邊行程](./#trip/day/2026-11-10)：空白雙朝聖手冊免費、田邊站旁09:00–18:00領取；**白濱返回田邊能否趕上18:00仍待確認**。¥100中邊路押印帳不是同一制度。
+- [11/11 熊野交通](./#trip/day/2026-11-11)、[11/12 那智山](./#trip/day/2026-11-12)：沿路 7＋3 處官方集章點的可展開清單。More → 準備清單內有 10 個裝置本地勾選項。
+- [官方免費手冊領取點](https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/) · [官方指定印章](https://www.tb-kumano.jp/kumano-kodo/dual-pilgrim/stamp-lists/) · [和歌山縣¥100中邊路押印帳](https://www.sekaiisan-wakayama.jp/walk/ouinchou.html)。短程朝聖**不等於集滿41章完全踏破**，也不等於已經完成西班牙側雙朝聖認證。
+
 ## 驗收
 
 ```sh

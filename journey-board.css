@@ -250,3 +250,86 @@
  .trip-overview-day.tl-overview-card>.tl-day-index{flex:0 0 35px}
  .trip-overview-day.tl-overview-card>.tl-day-signals{flex:0 0 63px}
 }
+
+/* Kumano credential: quiet overview first, sources and stamp locations on demand. */
+.tl-credential-card, .tl-stamp-card {
+  border:1px solid var(--tl-outline,var(--line)); border-radius:12px;
+  background:var(--surface); color:var(--text); overflow:hidden; min-width:0;
+}
+.tl-credential-card { margin:14px 0 5px; padding:13px 14px 0; }
+.tl-credential-header {display:flex;align-items:center;gap:11px;min-width:0;}
+.tl-stamp-symbol { flex:none; display:grid;place-items:center;width:38px;height:38px;
+  border:1px solid var(--accent);border-radius:9px;color:var(--accent);
+  background:var(--accent-soft);font-family:var(--font-display);font-weight:760;font-size:1.08rem;}
+.tl-credential-header>div {display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;}
+.tl-credential-header small {font-size:.68rem;color:var(--muted);}
+.tl-credential-header strong {font-size:.96rem;font-weight:750;}
+.tl-credential-free { font-size:.74rem;font-weight:750;border-radius:6px;padding:5px 8px;
+  color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));}
+.tl-credential-main {display:grid;grid-template-columns:76px minmax(0,1fr) 36px;
+  align-items:center;gap:12px;margin:13px 0 8px;border-radius:9px;
+  background:var(--tl-wash,var(--surface-2));padding:11px;min-width:0;}
+.tl-credential-main>div {display:flex;flex-direction:column;gap:3px;min-width:0;}
+.tl-credential-main>div:first-child {border-right:1px solid var(--line);padding-right:7px;}
+.tl-credential-main>div:first-child strong {font-size:1.32rem;line-height:1.2;
+  font-variant-numeric:tabular-nums;color:var(--accent);}
+.tl-credential-main>div:nth-child(2) strong{font-size:.85rem;}
+.tl-credential-main small{font-size:.7rem;color:var(--muted);line-height:1.35;}
+.tl-credential-main>a {width:36px;height:38px;display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:8px;color:var(--accent);font-size:1.3rem;text-decoration:none;}
+.tl-credential-risk {font-size:.76rem;line-height:1.5;margin:8px 1px 13px;
+  color:var(--muted);}
+.tl-credential-details {border-top:1px solid var(--tl-outline,var(--line));}
+.tl-credential-details>summary,.tl-stamp-card>summary{
+  display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 0;
+  list-style:none;cursor:pointer;font-weight:700;font-size:.79rem;}
+.tl-credential-details>summary::-webkit-details-marker,.tl-stamp-card>summary::-webkit-details-marker{display:none}
+.tl-credential-details>summary>b{color:var(--accent);font-size:1.04rem;margin-left:auto;}
+.tl-credential-details[open]>summary>b{transform:rotate(45deg);}
+.tl-credential-kinds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0 15px;}
+.tl-credential-kind{display:flex;flex-direction:column;gap:5px;padding:12px;
+  border-radius:8px;border:1px solid var(--tl-outline,var(--line));background:var(--tl-wash,var(--surface-2));}
+.tl-credential-kind>span{font-size:1.1rem;font-weight:780;color:var(--accent);font-variant-numeric:tabular-nums}
+.tl-credential-kind strong{font-size:.82rem}
+.tl-credential-kind small{color:var(--muted);font-size:.72rem;line-height:1.4}
+.tl-credential-kind p{font-size:.7rem;color:var(--muted);line-height:1.45;margin:5px 0 0}
+.tl-pickup-sites {list-style:none;margin:0;padding:0 2px;}
+.tl-pickup-sites li{display:flex;align-items:start;justify-content:space-between;gap:10px;
+  padding:12px 1px;border-top:1px solid var(--tl-outline,var(--line));}
+.tl-pickup-sites li>div{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.tl-pickup-sites strong{font-size:.8rem;}
+.tl-pickup-sites small{font-size:.71rem;line-height:1.38;color:var(--muted);}
+.tl-pickup-sites li>span{font-size:.7rem;white-space:nowrap;color:var(--accent);font-weight:730}
+.tl-credential-fallback {margin:10px 0 12px;padding:10px 12px;border-radius:8px;
+  border:1px solid var(--tl-outline,var(--line));color:var(--muted);font-size:.74rem;line-height:1.5;}
+.tl-credential-links {display:flex;flex-wrap:wrap;gap:7px 15px;padding:10px 0 13px}
+.tl-credential-links a{font-size:.73rem;color:var(--accent);font-weight:750;
+  text-decoration:none;border-bottom:1px solid currentColor;line-height:1.7;}
+.tl-stamp-card {margin-top:15px;padding:0 13px;}
+.tl-stamp-card>summary {min-height:58px;}
+.tl-stamp-card>summary .tl-stamp-symbol{width:35px;height:35px;font-size:.98rem;}
+.tl-stamp-heading{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1;}
+.tl-stamp-heading strong{font-size:.86rem;}
+.tl-stamp-heading small{font-size:.7rem;font-weight:500;color:var(--muted);}
+.tl-stamp-expand{font-size:.74rem;color:var(--accent);white-space:nowrap;}
+.tl-stamp-card[open] .tl-stamp-expand{font-weight:750;}
+.tl-stamp-stops{list-style:none;padding:0 1px;margin:0}
+.tl-stamp-stop{display:flex;align-items:center;gap:12px;padding:11px 2px;
+  border-top:1px solid var(--tl-outline,var(--line));min-width:0}
+.tl-stamp-order{font:750 .86rem var(--font-utility);font-variant-numeric:tabular-nums;
+  color:var(--accent);width:29px;flex:none;text-align:center;}
+.tl-stamp-stop>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl-stamp-stop strong{font-size:.84rem}
+.tl-stamp-stop small{color:var(--muted);font-size:.72rem;line-height:1.4;}
+.tl-stamp-guide-tip,.tl-stamp-guide-context {font-size:.73rem;line-height:1.55;
+  color:var(--muted);margin:10px 0;}
+.tl-stamp-guide-tip{padding:11px;border-radius:7px;background:var(--tl-wash,var(--surface-2));}
+@media(max-width:390px) {
+  .tl-credential-card{padding:11px 11px 0;}
+  .tl-credential-main{grid-template-columns:70px minmax(0,1fr) 32px;gap:8px;padding:10px 8px;}
+  .tl-credential-main>a{width:30px;height:34px}
+  .tl-credential-main>div:first-child strong{font-size:1.14rem;}
+  .tl-credential-kinds{grid-template-columns:1fr}
+  .tl-pickup-sites li>span{white-space:normal;text-align:right;}
+}
+.tl-stamp-signal{font-size:.72rem;font-weight:760;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:3px 7px}

@@ -6,8 +6,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-04T11:42:20+08:00",
-    "revision": "kansai-2026-11-04-transport-first-01",
+    "updatedAt": "2026-11-04T13:14:41+08:00",
+    "revision": "kansai-2026-11-04-pilgrimage-credential-01",
     "accent": "#426354",
     "themeColor": "#0b1020",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -964,6 +964,7 @@
       "title": "白濱半日・紀伊田邊",
       "routeLabel": "紀伊田邊",
       "reminders": [
+        "領空白雙朝聖手冊：JR紀伊田邊站旁田邊市觀光中心09:00–18:00免費；白濱半日後是否趕得上尚未確認。",
         "黑潮3號 09:04 大阪→11:37 白濱，全車指定席，尚未購票。",
         "Hotel Kii Tanabe 已訂，22:00前入住；到店確認次日06:10清晨退房方式。"
       ],
@@ -1034,7 +1035,7 @@
         "label": "黑潮3號・白濱・田邊",
         "from": "JR大阪",
         "to": "紀伊田邊",
-        "attention": "黑潮3號全車指定席，09:04大阪出發；未購票。",
+        "attention": "09:04黑潮3號全車指定席，尚未購票；免費集章手冊需於田邊觀光中心18:00關門前領取。",
         "attentionLevel": "caution",
         "callout": "09:04 黑潮3號",
         "legs": [
@@ -1097,6 +1098,7 @@
       "title": "熊野古道・本宮・速玉・浦島",
       "routeLabel": "紀伊勝浦",
       "reminders": [
+        "雙朝聖沿線集章：發心門王子（起點）→水吞→伏拝→祓殿→本宮大社（熊野側完成印章）→大齋原→速玉大社；先有空白手冊，11/11不能等到本宮才領。",
         "06:25到紀伊田邊站排隊，06:55快速巴士無預約；備足飲水、日圓與午餐。",
         "主案：大齋原前14:46搭52號→速玉15:40→17:04搭新勝線15號→紀伊勝浦17:48。",
         "錯過主案到16:10後一班，11/11速玉大社取消改11/12；浦島19:30後抵達須先聯絡。"
@@ -1451,6 +1453,7 @@
       "title": "那智山・洞窟溫泉",
       "routeLabel": "紀伊勝浦",
       "reminders": [
+        "雙朝聖沿線集章：熊野那智大社、青岸渡寺、飛瀧神社（那智瀑布）；此為熊野側指定路線條件，非雙朝聖全程證明。",
         "11/11若已拜速玉大社，今日不要再跑新宮，以那智山與洞窟溫泉為主。",
         "只有11/11速玉未完成，才啟用11/12下午JR新宮補訪方案。"
       ],
@@ -1810,6 +1813,12 @@
       "label": "確認虎航回程託運重量及報到規則",
       "dueDate": "2026-11-13",
       "priority": "normal"
+    },
+    {
+      "id": "dual-credential-pickup",
+      "label": "11/10 18:00前到田邊站旁領免費雙朝聖集章手冊（若白濱太晚則先確認代領或其他管道）",
+      "dueDate": "2026-11-10",
+      "priority": "high"
     }
   ],
   "checklists": [
@@ -1862,6 +1871,52 @@
         {
           "id": "baggage",
           "label": "大行李已寄送浦島並保留追蹤號"
+        }
+      ]
+    },
+    {
+      "id": "dual-pilgrim-stamps",
+      "title": "雙朝聖｜熊野側集章（11/11–11/12）",
+      "items": [
+        {
+          "id": "stamp-hosshinmon",
+          "label": "11/11 發心門王子"
+        },
+        {
+          "id": "stamp-mizunomi",
+          "label": "11/11 水吞王子"
+        },
+        {
+          "id": "stamp-fushiogami",
+          "label": "11/11 伏拝王子"
+        },
+        {
+          "id": "stamp-haraido",
+          "label": "11/11 祓殿王子"
+        },
+        {
+          "id": "stamp-hongu",
+          "label": "11/11 熊野本宮大社"
+        },
+        {
+          "id": "stamp-oyunohara",
+          "label": "11/11 大齋原"
+        },
+        {
+          "id": "stamp-hayatama",
+          "label": "11/11 熊野速玉大社"
+        },
+        {
+          "id": "stamp-nachi",
+          "label": "11/12 熊野那智大社"
+        },
+        {
+          "id": "stamp-seigantoji",
+          "label": "11/12 青岸渡寺"
+        },
+        {
+          "id": "stamp-hirou",
+          "label": "11/12 飛瀧神社（那智瀑布）"
         }
       ]
     }
@@ -2015,6 +2070,38 @@
       "category": "住宿已確認（1間×1晚）",
       "dayDate": "2026-11-10",
       "body": "價格：NT$1,356.53（訂單顯示總額；付款入帳未核）\n購買方式：日本〒646-0028 和歌山県田辺市高雄2-7-16；電話0739-26-7000；JR紀伊田邊站步行5～6分\n須提前：入住11/10 16:00～22:00；11/11 10:00前退房\n狀態：已確認；訂單編號1793665543\n提醒：房價 NT$1,072.35＋稅金及其他費用NT$284.18。官網免費輕早餐06:00～09:00，11/11須約06:10～06:15早退房才能06:25到站排隊；提前退房/鑰匙方式請11/10入住時確認。"
+    },
+    {
+      "title": "雙朝聖集章手冊｜免費",
+      "category": "熊野古道・集章",
+      "dayDate": "2026-11-10",
+      "body": "JR紀伊田邊站旁田邊市觀光中心09:00–18:00免費領取。11/10白濱半日返回時間未定，務必確認18:00前可到；11/11清晨出發時尚未開門。熊野側需發心門王子→本宮約7km＋速玉／那智參拜及沿途集章；雙朝聖仍須完成西班牙規定路段並登記。",
+      "sourceLinks": [
+        {
+          "label": "官方繁中｜手冊領取地點",
+          "url": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/"
+        },
+        {
+          "label": "官方繁中｜雙朝聖條件",
+          "url": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/"
+        },
+        {
+          "label": "官方｜必須蓋章地點",
+          "url": "https://www.tb-kumano.jp/kumano-kodo/dual-pilgrim/stamp-lists/"
+        }
+      ]
+    },
+    {
+      "title": "熊野古道中邊路押印帳｜¥100",
+      "category": "熊野古道・集章",
+      "dayDate": "2026-11-11",
+      "body": "本宮館09:00–17:00有售；全41章才能申請「中邊路完全踏破證明書」，部分路段有分段完步證明。與免費的雙朝聖手冊不同，不要當成單走7km就可拿完全踏破證明。",
+      "sourceLinks": [
+        {
+          "label": "和歌山縣｜¥100押印帳與41章",
+          "url": "https://www.sekaiisan-wakayama.jp/walk/ouinchou.html"
+        }
+      ]
     }
   ],
   "notes": [
@@ -2032,6 +2119,11 @@
       "id": "superseded",
       "title": "原始表單含已失效方案",
       "body": "11/04虎航舊14:40→17:55時刻已被16:25→19:40取代。11/09夜間去紀伊田邊與11/09京都留宿均已取消，改當晚回大阪住宿（尚待訂房）。11/12速玉大社僅限前一天未完成時補訪。"
+    },
+    {
+      "id": "kumano-credential-official",
+      "title": "雙朝聖手冊與中邊路41章制度",
+      "body": "免費雙朝聖集章手冊可於11/10田邊觀光中心09:00–18:00領取（或本宮館09:00–17:00等官方發放點）。¥100中邊路押印帳在本宮館、熊野古道館等地販售；集滿全部41章才能申請「完全踏破」。依本次11/11發心門→本宮7km＋速玉、11/12那智的行程可達熊野側指定路線，但要逐站集章並依官方核對，雙朝聖仍需完成西班牙側並登記。"
     }
   ],
   "costs": {
@@ -2053,6 +2145,191 @@
     {
       "label": "Travel Lite Template",
       "url": "https://github.com/world4jason/Travel-lite-Template"
+    },
+    {
+      "label": "熊野古道雙朝聖｜官方領取與集章地點",
+      "url": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/"
     }
-  ]
+  ],
+  "pilgrimage": {
+    "label": "熊野古道巡禮手冊",
+    "checkedAt": "2026-11-04",
+    "credentials": [
+      {
+        "id": "dual",
+        "name": "雙朝聖集章手冊",
+        "price": "免費",
+        "purpose": "熊野古道＋西班牙聖雅各之路",
+        "requirement": "熊野側：發心門王子→本宮約7km＋速玉、那智參拜；須依官方完成指定集章。雙朝聖身份仍須完成西班牙規定路線並登記。",
+        "source": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/"
+      },
+      {
+        "id": "nakahechi",
+        "name": "中邊路押印帳",
+        "price": "¥100",
+        "purpose": "中邊路 41 個集章點；分段完步另有區間證明",
+        "requirement": "集齊全部 41 章才可申請「中邊路完全踏破證明書」；本趟約7km並不等於41章全踏破。",
+        "source": "https://www.sekaiisan-wakayama.jp/walk/ouinchou.html"
+      }
+    ],
+    "pickupDeadline": {
+      "day": "2026-11-10",
+      "locationId": "tanabe",
+      "closing": "18:00",
+      "summary": "11/10 若要從發心門王子開始蓋章，先到田邊站旁領免費手冊。",
+      "risk": "當天下午在白濱，回到紀伊田邊是否趕上18:00尚未確定；11/11 06:55公車前觀光中心尚未營業。",
+      "fallback": "11/11 到本宮館可再領免費版／購買¥100版，但已走過的發心門、水吞、伏拝、祓殿等集章點無法沿途補蓋。若無法11/10領取，出發前先洽住宿或觀光單位確認其他方式。"
+    },
+    "pickups": [
+      {
+        "id": "tanabe",
+        "name": "田邊市觀光中心",
+        "local": "田辺市観光センター",
+        "hours": "09:00–18:00",
+        "where": "JR 紀伊田邊站旁",
+        "address": "和歌山県田辺市湊1-20",
+        "dual": true,
+        "nakahechi": false,
+        "note": "免費手冊可直接領、無須預約，現場庫存為準；¥100版不在和歌山縣官方販售名單內。"
+      },
+      {
+        "id": "takijiri",
+        "name": "熊野古道館",
+        "local": "熊野古道館（中辺路町観光協会）",
+        "hours": "08:00–17:00",
+        "where": "瀧尻王子旁",
+        "address": "和歌山県田辺市中辺路町栗栖川1222-1",
+        "dual": true,
+        "nakahechi": true,
+        "note": "¥100版販售窗口依和歌山官方公布時間；免費版庫存須現場確認。"
+      },
+      {
+        "id": "hongu",
+        "name": "世界遺產熊野本宮館",
+        "local": "世界遺産 熊野本宮館",
+        "hours": "09:00–17:00",
+        "where": "熊野本宮大社附近",
+        "address": "和歌山県田辺市本宮町本宮100-1",
+        "dual": true,
+        "nakahechi": true,
+        "note": "11/11 約12:20之後可到；但此時已走過起點與前段王子集章點。"
+      },
+      {
+        "id": "shingu",
+        "name": "新宮市觀光協會",
+        "local": "新宮市観光協会",
+        "hours": "09:00–17:00",
+        "where": "JR 新宮站對面",
+        "address": "和歌山県新宮市徐福2-1-11",
+        "dual": true,
+        "nakahechi": true,
+        "note": "11/11 主案在速玉大社前轉直達勝浦巴士，不經新宮站。"
+      },
+      {
+        "id": "katsuura",
+        "name": "紀伊勝浦站觀光案內所",
+        "local": "那智勝浦観光機構",
+        "hours": "09:00–18:00",
+        "where": "JR 紀伊勝浦站",
+        "address": "和歌山県東牟婁郡那智勝浦町築地6-1-1",
+        "dual": true,
+        "nakahechi": true,
+        "note": "11/11 約17:48抵達車站；18:00前可能來不及安全完成領取，不能視為可靠的事前領取點。"
+      }
+    ],
+    "route": {
+      "text": "從發心門王子步行至熊野本宮大社約7km，並參拜熊野速玉大社、熊野那智大社；這符合雙朝聖的熊野側指定路線條件之一。",
+      "caveat": "必須依官方要求留下沿線集章證明，且需另外完成西班牙聖雅各之路規定路段，才能登記雙朝聖者；不等同中邊路41章完全踏破。",
+      "stamps": [
+        {
+          "id": "hosshinmon",
+          "date": "2026-11-11",
+          "name": "發心門王子",
+          "local": "発心門王子",
+          "phase": "起點 · 08:54抵達後"
+        },
+        {
+          "id": "mizunomi",
+          "date": "2026-11-11",
+          "name": "水吞王子",
+          "local": "水吞王子",
+          "phase": "古道途中"
+        },
+        {
+          "id": "fushiogami",
+          "date": "2026-11-11",
+          "name": "伏拝王子",
+          "local": "伏拝王子",
+          "phase": "古道途中"
+        },
+        {
+          "id": "haraido",
+          "date": "2026-11-11",
+          "name": "祓殿王子",
+          "local": "祓殿王子",
+          "phase": "進入本宮前"
+        },
+        {
+          "id": "hongu",
+          "date": "2026-11-11",
+          "name": "熊野本宮大社",
+          "local": "熊野本宮大社",
+          "phase": "12:20前後 · 完成印章（手冊熊野側第一頁）"
+        },
+        {
+          "id": "oyunohara",
+          "date": "2026-11-11",
+          "name": "大齋原",
+          "local": "旧社地大斎原",
+          "phase": "下午 · 14:46巴士前"
+        },
+        {
+          "id": "hayatama",
+          "date": "2026-11-11",
+          "name": "熊野速玉大社",
+          "local": "熊野速玉大社",
+          "phase": "15:40到站後"
+        },
+        {
+          "id": "nachi",
+          "date": "2026-11-12",
+          "name": "熊野那智大社",
+          "local": "熊野那智大社",
+          "phase": "上午"
+        },
+        {
+          "id": "seigantoji",
+          "date": "2026-11-12",
+          "name": "青岸渡寺",
+          "local": "青岸渡寺",
+          "phase": "上午"
+        },
+        {
+          "id": "hirou",
+          "date": "2026-11-12",
+          "name": "飛瀧神社（那智瀑布）",
+          "local": "飛瀧神社",
+          "phase": "上午"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "label": "官方繁中｜手冊領取地點",
+        "url": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/"
+      },
+      {
+        "label": "官方繁中｜雙朝聖條件",
+        "url": "https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/"
+      },
+      {
+        "label": "官方｜必須蓋章地點",
+        "url": "https://www.tb-kumano.jp/kumano-kodo/dual-pilgrim/stamp-lists/"
+      },
+      {
+        "label": "和歌山縣｜¥100押印帳與41章",
+        "url": "https://www.sekaiisan-wakayama.jp/walk/ouinchou.html"
+      }
+    ]
+  }
 }

@@ -120,11 +120,89 @@
       '</strong><p>' + esc(opt.line) + '</p><small>' + esc(opt.duration) + '</small></article>'
       ).join("") + '</div>';
   }
+  function trustedPilgrimUrl(raw) {
+    if (typeof raw !== "string") return "";
+    try {
+      const url = new URL(raw);
+      return ["https:", "http:"].includes(url.protocol) && !url.username && !url.password ? url.href : "";
+    } catch { return ""; }
+  }
+  function pilgrimSources(links, limit = 3) {
+    return (Array.isArray(links) ? links : []).slice(0, limit).map((entry) => {
+      const url = trustedPilgrimUrl(entry.url);
+      return url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
+        esc(entry.label) + ' ↗</a>' : "";
+    }).join("");
+  }
+  function credentialPickupCard(day) {
+    if (day.date !== "2026-11-10") return "";
+    const p = state.data?.pilgrimage;
+    if (!p) return "";
+    const primary = p.pickups.find((point) => point.id === p.pickupDeadline.locationId);
+    if (!primary) return "";
+    const booking = p.credentials.map((credential) => {
+      return '<article class="tl-credential-kind"><span>' + esc(credential.price) + '</span>' +
+        '<strong>' + esc(credential.name) + '</strong><small>' + esc(credential.purpose) + '</small>' +
+        '<p>' + esc(credential.requirement) + '</p></article>';
+    }).join("");
+    const pickupRows = p.pickups.map((site) => {
+      return '<li><div><strong>' + esc(site.name) + '</strong>' +
+        '<small>' + esc(site.where) + ' · ' + esc(site.hours) + '</small>' +
+        '<small>' + esc(site.note) + '</small></div>' +
+        '<span>' + (site.dual ? '免費' : '') + (site.nakahechi ? ' · ¥100' : '') + '</span></li>';
+    }).join("");
+    return '<section class="tl-credential-card" aria-label="11月10日巡禮手冊領取">' +
+      '<div class="tl-credential-header"><span class="tl-stamp-symbol" aria-hidden="true">印</span>' +
+        '<div><small>11/11 古道出發前</small><strong>先領空白集章手冊</strong></div>' +
+        '<span class="tl-credential-free">免費</span></div>' +
+      '<div class="tl-credential-main"><div><strong>' + esc(p.pickupDeadline.closing) +
+        '</strong><small>11/10 關門</small></div><div><strong>' + esc(primary.name) + '</strong>' +
+        '<small>' + esc(primary.where) + ' · ' + esc(primary.hours) + '</small></div>' +
+        '<a href="' + esc(mapHandoff(primary.local + " " + primary.address)) +
+        '" target="_blank" rel="noopener noreferrer" aria-label="Google Maps 搜尋田邊市觀光中心">⌖</a></div>' +
+      '<p class="tl-credential-risk">' + esc(p.pickupDeadline.risk) + '</p>' +
+      '<details class="tl-credential-details"><summary>兩種手冊／5 處領取點 <b>＋</b></summary>' +
+        '<div class="tl-credential-kinds">' + booking + '</div>' +
+        '<ol class="tl-pickup-sites">' + pickupRows + '</ol>' +
+        '<p class="tl-credential-fallback">' + esc(p.pickupDeadline.fallback) + '</p>' +
+        '<div class="tl-credential-links">' + pilgrimSources(p.sources, 4) + '</div>' +
+      '</details></section>';
+  }
+  function pilgrimageStampCard(day) {
+    if (!["2026-11-11", "2026-11-12"].includes(day.date)) return "";
+    const p = state.data?.pilgrimage;
+    if (!p?.route?.stamps) return "";
+    const stamps = p.route.stamps.filter((stop) => stop.date === day.date);
+    if (!stamps.length) return "";
+    const full = p.route.stamps.length;
+    const stampRows = stamps.map((stop, index) =>
+      '<li class="tl-stamp-stop"><span class="tl-stamp-order">' +
+        String(index + 1).padStart(2, "0") + '</span><div><strong>' +
+        esc(stop.name) + '</strong><small>' + esc(stop.local) +
+        ' · ' + esc(stop.phase) + '</small></div></li>'
+    ).join("");
+    return '<details class="tl-stamp-card" data-stamp-day="' + esc(day.date) + '">' +
+      '<summary><span class="tl-stamp-symbol" aria-hidden="true">印</span>' +
+        '<span class="tl-stamp-heading"><strong>雙朝聖集章</strong><small>今日 ' +
+        stamps.length + ' 處 · 兩日共 ' + full + ' 處</small></span>' +
+        '<span class="tl-stamp-expand">展開 ＋</span></summary>' +
+      '<ol class="tl-stamp-stops">' + stampRows + '</ol>' +
+      '<p class="tl-stamp-guide-tip">' +
+      (day.date === "2026-11-11"
+        ? '發心門王子出發前先蓋章；熊野本宮大社的完成章請蓋在雙朝聖手冊「熊野側第一頁」。'
+        : '這三處是熊野側7km＋熊野三社方案的延續，不是41章完全踏破。') + '</p>' +
+      '<p class="tl-stamp-guide-context">' + esc(p.route.caveat) + '</p>' +
+      '<div class="tl-credential-links">' + pilgrimSources(p.sources.slice(1, 4), 3) + '</div>' +
+      '</details>';
+  }
+
   function board(day, context) {
     const m = day.mobility;
     if (!m) return "";
     const legs = Array.isArray(m.legs) ? m.legs : [];
     const num = state.data.days.findIndex((entry) => entry.date === day.date) + 1;
+    const stampCount = (state.data?.pilgrimage?.route?.stamps || [])
+      .filter((stop) => stop.date === day.date).length;
     const modes = uniqueModes(legs).map((mode) =>
       '<span class="tl-overview-mode" title="' + esc(modeNames[mode]) + '">' + icon(mode) + '</span>').join("");
     const alert = m.attention && m.attentionLevel !== 'neutral'
@@ -139,19 +217,20 @@
       '<header class="tl-board-head">' +
         '<div class="tl-board-number"><small>DAY</small><strong>' + String(num).padStart(2, "0") + '</strong></div>' +
         '<div class="tl-board-title"><p>' + esc(dateLabel(day)) + '</p><h2>' + esc(m.label || day.title) + '</h2>' +
-        '<div class="tl-mode-list" aria-label="交通方式">' + modes + '<span>' + esc(m.callout || '') + '</span></div></div>' +
+        '<div class="tl-mode-list" aria-label="交通方式">' + modes + '<span>' + esc(m.callout || '') + '</span>' +
+        (stampCount ? '<span class="tl-stamp-signal">印 ' + stampCount + ' 處</span>' : '') + '</div></div>' +
       '</header>' +
       '<div class="tl-route-frame"><div><small>START</small><strong>' + esc(m.from) + '</strong></div>' +
         '<span class="tl-route-arrow" aria-hidden="true">→</span>' +
         '<div><small>FINISH</small><strong>' + esc(m.to) + '</strong></div></div>' +
-      stageRail(legs) + alert +
+      stageRail(legs) + alert + credentialPickupCard(day) +
       (m.attentionLevel === 'neutral' && m.attention
         ? '<p class="tl-neutral-line">' + esc(m.attention) + '</p>' : '') +
       '<div class="tl-list-head"><h3>' + boardTitle + '</h3><span>' +
       (legs.length ? (legs.length + ' 段') : '選項') + '</span></div>' +
       (legs.length ? '<ol class="tl-leg-list">' + legs.map(legRow).join("") + '</ol>' :
         optionCards(m.options)) +
-      alternativeCards(m.alternatives, day) +
+      alternativeCards(m.alternatives, day) + pilgrimageStampCard(day) +
       '<footer class="tl-board-foot"><span>行程快照 · 非即時交通</span>' + referenceLink + '</footer>' +
       '</section>';
   }
