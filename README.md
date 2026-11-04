@@ -13,6 +13,30 @@
 若未啟用：Repository → Settings → Pages → Deploy from a branch → `main` → `/ (root)`。
 啟用後預期網址：`https://world4jason.github.io/2026-Oksaka-Kyoto-Kumano-Kodo/`。
 
+## 交通優先的畫面
+
+- **總覽**：11天濃縮成日期卡，保留出發地、目的地、交通方式與關鍵時間，不堆疊長備註。
+- **單日**：主要交通軸在前，重要班次與轉乘標為「關鍵」；行程全文與註記要點開才會顯示。
+- **交通**：站點／出發／抵達為主，Google Maps 只做地點查找，原本無經緯度的底圖折疊收納。
+- **11/11**：52號大齋原前的12:16、13:26、14:46、16:11與末班17:36依情境並排。**14:46**為主線，其他是備案，不等同已改行程。
+- **11/09**：貴船夜間33號巴士末班未核實，視覺上明示警告，絕不標示為已確認。
+
+畫面參考：[手機總覽](docs/ui-proof/mobile-overview.png) · [11/11手機交通](docs/ui-proof/mobile-kumano-trip.png) · [52號班次比較](docs/ui-proof/mobile-kumano-alternatives.png) · [桌面交通](docs/ui-proof/desktop-kumano-transport.png)。
+
+交通快照是 Excel 既有資料，不是即時班次。`trip.json.days[].mobility` 是網站顯示的唯一共用交通資料；詳細舊版來源仍留在 `reference.html`。
+
+## 驗收
+
+```sh
+node --test tests/transport-data.test.mjs
+node scripts/check-item-ids.mjs trip.json
+python3 -m http.server 8107
+# 另開一個終端機（需安裝 Playwright 和 Chromium/Chrome）
+python3 tests/transport-visual-smoke.py
+```
+
+已實測 320 / 390 / 1100px、11/11交通和備案、地圖頁切換與無橫向捲動。介面外觀未經本人最終驗收，不能把靜態測試當成交通官方確認。
+
 ## 本地預覽與資料檢查
 
 ```sh
