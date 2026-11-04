@@ -13,7 +13,7 @@ test("Published trip is eleven-day, transport-first, unique and public-safe", ()
   assert.equal(days.at(-1).date, "2026-11-14");
   assert.equal(data.ui.locale, "zh-TW");
   assert.equal(data.ui.defaultView, "trip");
-  assert.equal(allLegs.length, 46);
+  assert.equal(allLegs.length, 56); // 11/05 Ise split into actual local/express/CAN transfers.
   assert.equal(new Set(days.flatMap((day) => day.items.map((item) => item.id))).size,
     days.flatMap((day) => day.items).length);
   assert.ok(!JSON.stringify(data).includes("1793645892"));
