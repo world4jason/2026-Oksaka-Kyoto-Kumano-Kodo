@@ -1,0 +1,446 @@
+# Maintenance guide
+
+This document is for future humans and coding agents maintaining the template itself.
+
+For normal trip generation, prefer changing only `trip.json`. Change application code only when the behavior should be reusable across many future trips.
+
+## Local preview
+
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`.
+
+Do not rely on opening `index.html` directly with `file://`; the app fetches `trip.json` and uses Service Worker/PWA behavior.
+
+## Validation
+
+For any Style Pack border/spacing change, also read [STYLE_SURFACE_CONTRACT.md](./STYLE_SURFACE_CONTRACT.md) and run the structural smoke:
+
+```bash
+node --test tests/style-surface-contract.test.mjs
+npx playwright test tests/style-surface-role.spec.mjs tests/style-semantic-parity.spec.mjs tests/style-surface-padding.spec.mjs --project=chromium
+```
+
+The 16-appearance role gate is part of the normal Playwright project; `TRAVEL_LITE_FULL_STYLE_QA=1` explicitly enables the larger 240-state full-surface sweep. A CSS declaration or unexecuted smoke test is not a browser result. For any frame on a reading row, commit a matching text inset or use an open divider-only row.
+
+Before publishing any itinerary, run `npm run test:integrity -- path/to/trip.json`.
+It rejects duplicate/non-string IDs across **all** scheduled day items with stable
+source paths. Do not rename IDs automatically or infer a booking association.
+The CLI never modifies the published source; the runtime also fails closed on
+ambiguous Places, Transport and Trip identity-only links.
+
+At minimum, before merging template changes:
+
+```bash
+node --check bootstrap.js
+node --check app.js
+node --check trip-view.js
+node --check responsive-shell.js
+node --check companion-ux.js
+node --check storage.js
+node --check runtime-providers.js
+node --check runtime-features.js
+node --check runtime-google.js
+node --check runtime-handoff.js
+node --check theme-shell.js
+node --check sw.js
+node --check storybook-motion.js
+node --check storybook-decor.js
+node --check tests/pack-manifests.test.mjs
+```
+
+Also parse:
+
+- `trip.json`
+- `manifest.webmanifest`
+
+## Repeatable mobile layout regression
+
+The repository includes a local Playwright/Chromium layout harness. It does not depend on GitHub Actions.
+
+One-time setup:
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+Run the mobile/read-only companion matrix:
+
+```bash
+npm run test:mobile
+```
+
+Use the headed variant for visual review:
+
+```bash
+npm run test:mobile:headed
+```
+
+The harness serves the repository on `127.0.0.1:4317` and never reuses an existing server, so an unrelated local dev server cannot be tested by mistake. If that port is busy, pick another:
+
+```bash
+TRAVEL_LITE_TEST_PORT=4400 npm run test:mobile
+```
+
+The harness freezes time against an isolated 32-day stress fixture and covers:
+
+- 320 / 360 / 375 / 390 / 430 phone widths
+- 820 tablet portrait
+- 1100 compact desktop
+- 1600 wide desktop
+- Now / Trip / Transport / Places / More, plus legacy `#map` / `#check` deep links
+- long-trip navigation
+- fully untimed Today Brief
+- long mixed-language/generated strings: every `title` / `label` / `location` / `prompt` / `subtitle` / `name` / `note` in the fixture carries an unbroken token, so a new component cannot escape coverage by having short sample text
+- responsive deep-link persistence
+- enlarged-text reflow
+
+The primary invariant is that the document shell never becomes wider than the viewport. Explicit component-level horizontal rails remain allowed.
+
+A second invariant covers controls: every visible interactive element (links, buttons, selects, summaries, inputs) must lie horizontally inside the viewport and must not overlap another control in the same layer. Fixed/sticky chrome and the absolutely positioned body of an open `<details>` popover count as their own layers; only the known horizontal rails (`.day-tabs`, `.place-chips`, `.trip-route-steps`) are exempt, so vertically scrolling desktop rails are still checked. Every overflow menu and info card in the fixture is opened and checked explicitly, because left-edge clipping does not create document overflow. Each control is also scrolled to the viewport centre and must be the `elementFromPoint` target at its own centre: fixed/sticky chrome covering it is a failure, and only an open `<details>` popover may cover it. A permanent negative test covers content with an oversized fixed bottom nav and with a sticky layer, and adds a control that can never be scrolled into view, and expects each to fail.
+
+The harness serves MapLibre from the pinned `maplibre-gl` devDependency instead of the CDN, answers map style requests with a minimal local style (tiles are blocked), and checks the Map view only after a real map has initialised; a silent fallback fails the run. The fallback message has its own test, and the Map is rechecked after selecting another stop. When `runtime-features.js` moves to a new MapLibre version, bump the devDependency to the same version; the spec refuses to run if they differ.
+
+## Built-in Style Pack review (15 Style IDs, 16 visible looks)
+
+`npm run test:mobile` also runs `tests/style-options.spec.mjs`, `tests/phase2-packs.spec.mjs`, `tests/style-settings.spec.mjs`, `tests/nine-looks.spec.mjs`, `tests/second-prompt-batch.spec.mjs` and `tests/responsive-style-picker.spec.mjs` (separate from the 32-day default fixture). Verify:
+
+- old trips with no `ui.visualStyle` render the same Editorial Atlas and still switch light/dark
+- invalid style selection falls back to Editorial
+- explicit `storybook` and the `?previewStyle=storybook` URL render correctly
+- Storybook white-paper/card tokens do not leak into Editorial
+- SVG art keys are whitelisted, the generic fallback applies, and the default artwork is destination-neutral
+- the shared ordered timeline, TBD, transport labels and curated emphasis preserve actual itinerary truth in every appearance
+- both OS reduced motion and the per-trip local motion control stop animations
+- no overlap/overflow at narrow, tablet and desktop widths, offline cache includes optional assets
+- More → Appearance instantly switches all sixteen appearances with no reload, persists per trip, preserves dark theme on returning to Editorial, and remains keyboard-reachable
+- collapsed More control stays compact; 320–767px modal bottom sheet keeps header/footer fixed while tile grid scrolls, selecting a tile closes the sheet; ≥768px right drawer remains open for live style comparisons
+- native dialog must close through Escape, backdrop click, Done/×, preserve focus trapping, return focus to the current trigger after re-render, and honor reduced motion
+- verify screenshots for both viewport modes and real Megan-trip before merging or publishing
+- URL preview takes precedence temporarily, choosing a local style removes preview URL while preserving hash and unrelated query parameters, Follow trip default clears local state
+- navigation immediately after an asynchronous checklist write cannot redraw a stale Check view over a newly selected Trip view
+
+External Google Fonts are optional, loaded without blocking first paint. Only style-specific icon/artwork metadata belongs in a generated trip; core navigation and live-map behavior stay shared.
+
+## Product acceptance
+
+The base template should continue to satisfy:
+
+- `Now` shows **previous / scheduled-now / next** as a reference window
+- early/delayed travellers can see adjacent scheduled items without pretending GPS presence is known
+- only valid `HH:MM` starts participate in time calculations
+- missing/`TBD` start times remain floating and never become midnight/current
+- reminders and floating/TBD items remain visible
+- shared TBD cards cannot be resolved locally
+- `decision.mode: "personal"` clearly remains device-local
+- traveller-facing text does not mention `trip.json` or implementation instructions
+- `Trip` opens with a whole-trip overview rather than a wall of stop actions
+- Trip overview summarizes days, optional highlights, and unresolved shared decisions
+- a selected day shows route-at-a-glance + compact timeline
+- transfer context is static/pre-researched and never presented as live transit
+- itinerary rows keep an action budget: small map action + optional overflow, not repeated large buttons
+- `Transport` only shows already-planned stops and numbers map markers in itinerary order
+- selected map stop is visually distinct
+- no route optimization/live routing is introduced
+- Google Maps/external handoff remains available if the interactive map fails
+- phone Map can use most of the remaining viewport without breaking bottom-nav safe areas
+- Preparation & checklists in `More`, and the legacy `#check` route, persist the same completion state in IndexedDB with localStorage fallback
+- `More` remains reference-oriented
+- provider failure never blocks core itinerary/reference use
+- header distinguishes network data from an offline snapshot when possible
+- Web Share/copy-link preserves current read-only context
+- deep links can restore Now / Trip overview / Trip day / Transport stop / Places list or item / More, with legacy `#map` and `#check` links retained
+- simple `ui.locale` / `ui.labels` customization does not fork trip data
+- phone layout remains usable on a narrow viewport
+- compact desktop reveals a persistent day rail without squeezing the main view
+- wide desktop context rail changes with the active view rather than duplicating the same stops everywhere
+- `system`, `light`, and `dark` all remain readable
+- switching theme does not lose local state
+- the map follows the effective theme unless explicitly overridden
+
+## Companion-UX review
+
+After changing day-of behavior, test these cases explicitly:
+
+### Timed window
+
+Use a fixture/current time where the day contains at least three timed items.
+
+Verify:
+
+- previous points to the nearest earlier timed item
+- scheduled-now is only set inside the scheduled window
+- next is the next timed item, including the first item of a later day when today is finished
+- later items do not duplicate the next item
+
+### Floating/TBD
+
+Use an item with either no `start` or `start: "TBD"`.
+
+Verify:
+
+- it does not become current
+- it does not count as 00:00
+- it remains visible in Flexible today / Trip
+- shared decisions remain unresolved unless `resolvedOptionId` is present
+
+### Offline freshness
+
+Test both:
+
+1. successful network `trip.json` load
+2. failed `trip.json` network load after a prior successful snapshot
+
+Verify the header distinguishes `Online` from `Offline copy` and retains the published `updatedAt` context.
+
+### Deep links / share
+
+Test direct loads for at least:
+
+```text
+#now
+#trip/overview
+#trip/day/<date>
+#map/day/<date>/stop/<id>
+#places
+#places/item/<id>
+#check
+#more
+```
+
+Verify sharing/copying the current URL preserves the selected read-only context.
+
+## Trip-view review
+
+After changing Trip rendering, test both the Overview and at least one populated day.
+
+Run `tests/issue116-trip-contract.spec.mjs` for complete-boot, fixed-clock start-time classification and unchanged end/window behavior. Run `tests/style-semantic-parity.spec.mjs` for all 16 appearances, including both Editorial themes: the same named section/h2/list, one direct li/article per source item, same-li transfers, empty-day zero items, keyboard actions and source preservation. These tests load the actual script order; an isolated early parser is not evidence about the final runtime.
+
+For Route/Map geometry, run `tests/issue116-role-geometry.spec.mjs` in addition to the existing surface tests. It records role metrics and screenshots across narrow, desktop and short-height layouts. Use a separate pinned checkout through `TRAVEL_LITE_TEST_SITE_ROOT` for before/after evidence; capture-only baseline results are not acceptance PASS. Preserve the original baseline and bind the final full suite, matrix, screenshots and Pages verification to the same candidate version. The separate route-label deduplication defect is tracked in #120 and is not silently corrected by the #116 DOM/CSS migration.
+
+Verify:
+
+- Overview has clear day-level hierarchy before detailed stops
+- route summaries do not invent routing facts
+- `highlights` stay small and useful rather than becoming a recommendation feed
+- open shared decisions remain visibly unresolved
+- Google Maps is a small handoff, not the visual focus of each stop
+- `externalLinks` / `googleSearches` live under overflow unless they are true primary information
+- `decision` and `infoCard` remain content surfaces
+- `transferAfter` appears between the correct stops and disappears cleanly when absent
+- a dense item still scans well on mobile
+
+## Responsive-shell review
+
+Responsive changes must be tested across all three compositions, not just one phone and one desktop.
+
+Suggested minimum:
+
+```text
+390 × 844    phone
+1100 × 900   compact desktop / tablet landscape
+1600 × 900   wide desktop
+```
+
+Verify:
+
+### Phone `< 900px`
+
+- single-column content
+- bottom navigation remains available and safe-area friendly
+- Trip keeps its own Overview / day chips because no persistent day rail exists
+- Map can expand vertically without desktop rails leaking into the layout
+
+### Compact desktop `900–1399px`
+
+- persistent left trip-day/reference rail is visible
+- right context rail is hidden
+- primary navigation is horizontal above the main content
+- Trip day chips are hidden because the persistent day rail replaces them
+- clicking a day in the rail updates the same Trip renderer/state used on phone
+
+### Wide desktop `>= 1400px`
+
+- left trip-day/reference rail, main content, and right context rail are all visible
+- right rail content matches the active view
+- Now rail does not duplicate Trip-day context
+- Transport rail shows selected-stop details rather than the whole timeline
+- Places and More show device/offline context; the legacy `#check` rail shows completion/incomplete items
+
+Across all sizes:
+
+- do not duplicate data loading/storage/decision semantics by breakpoint
+- prefer collapsing a context panel over squeezing the main itinerary/map
+- map and timeline widths remain usable
+- resizing does not lose selected day, checklist state, theme, or deep-link context
+
+## Theme review
+
+Appearance is a local preference. Verify all three modes:
+
+- `system`
+- `light`
+- `dark`
+
+Theme styling should come from semantic tokens rather than scattered hard-coded colors. `trip.accent` may tint buttons/status elements, but should not become a fixed product identity or the sole carrier of meaning.
+
+The quick header control and **More → Appearance** must remain consistent with the same stored theme value.
+
+## Mobile reflow / overflow acceptance
+
+For phone-facing template changes, validate the page shell at **320 / 360 / 375 / 390 / 430 CSS px**.
+
+- readable page content must reflow without document-level horizontal scrolling
+- explicit horizontal rails such as day chips / route chips may scroll inside their own component
+- long generated titles, place names, URLs, and mixed CJK/Latin strings must wrap rather than widen the page
+- check `document.documentElement.scrollWidth <= window.innerWidth` on Now, Trip, Places, More, the legacy `#check` view, and the non-map shell around Transport
+- full-bleed mobile surfaces must derive their negative margin from `--shell-gutter`; do not hard-code a different gutter
+- do not use page-level overflow clipping as the only fix for an overflowing child
+
+## PWA / Service Worker rule
+
+`sw.js` precaches the application shell.
+
+When changing cached shell files or behavior in a way that existing clients must refresh, bump the shell cache name, for example:
+
+```js
+const CACHE = "travel-lite-shell-v10";
+```
+
+If this is forgotten, returning users may continue seeing stale JavaScript/CSS until the old cache is replaced.
+
+Keep runtime caching bounded. Do not turn the Service Worker into an unbounded map/download cache without an explicit storage-management design.
+
+## Storage compatibility
+
+Each independently deployed travel site has its own local storage scope,
+derived from the site's canonical script/base URL by `site-scope.js`. The
+`storage.js` IndexedDB database, fallback localStorage keys, the network
+freshness timestamp, and Storybook motion preference must use that scope.
+Sites published under different paths on the **same** GitHub Pages origin
+must not share any snapshot, personal notes, checks, or appearance values,
+even if both source trips have the same `trip.id`.
+
+Legacy pre-scoping values have no reliable owning-site identifier. **Do not
+auto-import or delete these values**. Existing users may need to re-enter
+some device-only state once after the site-isolation fix; users who load
+the published itinerary online will receive a fresh isolated offline cache.
+
+Regression command: `npx playwright test tests/site-storage.spec.mjs --project=chromium`.
+This covers two same-origin sites, blocked `trip.json` fallback, duplicate
+trip IDs, localStorage fallback, ambiguous legacy snapshots/checklists,
+successful online boot without importing old checklist state, same-site
+published itinerary revisions preserving private state, and a real
+Service Worker offline reload. This is a local Playwright test; no GitHub
+Actions workflow is required.
+
+Stable IDs are part of the data contract.
+
+Changing these can reset local state:
+
+- `trip.id`
+- checklist IDs
+- checklist item IDs
+- todo IDs
+- personal decision item/option IDs
+
+Only change them intentionally.
+
+`trip.json` is shared truth; IndexedDB is never shared truth.
+
+## URL/content safety
+
+Any URL rendered from trip data should be validated before use.
+
+Current handoff/info-card/trip-view/companion code allows expected safe protocols and rejects unexpected protocols. Preserve that behavior when adding new link surfaces.
+
+Never commit secrets or require secret API keys in the base static template.
+
+## Runtime provider policy
+
+The base template intentionally keeps runtime providers small:
+
+- Open-Meteo for weather
+- OpenFreeMap/MapLibre for planned-stop map rendering
+- Google Maps URLs for handoff
+
+Do not reintroduce generic place search, POI discovery, runtime encyclopedia enrichment, live transit, or route optimization by default. Prefer:
+
+- `googleSearches`
+- `externalLinks`
+- vibe-time `infoCard` generation
+- static `routeSummary` / `transferAfter`
+
+If a fork needs a larger provider integration, keep it fork-specific unless it clearly benefits the generic post-planning companion use case.
+
+## GitHub Pages
+
+The repository is intended to publish directly from:
+
+```text
+branch: main
+folder: /(root)
+```
+
+There is no build output directory. `.nojekyll` is intentional.
+
+When changing paths, remember the app is deployed under a repository subpath such as:
+
+```text
+/Travel-lite-Template/
+```
+
+Use relative asset URLs unless there is a strong reason not to.
+
+## Code review checklist
+
+Before merge, review for:
+
+### Scope
+
+- Does this help people during travel after planning is mostly complete?
+- Is this turning into planner/editor/discovery/sync functionality?
+- Could a specialist link solve it more simply?
+
+### Shared/local correctness
+
+- Does any IndexedDB mutation look like shared state?
+- Can two travellers on different devices safely see different local states without confusion?
+- Are shared decisions only resolved by shared data?
+
+### Offline/fallback
+
+- Does the core UI still work if weather/map/CDN calls fail?
+- Is `trip.json` still available from the local snapshot after a successful prior load?
+- Does the user understand whether they are looking at a network or offline copy?
+- Did a shell change require a Service Worker cache bump?
+
+### UX
+
+- Is `Now` glanceable and useful when the group is early/delayed?
+- Does Trip communicate information before actions?
+- Are repeated cards/actions avoided?
+- Are touch targets mobile-friendly?
+- Does each breakpoint use its available space intentionally rather than merely scaling the same layout?
+- Does the wide rail add context rather than duplicate the main view?
+- Do light/dark/system all preserve contrast and hierarchy?
+- Are optional modules hidden when their data is absent?
+
+### Security/privacy
+
+- Are dynamic links sanitized?
+- Are secrets absent from public files?
+- Are private booking credentials avoided?
+
+## When to update documentation
+
+- schema change → update `docs/TRIP_SCHEMA.md` or `docs/COMPANION_UX.md` when the contract is specifically day-of UX
+- product/architecture boundary change → update `docs/ARCHITECTURE.md`
+- maintenance/test/deployment change → update this file
+- agent behavior/conventions change → update root `AGENTS.md`
+- human-facing setup or feature change → update root `README.md`
+
+Do not add one-off review notes or historical discussion documents to the template root. Use issues/PR history for that context.
