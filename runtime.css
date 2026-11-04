@@ -1,0 +1,80 @@
+/* Runtime feature layer. SPDX-License-Identifier: AGPL-3.0-or-later */
+.weather-card { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; padding: 18px 20px; }
+.weather-card h2 { margin: 0 0 5px; font-size: 1.05rem; }
+.weather-card p { margin: 0; color: var(--muted); font-size: .82rem; }
+.weather-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 16px; background: var(--accent-soft); font-size: 1.6rem; }
+
+.map-handoff { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 18px; }
+.map-handoff.compact { display: none; }
+.map-handoff strong { display: block; margin-bottom: 5px; }
+.map-handoff p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.4; }
+
+.runtime-map-panel { --ui-map-workspace-padding: 0; --ui-map-workspace-frame: 0; --ui-map-workspace-fill: transparent; box-shadow: none; }
+.map-heading { align-items: end; margin-bottom: var(--space-4); }
+.map-heading h2 { margin: var(--space-1) 0 0; }
+.map-heading-copy { margin: var(--space-2) 0 0; color: var(--muted); font-size: var(--text-sm); }
+.map-primary-handoff { display: none; }
+.map-primary-handoff, .map-secondary-handoff { flex: 0 0 auto; }
+.runtime-map-panel .place-chip.active { font-weight: 800; }
+.runtime-map-panel .place-chip.active::before { content: "●"; margin-right: 6px; font-size: .55rem; vertical-align: middle; }
+.map-stage { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--surface-2); }
+.interactive-map { width: 100%; height: clamp(420px, 62vh, 680px); min-height: 420px; overflow: hidden; background: var(--surface-2); }
+.map-library-state { min-height: inherit; height: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr); place-content: center; gap: var(--space-4); padding: clamp(28px, 6vw, 64px); color: var(--muted); text-align: left; line-height: 1.5; }
+.map-library-state strong { display: block; margin-bottom: var(--space-1); color: var(--text); font-size: var(--text-lg); }
+.map-library-state p { max-width: 38rem; margin: 0; }
+.map-library-state .eyebrow { margin-bottom: var(--space-2); }
+.map-state-mark { width: 42px; height: 42px; display: grid; place-items: center; border: var(--border-subtle); border-radius: 50%; color: var(--accent); font-size: 1.35rem; }
+.map-library-loading .map-state-mark { animation: map-pulse var(--motion-slow) var(--ease-standard) infinite alternate; }
+.map-marker { appearance: none; min-width: 34px; height: 34px; padding: 0 8px; border: 2px solid white; border-radius: 999px; background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(0,0,0,.35); font: 700 .7rem/1 system-ui, sans-serif; cursor: pointer; transition: transform var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard); }
+.map-marker.active { transform: scale(1.22); background: var(--text); color: var(--bg); box-shadow: 0 0 0 5px var(--accent-soft), 0 7px 24px rgba(0,0,0,.28); }
+.map-marker:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.map-selected-summary { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-4); margin-top: var(--space-4); padding: var(--space-4) 0 0; border-top: var(--border-subtle); }
+.selected-place-card { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-top: 14px; padding: 14px 2px 0; }
+@keyframes map-pulse { from { transform: scale(.92); opacity: .55; } to { transform: scale(1.06); opacity: 1; } }
+.selected-place-card h3 { margin: 0 0 5px; }
+.selected-place-card p { margin: 0; color: var(--muted); font-size: .82rem; }
+.selected-place-card > .action-row,
+.selected-place-card > .info-card { flex-basis: 100%; }
+
+.info-card { margin-top: 12px; border-top: 1px solid var(--line); }
+.info-card summary { cursor: pointer; padding: 12px 0; color: color-mix(in srgb, var(--accent) 72%, var(--text)); font-size: .84rem; font-weight: 760; }
+.info-card-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 0 0 12px; }
+.info-card-image { width: 100%; max-height: 220px; object-fit: cover; border-radius: 14px; background: var(--surface-2); }
+.info-card-body h3 { margin: 0 0 6px; }
+.info-card-body p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.55; }
+.info-card-body ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+.info-source-links { margin-top: 10px; }
+
+.decision-card { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.decision-card.compact { margin-top: 10px; }
+.decision-options { display: grid; gap: 8px; margin-top: 10px; }
+.trip-reminder-card, .trip-decision-summary { margin-top: 14px; }
+
+@media (max-width: 520px) {
+  .interactive-map { min-height: 320px; height: 48vh; }
+  .selected-place-card, .map-handoff { align-items: flex-start; flex-direction: column; }
+}
+
+
+@media (min-width: 1400px) and (min-height: 601px) {
+  .map-primary-handoff { display: inline-flex; }
+  .runtime-map-panel .map-selected-summary { display: none; }
+  .runtime-map-panel .interactive-map { height: clamp(560px, 68vh, 760px); }
+}
+
+/* Optional read-only alternatives: never use selection or recommendation styling. */
+.trip-alternatives { min-width: 0; max-width: 100%; margin: 12px 0; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
+.trip-alternatives summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: space-between; align-items: center; cursor: pointer; padding: 12px 0; color: var(--text); font-weight: 650; }
+.trip-alternatives summary small, .trip-alternative small { color: var(--muted); font-size: .78rem; font-weight: 400; }
+.trip-alternatives summary:focus-visible, .trip-alternative a:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+.trip-alternatives-list { list-style: none; padding: 0 0 6px; margin: 0; }
+.trip-alternative { min-width: 0; overflow-wrap: anywhere; padding: 12px 0; border-top: 1px solid var(--line); }
+.trip-alternative strong, .trip-alternative small { display: block; }
+.trip-alternative strong { line-height: 1.4; }
+.trip-alternative p { margin: 6px 0; font-size: .86rem; line-height: 1.5; color: var(--muted); }
+.trip-alternative .inline-link { display: inline-block; margin: 6px 12px 4px 0; font-size: .81rem; }
+.trip-alternative-sources { display: flex; flex-wrap: wrap; gap: 0 6px; }
+.trip-transfer-copy .trip-alternatives { margin-top: 10px; }
+.trip-transfer-copy .trip-alternatives summary { font-size: .82rem; }
+.trip-overview-view > .trip-alternatives, .trip-day-view > .trip-alternatives { max-width: var(--content-reading); }
+@media (max-width: 520px) { .trip-alternatives { padding-inline: 10px; } }
