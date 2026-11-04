@@ -197,8 +197,9 @@
  .tl-board *{transition:none!important;scroll-behavior:auto!important}
 }
 
-/* This fork has its own itinerary/transport selector; don't stack two date navigators. */
-.tl-route-screen .long-trip-nav{display:none!important}
+/* Preserve the template's long-trip mobile date select. For trips with 8+
+   days long-trip-nav.css hides the chip strip and provides arrows + select;
+   suppressing that navigator left both controls invisible on mobile. */
 /* Hide large decorative pseudo-illustrations only on compact overview components. */
 .trip-overview-hero.tl-overview-hero::after,
 .trip-overview-day.tl-overview-card::after{
