@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="A tiny, offline-ready travel companion for GitHub Pages." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Travel Lite</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./runtime.css" />
+    <link rel="stylesheet" href="./desktop-theme.css" />
+    <link rel="stylesheet" href="./trip-view.css" />
+    <link rel="stylesheet" href="./responsive-shell.css" />
+    <link rel="stylesheet" href="./companion-ux.css" />
+    <link rel="stylesheet" href="./places-view.css" />
+    <link rel="stylesheet" href="./long-trip-nav.css" />
+    <link rel="stylesheet" href="./today-brief.css" />
+    <link rel="stylesheet" href="./style-settings.css" />
+    <link rel="stylesheet" href="./export.css" />
+    <link rel="stylesheet" href="./journey-trust.css" />
+    <link rel="stylesheet" href="./journey-transit.css" />
+    <!-- Trusted, bundled styles remain disabled unless ui.visualStyle selects them. -->
+    <link id="storybook-style" rel="stylesheet" href="./storybook-theme.css" disabled />
+    <!-- Only explicit, trusted packs can enable these local stylesheets. -->
+    <link id="candy-style" rel="stylesheet" href="./candy-theme.css" disabled />
+    <link id="risograph-style" rel="stylesheet" href="./risograph-theme.css" disabled />
+    <link id="paper-collage-style" rel="stylesheet" href="./paper-collage-theme.css" disabled />
+    <link id="naive-city-style" rel="stylesheet" href="./naive-city-theme.css" disabled />
+    <link id="taiwan-poster-style" rel="stylesheet" href="./taiwan-poster-theme.css" disabled />
+    <link id="field-stamp-style" rel="stylesheet" href="./field-stamp-theme.css" disabled />
+    <link id="quiet-linocut-style" rel="stylesheet" href="./quiet-linocut-theme.css" disabled />
+    <link id="doodle-memory-grid-style" rel="stylesheet" href="./doodle-memory-grid-theme.css" disabled />
+    <link id="crayon-journal-style" rel="stylesheet" href="./crayon-journal-theme.css" disabled />
+    <link id="painterly-editorial-style" rel="stylesheet" href="./painterly-editorial-theme.css" disabled />
+    <link id="geometric-print-style" rel="stylesheet" href="./geometric-print-theme.css" disabled />
+    <link id="quiet-acrylic-style" rel="stylesheet" href="./quiet-acrylic-theme.css" disabled />
+    <link id="vintage-watercolor-style" rel="stylesheet" href="./vintage-watercolor-theme.css" disabled />
+    <!-- Final role-owned geometry; loaded after ALL optional packs. -->
+    <link rel="stylesheet" href="./surface-contract.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="trip-header">
+        <div><p class="eyebrow" id="trip-location">Travel Lite</p><h1 id="trip-title">Loading trip…</h1><p class="trip-meta" id="trip-meta"></p></div>
+        <div class="live-time" aria-label="Trip local time"><span id="local-time">--:--</span><small id="timezone-label"></small></div>
+      </header>
+      <aside class="shell-context shell-context-left" id="shell-left" aria-label="Trip days"></aside>
+      <main id="view-root" aria-live="polite"><section class="panel loading-card"><div class="skeleton short"></div><div class="skeleton"></div><div class="skeleton medium"></div></section></main>
+      <aside class="shell-context shell-context-right" id="shell-right" aria-label="Trip context"></aside>
+      <nav class="bottom-nav" id="bottom-nav" aria-label="Primary navigation"></nav>
+    </div>
+    <template id="error-template"><section class="panel empty-state"><p class="eyebrow">Could not load trip data</p><h2>Open this site through a web server or GitHub Pages.</h2><p>Travel Lite reads <code>trip.json</code> and keeps a local IndexedDB snapshot after the first successful visit.</p></section></template>
+    <script src="./site-scope.js" defer></script>
+    <script src="./bootstrap.js" defer></script>
+    <script src="./storage.js" defer></script>
+    <script src="./storybook-motion.js" defer></script>
+    <script src="./item-identity.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./trip-view.js" defer></script>
+    <script src="./runtime-providers.js" defer></script>
+    <script src="./runtime-features.js" defer></script>
+    <script src="./runtime-handoff.js" defer></script>
+    <script src="./places-view.js" defer></script>
+    <script src="./transport-overview.js" defer></script>
+    <script src="./runtime-google.js" defer></script>
+    <script src="./theme-shell.js" defer></script>
+    <script src="./responsive-shell.js" defer></script>
+    <script src="./companion-ux.js" defer></script>
+    <script src="./timezone.js" defer></script>
+    <script src="./long-trip-nav.js" defer></script>
+    <script src="./today-brief.js" defer></script>
+    <script src="./journey-trust.js" defer></script>
+    <script src="./journey-transit.js" defer></script>
+    <script src="./storybook-decor.js" defer></script>
+    <script src="./export-core.js" defer></script>
+    <script src="./export-ui.js" defer></script>
+  </body>
+</html>
