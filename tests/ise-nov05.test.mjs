@@ -14,6 +14,7 @@ test("11/05 primary route is Naiku-only, preserves full two-shrine variant", () 
  assert.ok(src.includes("id=\"ise-legacy\""));
  assert.ok(src.includes("id=\"ise-primary\"")&&src.includes("id=\"ise-transit\""));
  assert.ok(d.routeSummary.includes("夫婦岩")&&d.routeSummary.includes("御木本珍珠島"));
+ assert.deepEqual(d.mobility.stageLegIds,["leg-2","leg-4","leg-6","leg-8","leg-11"]);
 });
 test("non-reserved Kintetsu connections and 51 bus distinguish express bus from rail", () => {
  const l=d.mobility.legs;

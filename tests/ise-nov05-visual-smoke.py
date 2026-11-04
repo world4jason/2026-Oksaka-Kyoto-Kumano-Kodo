@@ -17,6 +17,7 @@ with sync_playwright() as pw:
     page.wait_for_selector(".trip-day-view .tl-board")
     assert "伊勢內宮" in page.locator(".tl-board-title").inner_text()
     assert page.locator(".tl-leg").count()==14
+    assert page.locator(".tl-stage strong").all_inner_texts()==["06:54","09:40","13:34","14:42","16:57"]
     assert page.locator(".tl-board").inner_text().count("13:34")>0
     assert "14:42" in page.locator(".tl-board").inner_text()
     assert not page.locator(".tl-board").inner_text().find("07:05")>=0
