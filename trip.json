@@ -939,7 +939,9 @@
             "service": "33號公車／替代接駁",
             "hint": "2026夜間增班未核實；勿預設暗處步行2km。",
             "status": "unconfirmed",
-            "critical": true
+            "critical": true,
+            "mapOrigin": "貴船神社 京都市左京区",
+            "mapDestination": "貴船口駅 京都市左京区"
           },
           {
             "id": "leg-6",
@@ -1365,7 +1367,9 @@
             "service": "52 川丈線",
             "hint": "本宮大社前14:45先發；不用折返本宮。",
             "status": "reference",
-            "critical": true
+            "critical": true,
+            "mapOrigin": "大斎原前 バス停 和歌山県田辺市本宮町",
+            "mapDestination": "速玉大社前 バス停 和歌山県新宮市"
           },
           {
             "id": "leg-5",
@@ -1389,7 +1393,9 @@
             "service": "15 新勝線",
             "hint": "直達勝浦，不必繞去新宮搭JR。",
             "status": "reference",
-            "critical": true
+            "critical": true,
+            "mapOrigin": "速玉大社前 バス停 和歌山県新宮市",
+            "mapDestination": "紀伊勝浦駅 和歌山県那智勝浦町"
           },
           {
             "id": "leg-7",
