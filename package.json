@@ -5,6 +5,7 @@
   "scripts": {
     "test:integrity": "node scripts/check-item-ids.mjs trip.json",
     "serve": "python3 -m http.server 8000",
-    "test:transport": "node --test tests/transport-data.test.mjs"
+    "test:transport": "node --test tests/transport-data.test.mjs",
+    "test:pilgrimage": "node --test tests/pilgrimage.test.mjs"
   }
 }
