@@ -6,8 +6,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-05T01:50:00+09:00",
-    "revision": "kansai-2026-11-05-ise-naiku-nonreserved-v1",
+    "updatedAt": "2026-11-07T00:00:00+09:00",
+    "revision": "kansai-2026-11-07-sheet-actual-photos-v1",
     "accent": "#426354",
     "themeColor": "#0b1020",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -203,113 +203,176 @@
       "id": "d02",
       "date": "2026-11-05",
       "label": "第 2 天",
-      "title": "伊勢內宮・夫婦岩・鳥羽",
-      "routeLabel": "大阪→伊勢內宮→二見→鳥羽→大阪",
+      "title": "大阪天滿宮・生駒山周邊",
+      "routeLabel": "大阪市區→生駒山周邊",
       "reminders": [
-        "精簡版主案只拜伊勢內宮；原版外宮＋內宮完整保留在「11-05 伊勢鳥羽行程」分頁，不混成今天必走路線。",
-        "近鐵普通／急行／準急免指定席與預約；06:54大阪難波出發，09:27伊勢市；鳥羽16:57或17:22回大阪。",
-        "09:40伊勢市駅前10番51號「特急」是公車班名，並非近鐵全車指定席特急。轉乘只留13分鐘，錯過搭09:54普通51號。",
-        "13:34內宮前CAN→14:02夫婦岩及14:42夫婦岩→15:00鳥羽為關鍵公車；錯過應刪減景點，不要硬追車。",
-        "三重交通みちくさきっぷ1DAY¥1,300是當地巴士票，與不購買的近鐵¥7,500參拜數位套票不同。",
-        "鳥羽御木本珍珠島為首選（15:30海女實演），鳥羽水族館為二擇一備案，最後入館16:00；來源時刻非即時。"
+        "11/05實際曾回報到大阪天滿宮，下午已自生駒山周邊下山。寶山寺完整參訪範圍、車次與精確時間未確認。",
+        "伊勢・鳥羽行程已正式移至11/06；不要使用原先11/05的伊勢車次。"
       ],
       "items": [
         {
-          "id": "ise-hotel",
-          "start": "06:15",
-          "end": "06:40",
-          "title": "APA肥後橋→近鐵大阪難波",
-          "type": "transport",
-          "location": "APA 大阪肥後橋站前 TOWER",
-          "note": "四橋線肥後橋→なんば，再步行到近鐵；06:40前到站。",
-          "transportMode": "train"
+          "id": "d02-osaka-tenmangu",
+          "title": "大阪天滿宮",
+          "type": "place",
+          "location": "大阪天満宮・大阪市北区天神橋2-1-8",
+          "start": "TBD",
+          "lat": 34.696,
+          "lng": 135.513,
+          "note": "11/05已回報走到大阪天滿宮；實際參拜及停留時間未逐項確認。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "大阪天滿宮",
+            "summary": "大阪天滿宮是大阪市區的天神信仰中心；11/05曾回報到訪。",
+            "facts": [
+              "天神祭的主要神社之一。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Tenmangu_Shrine_2026.jpg?width=960",
+            "imageAlt": "大阪天滿宮",
+            "imageCredit": "Sakai Yayoi / Wikimedia Commons · CC0 1.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・Sakai Yayoi（CC0 1.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Osaka_Tenmangu_Shrine_2026.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Osaka_Tenmangu_Shrine_2026.jpg"
+              }
+            ]
+          }
         },
         {
-          "id": "ise-namba",
-          "start": "06:54",
-          "end": "06:57",
-          "title": "近鐵普通｜大阪難波→大阪上本町",
-          "type": "transport",
-          "location": "大阪難波駅",
-          "note": "ICOCA可用；上本町換07:06急行。",
-          "transportMode": "train"
-        },
-        {
-          "id": "ise-ise-express",
-          "start": "07:06",
-          "end": "09:27",
-          "title": "近鐵急行｜大阪上本町→伊勢市",
-          "type": "transport",
-          "location": "大阪上本町駅",
-          "note": "五十鈴川方向急行，伊勢中川直通不需下車；單程¥2,170、無指定席。",
-          "transportMode": "train"
-        },
-        {
-          "id": "ise-bus-transfer",
-          "start": "09:27",
-          "end": "09:40",
-          "title": "伊勢市站轉10號巴士站牌",
-          "type": "transport",
-          "location": "伊勢市駅前10番のりば",
-          "note": "只留13分鐘，實體一日券來不及買則改09:54普通51號或預先買數位當地1DAY。",
-          "transportMode": "bus"
-        },
-        {
-          "id": "ise-naiku51",
-          "start": "09:40",
-          "end": "10:02",
-          "title": "51號公車｜伊勢市駅前→內宮前",
-          "type": "transport",
-          "location": "伊勢市駅前10番のりば",
-          "note": "車次名「特急」為公車，不需指定席；單買¥520或當地1DAY。前班09:35、後班09:54。",
-          "transportMode": "bus"
-        },
+          "id": "d02-ikoma-hozanji",
+          "title": "生駒山・寶山寺周邊",
+          "type": "place",
+          "location": "宝山寺・奈良県生駒市門前町1-1",
+          "start": "TBD",
+          "lat": 34.6834,
+          "lng": 135.6924,
+          "note": "11/05下午原本安排生駒聖天／寶山寺；已回報約16時下山、放棄補拍電車。完整寺院參拜與御朱印未確認，不標成已完成。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "生駒山・寶山寺",
+            "summary": "生駒山腹的寶山寺（生駒聖天）周邊，寺院參拜與山景路線；11/05下午走到山區，完整寺內參訪未逐項確認。",
+            "facts": [
+              "寶山寺亦稱生駒聖天，山區有參道與纜車。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hozan-ji_keidai_001.jpg?width=960",
+            "imageAlt": "生駒山・寶山寺",
+            "imageCredit": "Naokijp / Wikimedia Commons · CC BY-SA 4.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・Naokijp（CC BY-SA 4.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Hozan-ji_keidai_001.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Hozan-ji_keidai_001.jpg"
+              }
+            ]
+          }
+        }
+      ],
+      "routeSummary": [
+        "大阪天滿宮",
+        "生駒山・寶山寺周邊",
+        "大阪"
+      ],
+      "mobility": {
+        "label": "大阪天滿宮・生駒山周邊",
+        "from": "大阪",
+        "to": "大阪",
+        "attention": "11/05是大阪市區／生駒山行程，不是伊勢日。生駒山寺院參訪內容未完全核實。",
+        "attentionLevel": "neutral",
+        "callout": "11/05 行程已更正",
+        "legs": []
+      },
+      "shortTitle": "大阪天滿宮・生駒山"
+    },
+    {
+      "id": "d03",
+      "date": "2026-11-06",
+      "label": "第 3 天",
+      "title": "伊勢內宮・夫婦岩・鳥羽・大阪夜景",
+      "routeLabel": "大阪→伊勢→二見→鳥羽→難波→北御堂",
+      "reminders": [
+        "11/06實際：二見夫婦岩有參拜，成功趕上14:42 CAN至鳥羽；御木本珍珠島15:20入、看海女表演、16:20離場。",
+        "最重要回程：16:30觀光特急しまかぜ→18:21；【已搭】16:35 Vista Car直達大阪難波18:42；下一班直達17:32→19:36，相隔57分鐘（不是17:35）。直達特急需特急券／指定席。",
+        "原定近鐵一般車與早晨行程未按實際搭乘紀錄確認，不寫成已搭或已預約。晚上御堂筋行道樹燈飾已散步、北御堂光影秀約看20分鐘／兩輪多。"
+      ],
+      "items": [
         {
           "id": "ise-naiku",
-          "start": "10:10",
-          "end": "11:50",
           "title": "伊勢神宮・內宮",
           "type": "place",
-          "location": "伊勢神宮 內宮（皇大神宮）",
-          "note": "宇治橋→五十鈴川御手洗場→正宮，約100分鐘。免費；主案不安排外宮。"
-        },
-        {
-          "id": "ise-okage",
-          "start": "11:50",
-          "end": "13:20",
-          "title": "御祓町・托福橫丁與午餐",
-          "type": "place",
-          "location": "おかげ横丁",
-          "note": "伊勢烏龍麵、赤福等；13:25前回到內宮前1號巴士站。"
-        },
-        {
-          "id": "ise-can-wait",
-          "start": "13:20",
-          "end": "13:34",
-          "title": "內宮前1號巴士站候車",
-          "type": "transport",
-          "location": "内宮前1番のりば",
-          "note": "13:34是保留二見＋鳥羽入館的關鍵，14:14後班無法直接保留全部景點。",
-          "transportMode": "bus"
+          "location": "伊勢神宮內宮（皇大神宮）",
+          "start": "TBD",
+          "lat": 34.4549,
+          "lng": 136.7257,
+          "note": "11/06已實際參拜；當日上午出發及參拜進出時間不納入本次歷史記錄。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "伊勢神宮內宮・宇治橋鳥居",
+            "summary": "伊勢神宮內宮供奉天照大御神；11/06已參拜。",
+            "facts": [
+              "主要動線可走宇治橋、五十鈴川御手洗場與正宮。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ise-Shrine_Naiku-Ujibashi-Torii.jpg?width=960",
+            "imageAlt": "伊勢神宮內宮・宇治橋鳥居",
+            "imageCredit": "MaedaAkihiko / Wikimedia Commons · CC0 1.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・MaedaAkihiko（CC0 1.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Ise-Shrine_Naiku-Ujibashi-Torii.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Ise-Shrine_Naiku-Ujibashi-Torii.jpg"
+              }
+            ]
+          }
         },
         {
           "id": "ise-can-futami",
           "start": "13:34",
           "end": "14:02",
-          "title": "CAN巴士｜內宮前→夫婦岩東口",
+          "title": "三重交通 CAN｜內宮前→夫婦岩東口",
           "type": "transport",
           "location": "内宮前1番のりば",
-          "note": "三重交通CAN，單買¥850／當地1DAY有效；早12:34、晚14:14。",
+          "note": "已趕上；同日官方平日班次。單買約¥850，當地1DAY有效。",
           "transportMode": "bus"
         },
         {
           "id": "ise-futami",
-          "start": "14:02",
-          "end": "14:38",
           "title": "二見興玉神社・夫婦岩",
           "type": "place",
-          "location": "夫婦岩・二見興玉神社",
-          "note": "約35分鐘參拜拍照，14:35回站牌；慢慢拍照就要取捨鳥羽入館。"
+          "location": "二見興玉神社・夫婦岩",
+          "start": "14:02",
+          "end": "14:38",
+          "lat": 34.5094,
+          "lng": 136.7883,
+          "note": "14:02抵達、約35分鐘參拜拍照，成功於14:42接上CAN往鳥羽；這段班次很關鍵。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "二見興玉神社・夫婦岩",
+            "summary": "二見興玉神社面海的夫婦岩由注連繩相連；11/06按計畫參拜並趕上14:42 CAN巴士。",
+            "facts": [
+              "14:02抵達後短時間參拜與拍照，14:42巴士是銜接鳥羽的關鍵。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Meotoiwa.jpg?width=960",
+            "imageAlt": "二見興玉神社・夫婦岩",
+            "imageCredit": "Marubatsu / Wikimedia Commons · Public Domain；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・Marubatsu（Public Domain）",
+                "url": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg"
+              }
+            ]
+          }
         },
         {
           "id": "ise-can-toba",
@@ -318,447 +381,289 @@
           "title": "CAN巴士｜夫婦岩東口→鳥羽",
           "type": "transport",
           "location": "夫婦岩東口",
-          "note": "單買¥490／當地1DAY有效，錯過14:42則16:02→16:20已過16:00最後售票。",
+          "note": "當天成功趕上14:42，約15:00到鳥羽・御木本珍珠島附近。",
           "transportMode": "bus"
         },
         {
           "id": "ise-pearl",
-          "start": "15:00",
-          "end": "16:35",
-          "title": "御木本珍珠島（首選）",
+          "title": "御木本珍珠島・海女表演",
           "type": "place",
-          "location": "ミキモト真珠島",
-          "note": "¥1,650，15:30海女示範、16:00最後售票；可延後17:22普通車回程。鳥羽水族館為二擇一備案。"
-        },
-        {
-          "id": "ise-toba-walk",
-          "start": "16:35",
-          "end": "16:55",
-          "title": "珍珠島步行→近鐵鳥羽駅",
-          "type": "transport",
-          "location": "近鐵鳥羽駅",
-          "note": "步行約10–15分鐘，保留16:57普通車轉乘；晚班17:22可更晚離場。",
-          "transportMode": "walk"
-        },
-        {
-          "id": "ise-toba-local",
-          "start": "16:57",
-          "end": "17:08",
-          "title": "近鐵普通｜鳥羽→五十鈴川",
-          "type": "transport",
-          "location": "近鐵鳥羽駅",
-          "note": "17:13急行接續僅5分鐘，誤點不必硬追。",
-          "transportMode": "train"
-        },
-        {
-          "id": "ise-toba-express",
-          "start": "17:13",
-          "end": "19:44",
-          "title": "近鐵急行｜五十鈴川→鶴橋",
-          "type": "transport",
-          "location": "五十鈴川駅",
-          "note": "伊勢中川直通，19:50鶴橋轉準急往大阪難波。",
-          "transportMode": "train"
-        },
-        {
-          "id": "ise-toba-namba",
-          "start": "19:50",
-          "end": "19:56",
-          "title": "近鐵準急｜鶴橋→大阪難波",
-          "type": "transport",
-          "location": "鶴橋駅",
-          "note": "無指定席；17:22鳥羽晚班回大阪難波20:43亦可用。",
-          "transportMode": "train"
-        },
-        {
-          "id": "ise-apa-return",
-          "start": "20:00",
-          "end": "20:30",
-          "title": "大阪難波→APA肥後橋",
-          "type": "transport",
-          "location": "APA 大阪肥後橋站前 TOWER",
-          "note": "四橋線なんば→肥後橋；若搭17:22晚班則約21:00回飯店。",
-          "transportMode": "train"
-        }
-      ],
-      "routeSummary": [
-        "APA肥後橋",
-        "大阪難波",
-        "伊勢市",
-        "伊勢內宮",
-        "托福橫丁",
-        "夫婦岩",
-        "御木本珍珠島",
-        "鳥羽",
-        "大阪難波",
-        "APA肥後橋"
-      ],
-      "mobility": {
-        "label": "伊勢內宮・夫婦岩・鳥羽",
-        "from": "APA肥後橋",
-        "to": "伊勢→二見→鳥羽→APA",
-        "attention": "不搭指定席。09:40伊勢市站轉巴士僅13分鐘；13:34內宮CAN、14:42夫婦岩CAN是保留全程的關鍵。錯過應刪減景點。",
-        "attentionLevel": "caution",
-        "callout": "13:34／14:42 CAN關鍵",
-        "legs": [
-          {
-            "id": "leg-1",
-            "mode": "subway",
-            "depart": "06:15",
-            "arrive": "06:40前",
-            "from": "肥後橋",
-            "to": "大阪難波",
-            "service": "四橋線＋步行",
-            "hint": "06:40前到近鐵月台。",
-            "status": "estimate",
-            "critical": false
-          },
-          {
-            "id": "leg-2",
-            "mode": "train",
-            "depart": "06:54",
-            "arrive": "06:57",
-            "from": "大阪難波",
-            "to": "大阪上本町",
-            "service": "近鐵普通",
-            "hint": "上本町轉07:06大阪線急行，全程免指定席。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-3",
-            "mode": "train",
-            "depart": "07:06",
-            "arrive": "09:27",
-            "from": "大阪上本町",
-            "to": "伊勢市",
-            "service": "近鐵急行",
-            "hint": "伊勢中川直通不下車；ICOCA可用、¥2,170。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-4",
-            "mode": "bus",
-            "depart": "09:40",
-            "arrive": "10:02",
-            "from": "伊勢市駅前10番のりば",
-            "to": "內宮前",
-            "service": "三重交通51號公車",
-            "hint": "「特急」是公車路線名，不是近鐵特急；錯過搭09:54普通51號。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-5",
-            "mode": "walk",
-            "depart": "10:10",
-            "arrive": "13:20",
-            "from": "伊勢神宮內宮",
-            "to": "御祓町・托福橫丁",
-            "service": "參拜＋午餐",
-            "hint": "內宮100分鐘、老街午餐90分鐘；13:25前回站牌。",
-            "status": "estimate",
-            "critical": false
-          },
-          {
-            "id": "leg-6",
-            "mode": "bus",
-            "depart": "13:34",
-            "arrive": "14:02",
-            "from": "內宮前1番のりば",
-            "to": "夫婦岩東口",
-            "service": "CAN巴士",
-            "hint": "¥850單買；12:34早班、14:14晚班見備案。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-7",
-            "mode": "walk",
-            "depart": "14:02",
-            "arrive": "14:38",
-            "from": "夫婦岩東口",
-            "to": "二見興玉神社・夫婦岩",
-            "service": "參拜＋拍照",
-            "hint": "夫婦岩只有35分鐘，14:35回站牌。",
-            "status": "estimate",
-            "critical": false
-          },
-          {
-            "id": "leg-8",
-            "mode": "bus",
-            "depart": "14:42",
-            "arrive": "15:00",
-            "from": "夫婦岩東口",
-            "to": "鳥羽水族館・御木本珍珠島",
-            "service": "CAN巴士",
-            "hint": "¥490單買；錯過則16:02到鳥羽已超過16:00入館截止。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-9",
-            "mode": "event",
-            "depart": "15:00",
-            "arrive": "16:35",
-            "from": "鳥羽",
-            "to": "御木本珍珠島",
-            "service": "15:30海女實演（首選）",
-            "hint": "¥1,650，16:00最後售票；鳥羽水族館二擇一。",
-            "status": "reference",
-            "critical": false
-          },
-          {
-            "id": "leg-10",
-            "mode": "walk",
-            "depart": "16:35",
-            "arrive": "16:55",
-            "from": "御木本珍珠島",
-            "to": "近鐵鳥羽駅",
-            "service": "步行10–15分",
-            "hint": "趕16:57普通車；想待到17:00選17:22。",
-            "status": "estimate",
-            "critical": false
-          },
-          {
-            "id": "leg-11",
-            "mode": "train",
-            "depart": "16:57",
-            "arrive": "17:08",
-            "from": "鳥羽",
-            "to": "五十鈴川",
-            "service": "近鐵普通",
-            "hint": "五十鈴川5分鐘轉17:13急行。",
-            "status": "reference",
-            "critical": true
-          },
-          {
-            "id": "leg-12",
-            "mode": "train",
-            "depart": "17:13",
-            "arrive": "19:44",
-            "from": "五十鈴川",
-            "to": "鶴橋",
-            "service": "近鐵急行",
-            "hint": "經伊勢中川直通；19:50鶴橋轉準急。",
-            "status": "reference",
-            "critical": false
-          },
-          {
-            "id": "leg-13",
-            "mode": "train",
-            "depart": "19:50",
-            "arrive": "19:56",
-            "from": "鶴橋",
-            "to": "大阪難波",
-            "service": "近鐵準急",
-            "hint": "無指定席；可改17:22鳥羽→20:43難波。",
-            "status": "reference",
-            "critical": false
-          },
-          {
-            "id": "leg-14",
-            "mode": "subway",
-            "depart": "約20:00",
-            "arrive": "20:30前後",
-            "from": "大阪難波",
-            "to": "肥後橋",
-            "service": "四橋線",
-            "hint": "返回已訂APA；17:22晚班回APA約21:00。",
-            "status": "estimate",
-            "critical": false
-          }
-        ],
-        "alternatives": [
-          {
-            "time": "06:07",
-            "arrival": "08:52",
-            "title": "去程早一班",
-            "status": "early",
-            "text": "難波06:07→上本町06:10、06:28急行→08:52伊勢市；APA需約05:35–05:45出發。免指定席。"
-          },
-          {
-            "time": "07:09",
-            "arrival": "10:02",
-            "title": "去程晚一班",
-            "status": "late",
-            "text": "難波07:09→上本町07:12、07:30急行→09:29伊勢中川、09:41急行→10:02伊勢市；多次轉乘，縮短內宮時間。"
-          },
-          {
-            "time": "09:54",
-            "arrival": "約10:14",
-            "title": "51公車後班",
-            "status": "late",
-            "text": "09:40錯過，改09:54普通51號；不用指定席，但內宮開始約延後12分鐘。"
-          },
-          {
-            "time": "12:34",
-            "arrival": "13:02",
-            "title": "夫婦岩多停留",
-            "status": "early",
-            "text": "12:34內宮前CAN→13:02夫婦岩，14:02往鳥羽→14:20；需縮減內宮／午餐。"
-          },
-          {
-            "time": "14:14",
-            "arrival": "14:42",
-            "title": "13:34 CAN錯過",
-            "status": "late",
-            "text": "14:14 CAN到夫婦岩14:42；下車參拜不能再搭14:42同一班去鳥羽，夫婦岩與鳥羽入館需二擇一。"
-          },
-          {
-            "time": "16:02",
-            "arrival": "16:20",
-            "title": "14:42 CAN錯過",
-            "status": "danger",
-            "text": "16:20才到鳥羽，珍珠島／水族館16:00已停入館；保留夫婦岩或鳥羽散步。"
-          },
-          {
-            "time": "17:22",
-            "arrival": "20:43",
-            "title": "晚一班免指定席",
-            "status": "early",
-            "text": "鳥羽17:22普通→伊勢中川18:23、18:43急行→上本町20:38、20:40普通→大阪難波20:43，可珍珠島玩至17:00。"
-          }
-        ],
-        "stageLegIds": [
-          "leg-2",
-          "leg-4",
-          "leg-6",
-          "leg-8",
-          "leg-11"
-        ]
-      },
-      "shortTitle": "伊勢內宮・鳥羽",
-      "planB": [
-        {
-          "title": "外宮＋內宮雙宮原版",
-          "category": "route",
-          "note": "非今日主案。完整保留在 Google Sheet「11-05 伊勢鳥羽行程」及網站 reference.html；外宮09:40–10:25、10:34公車→內宮。"
-        },
-        {
-          "title": "鳥羽水族館（二擇一）",
-          "category": "place",
-          "note": "¥2,800；16:00最後入館，來源表記載11/04起海獺展示暫停。不要與珍珠島硬排同一天。"
-        },
-        {
-          "title": "錯過CAN時取消鳥羽入館",
-          "category": "transport",
-          "note": "錯過13:34／14:42須依延誤時間取捨夫婦岩與珍珠島；不要假設16:00後可入館。"
-        }
-      ]
-    },
-    {
-      "id": "d03",
-      "date": "2026-11-06",
-      "label": "第 3 天",
-      "title": "大阪近郊五選一",
-      "routeLabel": "大阪・肥後橋",
-      "reminders": [
-        "高野山／星之鞦韆／箕面大瀑布／富田林寺內町／友島五選一，尚未決定。",
-        "Night Marché 與御堂筋燈光展皆視體力彈性。"
-      ],
-      "items": [
-        {
-          "id": "d03-choose",
-          "start": "TBD",
-          "title": "大阪近郊擇一",
-          "type": "place",
-          "location": "大阪近郊",
-          "note": "五個備選未定案，非全部排在這一天。",
-          "decision": {
-            "label": "待決定",
-            "prompt": "11/06 選擇哪一個近郊？",
-            "options": [
+          "location": "ミキモト真珠島・三重県鳥羽市鳥羽1-7-1",
+          "start": "15:20",
+          "end": "16:20",
+          "lat": 34.4958,
+          "lng": 136.8443,
+          "note": "11/06 15:20進場、看海女潛水示範，16:20離場；以入離場時間判斷對應15:30場。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "御木本珍珠島・海女潛水示範",
+            "summary": "珍珠養殖歷史博物館與海女潛水示範；11/06 15:20入場、看過海女示範，16:20離開。",
+            "facts": [
+              "配圖是2005年同一地點的代表性照片，不是11/06/2026演出實拍。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ama_at_Mikimoto_Pearl_Island.jpg?width=960",
+            "imageAlt": "御木本珍珠島・海女潛水示範",
+            "imageCredit": "James Dinsley / Wikimedia Commons · CC BY-SA 2.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
               {
-                "id": "koyasan",
-                "label": "高野山"
+                "label": "照片來源・James Dinsley（CC BY-SA 2.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Ama_at_Mikimoto_Pearl_Island.jpg"
               },
               {
-                "id": "hoshi",
-                "label": "星之鞦韆"
-              },
-              {
-                "id": "minoh",
-                "label": "箕面大瀑布"
-              },
-              {
-                "id": "tondabayashi",
-                "label": "富田林寺內町"
-              },
-              {
-                "id": "tomogashima",
-                "label": "友島"
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Ama_at_Mikimoto_Pearl_Island.jpg"
               }
             ]
           }
         },
         {
-          "id": "d03-s0-r39",
-          "start": "TBD",
-          "title": "御堂筋 Night Marché 梅田北區",
-          "type": "place",
-          "location": "阪神百貨前デッキ下広場",
-          "note": "來源時段：16:00–20:00（備選）；從所選近郊回梅田；阪神百貨前廣場；免費；晚回大阪可略過；官方確認11/06有夜市，優先排當天；不可跟高野山等滿日行程硬塞；時間許可才去"
+          "id": "ise-toba-walk",
+          "start": "16:20",
+          "end": "16:35",
+          "title": "珍珠島→近鐵鳥羽站",
+          "type": "transport",
+          "location": "近鉄鳥羽駅",
+          "note": "16:20離島後走到站內，趕上16:35直達特急，若需現場買特急券務必留時間。",
+          "transportMode": "walk"
         },
         {
-          "id": "d03-s0-r40",
-          "start": "TBD",
-          "title": "御堂筋燈光展2026（夜景）",
+          "id": "ise-toba-vista",
+          "start": "16:35",
+          "end": "18:42",
+          "title": "近鐵 Vista Car 特急｜鳥羽→大阪難波直達",
+          "type": "transport",
+          "location": "近鉄鳥羽駅→大阪難波駅",
+          "note": "【11/06已搭】16:35鳥羽發、18:42難波到；全程不換車、需指定席特急券。參考基本運賃¥2,460＋特急券¥1,640＝¥4,100。16:30有「しまかぜ」→18:21（另付觀光特別車輛費）；下一班直達17:32→19:36，晚57分鐘，非17:35。",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "近鐵官方",
+              "url": "https://www.kintetsu.co.jp/"
+            }
+          ]
+        },
+        {
+          "id": "d03-namba-arrival",
+          "start": "18:42",
+          "title": "抵達大阪難波",
+          "type": "transport",
+          "location": "大阪難波駅",
+          "note": "11/06已實際回到難波，接著步行看御堂筋夜景。",
+          "transportMode": "walk"
+        },
+        {
+          "id": "d03-midosuji",
+          "title": "御堂筋燈光展・街道散步",
           "type": "place",
-          "location": "御堂筋・心齋橋～難波",
-          "note": "來源時段：17:00–翌01:00（建議19–21）；梅田／心齋橋 → 難波，沿御堂筋挑一段散步；免費；不用走完4公里；11/06主夜景；官方11/03–12/31每日17:00–翌01:00。若近郊太晚回來只看這個；晚間彈性"
+          "location": "御堂筋・難波～心齋橋",
+          "start": "TBD",
+          "lat": 34.6758,
+          "lng": 135.5017,
+          "note": "11/06晚間走過一段，覺得樹上燈飾較普通。主要是街道裝飾，不是定時聲光秀。配圖為2024歷史照片。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "御堂筋街道燈飾",
+            "summary": "大阪御堂筋的行道樹夜間燈飾，11/06由難波走過一段；並非定時的聲光投影秀。",
+            "facts": [
+              "配圖拍攝於2024年，僅供示意。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midosuji_illumination_on_4th_December_2024.jpg?width=960",
+            "imageAlt": "御堂筋街道燈飾",
+            "imageCredit": "Tokumeigakarinoaoshima / Wikimedia Commons · CC0 1.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・Tokumeigakarinoaoshima（CC0 1.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Midosuji_illumination_on_4th_December_2024.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Midosuji_illumination_on_4th_December_2024.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "id": "d03-kitamido",
+          "title": "北御堂・光影秀",
+          "type": "place",
+          "location": "本願寺津村別院（北御堂）・大阪市中央区本町4-1-3",
+          "start": "TBD",
+          "lat": 34.6855,
+          "lng": 135.5,
+          "note": "11/06後來在北御堂觀看約20分鐘、看了兩輪多 Show。配圖為北御堂寺院照片，非當晚實際投影畫面。",
+          "infoCard": {
+            "label": "景點介紹",
+            "title": "北御堂・本願寺津村別院",
+            "summary": "北御堂位於大阪本町；11/06晚間觀看約20分鐘光影 Show，看了兩輪多。",
+            "facts": [
+              "配圖是寺院既有外觀照片，非2026年互動投影秀實拍。"
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kita-Mido_Hongan-ji_Tsumura_Betsuin_(Chuo-Ku_Osaka)_Temple_hdsr_S5_km01.jpg?width=960",
+            "imageAlt": "北御堂・本願寺津村別院",
+            "imageCredit": "Hyppolyte de Saint-Rambert / Wikimedia Commons · CC BY 4.0；景點參考照片，非本次旅程實拍",
+            "sourceLinks": [
+              {
+                "label": "照片來源・Hyppolyte de Saint-Rambert（CC BY 4.0）",
+                "url": "https://commons.wikimedia.org/wiki/File:Kita-Mido_Hongan-ji_Tsumura_Betsuin_(Chuo-Ku_Osaka)_Temple_hdsr_S5_km01.jpg"
+              },
+              {
+                "label": "授權與原始照片說明",
+                "url": "https://commons.wikimedia.org/wiki/File:Kita-Mido_Hongan-ji_Tsumura_Betsuin_(Chuo-Ku_Osaka)_Temple_hdsr_S5_km01.jpg"
+              }
+            ]
+          }
         }
       ],
       "routeSummary": [
-        "APA肥後橋站前 ↔ 南海難波／京阪淀屋橋／梅田出發之選定近郊",
-        "御堂筋燈光",
-        "肥後橋"
+        "伊勢神宮內宮",
+        "二見興玉神社・夫婦岩",
+        "鳥羽・御木本珍珠島",
+        "16:35 Vista Car",
+        "大阪難波",
+        "御堂筋燈飾",
+        "北御堂"
       ],
       "planB": [
         {
-          "title": "平安樂市手作市集（原備案）",
-          "category": "event",
-          "note": "原始票券分頁列為備案，非已決定的主行程。"
+          "title": "近鐵16:30觀光特急しまかぜ→難波18:21",
+          "category": "train",
+          "note": "在16:35 Vista Car之前五分鐘發車；需另付觀光特急專用車輛費，11/06未搭。",
+          "sourceLinks": [
+            {
+              "label": "近鐵觀光特急",
+              "url": "https://www.kintetsu.co.jp/senden/shimakaze/"
+            }
+          ]
+        },
+        {
+          "title": "近鐵17:32 Vista Car→難波19:36",
+          "category": "train",
+          "note": "若錯過16:35，下一班直達須等約57分鐘；時間不是17:35。特急需指定席。",
+          "sourceLinks": [
+            {
+              "label": "近鐵官方",
+              "url": "https://www.kintetsu.co.jp/"
+            }
+          ]
+        },
+        {
+          "title": "免特急券一般車",
+          "category": "train",
+          "note": "鳥羽16:57→難波19:56或17:22→20:45，須轉車；為原定預算備案，11/06未搭。"
         }
       ],
       "mobility": {
-        "label": "大阪近郊五選一",
-        "from": "大阪",
-        "to": "大阪",
-        "attention": "以下是五選一，不能全部安排同一天。",
-        "attentionLevel": "neutral",
-        "callout": "未決定",
-        "legs": [],
-        "options": [
+        "label": "伊勢內宮・二見・鳥羽→大阪",
+        "from": "大阪／伊勢內宮",
+        "to": "鳥羽→大阪難波→北御堂",
+        "attention": "【已搭】鳥羽16:35 Vista Car特急直達難波18:42；前16:30しまかぜ、後17:32 Vista Car（相隔57分鐘），不是17:35。特急需指定席，與原定普通／急行回程不同。",
+        "attentionLevel": "caution",
+        "callout": "16:35 直達特急最重要",
+        "legs": [
           {
-            "title": "高野山",
-            "line": "南海難波 → 極樂橋 → 高野山纜車",
-            "duration": "單程約1.5–2h+"
+            "id": "leg-1",
+            "mode": "bus",
+            "depart": "13:34",
+            "arrive": "14:02",
+            "from": "內宮前",
+            "to": "夫婦岩東口",
+            "service": "三重交通 CAN",
+            "hint": "11/06已趕上；當時已完成內宮參拜。",
+            "status": "reference",
+            "critical": true
           },
           {
-            "title": "星之鞦韆",
-            "line": "京阪淀屋橋 → 枚方市 → 私市",
-            "duration": "最後步行約40–60分"
+            "id": "leg-2",
+            "mode": "walk",
+            "depart": "14:02",
+            "arrive": "14:38",
+            "from": "夫婦岩東口",
+            "to": "二見興玉神社・夫婦岩",
+            "service": "短停參拜",
+            "hint": "拍照參拜後準時回到公車站。",
+            "status": "reference",
+            "critical": false
           },
           {
-            "title": "箕面大瀑布",
-            "line": "阪急梅田 → 箕面",
-            "duration": "從車站步行約40分"
+            "id": "leg-3",
+            "mode": "bus",
+            "depart": "14:42",
+            "arrive": "15:00",
+            "from": "夫婦岩東口",
+            "to": "鳥羽・御木本珍珠島",
+            "service": "三重交通 CAN",
+            "hint": "11/06已搭到鳥羽，為保留珍珠島的關鍵接駁。",
+            "status": "reference",
+            "critical": true
           },
           {
-            "title": "富田林寺內町",
-            "line": "近鐵 → 富田林",
-            "duration": "半日散步"
+            "id": "leg-4",
+            "mode": "event",
+            "depart": "15:20",
+            "arrive": "16:20",
+            "from": "御木本珍珠島",
+            "to": "海女表演／島內",
+            "service": "珍珠島參觀",
+            "hint": "已入館、看海女表演；16:20離場。",
+            "status": "reference",
+            "critical": false
           },
           {
-            "title": "友島",
-            "line": "南海加太線 → 加太港 → 渡船",
-            "duration": "船班受海象影響"
+            "id": "leg-5",
+            "mode": "walk",
+            "depart": "16:20",
+            "arrive": "16:35",
+            "from": "御木本珍珠島",
+            "to": "近鐵鳥羽站",
+            "service": "步行轉乘",
+            "hint": "若要現場購買特急券，實務上需抓購票與月台時間。",
+            "status": "reference",
+            "critical": true
+          },
+          {
+            "id": "leg-6",
+            "mode": "train",
+            "depart": "16:35",
+            "arrive": "18:42",
+            "from": "近鐵鳥羽站",
+            "to": "大阪難波站",
+            "service": "Vista Car 直達特急",
+            "hint": "11/06已搭，免換乘，需指定席；16:30 Shimakaze→18:21，下一班直達17:32→19:36。",
+            "status": "reference",
+            "critical": true
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "16:30 觀光特急しまかぜ",
+            "from": "鳥羽",
+            "to": "大阪難波",
+            "depart": "16:30",
+            "arrive": "18:21",
+            "service": "近鐵しまかぜ",
+            "hint": "直達但需要特急券及專用車輛費；非實搭。"
+          },
+          {
+            "label": "17:32 Vista Car 下一班",
+            "from": "鳥羽",
+            "to": "大阪難波",
+            "depart": "17:32",
+            "arrive": "19:36",
+            "service": "近鐵 Vista Car",
+            "hint": "晚16:35整整57分鐘，需特急券。"
+          },
+          {
+            "label": "普通／急行（免特急券）",
+            "from": "鳥羽",
+            "to": "大阪難波",
+            "depart": "16:57／17:22",
+            "arrive": "19:56／20:45",
+            "service": "近鐵一般車（轉車）",
+            "hint": "原定省錢方案，需於五十鈴川或伊勢中川、鶴橋轉車。"
           }
         ]
       },
-      "shortTitle": "大阪近郊五選一"
+      "shortTitle": "伊勢・鳥羽・北御堂"
     },
     {
       "id": "d04",
@@ -1284,7 +1189,7 @@
       "reminders": [
         "11/09夜晚已訂同一間APA大阪肥後橋站前 TOWER一晚；11/10從APA出發前往大阪站。黑潮3／5號或其他交通仍待選擇。",
         "領空白雙朝聖手冊：JR紀伊田邊站旁田邊市觀光中心09:00–18:00免費；白濱半日後是否趕得上尚未確認。",
-        "黑潮3號 09:04 大阪→11:37 白濱，全車指定席，尚未購票。",
+        "大阪→白濱：黑潮3號09:04→11:37，或黑潮5號09:33→11:58，兩班皆全車指定席且尚未購票；也可選高速巴士或普通車。",
         "Hotel Kii Tanabe 已訂，22:00前入住；到店確認次日06:10清晨退房方式。"
       ],
       "items": [
@@ -1295,7 +1200,7 @@
           "title": "黑潮3號：大阪→白濱",
           "type": "transport",
           "location": "JR大阪站→JR白濱站",
-          "note": "全車指定席，尚未購票；11/09舊版黑潮29號已取消。",
+          "note": "候選A：黑潮3號09:04大阪→11:37白濱；候選B：黑潮5號09:33→11:58，兩班皆全車指定席且尚未購票。若改搭高速巴士／一般列車，白濱遊玩時間需調整。",
           "transportMode": "train",
           "mustGo": true
         },
@@ -1354,7 +1259,7 @@
         "label": "黑潮3號・白濱・田邊",
         "from": "JR大阪",
         "to": "紀伊田邊",
-        "attention": "09:04黑潮3號全車指定席，尚未購票；免費集章手冊需於田邊觀光中心18:00關門前領取。",
+        "attention": "大阪→白濱可選黑潮3號09:04→11:37或黑潮5號09:33→11:58（均全車指定席且未購票）；田邊站觀光中心18:00關門，盡量17:30前領免費雙朝聖集章手冊。",
         "attentionLevel": "caution",
         "callout": "09:04 黑潮3號",
         "legs": [
@@ -1408,7 +1313,14 @@
           }
         ]
       },
-      "shortTitle": "黑潮3號・白濱・田邊"
+      "shortTitle": "黑潮3號・白濱・田邊",
+      "planB": [
+        {
+          "title": "黑潮5號（大阪09:33→白濱11:58）",
+          "category": "train",
+          "note": "11/10定期運行，需另購全車指定席；只是備選，尚未決定或購票。"
+        }
+      ]
     },
     {
       "id": "d08",
@@ -1928,17 +1840,38 @@
       "title": "紀伊勝浦→臨空城",
       "routeLabel": "臨空城（りんくうタウン）",
       "reminders": [
-        "11/13最後一晚臨空城住宿仍未訂。",
-        "紀伊勝浦前往臨空城的特急及轉車班次尚須確認與購票。"
+        "浦島飯店10:00前退房；11:49黑潮22號至日根野15:08，15:19 JR關空快速至臨空城15:24。",
+        "備案：13:46黑潮26號→日根野17:07→17:22 JR→臨空城17:26。兩班特急均全車指定席、尚未購票。",
+        "11/13臨空城住宿仍未訂；轉車時間依現場月台顯示，歷史查詢不等同即時運行。"
       ],
       "items": [
         {
-          "id": "d10-train",
+          "id": "d10-urashima-out",
           "start": "TBD",
-          "title": "紀伊勝浦→日根野／臨空城",
+          "title": "浦島飯店退房 → 紀伊勝浦站",
           "type": "transport",
-          "location": "紀伊勝浦→りんくうタウン",
-          "note": "黑潮特急與接續車次尚未購票。",
+          "location": "浦島飯店→勝浦観光桟橋→紀伊勝浦駅",
+          "note": "10:00前退房；依當日接駁船／巴士班次往觀光棧橋後步行約6分鐘到JR紀伊勝浦。",
+          "transportMode": "boat"
+        },
+        {
+          "id": "d10-kuroshio22",
+          "start": "11:49",
+          "end": "15:08",
+          "title": "黑潮22號｜紀伊勝浦→日根野",
+          "type": "transport",
+          "location": "JR紀伊勝浦駅",
+          "note": "主線；全車指定席尚未購票。後一班黑潮26號13:46→17:07日根野供彈性備案。",
+          "transportMode": "train"
+        },
+        {
+          "id": "d10-rinku",
+          "start": "15:19",
+          "end": "15:24",
+          "title": "JR關空快速｜日根野→臨空城",
+          "type": "transport",
+          "location": "日根野駅→りんくうタウン駅",
+          "note": "日根野11分鐘換乘，依2／3號月台往關空方向列車標示；沒搭上可15:34→15:39。黑潮26號則轉17:22→17:26。",
           "transportMode": "train"
         },
         {
@@ -1947,48 +1880,90 @@
           "title": "臨空城住宿（尚未訂）",
           "type": "stay",
           "location": "りんくうタウン",
-          "note": "隔日11:30早班機，今晚住KIX附近；飯店待找。"
+          "note": "11/13–11/14住宿未確定，不當作已訂；11/14 11:30自KIX返台。"
         }
       ],
       "routeSummary": [
-        "紀伊勝浦",
-        "日根野／臨空城"
+        "浦島飯店",
+        "紀伊勝浦11:49黑潮22號",
+        "日根野15:08",
+        "15:19 JR關空快速",
+        "臨空城15:24"
       ],
       "mobility": {
-        "label": "紀伊勝浦 → 臨空城",
+        "label": "紀伊勝浦→日根野→臨空城",
         "from": "紀伊勝浦",
-        "to": "臨空城",
-        "attention": "北上車次與轉車、11/13臨空城住宿尚未確定。",
-        "attentionLevel": "danger",
-        "callout": "交通＋住宿待訂",
+        "to": "臨空城（りんくうタウン）",
+        "attention": "主案11:49黑潮22號→日根野15:08，15:19接關空快速→臨空城15:24；備案13:46黑潮26號→17:07日根野，17:22 JR→17:26臨空城。未購票、臨空城住宿待訂。",
+        "attentionLevel": "caution",
+        "callout": "11:49 黑潮22／13:46 黑潮26",
         "legs": [
           {
             "id": "leg-1",
             "mode": "train",
-            "depart": "待定",
-            "arrive": "待定",
+            "depart": "11:49",
+            "arrive": "15:08",
             "from": "紀伊勝浦",
-            "to": "日根野／臨空城",
-            "service": "くろしお特急＋JR",
-            "hint": "特急指定席與轉乘方式尚未確認。",
-            "status": "unconfirmed",
-            "critical": false
+            "to": "日根野",
+            "service": "黑潮22號・全車指定席",
+            "status": "reference",
+            "critical": true,
+            "hint": "主案尚未購票。浦島10:00退房後出發，先確認往車站接駁。"
           },
           {
             "id": "leg-2",
+            "mode": "train",
+            "depart": "15:19",
+            "arrive": "15:24",
+            "from": "日根野",
+            "to": "りんくうタウン",
+            "service": "JR關空快速（往關西空港）",
+            "status": "reference",
+            "critical": true,
+            "hint": "日根野換車約11分鐘；錯過可搭15:34→15:39。"
+          },
+          {
+            "id": "leg-3",
             "mode": "stay",
             "depart": "待定",
-            "arrive": "待定",
+            "arrive": "未訂",
             "from": "りんくうタウン",
-            "to": "機場附近飯店",
-            "service": "住宿待訂",
-            "hint": "11/14早上11:30起飛。",
+            "to": "臨空城住宿",
+            "service": "尚未預訂",
             "status": "unconfirmed",
-            "critical": false
+            "critical": false,
+            "hint": "11/14上午要往KIX出境，請優先確認住宿。"
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "黑潮26號晚出發",
+            "from": "紀伊勝浦",
+            "to": "日根野",
+            "depart": "13:46",
+            "arrive": "17:07",
+            "service": "くろしお26号",
+            "hint": "全車指定席，未購票；日根野接17:22→17:26臨空城。"
+          },
+          {
+            "label": "主班錯過接續列車",
+            "from": "日根野",
+            "to": "臨空城",
+            "depart": "15:34",
+            "arrive": "15:39",
+            "service": "JR關空快速",
+            "hint": "主案15:19未趕上時備用。"
           }
         ]
       },
-      "shortTitle": "紀伊勝浦 → 臨空城"
+      "shortTitle": "紀伊勝浦 → 臨空城",
+      "planB": [
+        {
+          "title": "黑潮26號＋關空快速（13:46→17:26）",
+          "category": "train",
+          "note": "紀伊勝浦13:46→日根野17:07，轉17:22→臨空城17:26；兩班都只是待選交通，黑潮指定席尚未購票。"
+        }
+      ]
     },
     {
       "id": "d11",
