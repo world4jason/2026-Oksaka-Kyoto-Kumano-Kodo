@@ -20,6 +20,9 @@
 .places-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,265px),1fr)); gap:12px; }
 .places-card { display:flex; text-align:left; flex-direction:column; gap:10px; min-width:0; width:100%; padding:19px; color:var(--text); cursor:pointer; border-radius:var(--radius-md); background:var(--surface); }
 .places-card:hover,.places-card:focus-visible { border-color:var(--accent); }
+.places-card-thumbnail { display:block; width:100%; aspect-ratio:16/9; border-radius:var(--radius-sm); background:var(--surface-2); overflow:hidden; }
+.places-card-thumbnail img { display:block; width:100%; height:100%; object-fit:cover; }
+.places-photo-credit { margin:-3px 0 12px!important; font-size:.72rem; line-height:1.5; color:var(--muted); }
 .places-card-meta { color:var(--muted); font-size:.74rem; }
 .places-card-title { font-family:var(--font-display,inherit); font-size:1.2rem; font-weight:750; line-height:1.3; overflow-wrap:anywhere; }
 .places-card-excerpt { color:var(--muted); font-size:.86rem; line-height:1.5; overflow-wrap:anywhere; flex:1; }
