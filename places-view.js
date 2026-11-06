@@ -100,11 +100,13 @@
     const contents = badges(item);
     const info = item.infoCard || {};
     const excerpt = info.summary || item.note || item.location || label("尚無景點介紹", "Details not provided");
+    const thumbnail = safeHttp(info.image);
     const unique = isUniquePlaceId(item.id);
     const start = unique
       ? `<button class="places-card panel" data-open-place="${escapeAttr(item.id)}" type="button">`
       : `<article class="places-card panel places-ambiguous-card" data-ambiguous-place aria-label="${label("景點來源 ID 不明確", "Place source ID is ambiguous")}">`;
     return `${start}
+      ${thumbnail ? `<span class="places-card-thumbnail"><img src="${escapeAttr(thumbnail)}" alt="" loading="lazy" decoding="async"></span>` : ""}
       <span class="places-card-meta">${escapeHtml(smallDay(entry))}</span>
       <span class="places-card-title">${escapeHtml(item.title)}</span>
       <span class="places-card-excerpt">${escapeHtml(excerpt)}</span>
@@ -183,7 +185,7 @@
       ${hasAbout ? `<section class="panel places-about">
         <p class="eyebrow">${label("景點介紹", "PLACE GUIDE")}</p>
         <h3>${escapeHtml(info.title || item.title)}</h3>
-        ${photo ? `<img src="${escapeAttr(photo)}" alt="" loading="lazy" class="places-photo">` : ""}
+        ${photo ? `<img src="${escapeAttr(photo)}" alt="${escapeAttr(info.imageAlt || item.title)}" loading="lazy" decoding="async" class="places-photo">${info.imageCredit ? `<p class="places-photo-credit">${label("照片：", "Photo: ")}${escapeHtml(info.imageCredit)}</p>` : ""}` : ""}
         ${info.summary ? `<p>${escapeHtml(info.summary)}</p>` : ""}
         ${facts.length ? `<ul>${facts.map((fact) => `<li>${escapeHtml(fact)}</li>`).join("")}</ul>` : ""}
         ${sources ? `<div class="places-links"><strong>${label("資料來源", "Sources")}</strong>${sources}</div>` : ""}
