@@ -54,6 +54,7 @@ Trip、Transport、Places 使用同一個手機日期下拉與前後一天箭頭
 
 ```sh
 node --test tests/transport-data.test.mjs
+node --test tests/kansai-2026-11-sync.test.mjs
 node scripts/check-item-ids.mjs trip.json
 python3 -m http.server 8107
 # 另開一個終端機（需安裝 Playwright 和 Chromium/Chrome）
