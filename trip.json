@@ -235,8 +235,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Osaka_Tenmangu_Shrine_2026.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Osaka_Tenmangu_Shrine_2026.jpg"
+                "label": "影像授權 CC0 1.0",
+                "url": "https://creativecommons.org/publicdomain/zero/1.0/"
               }
             ]
           }
@@ -247,8 +247,6 @@
           "type": "place",
           "location": "宝山寺・奈良県生駒市門前町1-1",
           "start": "TBD",
-          "lat": 34.6834,
-          "lng": 135.6924,
           "note": "11/05下午原本安排生駒聖天／寶山寺；已回報約16時下山、放棄補拍電車。完整寺院參拜與御朱印未確認，不標成已完成。",
           "infoCard": {
             "label": "景點介紹",
@@ -266,8 +264,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Hozan-ji_keidai_001.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Hozan-ji_keidai_001.jpg"
+                "label": "影像授權 CC BY-SA 4.0",
+                "url": "https://creativecommons.org/licenses/by-sa/4.0/"
               }
             ]
           }
@@ -326,8 +324,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Ise-Shrine_Naiku-Ujibashi-Torii.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Ise-Shrine_Naiku-Ujibashi-Torii.jpg"
+                "label": "影像授權 CC0 1.0",
+                "url": "https://creativecommons.org/publicdomain/zero/1.0/"
               }
             ]
           }
@@ -365,10 +363,6 @@
             "sourceLinks": [
               {
                 "label": "照片來源・Marubatsu（Public Domain）",
-                "url": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg"
-              },
-              {
-                "label": "授權與原始照片說明",
                 "url": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg"
               }
             ]
@@ -410,8 +404,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Ama_at_Mikimoto_Pearl_Island.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Ama_at_Mikimoto_Pearl_Island.jpg"
+                "label": "影像授權 CC BY-SA 2.0",
+                "url": "https://creativecommons.org/licenses/by-sa/2.0/"
               }
             ]
           }
@@ -476,8 +470,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Midosuji_illumination_on_4th_December_2024.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Midosuji_illumination_on_4th_December_2024.jpg"
+                "label": "影像授權 CC0 1.0",
+                "url": "https://creativecommons.org/publicdomain/zero/1.0/"
               }
             ]
           }
@@ -507,8 +501,8 @@
                 "url": "https://commons.wikimedia.org/wiki/File:Kita-Mido_Hongan-ji_Tsumura_Betsuin_(Chuo-Ku_Osaka)_Temple_hdsr_S5_km01.jpg"
               },
               {
-                "label": "授權與原始照片說明",
-                "url": "https://commons.wikimedia.org/wiki/File:Kita-Mido_Hongan-ji_Tsumura_Betsuin_(Chuo-Ku_Osaka)_Temple_hdsr_S5_km01.jpg"
+                "label": "影像授權 CC BY 4.0",
+                "url": "https://creativecommons.org/licenses/by/4.0/"
               }
             ]
           }
@@ -595,18 +589,6 @@
             "hint": "11/06已搭到鳥羽，為保留珍珠島的關鍵接駁。",
             "status": "reference",
             "critical": true
-          },
-          {
-            "id": "leg-4",
-            "mode": "event",
-            "depart": "15:20",
-            "arrive": "16:20",
-            "from": "御木本珍珠島",
-            "to": "海女表演／島內",
-            "service": "珍珠島參觀",
-            "hint": "已入館、看海女表演；16:20離場。",
-            "status": "reference",
-            "critical": false
           },
           {
             "id": "leg-5",
