@@ -56,7 +56,9 @@ test("Nov 10 exposes all three Shirahama visits and critical credential pickup, 
   assert.deepEqual(byDate("2026-11-10").mobility.alternatives.slice(0,2).map(x => x.time), ["09:04","09:33"]);
 });
 
-test("Nov 8–10 time windows preserve monotonic order and stable IDs", () => {
+test("Nov 8–10 time windows preserve monotonic order, stable IDs and public-safe notes", () => {
+  assert.ok(!JSON.stringify(trip).includes("1793645892"));
+  assert.ok(!JSON.stringify(trip).includes("1793665543"));
   const seen=new Set();
   for(const day of trip.days) for(const item of day.items){
     assert.ok(item.id && !seen.has(item.id), item.id);
