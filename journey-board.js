@@ -297,21 +297,29 @@
     if (!day) return;
     const nav = layout.querySelector(".trip-v2-tabs");
     if (!nav) return;
-    nav.insertAdjacentHTML("afterend", board(day, "trip"));
-    layout.querySelector(".day-summary")?.remove();
+
+    // Trip answers "where am I staying and how do I reach the next stop?"
+    // Keep the mixed place + transfer timeline visible. Detailed transit
+    // comparisons belong below it, collapsed by default (Transport tab stays
+    // transport-first). Do not hide the day summary or the planned visits.
+    layout.classList.add("tl-itinerary-first");
     layout.querySelector(".trip-route-summary")?.remove();
     const section = layout.querySelector(".trip-timeline-section");
     const extras = [...layout.querySelectorAll(".trip-alternatives")];
-    if (section) {
-      const deep = document.createElement("details");
-      deep.className = "tl-complete-itinerary";
-      deep.innerHTML = '<summary><span>完整行程與備註</span><small>' +
-        (day.items?.length || 0) + ' 個活動</small><b>＋</b></summary>';
-      section.before(deep);
-      deep.appendChild(section);
-      extras.forEach((ex) => deep.appendChild(ex));
-      if (window.location.hash.includes("/stop/")) deep.open = true;
-    }
+
+    const details = document.createElement("details");
+    details.className = "tl-transport-details";
+    const summary = document.createElement("summary");
+    summary.innerHTML = '<span>交通詳細與備案</span><small>' +
+      (day.mobility?.legs?.length || 0) + ' 段交通參考</small><b aria-hidden="true">＋</b>';
+    details.appendChild(summary);
+
+    const content = document.createElement("div");
+    content.className = "tl-transport-details-content";
+    content.innerHTML = board(day, "trip");
+    details.appendChild(content);
+    extras.forEach((node) => content.appendChild(node));
+    (section || nav).after(details);
   }
   renderTrip = function visualTripRender() {
     baseTrip();
