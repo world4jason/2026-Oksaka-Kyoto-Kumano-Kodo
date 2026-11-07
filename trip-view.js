@@ -28,7 +28,7 @@
     if (!hasTimedStart(item)) {
       return `<span class="timeline-time timeline-time--floating">${localized("時間未定", "Time TBD")}</span>`;
     }
-    const end = /^([01]\\d|2[0-3]):[0-5]\\d$/.test(item.end || "") && item.end !== item.start
+    const end = /^([01]\d|2[0-3]):[0-5]\d$/.test(item.end || "") && item.end !== item.start
       ? `<span class="timeline-time-end">～${escapeHtml(item.end)}</span>` : "";
     return `<time class="timeline-time" datetime="${escapeAttr(item.start)}">${escapeHtml(item.start)}${end}</time>`;
   }
