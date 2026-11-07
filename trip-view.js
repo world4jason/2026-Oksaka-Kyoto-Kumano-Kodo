@@ -28,7 +28,9 @@
     if (!hasTimedStart(item)) {
       return `<span class="timeline-time timeline-time--floating">${localized("時間未定", "Time TBD")}</span>`;
     }
-    return `<time class="timeline-time" datetime="${escapeAttr(item.start)}">${escapeHtml(item.start)}</time>`;
+    const end = /^([01]\d|2[0-3]):[0-5]\d$/.test(item.end || "") && item.end !== item.start
+      ? `<span class="timeline-time-end">～${escapeHtml(item.end)}</span>` : "";
+    return `<time class="timeline-time" datetime="${escapeAttr(item.start)}">${escapeHtml(item.start)}${end}</time>`;
   }
 
   function safeUrl(rawUrl, protocols = ["http:", "https:"]) {
@@ -238,7 +240,7 @@
       const details = `<div class="timeline-content">${itemTop}${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}${supplementaryContent(item)}</div>`;
       const currentClass = isCurrent ? "current" : "";
       return `<li class="trip-stop-wrap">
-        <article class="timeline-item trip-v2-item ${currentClass} ${item.mustGo === true ? "trip-must-go" : ""}">
+        <article class="timeline-item trip-v2-item ${item.type === "transport" ? "trip-v2-item--transport" : "trip-v2-item--stop"} ${currentClass} ${item.mustGo === true ? "trip-must-go" : ""}">
           ${timeLabel(item)}
           <div class="timeline-rail" aria-hidden="true"><div class="timeline-dot"></div></div>
           ${details}
@@ -254,7 +256,7 @@
       </section>`;
 
     const timelineView = `<section class="trip-timeline-section" aria-labelledby="trip-timeline-title">
-        <div class="trip-timeline-heading"><h2 id="trip-timeline-title" class="trip-timeline-title">${localized("每日時間軸", "Day timeline")}</h2><p>${localized("依原行程順序排列 · 未定時間保留彈性", "Published order · flexible times stay flexible")}</p></div>
+        <div class="trip-timeline-heading"><h2 id="trip-timeline-title" class="trip-timeline-title">${localized("景點停留與交通銜接", "Visits and connections")}</h2><p>${localized("依時序顯示景點停留與接駁；估計時間並非即時班次", "Visit windows and transfers in order; estimates are not live schedules")}</p></div>
         <ol class="timeline trip-v2-timeline composition-sequence" role="list" aria-labelledby="trip-timeline-title">${timeline}</ol>
         ${timeline ? "" : '<div class="empty-state"><p>No plans yet.</p></div>'}
       </section>`;
