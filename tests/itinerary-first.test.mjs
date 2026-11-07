@@ -43,7 +43,8 @@ test("Nov 9 shows visit window and separates lodging tasks from actual transport
 
 test("Nov 10 exposes all three Shirahama visits and critical credential pickup, while train choice remains unresolved", () => {
   const items=byDate("2026-11-10").items;
-  const named = (term) => items.find(x => x.title.includes(term));
+  const named = (term) => items.find(x => x.type === "place" && x.title.includes(term));
+  const selectedTrain = items.find(x => x.title.includes("黑潮3號"));
   assert.deepEqual(["三段壁","千疊敷","白良濱"].map(t => [named(t).start,named(t).end]), [
     ["13:00","14:00"],["14:15","15:00"],["15:15","16:00"]
   ]);
@@ -51,7 +52,7 @@ test("Nov 10 exposes all three Shirahama visits and critical credential pickup, 
   assert.equal(credential.start,"17:30");
   assert.equal(credential.mustGo,true);
   assert.ok(credential.note.includes("18:00"));
-  assert.equal(named("黑潮3號").mustGo, false);
+  assert.equal(selectedTrain.mustGo, false);
   assert.deepEqual(byDate("2026-11-10").mobility.alternatives.slice(0,2).map(x => x.time), ["09:04","09:33"]);
 });
 
@@ -62,7 +63,7 @@ test("Nov 8–10 time windows preserve monotonic order and stable IDs", () => {
     seen.add(item.id);
   }
   for(const date of ["2026-11-08","2026-11-09","2026-11-10"]) {
-    const starts=byDate(date).items.map(item => item.start).filter(x => /^\\d{2}:\\d{2}$/.test(x));
+    const starts=byDate(date).items.map(item => item.start).filter(x => /^\d{2}:\d{2}$/.test(x));
     assert.deepEqual(starts,[...starts].sort(), date);
   }
 });
