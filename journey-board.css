@@ -334,3 +334,79 @@
   .tl-pickup-sites li>span{white-space:normal;text-align:right;}
 }
 .tl-stamp-signal{font-size:.72rem;font-weight:760;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:3px 7px}
+
+
+/* Trip itinerary-first: activities stay visible, detailed transit is optional. */
+.tl-itinerary-first > .day-summary {
+  padding-top: 14px;
+  padding-bottom: 18px;
+}
+.tl-itinerary-first .trip-timeline-section {
+  margin-top: 6px;
+  min-width: 0;
+}
+.tl-itinerary-first .timeline-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.tl-itinerary-first .timeline-time-end {
+  display: block;
+  font-size: .71em;
+  line-height: 1.35;
+  color: var(--muted);
+  letter-spacing: 0;
+  font-weight: 550;
+}
+.tl-itinerary-first .trip-v2-item--transport .timeline-content h3 {
+  font-size: .91rem;
+  font-weight: 650;
+}
+.tl-itinerary-first .trip-v2-item--transport .timeline-content {
+  color: var(--muted);
+}
+.tl-itinerary-first .trip-v2-item--stop .timeline-content h3 {
+  color: var(--text);
+}
+.tl-transport-details {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+  overflow: hidden;
+  margin-top: 20px;
+}
+.tl-transport-details > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  cursor: pointer;
+  min-height: 55px;
+  font-weight: 750;
+  list-style: none;
+}
+.tl-transport-details > summary::-webkit-details-marker { display: none; }
+.tl-transport-details > summary small {
+  margin-left: auto;
+  font-size: .73rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.tl-transport-details > summary b {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.tl-transport-details[open] > summary b { transform: rotate(45deg); }
+.tl-transport-details-content { padding: 0 12px 14px; }
+.tl-transport-details-content > .tl-board { margin-top: 0; }
+.tl-transport-details-content > .trip-alternatives { margin-top: 12px; }
+.tl-transport-details > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+@media (max-width: 650px) {
+  .tl-itinerary-first > .day-summary { padding-block: 10px 12px; }
+  .tl-itinerary-first .timeline-time-end { font-size: .68em; }
+  .tl-transport-details > summary { padding: 14px 12px; }
+  .tl-transport-details-content { padding: 0 6px 10px; }
+}
