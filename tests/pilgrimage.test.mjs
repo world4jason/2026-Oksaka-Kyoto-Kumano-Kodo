@@ -14,16 +14,13 @@ test("Two credential systems remain distinct and source backed", () => {
   assert.ok(p.sources.every(x => /^https:\/\//.test(x.url)));
   assert.ok(p.sources.some(x => x.url.includes("/credential-2/")));
 });
-test("Tanabe time-critical pickup stays unconfirmed and official sale limits are accurate", () => {
+test("Tanabe credential pickup remains a reference and not a completed collection claim", () => {
   const pickup = p.pickups.find(site => site.id === "tanabe");
   assert.equal(pickup.hours, "09:00–18:00");
   assert.equal(pickup.dual, true);
   assert.equal(pickup.nakahechi, false);
-  assert.ok(p.pickupDeadline.risk.includes("白濱"));
-  assert.ok(p.pickupDeadline.risk.includes("18:00"));
-  assert.ok(p.pickupDeadline.fallback.includes("已走過"));
-  assert.ok(day("2026-11-10").reminders.some(text => text.includes("免費")));
-  assert.ok(itinerary.todos.some(x => x.id === "dual-credential-pickup" && x.priority === "high"));
+  assert.doesNotMatch(JSON.stringify(p), /已集齊(?:全部|十|10)|十枚章全數完成|10枚章全數完成/);
+  assert.ok(!itinerary.todos.some(x => x.id === "dual-credential-pickup"));
 });
 test("Stamp passport follows official ten sites and published 7km route without invented times", () => {
   const stampNames = p.route.stamps.map(x => x.local);
@@ -37,20 +34,21 @@ test("Stamp passport follows official ten sites and published 7km route without 
   assert.ok(p.route.caveat.includes("西班牙"));
   assert.ok(p.route.caveat.includes("41"));
   assert.ok(p.route.stamps.every(x => x.id && x.name && x.phase && x.date));
-  assert.ok(day("2026-11-11").reminders.some(text => text.includes("發心門王子")));
-  assert.ok(day("2026-11-12").reminders.some(text => text.includes("青岸渡寺")));
+  assert.match(JSON.stringify(day("2026-11-11").items), /發心門王子/);
+  assert.match(JSON.stringify(day("2026-11-12").items), /青岸渡寺/);
 });
-test("Device-only local checklist mirrors ten actual official stamp stops", () => {
+test("Device-only local checklist retains the ten reference stamp stops and stable IDs", () => {
   const c = itinerary.checklists.find(x => x.id === "dual-pilgrim-stamps");
   assert.ok(c);
   assert.equal(c.items.length, 10);
   assert.equal(new Set(c.items.map(x => x.id)).size, 10);
   assert.ok(c.items.every(x => x.label.startsWith("11/11") || x.label.startsWith("11/12")));
 });
-test("Main transportation schedules and published reservations remain untouched", () => {
+test("Actual Kumano transportation includes JR to Katsuura and the confirmed Urashima stay", () => {
   assert.equal(itinerary.days.length, 11);
   const legs = day("2026-11-11").mobility.legs;
-  assert.ok(legs.some(x => x.service === "52 川丈線" && x.depart === "14:46" && x.arrive === "15:40"));
-  assert.ok(legs.some(x => x.service === "15 新勝線" && x.depart === "17:04" && x.arrive === "17:48"));
+  assert.ok(legs.some(x => x.mode === "bus" && x.depart === "06:55"));
+  assert.ok(legs.some(x => x.mode === "train" && x.from.includes("新宮") && x.to.includes("紀伊勝浦")));
+  assert.ok(!legs.some(x => x.service === "15 新勝線" && x.depart === "17:04"));
   assert.ok(itinerary.reservations.some(x => x.id === "urashima" && x.status === "confirmed"));
 });

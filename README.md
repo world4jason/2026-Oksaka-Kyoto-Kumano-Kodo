@@ -1,67 +1,62 @@
-# 2026 大阪・京都・熊野古道｜Travel Lite
+# 2026 大阪・京都・熊野古道｜11 天 10 夜分享版
 
-以 [Travel-lite-Template](https://github.com/world4jason/Travel-lite-Template) 建立的獨立關西旅行網站。
+這是一份依實際走訪順序整理的關西旅行行程，日期為 **2026/11/04–11/14**。前六晚以大阪肥後橋為據點，安排大阪、伊勢鳥羽與京都；後半段走白濱、熊野古道和那智山，最後經和歌山、泉佐野返台。
 
-- **日期**：2026/11/04–11/14，11天10夜；11/14返回桃園。
-- **路線**：大阪、伊勢、京都、白濱、紀伊田邊、熊野古道、紀伊勝浦、臨空城。
-- **行程主檔**：[trip.json](./trip.json)；靜態網站：[index.html](./index.html)。
-- **所有票券及交通組合**：[reference.html](./reference.html)（包含11/11巴士、JR及備案）。
-- **介面**：繁體中文，預設 Vintage Watercolor；可在 More → Appearance 切換。
+- [瀏覽行程網站](https://world4jason.github.io/2026-Oksaka-Kyoto-Kumano-Kodo/)
+- [Google Sheet 分享版](https://docs.google.com/spreadsheets/d/1CO_891wspexrJr8SeXrx_AHTNmjvDCuA0C4e9RE_x3Q/edit#gid=202611160)
+- [每日行程、交通時間與官方參考](./reference.html)
 
-## GitHub Pages
+可以直接參考每日路線安排自己的旅行。表中的活動、班次及航班時間屬於這次旅行記錄；換日期出發時，請重新確認花火、祭典、市集、夜間點燈與交通時刻。日本境內時間為日本時間，航班各端時間為當地時間。
 
-若未啟用：Repository → Settings → Pages → Deploy from a branch → `main` → `/ (root)`。
-啟用後預期網址：`https://world4jason.github.io/2026-Oksaka-Kyoto-Kumano-Kodo/`。
+## 每天做了什麼
 
-## 交通優先的畫面
+| 天數／日期 | 實際路線與活動 | 當晚住宿 |
+| --- | --- | --- |
+| **D1 · 11/04（三）** | 桃園 → 關西機場 → 大阪肥後橋。IT212 航班時刻：16:25 桃園出發、19:40 抵達關西。 | 大阪 APA 肥後橋 |
+| **D2 · 11/05（四）** | 露天神社 → 大阪天滿宮 → 附近商業街吃午餐 → 生駒聖天／寶山寺 → 回大阪。 | 大阪 APA 肥後橋 |
+| **D3 · 11/06（五）** | 伊勢神宮內宮 → 二見興玉神社、夫婦岩 → 御木本珍珠島，觀看 **15:30 海女表演** → **16:35 Vista Car 特急直達大阪難波，18:42 抵達** → 御堂筋燈飾、北御堂光影秀。 | 大阪 APA 肥後橋 |
+| **D4 · 11/07（六）** | 早上逛服部綠地 **méli mélo 市集** → 下午到豬名川河岸看書、等煙火 → **18:00–18:30 豬名川花火** → 回大阪。 | 大阪 APA 肥後橋 |
+| **D5 · 11/08（日）** | 下鴨神社 → 伏見稻荷大社，**13:00 本殿祭、14:00 火焚神事都有看到** → 太秦映畫村百鬼夜行，**17:30、19:30 兩場都有看到** → 回大阪。 | 大阪 APA 肥後橋 |
+| **D6 · 11/09（一）** | 中之島散步 → 京都御苑 → 叡山電車紅葉隧道 → 貴船神社本宮、奧宮夜間點燈 → 回大阪。 | 大阪 APA 肥後橋 |
+| **D7 · 11/10（二）** | 大阪 → 紀伊田邊轉乘 → 三段壁洞窟 → 千疊敷看夕陽 → 回紀伊田邊。 | Hotel Kii Tanabe |
+| **D8 · 11/11（三）** | **06:55** 紀伊田邊快速巴士 → 發心門王子 → 熊野古道步行約 7 公里、伏拜茶屋休息 → 熊野本宮大社 → 大齋原 → 熊野速玉大社 → 新宮城跡 → 新宮站搭 **JR** 到紀伊勝浦 → 浦島飯店 → 晚上泡 **玄武洞溫泉**。 | 浦島飯店 |
+| **D9 · 11/12（四）** | 早上泡湯、Lawson 早餐 → 中午出發，搭 **13:50** 往那智山巴士 → 大門坂 → 熊野那智大社 → 青岸渡寺、三重塔外觀 → 那智瀑布／飛瀧神社 → 約 **16:32** 從那智の滝前搭車返回 → 浦島飯店。 | 浦島飯店 |
+| **D10 · 11/13（五）** | 早上泡湯、吃早餐、退房 → 狼煙山遊園 → 下午搭黑潮 26 號到和歌山（票面 **13:46–16:48**）→ 和歌山城外圍、公園散步 → 和歌山市站 → 泉佐野。 | 泉佐野；R Hotel 為原安排，實住待確認 |
+| **D11 · 11/14（六）** | 泉佐野 → 關西機場 → 桃園。IT211 航班時刻：**11:30 關西出發、13:50 抵達桃園**。 | — |
 
-- **總覽**：11天濃縮成日期卡，保留出發地、目的地、交通方式與關鍵時間，不堆疊長備註。
-- **單日**：主要交通軸在前，重要班次與轉乘標為「關鍵」；行程全文與註記要點開才會顯示。
-- **交通**：站點／出發／抵達為主，Google Maps 只做地點查找，原本無經緯度的底圖折疊收納。
-- **11/11**：52號大齋原前的12:16、13:26、14:46、16:11與末班17:36依情境並排。**14:46**為主線，其他是備案，不等同已改行程。
-- **11/09**：貴船夜間33號巴士末班未核實，視覺上明示警告，絕不標示為已確認。
+D9 的約 16:32 是當天實際搭到回程巴士的記錄，不能直接當成其他日期的固定班表。和歌山城這次參觀範圍為外圍與公園。
 
-畫面參考：[手機總覽](docs/ui-proof/mobile-overview.png) · [11/11手機交通](docs/ui-proof/mobile-kumano-trip.png) · [52號班次比較](docs/ui-proof/mobile-kumano-alternatives.png) · [桌面交通](docs/ui-proof/desktop-kumano-transport.png)。
+## 住宿節奏
 
-交通快照是 Excel 既有資料，不是即時班次。`trip.json.days[].mobility` 是網站顯示的唯一共用交通資料；詳細舊版來源仍留在 `reference.html`。
+| 日期 | 晚數 | 地點／飯店 |
+| --- | ---: | --- |
+| 11/04 入住，11/10 退房 | 6 | APA Hotel 大阪肥後橋站前 TOWER；包含 11/09 續住的一晚。 |
+| 11/10 入住，11/11 退房 | 1 | Hotel Kii Tanabe。 |
+| 11/11 入住，11/13 退房 | 2 | 浦島飯店。 |
+| 11/13–11/14 | 1 | 泉佐野；原安排為 R Hotel Kansai Airport，最後一晚實際入住飯店尚待確認。 |
 
-## 共用日期導航（2026/11/05）
+## 複製行程時保留的重點
 
-Trip、Transport、Places 使用同一個手機日期下拉與前後一天箭頭，共用選定日期。Trip 保留11天摘要總覽、Places 保留所有景點總覽、Transport 只切單日；切分頁、瀏覽器 Back/Forward、重新整理仍維持最後選定日期。程式依上游 [Template #129](https://github.com/world4jason/Travel-lite-Template/issues/129) 與 [PR #130](https://github.com/world4jason/Travel-lite-Template/pull/130) 套用；仍需 Owner 真機與三位真人後續審查。
+- **伊勢鳥羽日**：內宮、二見、珍珠島依序串接；這次觀看 15:30 海女表演，16:20 離島後前往鳥羽站，搭 16:35 Vista Car 特急回大阪。
+- **大阪與京都活動日**：D4 花火、D5 祭事與百鬼夜行、D6 夜間點燈都有特定日期與場次，應先核對活動日再安排住宿。
+- **熊野古道日**：發心門王子到本宮約 7 公里；當天完成本宮、大齋原、速玉與新宮城跡，再從新宮搭 JR 到紀伊勝浦。當次搭乘的熊野巴士不收 ICOCA，可用現金或感應信用卡。
+- **那智與浦島**：浦島連住兩晚，D9 上午留給泡湯，中午才出發前往那智山；D10 退房後逛狼煙山，再移動到和歌山。
 
-## 11/05 伊勢・鳥羽更新（2026/11/05）
+[完整參考頁](./reference.html#sources)保留原行程使用的官方活動、交通與飯店資料連結。熊野古道集章資料可參考[官方手冊領取說明](https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/)、[指定印章地點](https://www.tb-kumano.jp/kumano-kodo/dual-pilgrim/stamp-lists/)與[雙朝聖條件](https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/)。這份短程路線本身不代表已完成雙朝聖認證或 41 章完全踏破。
 
-- **主案**：伊勢市站直接搭09:40 51號巴士至內宮，不去外宮；11:50–13:20托福橫丁／午餐；13:34 CAN 往二見夫婦岩；14:42 CAN 往鳥羽，御木本珍珠島首選、水族館備案。
-- 近鐵全部 **普通／急行／準急免指定席**，去程06:54難波→09:27伊勢市；鳥羽回程16:57→19:56難波、可延後17:22→20:43。當地三重交通1DAY ¥1,300與不買的近鐵¥7,500套票不同。
-- **原版外宮＋內宮仍保留**於 [完整參考表的雙宮分頁](./reference.html#ise-legacy)；主要交通前後班、錯車後是否可保留夫婦岩／鳥羽入館見 [11/05前後班](./reference.html#ise-transit)。班次不是即時保證。
+## 網站與本地預覽
 
-## 熊野古道集章手冊
+網站以 [Travel-lite-Template](https://github.com/world4jason/Travel-lite-Template) 建立，介面使用繁體中文。可由「行程／交通／景點」查看各日內容，「更多」保留參考連結與裝置內的外觀設定。
 
-- [11/10 田邊行程](./#trip/day/2026-11-10)：空白雙朝聖手冊免費、田邊站旁09:00–18:00領取；**白濱返回田邊能否趕上18:00仍待確認**。¥100中邊路押印帳不是同一制度。
-- [11/11 熊野交通](./#trip/day/2026-11-11)、[11/12 那智山](./#trip/day/2026-11-12)：沿路 7＋3 處官方集章點的可展開清單。More → 準備清單內有 10 個裝置本地勾選項。
-- [官方免費手冊領取點](https://www.tb-kumano.jp/tw/kumano-kodo/dual-pilgrim/credential-2/) · [官方指定印章](https://www.tb-kumano.jp/kumano-kodo/dual-pilgrim/stamp-lists/) · [和歌山縣¥100中邊路押印帳](https://www.sekaiisan-wakayama.jp/walk/ouinchou.html)。短程朝聖**不等於集滿41章完全踏破**，也不等於已經完成西班牙側雙朝聖認證。
-
-## 驗收
-
-```sh
-node --test tests/transport-data.test.mjs
-node scripts/check-item-ids.mjs trip.json
-python3 -m http.server 8107
-# 另開一個終端機（需安裝 Playwright 和 Chromium/Chrome）
-python3 tests/transport-visual-smoke.py
-```
-
-已實測 320 / 390 / 1100px、11/11交通和備案、地圖頁切換與無橫向捲動。介面外觀未經本人最終驗收，不能把靜態測試當成交通官方確認。
-
-## 本地預覽與資料檢查
+共用行程資料為 [trip.json](./trip.json)，入口為 [index.html](./index.html)。Google Sheet 分享頁與本頁依旅後確認內容整理；原工作表保留原始規劃與歷史版本。
 
 ```sh
 python3 -m http.server 8000
-node scripts/check-item-ids.mjs trip.json
+npm run test:integrity -- trip.json
 ```
 
-資料係依《京都旅行 NOTE》三個工作表匯入：主行程以頂部11天為準，舊版航班／京都留宿／夜間黑潮前往田邊方案均不覆蓋新版。11/11完整交通查核及備案仍以原工作表歷史版本為來源，不保證即時發車。此版本尚未取得本人逐日驗收，`trip.publication` 為 `draft/not-run`。原始Excel含私人訂房資訊，不上傳公開Repository，公開網站不含完整訂單號與機票憑證。
+若要自行部署 GitHub Pages，可選用 `main` 分支與 `/ (root)`。交通資料為旅程記錄，網站不提供即時班次；自動檢查也不等於車站或活動官方確認。
 
 ## 授權與來源
 
-保留原始 [LICENSE](./LICENSE)、[NOTICE.md](./NOTICE.md)、上游檔案內授權與版權聲明。原程式來源為 [world4jason/Travel-lite-Template](https://github.com/world4jason/Travel-lite-Template)，依適用 AGPL-3.0-or-later 或個別上游檔案授權。2026-11-04 加入獨立行程資料與參考頁；上游程式庫未修改。
+保留原始 [LICENSE](./LICENSE)、[NOTICE.md](./NOTICE.md)、上游檔案內授權與版權聲明。原程式來源為 [world4jason/Travel-lite-Template](https://github.com/world4jason/Travel-lite-Template)，依適用 AGPL-3.0-or-later 或個別上游檔案授權。2026-11-04 加入獨立行程資料與參考頁；2026-11-16 依旅後確認內容整理分享版。原始 Excel 的私人訂房識別資料不納入公開內容。

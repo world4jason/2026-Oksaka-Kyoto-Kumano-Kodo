@@ -13,29 +13,28 @@ test("APA has two separately confirmed bookings, with no invented price", () => 
   assert.ok(!JSON.stringify(stays[1]).includes("NT$"));
 });
 
-test("Nov 9 route returns to the booked APA without assuming the same room", () => {
+test("Nov 9 completed Kyoto route returns to the booked APA", () => {
   const day = trip.days.find(item => item.date === "2026-11-09");
   assert.ok(day);
-  assert.ok(day.routeLabel.includes("APA"));
-  assert.equal(day.routeSummary.at(-1), "APA大阪肥後橋");
+  assert.match(day.routeSummary.at(-1), /大阪/);
   assert.ok(day.items.some(item => item.location.includes("APA 大阪肥後橋站前 TOWER")));
   assert.ok(!JSON.stringify(day).includes("大阪住宿尚未訂"));
-  assert.ok(day.reminders.some(text => text.includes("兩筆APA訂單")));
-  assert.equal(day.mobility.attentionLevel, "danger");
-  assert.equal(day.mobility.legs.find(item => item.id === "leg-5").status, "unconfirmed");
-  assert.ok(day.mobility.attention.includes("23:00"));
+  assert.match(day.routeSummary.join(" → "), /中之島.*京都御苑.*紅葉隧道.*貴船/);
+  assert.doesNotMatch(JSON.stringify(day), /確定同一房間|已保證不換房/);
 });
 
-test("Old booking todo is gone; new check-in coordination is still pending", () => {
+test("Completed Osaka stays do not retain obsolete booking or check-in tasks", () => {
   assert.ok(!trip.todos.some(item => item.id === "osaka-extra-stay"));
-  assert.ok(trip.todos.some(item => item.id === "apa-two-bookings-checkin" && item.priority === "high"));
-  assert.ok(trip.days.find(item => item.date === "2026-11-10").reminders.some(t => t.includes("APA")));
+  assert.ok(!trip.todos.some(item => item.id === "apa-two-bookings-checkin"));
+  const firstStay = trip.reservations.find(item => item.id === "apa");
+  const extraStay = trip.reservations.find(item => item.id === "apa-additional-night");
+  assert.match(JSON.stringify(firstStay), /(?:5\s*|五)晚/);
+  assert.match(JSON.stringify(extraStay), /(?:1\s*|一)晚/);
 });
 
-test("Public reference is current and private booking codes are not visible", () => {
-  assert.ok(reference.includes("11/09–11/10 同一間 APA"));
-  assert.ok(reference.includes("已訂（11/09–11/10另筆訂單"));
-  for (const code of ["1793645892", "1793665543"]) assert.ok(!reference.includes(code));
+test("Public reference retains the six Osaka nights without an unresolved booking claim", () => {
+  assert.match(reference, /APA/);
+  assert.match(reference, /6晚|6 晚/);
   assert.ok(!reference.includes("11/09大阪住宿仍待訂"));
   assert.ok(!reference.includes("11/09晚住宿仍待訂"));
 });

@@ -221,7 +221,7 @@
       : "";
     const boardTitle = context === "map" ? "交通步驟" : "交通快覽";
     const referenceLink = '<a href="./reference.html#' +
-      (day.date === '2026-11-05' ? 'ise-primary' : day.date === '2026-11-11' ? 'kumano' : 'days') +
+      (day.date === '2026-11-06' ? 'ise-primary' : day.date === '2026-11-11' ? 'kumano' : 'days') +
       '" class="tl-source-link" target="_blank" rel="noopener noreferrer">完整來源時刻 <span aria-hidden="true">↗</span></a>';
     return '<section class="tl-board" aria-label="' + esc(day.date) + ' 行程與交通">' +
       '<header class="tl-board-head">' +
