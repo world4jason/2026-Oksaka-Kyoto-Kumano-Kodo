@@ -6,8 +6,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-15T19:39:07.187Z",
-    "revision": "kansai-2026-11-16-maps-and-alternatives-v4",
+    "updatedAt": "2026-11-15T19:51:54Z",
+    "revision": "kansai-2026-11-16-maps-and-alternatives-v5",
     "accent": "#426354",
     "themeColor": "#0b1020",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -2036,7 +2036,7 @@
             "to": "APA肥後橋櫃台",
             "service": "寄送行李至浦島・退房",
             "hint": "大件行李寄往11/11入住的浦島，田邊一晚與古道用品隨身帶；之後前往大阪站搭11:18黑潮。",
-            "status": "confirmed",
+            "status": "reference",
             "critical": false,
             "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%91%E3%83%9B%E3%83%86%E3%83%AB%20%E5%A4%A7%E9%98%AA%E8%82%A5%E5%BE%8C%E6%A9%8B%E9%A7%85%E5%89%8D%20%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E5%8C%BA%E5%9C%9F%E4%BD%90%E5%A0%801-2-1"
           },
@@ -3785,7 +3785,7 @@
       "locationId": "tanabe",
       "closing": "18:00",
       "summary": "原行前安排：從發心門王子開始集章者，可先在田邊準備手冊。",
-      "risk": "實際在哪裡領取手冊、何時領取，未逐項記錄；此區保留原行前官方參考。",
+      "risk": "領取建議：13:35抵達紀伊田邊後、15:02巴士出發前，可到車站旁的田邊市觀光中心領取免費手冊（09:00–18:00）。請預留返回巴士站候車的時間；這是行前參考安排。",
       "fallback": "可參考下列官方領取／販售點；欲沿起點集章，請在健行前備妥手冊，並依出發日期核對營業時間與庫存。"
     },
     "pickups": [

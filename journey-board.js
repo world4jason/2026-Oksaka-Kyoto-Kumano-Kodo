@@ -326,7 +326,10 @@
   };
   renderMap = function visualTransportRender() {
     const previousMap = viewRoot.querySelector(".tl-map-optional");
-    const openMap = previousMap ? previousMap.open : Boolean(state.selectedMapItemId);
+    // Stored-view hydration renders before the incoming route is applied. Open
+    // an explicit stop on that first render, then preserve any manual collapse.
+    const incomingStop = /^#(?:map|transport)\/day\/[^/]+\/stop\/[^/]+\/?$/.test(window.location.hash);
+    const openMap = previousMap ? previousMap.open : Boolean(state.selectedMapItemId || incomingStop);
     baseMap();
     const day = dayByDate(state.selectedDate) || state.data.days[0];
     const panel = viewRoot.querySelector(".runtime-map-panel");

@@ -23,6 +23,13 @@
 .map-library-state strong { display: block; margin-bottom: var(--space-1); color: var(--text); font-size: var(--text-lg); }
 .map-library-state p { max-width: 38rem; margin: 0; }
 .map-library-state .eyebrow { margin-bottom: var(--space-2); }
+/* A single-point raster fallback stays inside the existing map stage. */
+.map-raster-fallback { display: flex; flex-direction: column; height: 100%; overflow: auto; }
+.map-raster-caption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-3); }
+.map-raster-caption > div { min-width: 0; overflow-wrap: anywhere; }
+.map-raster-caption p { margin: 0 0 var(--space-1); }
+.map-raster-caption strong { color: var(--text); }
+.map-raster-frame { display: block; flex: 1 0 200px; width: 100%; min-height: 200px; border: 0; }
 .map-state-mark { width: 42px; height: 42px; display: grid; place-items: center; border: var(--border-subtle); border-radius: 50%; color: var(--accent); font-size: 1.35rem; }
 .map-library-loading .map-state-mark { animation: map-pulse var(--motion-slow) var(--ease-standard) infinite alternate; }
 .map-marker { appearance: none; min-width: 34px; height: 34px; padding: 0 8px; border: 2px solid white; border-radius: 999px; background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(0,0,0,.35); font: 700 .7rem/1 system-ui, sans-serif; cursor: pointer; transition: transform var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard); }

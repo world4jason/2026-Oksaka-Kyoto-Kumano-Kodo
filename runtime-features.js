@@ -164,9 +164,35 @@
     return Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? { lat, lng } : null;
   }
 
+  function rasterMapUrl(item) {
+    const point = itemCoordinates(item);
+    // OSM's standard map uses Web Mercator. Keep points outside its latitude
+    // range on the external handoff instead of silently moving their marker.
+    if (!point || Math.abs(point.lat) > 85.0511) return "";
+    const latDelta = 0.005;
+    const lngDelta = latDelta / Math.cos(point.lat * Math.PI / 180);
+    const bbox = [Math.max(-180, point.lng - lngDelta), Math.max(-85.0511, point.lat - latDelta),
+      Math.min(180, point.lng + lngDelta), Math.min(85.0511, point.lat + latDelta)];
+    const url = new URL("https://www.openstreetmap.org/export/embed.html");
+    url.searchParams.set("bbox", bbox.map(value => Number(value.toFixed(6))).join(","));
+    url.searchParams.set("layer", "mapnik");
+    url.searchParams.set("marker", `${point.lat},${point.lng}`);
+    return url.href;
+  }
+
   function mapFallback(container, selected, missingCoordinates = false) {
     const zh = /^zh/i.test(state.data?.ui?.locale || "");
     const url = selected ? googleMapsOpenUrl(selected) : "";
+    const rasterUrl = rasterMapUrl(selected);
+    if (rasterUrl) {
+      const label = selected.mapPointLabel || selected.location || selected.title || (zh ? "所選地點" : "Selected stop");
+      container.innerHTML = `<div class="map-raster-fallback">
+        <div class="map-raster-caption"><div role="status"><p class="eyebrow">${zh ? "一般地圖 · 所選地點" : "Standard map · selected stop"}</p><strong>${escapeHtml(label)}</strong></div>
+          ${url ? `<a class="button-link" href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${zh ? "在 Google Maps 開啟" : "Open Google Maps"} ↗</a>` : ""}</div>
+        <iframe class="map-raster-frame" src="${escapeAttr(rasterUrl)}" title="${escapeAttr(`OpenStreetMap · ${label}`)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>`;
+      return;
+    }
     const heading = missingCoordinates
       ? (zh ? "此日地點可從外部地圖查看" : "Open this day's stops in your map app")
       : (zh ? "互動地圖暫時無法載入" : "Interactive map unavailable");

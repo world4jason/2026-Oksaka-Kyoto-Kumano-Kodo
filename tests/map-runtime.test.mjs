@@ -138,7 +138,7 @@ test("Only known points get numbered markers and initial style failure keeps the
   assert.equal(h.markers[0].element.style.zIndex, "2");
   h.maps[0].emit("error", { error: new Error("Style request returned403") });
   assert.equal(h.maps[0].removed, true);
-  assert.match(h.current().container.innerHTML, /互動地圖暫時無法載入/);
+  assert.match(h.current().container.innerHTML, /class="map-raster-frame"/);
   assert.match(h.current().container.innerHTML, /https:\/\/www\.google\.com\/maps\/search/);
 
   h.context.renderMap(); await flush();
@@ -147,12 +147,47 @@ test("Only known points get numbered markers and initial style failure keeps the
   assert.notEqual(h.maps[1].removed, true, "a loaded map survives a later tile error");
 });
 
+test("WebGL failure embeds only the selected known point and retains the precise Google handoff", async () => {
+  const h = harness();
+  const selected = h.items[2];
+  selected.mapPointLabel = '勝浦観光桟橋 <船> "入口"';
+  h.context.state.selectedMapItemId = selected.id;
+  h.context.__mapLibrary.Map = class { constructor() { throw new Error("GPUInitializationError: WebGL2 unavailable"); } };
+  h.context.renderMap(); await flush();
+  const html = h.current().container.innerHTML;
+  const iframe = html.match(/<iframe\b[^>]*>/)?.[0];
+  assert.ok(iframe, "constructor failure must provide a map that does not require WebGL");
+  const url = new URL(iframe.match(/src="([^"]+)"/)[1].replaceAll("&amp;", "&"));
+  assert.equal(url.origin, "https://www.openstreetmap.org");
+  assert.equal(url.pathname, "/export/embed.html");
+  assert.equal(url.searchParams.get("layer"), "mapnik");
+  assert.equal(url.searchParams.get("marker"), `${selected.lat},${selected.lng}`);
+  const [west, south, east, north] = url.searchParams.get("bbox").split(",").map(Number);
+  assert.ok(west < Number(selected.lng) && east > Number(selected.lng));
+  assert.ok(south < Number(selected.lat) && north > Number(selected.lat));
+  assert.ok(Math.abs((north - south) - 0.01) < 0.000002);
+  assert.ok(Math.abs((east - west) * Math.cos(Number(selected.lat) * Math.PI / 180) - 0.01) < 0.000002,
+    "the longitude span accounts for latitude");
+  assert.match(iframe, /title="OpenStreetMap · 勝浦観光桟橋 &lt;船&gt; &quot;入口&quot;"/);
+  assert.match(iframe, /loading="lazy"/);
+  assert.match(html, /勝浦観光桟橋 &lt;船&gt; &quot;入口&quot;/);
+  assert.ok(html.includes(escape(h.context.googleMapsOpenUrl(selected))), "external link remains outside the iframe");
+  assert.equal((html.match(/<iframe\b/g) || []).length, 1, "fallback does not manufacture a multi-stop route");
+
+  h.context.state.selectedMapItemId = "unknown";
+  h.context.renderMap(); await flush();
+  assert.doesNotMatch(h.current().container.innerHTML, /<iframe\b/,
+    "a selected stop without coordinates must not inherit a different stop's map");
+  assert.match(h.current().container.innerHTML, /在 Google Maps 開啟/);
+});
+
 test("No-coordinate days keep a usable external map link without loading MapLibre", async () => {
   const h = harness();
   h.day.items = [h.items[1]];
   h.context.renderMap(); await flush();
   assert.equal(h.maps.length, 0);
   assert.match(h.current().container.innerHTML, /在 Google Maps 開啟/);
+  assert.doesNotMatch(h.current().container.innerHTML, /<iframe\b/);
 });
 
 test("Map disclosure stays open after marker selection and opens for an explicit place handoff", async () => {
@@ -173,6 +208,22 @@ test("Map disclosure stays open after marker selection and opens for an explicit
   h.context.state.selectedMapItemId = "shrine";
   h.context.renderMap(); await flush();
   assert.equal(h.current().disclosure.open, true, "Places handoff shows the selected location");
+});
+
+test("Initial explicit stop links open before stored-view hydration and respect a later manual collapse", async () => {
+  for (const route of ["map", "transport"]) {
+    const h = harness({ board: true });
+    h.context.location.hash = `#${route}/day/${h.day.date}/stop/pier`;
+    assert.equal(h.context.state.selectedMapItemId, null, "the incoming hash has not been applied yet");
+    h.context.renderMap(); await flush();
+    assert.equal(h.current().disclosure.open, true, "the first stored Transport render must not create a closed disclosure");
+    h.context.state.selectedMapItemId = "pier";
+    h.context.renderMap(); await flush();
+    assert.equal(h.current().disclosure.open, true, "applying the incoming stop keeps the map visible");
+    h.current().disclosure.open = false;
+    h.context.renderMap(); await flush();
+    assert.equal(h.current().disclosure.open, false, "the unchanged stop hash must not override a manual collapse");
+  }
 });
 
 test("Mobility rows preserve an explicit directions URL and reject unsafe schemes", async () => {
