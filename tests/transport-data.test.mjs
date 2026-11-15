@@ -58,7 +58,7 @@ test("11/11 starts with the 06:55 bus and reaches Katsuura by JR after the actua
   assert.match(route, /發心門.*本宮.*大[齋斎]原.*速玉.*新宮城.*紀伊勝浦/);
   assert.match(JSON.stringify(day.items), /玄武洞/);
 });
-test("11/09 Kyoto and 11/13 Wakayama routes follow completed visits without inventing the final hotel", () => {
+test("11/09 Kyoto and 11/13 Wakayama routes include the confirmed final hotel stay", () => {
   const kifune = byDate("2026-11-09");
   assert.match(kifune.routeSummary.join(" → "), /中之島.*京都御苑.*紅葉隧道.*貴船.*大阪/);
   assert.doesNotMatch(JSON.stringify(kifune), /交通未核實|大阪住宿尚未訂/);
@@ -69,7 +69,7 @@ test("11/09 Kyoto and 11/13 Wakayama routes follow completed visits without inve
   assert.ok(!wakayama.items.some((item) => /臨空城|Rinku|Outlet/i.test(item.title)));
   const rHotel = data.reservations.find((stay) => /R Hotel/i.test(stay.title));
   assert.ok(rHotel);
-  assert.notEqual(rHotel.status, "confirmed");
+  assert.equal(rHotel.status, "confirmed");
 });
 test("11/05 and 11/12 show the actual Osaka and afternoon Nachi itineraries", () => {
   const osaka = byDate("2026-11-05");

@@ -6,8 +6,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-15T18:22:29.067Z",
-    "revision": "kansai-2026-11-16-owner-corrected-actual-v1",
+    "updatedAt": "2026-11-15T18:50:07.789Z",
+    "revision": "kansai-2026-11-16-r-hotel-confirmed-v2",
     "accent": "#426354",
     "themeColor": "#0b1020",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -1635,7 +1635,7 @@
       "routeLabel": "浦島飯店 → 狼煙山 → 紀伊勝浦 → 和歌山 → 和歌山城外觀 → 南海和歌山市站 → 泉佐野",
       "reminders": [
         "黑潮 26 號：13:46 紀伊勝浦 → 16:48 和歌山。",
-        "最後一晚原訂 R Hotel Kansai Airport，實際入住待確認。"
+        "最後一晚入住泉佐野 R Hotel Kansai Airport。"
       ],
       "items": [
         {
@@ -1708,10 +1708,10 @@
         {
           "id": "d10-hotel",
           "start": "TBD",
-          "title": "R Hotel Kansai Airport（原訂安排）",
+          "title": "入住 R Hotel Kansai Airport",
           "type": "stay",
           "location": "R Hotel Kansai Airport・泉佐野",
-          "note": "11/13–11/14 原訂住宿安排；實際是否入住仍待確認。"
+          "note": "11/13–11/14 於泉佐野入住一晚。"
         }
       ],
       "routeSummary": [
@@ -1727,7 +1727,7 @@
         "label": "浦島晨湯・狼煙山・和歌山城外觀・泉佐野",
         "from": "浦島飯店",
         "to": "泉佐野",
-        "attention": "R Hotel 僅保留為原訂安排，未確認實際入住。",
+        "attention": "",
         "attentionLevel": "info",
         "callout": "黑潮26號・和歌山城外觀",
         "legs": [
@@ -1782,13 +1782,13 @@
           {
             "id": "leg-5",
             "mode": "stay",
-            "depart": "原訂當晚",
+            "depart": "當晚",
             "arrive": "未記錄",
             "from": "泉佐野",
             "to": "R Hotel Kansai Airport",
-            "service": "最後一晚原訂安排",
-            "hint": "實際入住尚未確認。",
-            "status": "unconfirmed",
+            "service": "R Hotel 住宿一晚",
+            "hint": "11/13–11/14 已入住。",
+            "status": "confirmed",
             "critical": false
           }
         ]
@@ -2035,13 +2035,13 @@
     {
       "id": "r-hotel-original",
       "type": "stay",
-      "title": "R Hotel Kansai Airport（原訂安排）",
+      "title": "R Hotel Kansai Airport（已入住一晚）",
       "date": "2026-11-13",
-      "time": "11/13～11/14；實際入住待確認",
+      "time": "11/13入住～11/14退房（1晚）",
       "location": "泉佐野",
-      "status": "unconfirmed",
+      "status": "confirmed",
       "itemId": "d10-hotel",
-      "note": "保留原訂安排；尚無實際入住確認。"
+      "note": "旅人確認最後一晚實際入住。"
     }
   ],
   "essentials": [
@@ -2118,10 +2118,10 @@
       "body": "晨湯、早餐、退房、狼煙山後，13:46黑潮26號→16:48和歌山；參觀和歌山城外觀與公園，再由南海和歌山市站前往泉佐野。"
     },
     {
-      "title": "最後一晚住宿待確認",
+      "title": "最後一晚住宿｜R Hotel Kansai Airport",
       "category": "stay",
       "dayDate": "2026-11-13",
-      "body": "原訂11/13–11/14入住泉佐野 R Hotel Kansai Airport；實際是否入住尚未確認。"
+      "body": "11/13–11/14 入住泉佐野 R Hotel Kansai Airport，共一晚。"
     },
     {
       "title": "虎航 IT211：關西 → 桃園",
@@ -2190,8 +2190,8 @@
     },
     {
       "id": "last-stay",
-      "title": "最後一晚原訂住宿",
-      "body": "11/13–11/14原訂 R Hotel Kansai Airport；實際是否入住仍待確認。"
+      "title": "最後一晚住宿",
+      "body": "11/13–11/14 入住泉佐野 R Hotel Kansai Airport，共一晚。"
     }
   ],
   "costs": {
