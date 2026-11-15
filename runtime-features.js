@@ -6,10 +6,12 @@
  */
 (() => {
   let mapInstance = null;
+  let rasterMapInstance = null;
   // Each initMap() call takes a generation; a call whose MapLibre import resolves after a newer render
   // started must not create a second map in the (replaced) container.
   let mapInitGeneration = 0;
   let maplibrePromise = null;
+  let leafletPromise = null;
 
   const baseRenderNow = renderNow;
   const baseRenderTrip = renderTrip;
@@ -146,11 +148,32 @@
     return maplibrePromise;
   }
 
+  async function ensureLeaflet() {
+    if (leafletPromise) return leafletPromise;
+    if (!document.querySelector('link[data-leaflet]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css";
+      link.dataset.leaflet = "1";
+      document.head.appendChild(link);
+    }
+    leafletPromise = import("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet-src.esm.js").catch((error) => {
+      leafletPromise = null;
+      throw error;
+    });
+    return leafletPromise;
+  }
+
   function destroyMap() {
-    if (!mapInstance) return;
-    const previous = mapInstance;
+    const previous = [mapInstance, rasterMapInstance];
     mapInstance = null;
-    try { previous.remove(); } catch {}
+    rasterMapInstance = null;
+    previous.forEach(map => { try { map?.remove(); } catch {} });
+  }
+
+  function currentMapContainer(container, generation) {
+    return generation === mapInitGeneration && state.view === "map" &&
+      document.querySelector("#runtime-map") === container;
   }
 
   function itemCoordinates(item) {
@@ -164,35 +187,9 @@
     return Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? { lat, lng } : null;
   }
 
-  function rasterMapUrl(item) {
-    const point = itemCoordinates(item);
-    // OSM's standard map uses Web Mercator. Keep points outside its latitude
-    // range on the external handoff instead of silently moving their marker.
-    if (!point || Math.abs(point.lat) > 85.0511) return "";
-    const latDelta = 0.005;
-    const lngDelta = latDelta / Math.cos(point.lat * Math.PI / 180);
-    const bbox = [Math.max(-180, point.lng - lngDelta), Math.max(-85.0511, point.lat - latDelta),
-      Math.min(180, point.lng + lngDelta), Math.min(85.0511, point.lat + latDelta)];
-    const url = new URL("https://www.openstreetmap.org/export/embed.html");
-    url.searchParams.set("bbox", bbox.map(value => Number(value.toFixed(6))).join(","));
-    url.searchParams.set("layer", "mapnik");
-    url.searchParams.set("marker", `${point.lat},${point.lng}`);
-    return url.href;
-  }
-
   function mapFallback(container, selected, missingCoordinates = false) {
     const zh = /^zh/i.test(state.data?.ui?.locale || "");
     const url = selected ? googleMapsOpenUrl(selected) : "";
-    const rasterUrl = rasterMapUrl(selected);
-    if (rasterUrl) {
-      const label = selected.mapPointLabel || selected.location || selected.title || (zh ? "所選地點" : "Selected stop");
-      container.innerHTML = `<div class="map-raster-fallback">
-        <div class="map-raster-caption"><div role="status"><p class="eyebrow">${zh ? "一般地圖 · 所選地點" : "Standard map · selected stop"}</p><strong>${escapeHtml(label)}</strong></div>
-          ${url ? `<a class="button-link" href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${zh ? "在 Google Maps 開啟" : "Open Google Maps"} ↗</a>` : ""}</div>
-        <iframe class="map-raster-frame" src="${escapeAttr(rasterUrl)}" title="${escapeAttr(`OpenStreetMap · ${label}`)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>`;
-      return;
-    }
     const heading = missingCoordinates
       ? (zh ? "此日地點可從外部地圖查看" : "Open this day's stops in your map app")
       : (zh ? "互動地圖暫時無法載入" : "Interactive map unavailable");
@@ -206,9 +203,59 @@
     </div>`;
   }
 
+  async function initRasterMap(container, selected, generation) {
+    if (!currentMapContainer(container, generation)) return;
+    const point = itemCoordinates(selected);
+    // Do not move a point outside the standard map's Web Mercator range, or
+    // substitute another stop when the selected item lacks coordinates.
+    if (!point || Math.abs(point.lat) > 85.0511) {
+      mapFallback(container, selected);
+      return;
+    }
+    const zh = /^zh/i.test(state.data?.ui?.locale || "");
+    const label = selected.mapPointLabel || selected.location || selected.title || (zh ? "所選地點" : "Selected stop");
+    const url = googleMapsOpenUrl(selected);
+    container.innerHTML = `<div class="map-raster-fallback">
+      <div class="map-raster-caption"><div><p class="eyebrow">${zh ? "一般地圖 · 所選地點" : "Standard map · selected stop"}</p><strong>${escapeHtml(label)}</strong><p class="map-raster-status" role="status"></p></div>
+        ${url ? `<a class="button-link" href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${zh ? "在 Google Maps 開啟" : "Open Google Maps"} ↗</a>` : ""}</div>
+      <div class="map-raster-frame" role="region" aria-label="${escapeAttr(`OpenStreetMap · ${label}`)}"></div>
+    </div>`;
+    const frame = container.querySelector(".map-raster-frame");
+    try {
+      const L = await ensureLeaflet();
+      if (!currentMapContainer(container, generation) || container.querySelector(".map-raster-frame") !== frame) return;
+      const map = rasterMapInstance = L.map(frame, {
+        center: [point.lat, point.lng], zoom: 15, attributionControl: true,
+        scrollWheelZoom: false, zoomAnimation: false, fadeAnimation: false,
+      });
+      const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19, keepBuffer: 0, updateWhenIdle: true, updateWhenZooming: false,
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+      L.marker([point.lat, point.lng], {
+        title: label, alt: label,
+        icon: L.divIcon({ className: "map-raster-marker", html: '<span aria-hidden="true">●</span>',
+          iconSize: [28, 28], iconAnchor: [14, 14] }),
+      }).addTo(map);
+      tiles.on("tileerror", () => {
+        if (!currentMapContainer(container, generation) || rasterMapInstance !== map) return;
+        const status = container.querySelector(".map-raster-status");
+        if (status) status.textContent = zh ? "部分底圖無法載入，可在 Google Maps 查看位置。" : "Some map tiles are unavailable. Open Google Maps for this place.";
+      });
+      requestAnimationFrame(() => {
+        if (currentMapContainer(container, generation) && rasterMapInstance === map) map.invalidateSize({ pan: false });
+      });
+    } catch (error) {
+      if (!currentMapContainer(container, generation)) return;
+      console.warn("Raster map unavailable", error);
+      destroyMap();
+      mapFallback(container, selected);
+    }
+  }
+
   // Shared by map handoffs and the disclosure that reveals a hidden canvas.
   window.TravelLiteMap = Object.freeze({ coordinates: itemCoordinates,
-    resize: () => mapInstance?.resize() });
+    resize: () => { mapInstance?.resize(); rasterMapInstance?.invalidateSize({ pan: false }); } });
 
   async function initMap(items, selected) {
     const generation = ++mapInitGeneration;
@@ -224,7 +271,7 @@
 
     try {
       const maplibregl = await ensureMapLibre();
-      if (generation !== mapInitGeneration || !document.querySelector("#runtime-map") || state.view !== "map") return;
+      if (!currentMapContainer(container, generation)) return;
       const focus = itemCoordinates(selected) || itemCoordinates(mappable[0]);
 
       const map = mapInstance = new maplibregl.Map({
@@ -239,10 +286,10 @@
       let loaded = false;
       map.once("load", () => { loaded = true; });
       map.on("error", (event) => {
-        if (loaded || generation !== mapInitGeneration || mapInstance !== map) return;
+        if (loaded || !currentMapContainer(container, generation) || mapInstance !== map) return;
         console.warn("Initial map unavailable", event.error);
         destroyMap();
-        mapFallback(container, selected);
+        initRasterMap(container, selected, generation);
       });
       map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
 
@@ -277,10 +324,10 @@
 
       if (mappable.length > 1) map.fitBounds(bounds, { padding: 54, maxZoom: 14, duration: 0 });
     } catch (error) {
-      if (generation !== mapInitGeneration) return;
+      if (!currentMapContainer(container, generation)) return;
       console.warn("MapLibre unavailable", error);
       destroyMap();
-      mapFallback(container, selected);
+      initRasterMap(container, selected, generation);
     }
   }
 
@@ -340,7 +387,11 @@
 
   // Mirrors `#view-root:has(.runtime-map-panel)` for browsers without :has() (iOS Safari < 15.4).
   // An observer covers every module that rewrites #view-root, not just renderMap().
-  const syncMapRootClass = () => root.classList.toggle("view-root--map", Boolean(root.querySelector(".runtime-map-panel")));
+  const syncMapRootClass = () => {
+    const visible = Boolean(root.querySelector(".runtime-map-panel"));
+    root.classList.toggle("view-root--map", visible);
+    if (!visible) { mapInitGeneration++; destroyMap(); }
+  };
   new MutationObserver(syncMapRootClass).observe(root, { childList: true });
   syncMapRootClass();
 })();

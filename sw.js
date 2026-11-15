@@ -3,7 +3,7 @@
 // shell/runtime, and activating one cannot delete the other's cache.
 const CACHE_PREFIX = "travel-lite:" + new URL(self.registration.scope).pathname
   .replace(/[^a-z0-9]/gi, "-") + ":";
-const CACHE = CACHE_PREFIX + "shell-v64-map-fallback";
+const CACHE = CACHE_PREFIX + "shell-v65-raster-map";
 const RUNTIME_CACHE = CACHE_PREFIX + "runtime-v1";
 const scopeUrl = (path) => new URL(path, self.registration.scope).href;
 const INDEX = scopeUrl("./index.html");
@@ -11,7 +11,7 @@ const CORE = [
   "./",
   "./index.html",
   "./styles.css",
-  "./runtime.css?v=20261116-maps-v5",
+  "./runtime.css?v=20261116-maps-v6",
   "./desktop-theme.css",
   "./trip-view.css",
   "./responsive-shell.css",
@@ -42,14 +42,14 @@ const CORE = [
   "./bootstrap.js",
   "./storage.js",
   "./item-identity.js",
-  "./app.js?v=20261116-maps-v5",
+  "./app.js?v=20261116-maps-v6",
   "./trip-view.js",
   "./runtime-providers.js",
-  "./runtime-features.js?v=20261116-maps-v5",
+  "./runtime-features.js?v=20261116-maps-v6",
   "./runtime-handoff.js",
   "./places-view.js",
   "./transport-overview.js",
-  "./runtime-google.js?v=20261116-maps-v5",
+  "./runtime-google.js?v=20261116-maps-v6",
   "./theme-shell.js",
   "./responsive-shell.js",
   "./companion-ux.js",
@@ -63,7 +63,7 @@ const CORE = [
   "./export-core.js",
   "./export-ui.js",
   "./trip.json",
-  "./journey-board.js?v=20261116-maps-v5",
+  "./journey-board.js?v=20261116-maps-v6",
   "./date-navigation.js",
   "./journey-board.css",
   "./date-navigation.css",

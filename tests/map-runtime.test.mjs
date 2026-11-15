@@ -1,4 +1,4 @@
-/* Map regression contracts. DOM/MapLibre are stubbed; browser rendering is a separate acceptance check.
+/* Map regression contracts. DOM/map libraries are stubbed; browser rendering is a separate acceptance check.
  * SPDX-License-Identifier: AGPL-3.0-or-later */
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -11,21 +11,27 @@ const escape = value => String(value ?? "").replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 function harness({ board = false } = {}) {
-  const maps = [], markers = [], saved = [];
+  const maps = [], markers = [], rasterMaps = [], rasterMarkers = [], tileLayers = [], saved = [], observers = [];
+  let leafletLoads = 0;
   let current = {};
   class Element {
     constructor(tag = "div") {
       this.tagName = tag; this.style = {}; this.dataset = {}; this.events = {};
       this.attributes = {}; this.open = false; this.classList = { toggle() {}, add() {} };
     }
-    set innerHTML(value) { this.html = value; }
+    set innerHTML(value) {
+      this.html = value; this.children = {};
+      for (const name of ["map-raster-frame", "map-raster-status"]) {
+        if (value.includes(`class="${name}"`)) this.children["." + name] = new Element();
+      }
+    }
     get innerHTML() { return this.html || ""; }
     setAttribute(name, value) { this.attributes[name] = value; }
     addEventListener(name, callback) { this.events[name] = callback; }
     appendChild(child) { this.child = child; }
     before(element) { if (this === current.panel) current.disclosure = element; }
     insertAdjacentHTML(position, html) { this.inserted = (this.inserted || "") + html; }
-    querySelector() { return null; }
+    querySelector(selector) { return this.children?.[selector] || null; }
     querySelectorAll() { return []; }
   }
   const root = new Element();
@@ -59,6 +65,25 @@ function harness({ board = false } = {}) {
       addTo(map) { this.map = map; markers.push(this); return this; }
     },
   };
+  const leaflet = {
+    map(frame, options) {
+      const map = { frame, options, remove() { this.removed = true; },
+        invalidateSize(options) { this.invalidations = (this.invalidations || 0) + 1; this.resizeOptions = options; } };
+      rasterMaps.push(map); return map;
+    },
+    tileLayer(url, options) {
+      const tiles = { url, options, events: {},
+        addTo(map) { this.map = map; return this; },
+        on(name, fn) { this.events[name] = fn; return this; },
+        emit(name) { this.events[name]?.(); } };
+      tileLayers.push(tiles); return tiles;
+    },
+    marker(point, options) {
+      const marker = { point, options, addTo(map) { this.map = map; return this; } };
+      rasterMarkers.push(marker); return marker;
+    },
+    divIcon: options => options,
+  };
   const items = [
     { id: "shrine", title: "參拜神社", location: "大阪天滿宮", lat: 34.696, lng: 135.513,
       mapPointLabel: "大阪天満宮", mapQuery: "大阪天満宮 大阪市北区", start: "10:30" },
@@ -72,6 +97,7 @@ function harness({ board = false } = {}) {
     ] } };
   const context = vm.createContext({
     URL, URLSearchParams, console: { warn() {} }, __mapLibrary: library,
+    __loadLeaflet: () => { leafletLoads++; return Promise.resolve(leaflet); },
     state: { data: { trip: { center: { lat: 34, lng: 135 } }, ui: { locale: "zh-TW" }, providers: {}, days: [day] },
       selectedDate: day.date, selectedMapItemId: null, view: "map",
       itemIdentity: { isUnique: id => items.filter(item => item.id === id).length === 1 } },
@@ -81,7 +107,7 @@ function harness({ board = false } = {}) {
     itemIdentityWarningHtml: () => "", tripKey: key => key,
     TravelLiteStorage: { set: (key, value) => saved.push([key, value]) },
     TravelLiteProviders: { config: () => ({ mapStyle: "https://example.org/style.json" }) },
-    MutationObserver: class { observe() {} }, requestAnimationFrame: fn => fn(),
+    MutationObserver: class { constructor(callback) { this.callback = callback; observers.push(this); } observe() {} }, requestAnimationFrame: fn => fn(),
     addEventListener() {}, scrollTo() {}, location: { hash: "", href: "https://example.org/trip/" },
     document: { querySelector: selector => selector === "#view-root" ? root :
       selector === "#runtime-map" ? current.container : null,
@@ -92,12 +118,15 @@ function harness({ board = false } = {}) {
   // failure handling and disclosure code execute unchanged below.
   const runtime = source("runtime-features.js");
   const externalImport = 'import("https://cdn.jsdelivr.net/npm/maplibre-gl@6.10.0/+esm")';
+  const rasterImport = 'import("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet-src.esm.js")';
   assert.equal(runtime.split(externalImport).length, 2);
-  vm.runInContext(runtime.replace(externalImport, "Promise.resolve(__mapLibrary)"), context);
+  assert.equal(runtime.split(rasterImport).length, 2);
+  vm.runInContext(runtime.replace(externalImport, "Promise.resolve(__mapLibrary)").replace(rasterImport, "__loadLeaflet()"), context);
   vm.runInContext(source("runtime-google.js"), context);
   if (board) vm.runInContext(source("journey-board.js"), context);
-  return { context, day, items, maps, markers, saved, root, current: () => current,
-    leaveMap() { current = {}; } };
+  return { context, day, items, maps, markers, rasterMaps, rasterMarkers, tileLayers, leaflet,
+    saved, root, current: () => current, leafletLoads: () => leafletLoads,
+    leaveMap() { current = {}; observers.forEach(observer => observer.callback()); } };
 }
 
 test("Map coordinates reject empty/coerced values and out-of-range points", () => {
@@ -136,18 +165,22 @@ test("Only known points get numbered markers and initial style failure keeps the
   assert.deepEqual(h.markers.map(marker => marker.element.textContent), ["1", "3"]);
   assert.equal(h.markers[1].element.title, "3. 勝浦観光桟橋");
   assert.equal(h.markers[0].element.style.zIndex, "2");
+  assert.equal(h.leafletLoads(), 0, "MapLibre remains primary and does not load the raster library");
   h.maps[0].emit("error", { error: new Error("Style request returned403") });
+  await flush();
   assert.equal(h.maps[0].removed, true);
+  assert.equal(h.rasterMaps.length, 1);
   assert.match(h.current().container.innerHTML, /class="map-raster-frame"/);
   assert.match(h.current().container.innerHTML, /https:\/\/www\.google\.com\/maps\/search/);
 
   h.context.renderMap(); await flush();
+  assert.equal(h.rasterMaps[0].removed, true, "returning to MapLibre removes the prior raster instance");
   h.maps[1].emit("load");
   h.maps[1].emit("error", { error: new Error("One later tile unavailable") });
   assert.notEqual(h.maps[1].removed, true, "a loaded map survives a later tile error");
 });
 
-test("WebGL failure embeds only the selected known point and retains the precise Google handoff", async () => {
+test("WebGL failure renders only the selected known point with raster tiles and keeps handoffs on tile errors", async () => {
   const h = harness();
   const selected = h.items[2];
   selected.mapPointLabel = '勝浦観光桟橋 <船> "入口"';
@@ -155,30 +188,73 @@ test("WebGL failure embeds only the selected known point and retains the precise
   h.context.__mapLibrary.Map = class { constructor() { throw new Error("GPUInitializationError: WebGL2 unavailable"); } };
   h.context.renderMap(); await flush();
   const html = h.current().container.innerHTML;
-  const iframe = html.match(/<iframe\b[^>]*>/)?.[0];
-  assert.ok(iframe, "constructor failure must provide a map that does not require WebGL");
-  const url = new URL(iframe.match(/src="([^"]+)"/)[1].replaceAll("&amp;", "&"));
-  assert.equal(url.origin, "https://www.openstreetmap.org");
-  assert.equal(url.pathname, "/export/embed.html");
-  assert.equal(url.searchParams.get("layer"), "mapnik");
-  assert.equal(url.searchParams.get("marker"), `${selected.lat},${selected.lng}`);
-  const [west, south, east, north] = url.searchParams.get("bbox").split(",").map(Number);
-  assert.ok(west < Number(selected.lng) && east > Number(selected.lng));
-  assert.ok(south < Number(selected.lat) && north > Number(selected.lat));
-  assert.ok(Math.abs((north - south) - 0.01) < 0.000002);
-  assert.ok(Math.abs((east - west) * Math.cos(Number(selected.lat) * Math.PI / 180) - 0.01) < 0.000002,
-    "the longitude span accounts for latitude");
-  assert.match(iframe, /title="OpenStreetMap · 勝浦観光桟橋 &lt;船&gt; &quot;入口&quot;"/);
-  assert.match(iframe, /loading="lazy"/);
+  assert.equal(h.rasterMaps.length, 1, "constructor failure must provide a map that does not require WebGL");
+  assert.doesNotMatch(html, /<iframe\b|export\/embed/);
+  assert.deepEqual(Array.from(h.rasterMaps[0].options.center), [33.626, 135.944]);
+  assert.equal(h.rasterMaps[0].options.attributionControl, true);
+  assert.equal(h.rasterMarkers.length, 1, "fallback marks one selected stop without inventing a route");
+  assert.deepEqual(Array.from(h.rasterMarkers[0].point), [33.626, 135.944]);
+  assert.equal(h.rasterMarkers[0].options.title, selected.mapPointLabel);
+  assert.equal(h.tileLayers[0].url, "https://tile.openstreetmap.org/{z}/{x}/{y}.png");
+  assert.equal(h.tileLayers[0].options.keepBuffer, 0);
+  assert.equal(h.tileLayers[0].options.updateWhenIdle, true);
+  assert.match(h.tileLayers[0].options.attribution, /©.*https:\/\/www\.openstreetmap\.org\/copyright.*OpenStreetMap/);
+  assert.match(html, /aria-label="OpenStreetMap · 勝浦観光桟橋 &lt;船&gt; &quot;入口&quot;"/);
   assert.match(html, /勝浦観光桟橋 &lt;船&gt; &quot;入口&quot;/);
-  assert.ok(html.includes(escape(h.context.googleMapsOpenUrl(selected))), "external link remains outside the iframe");
-  assert.equal((html.match(/<iframe\b/g) || []).length, 1, "fallback does not manufacture a multi-stop route");
+  assert.ok(html.includes(escape(h.context.googleMapsOpenUrl(selected))), "external link remains outside the raster map");
+  h.tileLayers[0].emit("tileerror");
+  assert.match(h.current().container.querySelector(".map-raster-status").textContent, /Google Maps/);
+  assert.ok(h.current().container.innerHTML.includes(escape(h.context.googleMapsOpenUrl(selected))));
+  const invalidations = h.rasterMaps[0].invalidations;
+  h.context.TravelLiteMap.resize();
+  assert.equal(h.rasterMaps[0].invalidations, invalidations + 1, "revealing the disclosure resizes the raster map");
+  assert.equal(h.rasterMaps[0].resizeOptions.pan, false);
 
   h.context.state.selectedMapItemId = "unknown";
   h.context.renderMap(); await flush();
-  assert.doesNotMatch(h.current().container.innerHTML, /<iframe\b/,
+  assert.equal(h.rasterMaps[0].removed, true);
+  assert.equal(h.rasterMaps.length, 1,
     "a selected stop without coordinates must not inherit a different stop's map");
   assert.match(h.current().container.innerHTML, /在 Google Maps 開啟/);
+});
+
+test("A delayed raster import creates only the newest selected map and leaving removes it", async () => {
+  const h = harness();
+  let resolve;
+  const pending = new Promise(done => { resolve = done; });
+  h.context.__loadLeaflet = () => pending;
+  h.context.__mapLibrary.Map = class { constructor() { throw new Error("WebGL unavailable"); } };
+  h.context.renderMap(); await flush();
+  h.context.state.selectedMapItemId = "pier";
+  h.context.renderMap(); await flush();
+  resolve(h.leaflet); await flush();
+  assert.equal(h.rasterMaps.length, 1, "stale selection must not initialize a map in a replaced container");
+  assert.deepEqual(Array.from(h.rasterMaps[0].options.center), [33.626, 135.944]);
+  h.leaveMap();
+  assert.equal(h.rasterMaps[0].removed, true, "leaving the map removes event listeners and tile layers");
+});
+
+test("Navigating away during raster loading discards its asynchronous result", async () => {
+  const h = harness();
+  let resolve;
+  h.context.__loadLeaflet = () => new Promise(done => { resolve = done; });
+  h.context.__mapLibrary.Map = class { constructor() { throw new Error("WebGL unavailable"); } };
+  h.context.renderMap(); await flush();
+  h.context.state.view = "trip";
+  h.leaveMap();
+  resolve(h.leaflet); await flush();
+  assert.equal(h.rasterMaps.length, 0);
+  assert.equal(h.tileLayers.length, 0);
+});
+
+test("Raster-library failure retains the selected place's external map link", async () => {
+  const h = harness();
+  h.context.__loadLeaflet = () => Promise.reject(new Error("CDN unavailable"));
+  h.context.__mapLibrary.Map = class { constructor() { throw new Error("WebGL unavailable"); } };
+  h.context.renderMap(); await flush();
+  assert.equal(h.rasterMaps.length, 0);
+  assert.match(h.current().container.innerHTML, /互動地圖暫時無法載入/);
+  assert.ok(h.current().container.innerHTML.includes(escape(h.context.googleMapsOpenUrl(h.items[0]))));
 });
 
 test("No-coordinate days keep a usable external map link without loading MapLibre", async () => {
@@ -186,6 +262,7 @@ test("No-coordinate days keep a usable external map link without loading MapLibr
   h.day.items = [h.items[1]];
   h.context.renderMap(); await flush();
   assert.equal(h.maps.length, 0);
+  assert.equal(h.leafletLoads(), 0);
   assert.match(h.current().container.innerHTML, /在 Google Maps 開啟/);
   assert.doesNotMatch(h.current().container.innerHTML, /<iframe\b/);
 });
