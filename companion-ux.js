@@ -177,7 +177,7 @@
   function windowCard(label, item, tone = "") {
     if (!item) return `<article class="companion-window-card empty"><span>${escapeHtml(label)}</span><strong>—</strong></article>`;
     const nowDate = zonedNow(state.data.trip.timezone).date;
-    const when = [relativeDay(item, nowDate), item.start || t("tbd")].filter(Boolean).join(" · ");
+    const when = [relativeDay(item, nowDate), item.start || item.timeLabel || t("tbd")].filter(Boolean).join(" · ");
     return `<article class="companion-window-card ${tone}"><div><span>${escapeHtml(label)}</span><small>${escapeHtml(when)}</small></div><strong>${escapeHtml(item.title || "")}</strong><p>${escapeHtml(item.location || item.dayTitle || "")}</p>${compactLinks(item)}</article>`;
   }
 
@@ -413,7 +413,7 @@
   }
 
   function contextRows(items) {
-    return items.filter(Boolean).map((item) => `<article class="companion-context-row"><span>${escapeHtml(item.start || t("tbd"))}</span><div><strong>${escapeHtml(item.title || "")}</strong><small>${escapeHtml(item.location || item.dayTitle || "")}</small></div></article>`).join("");
+    return items.filter(Boolean).map((item) => `<article class="companion-context-row"><span>${escapeHtml(item.start || item.timeLabel || t("tbd"))}</span><div><strong>${escapeHtml(item.title || "")}</strong><small>${escapeHtml(item.location || item.dayTitle || "")}</small></div></article>`).join("");
   }
 
   function reservationRows(date = "") {

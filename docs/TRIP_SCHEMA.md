@@ -229,6 +229,7 @@ Rules:
 
 - use stable IDs
 - timed starts use local trip time in `HH:MM`
+- an untimed item may supply a plain-text `timeLabel` such as `上午` for the Trip timeline, context rows, and printed itinerary; it remains floating and never participates in current-item calculations. Valid `HH:MM` starts take precedence over this display label.
 - provide `end` when possible so the Now reference window is more accurate
 - resolve `lat`/`lng` during vibe-time for real planned stops when practical
 

@@ -2,12 +2,12 @@
   "trip": {
     "id": "osaka-kyoto-kumano-2026",
     "title": "大阪・京都・熊野古道",
-    "subtitle": "2026.11.04–11.14 · 11 天 10 夜實走分享",
+    "subtitle": "2026.11.04–11.14 · 11天10夜實走路線與照走時間表",
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-15T18:50:07.789Z",
-    "revision": "kansai-2026-11-16-r-hotel-confirmed-v2",
+    "updatedAt": "2026-11-15T19:11:16.536Z",
+    "revision": "kansai-2026-11-16-shareable-timing-v3",
     "accent": "#426354",
     "themeColor": "#0b1020",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -99,9 +99,10 @@
           "title": "虎航 IT212：桃園起飛",
           "type": "transport",
           "location": "桃園國際機場 TPE",
-          "note": "16:25 為台灣時間。",
+          "note": "16:25台灣起飛→19:40日本抵達；飛行2小時15分鐘。起飛項目的時計為台灣時間。",
           "transportMode": "flight",
-          "timezone": "Asia/Taipei"
+          "timezone": "Asia/Taipei",
+          "end": "18:40"
         },
         {
           "id": "d01-flight-arrive",
@@ -109,24 +110,38 @@
           "title": "IT212 抵達關西機場",
           "type": "transport",
           "location": "關西國際機場 KIX",
-          "note": "19:40 為日本時間。",
-          "transportMode": "flight"
+          "note": "19:40日本時間抵達；約19:40–21:00辦理入境、領行李並前往機場車站，抓約1小時20分鐘。",
+          "transportMode": "flight",
+          "end": "21:00"
         },
         {
           "id": "d01-airport-osaka",
-          "start": "TBD",
+          "start": "21:00",
           "title": "關西機場 → 大阪",
           "type": "transport",
           "location": "關西國際機場 → 大阪",
-          "note": "入境後前往大阪；實際搭乘班次與抵達時間未記錄。"
+          "note": "約21:00–22:15，南海空港急行至難波，再步行轉四橋線至肥後橋。全段含候車與轉乘抓約75分鐘；空港急行本身車程約44分鐘。",
+          "end": "22:15",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "南海：關西機場交通",
+              "url": "https://www.nankai.co.jp/traffic/kix.html"
+            },
+            {
+              "label": "APA肥後橋交通",
+              "url": "https://www.apahotel.com/hotel/kansai/osaka/osakahigobashi-ekimae/"
+            }
+          ]
         },
         {
           "id": "d01-apa",
-          "start": "TBD",
+          "start": "22:15",
           "title": "入住 APA 大阪肥後橋站前 TOWER",
           "type": "stay",
           "location": "大阪市西区土佐堀1-2-1",
-          "note": "大阪住宿共六晚：11/04–11/09 原五晚，11/09–11/10 另訂一晚。"
+          "note": "約22:15–22:45辦理入住與放行李，抓30分鐘。大阪住宿共六晚：11/04–11/09原五晚，11/09–11/10另訂一晚。",
+          "end": "22:45"
         }
       ],
       "routeSummary": [
@@ -139,49 +154,50 @@
         "label": "抵達關西・大阪入住",
         "from": "桃園",
         "to": "APA 肥後橋",
-        "attention": "機場至飯店的實際班次未記錄。",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "IT212 抵達關西",
         "legs": [
           {
             "id": "leg-1",
             "mode": "flight",
-            "depart": "台灣 16:25",
-            "arrive": "日本 19:40",
+            "depart": "台灣16:25",
+            "arrive": "日本19:40",
             "from": "桃園 TPE",
             "to": "關西 KIX",
             "service": "台灣虎航 IT212",
-            "hint": "航班時間分別使用出發地與抵達地時區。",
+            "hint": "IT212，飛行2小時15分鐘；兩端為當地時間。",
             "status": "confirmed",
             "critical": true
           },
           {
             "id": "leg-2",
-            "mode": "task",
-            "depart": "入境後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約21:00",
+            "arrive": "約22:15",
             "from": "關西機場",
-            "to": "大阪",
-            "service": "機場 → 大阪",
-            "hint": "實際交通班次未記錄。",
+            "to": "APA 肥後橋",
+            "service": "南海空港急行＋四橋線",
+            "hint": "入境與領行李先抓約80分鐘；南海空港急行→難波轉四橋線→肥後橋，全段約75分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-3",
             "mode": "stay",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約22:15",
+            "arrive": "約22:45",
             "from": "大阪",
             "to": "APA 肥後橋",
             "service": "入住 APA",
-            "hint": "11/04 起連住大阪，11/09 另筆續住。",
+            "hint": "入住與放行李抓30分鐘，11/04起連住六晚。",
             "status": "confirmed",
             "critical": false
           }
         ]
       },
-      "shortTitle": "關西入境"
+      "shortTitle": "關西入境",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d02",
@@ -195,49 +211,95 @@
       "items": [
         {
           "id": "d04-s0-r41",
-          "start": "TBD",
+          "start": "09:30",
           "title": "露天神社（お初天神）",
           "type": "place",
           "location": "露天神社（お初天神）",
-          "note": "當天第一站。",
+          "note": "約09:00從APA出發，步行約20–25分鐘；約09:30–10:00參拜露天神社，停留30分鐘。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://tuyutenjin.com/omamori/"
             }
-          ]
+          ],
+          "end": "10:00",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約20–30分鐘",
+            "summary": "約10:00離開露天神社，步行往南森町與大阪天滿宮，約10:30抵達。",
+            "sourceLinks": [
+              {
+                "label": "露天神社交通",
+                "url": "https://tuyutenjin.com/access_map/"
+              },
+              {
+                "label": "大阪天滿宮交通",
+                "url": "https://osakatemmangu.or.jp/access"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d02-osaka-tenmangu",
-          "start": "TBD",
+          "start": "10:30",
           "title": "大阪天滿宮",
           "type": "place",
           "location": "大阪天滿宮",
-          "note": "露天神社之後前往參拜。"
+          "note": "約10:30–11:30參拜大阪天滿宮及附近散步，停留約1小時。",
+          "end": "11:30"
         },
         {
           "id": "d02-shopping-street-lunch",
-          "start": "TBD",
+          "start": "11:30",
           "title": "大阪天滿宮附近商店街午餐",
           "type": "food",
           "location": "大阪天滿宮附近商店街",
-          "note": "午餐後前往生駒。"
+          "note": "約11:30–12:15在天滿宮附近商店街吃午餐，抓45分鐘。",
+          "end": "12:15",
+          "transferAfter": {
+            "mode": "地鐵／近鐵／纜車／步行",
+            "duration": "約65–85分鐘",
+            "summary": "約12:15出發：南森町→堺筋本町→中央線／近鐵京阪奈線到生駒→鳥居前纜車→寶山寺，約13:30抵達。",
+            "sourceLinks": [
+              {
+                "label": "大阪Metro路線",
+                "url": "https://subway.osakametro.co.jp/station_guide/index.php"
+              },
+              {
+                "label": "近鐵生駒交通",
+                "url": "https://www.kintetsu.co.jp/life/area/ikoma.html"
+              },
+              {
+                "label": "生駒纜車",
+                "url": "https://www.kintetsu.co.jp/senden/ikomaretro/"
+              },
+              {
+                "label": "寶山寺交通",
+                "url": "https://yamatoji.nara-kankou.or.jp/01shaji/02tera/02west_area/hozanji/access/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d02-hozanji",
-          "start": "TBD",
+          "start": "13:30",
           "title": "生駒聖天・寶山寺",
           "type": "place",
           "location": "生駒山 寶山寺",
-          "note": "下午到寶山寺參拜，之後下山返回大阪。"
+          "note": "約13:30–16:15參拜生駒聖天・寶山寺，慢慢走參道與周邊，停留約2小時45分鐘。",
+          "end": "16:15"
         },
         {
           "id": "d02-osaka-return",
-          "start": "TBD",
+          "start": "16:15",
           "title": "生駒 → 大阪",
           "type": "transport",
           "location": "生駒 → 大阪",
-          "note": "返回 APA 大阪肥後橋住宿。"
+          "note": "約16:15–17:30下山返回大阪：步行至寶山寺站，纜車回鳥居前／生駒，再經中央線本町、四橋線肥後橋回飯店；含候車抓約75分鐘。",
+          "end": "17:30",
+          "transportMode": "train"
         }
       ],
       "routeSummary": [
@@ -252,61 +314,62 @@
         "label": "露天神社・大阪天滿宮・生駒寶山寺",
         "from": "大阪",
         "to": "大阪",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "市區神社＋生駒參拜",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約09:00",
+            "arrive": "約09:30",
             "from": "大阪",
             "to": "露天神社",
             "service": "露天神社",
-            "hint": "當天第一站。",
+            "hint": "APA步行至露天神社約20–25分鐘；約09:30–10:00參拜30分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-2",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約10:00",
+            "arrive": "約10:30",
             "from": "露天神社",
             "to": "大阪天滿宮",
             "service": "大阪天滿宮",
-            "hint": "接著在附近商店街吃午餐。",
+            "hint": "步行約20–30分鐘；大阪天滿宮停留約1小時，接11:30–12:15商店街午餐。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-3",
             "mode": "event",
-            "depart": "下午",
-            "arrive": "未記錄",
+            "depart": "約12:15",
+            "arrive": "約13:30",
             "from": "大阪",
             "to": "生駒寶山寺",
             "service": "生駒聖天・寶山寺",
-            "hint": "參拜後下山。",
+            "hint": "地鐵／近鐵轉生駒纜車，全段約65–85分鐘；寶山寺參拜散步至約16:15，停留2小時45分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-4",
-            "mode": "task",
-            "depart": "參拜後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約16:15",
+            "arrive": "約17:30",
             "from": "生駒",
             "to": "大阪",
             "service": "返回大阪",
-            "hint": "當晚仍住 APA 肥後橋。",
+            "hint": "步行、纜車、近鐵及地鐵返回APA，全段約60–80分鐘。",
             "status": "reference",
             "critical": false
           }
         ]
       },
-      "shortTitle": "大阪・生駒"
+      "shortTitle": "大阪・生駒",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d03",
@@ -321,25 +384,37 @@
       "items": [
         {
           "id": "ise-outbound",
-          "start": "TBD",
           "title": "大阪 → 伊勢神宮內宮",
           "type": "transport",
           "location": "大阪 → 伊勢神宮內宮",
-          "note": "上午前往伊勢；去程的實際班次與時間未完整記錄。"
+          "note": "上午移動約2.5–3小時，約11:00開始內宮行程。照排可由肥後橋到難波，搭近鐵至伊勢市，再轉巴士到內宮前；依當天班次選擇。",
+          "timeLabel": "上午",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "近鐵：伊勢交通參考",
+              "url": "https://www.kintetsu.co.jp/senden/Railway/Ticket/mawaryanse/imgs/mawaryanse.pdf"
+            },
+            {
+              "label": "伊勢官方交通指南",
+              "url": "https://ise-kanko.jp/focus/accesguide/"
+            }
+          ]
         },
         {
           "id": "ise-naiku",
-          "start": "TBD",
+          "start": "11:00",
           "title": "伊勢神宮・內宮",
           "type": "place",
           "location": "伊勢神宮 內宮（皇大神宮）",
-          "note": "上午參拜內宮。",
+          "note": "約11:00–13:15參拜內宮及周邊散步，停留約2小時15分鐘；之後預留步行到內宮前站與候車時間。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://www.isejingu.or.jp/visit/"
             }
-          ]
+          ],
+          "end": "13:15"
         },
         {
           "id": "ise-can-futami",
@@ -347,7 +422,7 @@
           "title": "CAN 巴士｜內宮前 → 夫婦岩東口",
           "type": "transport",
           "location": "內宮前 → 夫婦岩東口",
-          "note": "接續二見興玉神社與夫婦岩。",
+          "note": "13:34內宮前→14:02夫婦岩東口，CAN巴士車程28分鐘；下車步行至二見興玉神社。",
           "end": "14:02",
           "transportMode": "bus",
           "externalLinks": [
@@ -359,17 +434,18 @@
         },
         {
           "id": "ise-futami",
-          "start": "TBD",
+          "start": "14:05",
           "title": "二見興玉神社・夫婦岩",
           "type": "place",
           "location": "二見興玉神社・夫婦岩",
-          "note": "抵達後參拜與看夫婦岩；14:42 接續前往鳥羽。",
+          "note": "約14:05–14:35參拜二見興玉神社、看夫婦岩，停留約30分鐘；14:35左右回巴士站候車。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://futamiokitamajinja.or.jp/"
             }
-          ]
+          ],
+          "end": "14:35"
         },
         {
           "id": "ise-can-toba",
@@ -377,8 +453,9 @@
           "title": "CAN 巴士｜夫婦岩東口 → 鳥羽",
           "type": "transport",
           "location": "夫婦岩東口 → 鳥羽",
-          "note": "約 15:00 抵達鳥羽。",
-          "transportMode": "bus"
+          "note": "14:42搭CAN巴士前往鳥羽，約15:00抵達，車程約18分鐘；接續步行前往珍珠島。",
+          "transportMode": "bus",
+          "end": "15:00"
         },
         {
           "id": "ise-pearl",
@@ -386,7 +463,7 @@
           "title": "御木本珍珠島・15:30 海女實演",
           "type": "place",
           "location": "ミキモト真珠島",
-          "note": "15:20 入館，觀看 15:30 海女實演，16:20 離開。",
+          "note": "15:20入館、15:30觀看海女實演、16:20離開，整段參觀約1小時。",
           "end": "16:20",
           "mustGo": true,
           "externalLinks": [
@@ -402,8 +479,9 @@
           "title": "御木本珍珠島 → 近鐵鳥羽站",
           "type": "transport",
           "location": "御木本珍珠島 → 近鐵鳥羽駅",
-          "note": "離島後前往車站，搭乘 16:35 Vista Car。",
-          "transportMode": "walk"
+          "note": "16:20離開珍珠島，步行到近鐵鳥羽站，含找月台與上車預留15分鐘，接16:35特急。",
+          "transportMode": "walk",
+          "end": "16:35"
         },
         {
           "id": "ise-toba-vista",
@@ -411,39 +489,43 @@
           "title": "近鐵 Vista Car 特急｜鳥羽 → 大阪難波",
           "type": "transport",
           "location": "近鐵鳥羽駅 → 大阪難波駅",
-          "note": "實際搭乘直達特急返回大阪。",
+          "note": "16:35搭Vista Car特急由鳥羽直達大阪難波18:42，車程2小時7分鐘。",
           "end": "18:42",
           "transportMode": "train"
         },
         {
           "id": "d03-s0-r40",
-          "start": "TBD",
+          "start": "18:55",
           "title": "御堂筋燈飾",
           "type": "place",
           "location": "御堂筋・大阪",
-          "note": "回大阪後欣賞御堂筋燈飾。",
+          "note": "約18:55–19:45由難波沿御堂筋向北散步看燈飾，含拍照停留抓約50分鐘。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://hikari-kyoen.com/core/midosuji/"
             }
-          ]
+          ],
+          "end": "19:45"
         },
         {
           "id": "d03-kitamido",
-          "start": "TBD",
+          "start": "19:45",
           "title": "北御堂光影秀",
           "type": "place",
           "location": "北御堂・大阪",
-          "note": "停留約 20 分鐘，看了兩輪多的光影秀。"
+          "note": "約19:45–20:10觀看北御堂光影秀；觀看約20分鐘、看了兩輪多，含短暫等候抓25分鐘。",
+          "end": "20:10"
         },
         {
           "id": "ise-apa-return",
-          "start": "TBD",
+          "start": "20:10",
           "title": "返回 APA 肥後橋",
           "type": "transport",
           "location": "APA 大阪肥後橋站前 TOWER",
-          "note": "大阪夜景結束後返回飯店。"
+          "note": "約20:10–20:30從北御堂步行回APA肥後橋，抓15–20分鐘。",
+          "end": "20:30",
+          "transportMode": "walk"
         }
       ],
       "routeSummary": [
@@ -461,7 +543,7 @@
         "label": "伊勢內宮・夫婦岩・珍珠島・大阪夜景",
         "from": "大阪",
         "to": "APA 肥後橋",
-        "attention": "保留實際搭乘紀錄；重新照排行程時，須按出發日期核對班次。",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "15:30 海女實演・16:35 Vista Car",
         "legs": [
@@ -469,11 +551,11 @@
             "id": "leg-1",
             "mode": "task",
             "depart": "上午",
-            "arrive": "未記錄",
+            "arrive": "約11:00",
             "from": "大阪",
             "to": "伊勢神宮內宮",
-            "service": "前往伊勢・參拜內宮",
-            "hint": "去程實際班次未完整記錄。",
+            "service": "大阪→伊勢市→內宮前",
+            "hint": "上午交通抓約2.5–3小時，約11:00開始內宮參拜；內宮及周邊停留至約13:15。",
             "status": "reference",
             "critical": false
           },
@@ -485,7 +567,7 @@
             "from": "內宮前",
             "to": "夫婦岩東口",
             "service": "CAN 巴士",
-            "hint": "下車後參拜二見興玉神社、看夫婦岩。",
+            "hint": "CAN巴士28分鐘；約14:05–14:35參拜二見興玉神社與夫婦岩。",
             "status": "reference",
             "critical": true
           },
@@ -497,7 +579,7 @@
             "from": "夫婦岩東口",
             "to": "鳥羽",
             "service": "CAN 巴士",
-            "hint": "前往御木本珍珠島。",
+            "hint": "CAN巴士車程約18分鐘，再步行往御木本珍珠島。",
             "status": "reference",
             "critical": true
           },
@@ -509,7 +591,7 @@
             "from": "鳥羽",
             "to": "御木本珍珠島",
             "service": "15:30 海女實演",
-            "hint": "15:20 入館，16:20 離開。",
+            "hint": "珍珠島停留1小時；15:30觀看海女實演。",
             "status": "reference",
             "critical": false
           },
@@ -521,7 +603,7 @@
             "from": "御木本珍珠島",
             "to": "近鐵鳥羽站",
             "service": "步行前往車站",
-            "hint": "接續已搭乘的 Vista Car 特急。",
+            "hint": "步行至近鐵鳥羽站，含進站與上車抓15分鐘。",
             "status": "reference",
             "critical": false
           },
@@ -533,19 +615,19 @@
             "from": "鳥羽",
             "to": "大阪難波",
             "service": "近鐵 Vista Car 特急",
-            "hint": "實際搭乘直達大阪難波。",
+            "hint": "Vista Car直達大阪難波，2小時7分鐘。",
             "status": "confirmed",
             "critical": true
           },
           {
             "id": "leg-night",
             "mode": "event",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約18:55",
+            "arrive": "約20:10",
             "from": "御堂筋",
             "to": "北御堂",
             "service": "大阪夜景",
-            "hint": "北御堂光影秀停留約20分鐘、看兩輪多。",
+            "hint": "御堂筋散步約50分鐘，北御堂光影秀含等候約25分鐘；再步行約20分鐘回APA。",
             "status": "reference",
             "critical": false
           }
@@ -558,7 +640,8 @@
           "leg-night"
         ]
       },
-      "shortTitle": "伊勢・鳥羽"
+      "shortTitle": "伊勢・鳥羽",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d04",
@@ -572,33 +655,51 @@
       "items": [
         {
           "id": "d04-s0-r43",
-          "start": "TBD",
+          "start": "11:00",
           "title": "服部綠地 méli mélo 市集",
           "type": "place",
           "location": "服部綠地・大阪豊中",
-          "note": "上午逛市集。",
+          "note": "約10:00從大阪出發，交通抓40–60分鐘；約11:00–14:00逛服部綠地méli mélo市集，停留約3小時。市集在圓形花壇／東中央廣場，14:00離開。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://hattori-ryokuchi.com/xo_event/meli-melo-osaka%E3%83%A1%E3%83%AA%E3%83%A1%E3%83%AD%E3%82%AA%E3%83%BC%E3%82%B5%E3%82%AB-2/"
             }
-          ]
+          ],
+          "end": "14:00"
         },
         {
           "id": "d04-s0-r44",
-          "start": "TBD",
+          "start": "14:00",
           "title": "服部綠地 → 豬名川河岸",
           "type": "transport",
           "location": "服部綠地 → 豬名川河岸",
-          "note": "下午移動到河岸。"
+          "note": "14:00從市集出發，往西穿園步行到阪急曽根站，搭寶塚線往池田，再步行到豬名川河岸。含跨園、候車與找位置抓約60–80分鐘，約15:15抵達。",
+          "end": "15:15",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "服部綠地交通",
+              "url": "https://hattori-ryokuchi.com/access/"
+            },
+            {
+              "label": "阪急曽根往池田方向",
+              "url": "https://www.hankyu.co.jp/station/html/HK-44_ta_2_h.html"
+            },
+            {
+              "label": "豬名川花火官方交通",
+              "url": "https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kisetu/1024543.html"
+            }
+          ]
         },
         {
           "id": "d04-s0-r45",
-          "start": "TBD",
+          "start": "15:15",
           "title": "河岸看書、等待花火",
           "type": "place",
           "location": "豬名川河岸",
-          "note": "在河岸看書，等待傍晚花火。"
+          "note": "約15:15–17:50在河岸看書、休息並等花火，停留約2小時35分鐘；17:50左右準備觀看。",
+          "end": "17:50"
         },
         {
           "id": "d04-s0-r46",
@@ -606,17 +707,19 @@
           "title": "豬名川花火大會",
           "type": "place",
           "location": "豬名川河川敷",
-          "note": "觀看 18:00–18:30 花火。",
+          "note": "18:00–18:30觀看豬名川花火，約30分鐘。",
           "end": "18:30",
           "mustGo": true
         },
         {
           "id": "d04-s0-r47",
-          "start": "TBD",
+          "start": "18:30",
           "title": "花火結束 → 大阪",
           "type": "transport",
           "location": "豬名川河岸 → 大阪",
-          "note": "返回 APA 肥後橋住宿。"
+          "note": "約18:30–20:00散場後步行回池田站，搭阪急回梅田，再返回肥後橋；含人潮與候車抓60–90分鐘。",
+          "end": "20:00",
+          "transportMode": "train"
         }
       ],
       "routeSummary": [
@@ -629,31 +732,31 @@
         "label": "服部綠地市集・豬名川花火",
         "from": "大阪",
         "to": "大阪",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "河岸看書等 18:00 花火",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約10:00",
+            "arrive": "約11:00",
             "from": "大阪",
             "to": "服部綠地",
             "service": "méli mélo 市集",
-            "hint": "上午逛市集。",
+            "hint": "大阪到服部綠地約40–60分鐘；約11:00–14:00逛市集3小時。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-2",
-            "mode": "task",
-            "depart": "下午",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "14:00",
+            "arrive": "約15:15",
             "from": "服部綠地",
             "to": "豬名川河岸",
             "service": "移動到花火會場",
-            "hint": "抵達後在河岸看書等待。",
+            "hint": "跨園步行至曽根，阪急到池田再步行河岸，全段約60–80分鐘；抵達後看書等花火。",
             "status": "reference",
             "critical": false
           },
@@ -665,25 +768,26 @@
             "from": "豬名川河岸",
             "to": "豬名川河岸",
             "service": "豬名川花火大會",
-            "hint": "花火實際觀看時段。",
+            "hint": "花火30分鐘；下午先在河岸看書等待。",
             "status": "reference",
             "critical": true
           },
           {
             "id": "leg-4",
-            "mode": "task",
-            "depart": "花火結束後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約18:30",
+            "arrive": "約20:00",
             "from": "豬名川河岸",
             "to": "大阪",
             "service": "返回大阪",
-            "hint": "當晚住 APA 肥後橋。",
+            "hint": "步行回池田，阪急至梅田再返回肥後橋，含散場人潮抓60–90分鐘。",
             "status": "reference",
             "critical": false
           }
         ]
       },
-      "shortTitle": "市集・花火"
+      "shortTitle": "市集・花火",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d05",
@@ -698,25 +802,28 @@
       "items": [
         {
           "id": "d05-s0-r48",
-          "start": "TBD",
+          "start": "09:30",
           "title": "下鴨神社",
           "type": "place",
           "location": "下鴨神社",
-          "note": "上午參拜下鴨神社。",
+          "note": "約08:00從APA出發，淀屋橋搭京阪至出町柳，再步行到下鴨，整段約80–100分鐘；約09:30–11:00參拜散步，停留1.5小時。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://www.shimogamo-jinja.or.jp/"
             }
-          ]
+          ],
+          "end": "11:00"
         },
         {
           "id": "d05-s0-r49",
-          "start": "TBD",
+          "start": "11:00",
           "title": "下鴨 → 伏見稻荷",
           "type": "transport",
           "location": "下鴨神社 → 伏見稻荷大社",
-          "note": "接續下午祭典。"
+          "note": "約11:00–12:00，步行回出町柳，搭京阪至伏見稻荷站後步行到神社；含候車抓40–60分鐘，預留活動前緩衝。",
+          "end": "12:00",
+          "transportMode": "train"
         },
         {
           "id": "d05-s0-r50",
@@ -724,13 +831,14 @@
           "title": "伏見稻荷・13:00 本殿祭",
           "type": "place",
           "location": "伏見稻荷大社",
-          "note": "觀看 13:00 場次。",
+          "note": "13:00觀看本殿祭；此段參拜與觀看抓約45分鐘，接14:00火焚神事。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://inari.jp/rite/?month=11%E6%9C%88"
             }
-          ]
+          ],
+          "end": "13:45"
         },
         {
           "id": "d05-fushimi-hitaki",
@@ -738,29 +846,43 @@
           "title": "伏見稻荷・14:00 火焚神事",
           "type": "place",
           "location": "伏見稻荷大社",
-          "note": "觀看 14:00 場次。"
+          "note": "14:00觀看火焚神事，連同參拜與離場抓約1.5小時，約15:30出發往太秦。",
+          "end": "15:30"
         },
         {
           "id": "d05-s0-r51",
-          "start": "TBD",
+          "start": "15:30",
           "title": "伏見稻荷 → 太秦映画村",
           "type": "transport",
           "location": "伏見稻荷大社 → 太秦映画村",
-          "note": "移動至太秦，接續夜間活動。"
+          "note": "約15:30–16:40：JR稻荷→京都轉嵯峨野線→花園，再步行約13分鐘至映画村；含轉車與候車抓50–70分鐘。",
+          "end": "16:40",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "伏見稻荷交通",
+              "url": "https://inari.jp/access/"
+            },
+            {
+              "label": "太秦活動與交通",
+              "url": "https://eigamura.com/feature/yokai2026/"
+            }
+          ]
         },
         {
           "id": "d05-s0-r52",
-          "start": "TBD",
+          "start": "17:00",
           "title": "太秦映画村夜間入村",
           "type": "place",
           "location": "太秦映画村",
-          "note": "實際入村時間未記錄。",
+          "note": "約17:00入村，預留25分鐘入場、找位置及等17:30第一場。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://www.eigamura.com/hours-tickets/"
             }
-          ]
+          ],
+          "end": "17:25"
         },
         {
           "id": "d05-s0-r53",
@@ -768,7 +890,8 @@
           "title": "17:30 太秦百鬼夜行",
           "type": "place",
           "location": "太秦映画村",
-          "note": "觀看 17:30 場次。"
+          "note": "17:30觀看第一場百鬼夜行，表演及散場抓約30分鐘；之後留在村內休息、等第二場。",
+          "end": "18:00"
         },
         {
           "id": "d05-s0-r54",
@@ -776,16 +899,19 @@
           "title": "19:30 太秦百鬼夜行",
           "type": "place",
           "location": "太秦映画村",
-          "note": "17:30 與 19:30 兩場都已觀看。",
-          "mustGo": true
+          "note": "19:30觀看第二場百鬼夜行，表演及散場抓約30分鐘，約20:00離場。",
+          "mustGo": true,
+          "end": "20:00"
         },
         {
           "id": "d05-s0-r56",
-          "start": "TBD",
+          "start": "20:00",
           "title": "太秦映画村 → 大阪",
           "type": "transport",
           "location": "太秦映画村 → APA 大阪肥後橋站前 TOWER",
-          "note": "夜間活動結束後返回大阪。"
+          "note": "約20:00–21:30，步行到花園，JR至京都轉新快速回大阪，再返回APA肥後橋；全段含候車約75–100分鐘。",
+          "end": "21:30",
+          "transportMode": "train"
         }
       ],
       "routeSummary": [
@@ -799,19 +925,19 @@
         "label": "下鴨・伏見稻荷・太秦百鬼夜行",
         "from": "大阪",
         "to": "大阪",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "一天四場祭典與表演",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約08:00",
+            "arrive": "約09:30",
             "from": "大阪",
             "to": "下鴨神社",
             "service": "下鴨神社參拜",
-            "hint": "上午已到訪。",
+            "hint": "APA→淀屋橋→出町柳→下鴨，約80–100分鐘；下鴨停留約1.5小時至11:00。",
             "status": "reference",
             "critical": false
           },
@@ -819,23 +945,23 @@
             "id": "leg-2",
             "mode": "event",
             "depart": "13:00",
-            "arrive": "14:00場次後",
+            "arrive": "約15:30",
             "from": "伏見稻荷大社",
             "to": "伏見稻荷大社",
             "service": "本殿祭・火焚神事",
-            "hint": "13:00、14:00 兩場皆觀看。",
+            "hint": "13:00本殿祭、14:00火焚神事兩場都觀看，整段約2.5小時；11:00–12:00先從下鴨移動到伏見稻荷。",
             "status": "reference",
             "critical": true
           },
           {
             "id": "leg-3",
-            "mode": "task",
-            "depart": "祭典後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約15:30",
+            "arrive": "約16:40",
             "from": "伏見稻荷",
             "to": "太秦映画村",
             "service": "前往夜間活動",
-            "hint": "實際轉乘與入村時間未記錄。",
+            "hint": "JR稻荷→京都→花園，再步行至映画村，約50–70分鐘；約17:00入村。",
             "status": "reference",
             "critical": false
           },
@@ -843,29 +969,30 @@
             "id": "leg-4",
             "mode": "event",
             "depart": "17:30",
-            "arrive": "19:30場次後",
+            "arrive": "約20:00",
             "from": "太秦映画村",
             "to": "太秦映画村",
             "service": "太秦表演・百鬼夜行",
-            "hint": "17:30、19:30 兩場皆觀看。",
+            "hint": "17:30與19:30各看一場，單場含散場抓約30分鐘，中間留村內休息與等候。",
             "status": "reference",
             "critical": true
           },
           {
             "id": "leg-5",
-            "mode": "task",
-            "depart": "活動後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約20:00",
+            "arrive": "約21:30",
             "from": "太秦",
             "to": "大阪",
             "service": "返回大阪",
-            "hint": "當晚仍住 APA 肥後橋。",
+            "hint": "步行至花園，JR經京都回大阪，再回APA，全段約75–100分鐘。",
             "status": "reference",
             "critical": false
           }
         ]
       },
-      "shortTitle": "京都祭典"
+      "shortTitle": "京都祭典",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d06",
@@ -880,73 +1007,119 @@
       "items": [
         {
           "id": "d06-nakanoshima",
-          "start": "TBD",
+          "start": "11:00",
           "title": "中之島",
           "type": "place",
           "location": "大阪 中之島",
-          "note": "上午在中之島散步。"
+          "note": "約11:00–13:30在中之島散步，停留約2.5小時；之後移動到淀屋橋搭京阪。",
+          "end": "13:30"
         },
         {
           "id": "d06-s0-r65",
-          "start": "TBD",
+          "start": "14:00",
           "title": "大阪 → 京都",
           "type": "transport",
           "location": "大阪 → 京都",
-          "note": "中之島之後前往京都。"
+          "note": "約14:00–15:30，淀屋橋搭京阪特急至出町柳，再步行約20分鐘到京都御苑；全段含候車抓75–95分鐘。",
+          "end": "15:30",
+          "transportMode": "train"
         },
         {
           "id": "d06-kyoto-gyoen",
-          "start": "TBD",
+          "start": "15:30",
           "title": "京都御苑",
           "type": "place",
           "location": "京都御苑",
-          "note": "中之島之後前往京都御苑。"
+          "note": "約15:30–17:05在京都御苑散步，停留約1小時35分鐘，之後往出町柳站。",
+          "end": "17:05",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約20–30分鐘",
+            "summary": "約17:05離開御苑，步行到出町柳，約17:30接續叡山電車。",
+            "sourceLinks": [
+              {
+                "label": "京都御苑官方交通",
+                "url": "https://www.env.go.jp/garden/kyotogyoen/2_guide/access.html"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d06-s0-r66",
-          "start": "TBD",
+          "start": "17:30",
           "title": "叡山電車・紅葉隧道",
           "type": "transport",
           "location": "叡山電車 紅葉隧道 → 貴船口",
-          "note": "搭叡電看紅葉隧道，再前往貴船。",
+          "note": "約17:30–18:10搭叡山電車往貴船口，經過夜間點燈的紅葉隧道；車程約30–35分鐘，整段抓40分鐘含候車。",
           "transportMode": "train",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://eizandensha.co.jp/event/detail2972/"
             }
-          ]
+          ],
+          "end": "18:10",
+          "transferAfter": {
+            "mode": "巴士／步行",
+            "duration": "約20分鐘",
+            "summary": "約18:10抵貴船口後，接33號巴士約7分鐘，再步行約5分鐘到本宮，含候車約18:30抵達。",
+            "sourceLinks": [
+              {
+                "label": "京都官方貴船交通",
+                "url": "https://ja.kyoto.travel/feature/traffic/access.php?id=15"
+              },
+              {
+                "label": "貴船神社交通",
+                "url": "https://kifunejinja.jp/en/access/"
+              },
+              {
+                "label": "2026年貴船33號夜間加班",
+                "url": "https://www.kyotobus.jp/news/2026/11/kibune2026a.html"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d06-s0-r67",
-          "start": "TBD",
+          "start": "18:30",
           "title": "貴船神社本宮・奧宮夜間點燈",
           "type": "place",
           "location": "貴船神社 本宮・奧宮",
-          "note": "本宮與奧宮的夜間點燈都已到訪。",
+          "note": "約18:30–18:55參拜本宮並看點燈，停留25分鐘；步行約15分鐘至奧宮，約19:10–19:40參拜與看點燈30分鐘。",
           "mustGo": true,
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://kifunejinja.jp/news/1726/"
+            },
+            {
+              "label": "2026貴船神社點燈",
+              "url": "https://kifunejinja.jp/news/1729/"
             }
-          ]
+          ],
+          "end": "19:40"
         },
         {
           "id": "d06-s0-r68",
-          "start": "TBD",
+          "start": "19:40",
           "title": "貴船 → 出町柳",
           "type": "transport",
           "location": "貴船 → 出町柳",
-          "note": "點燈行程結束後下山；實際下山時間未記錄。"
+          "note": "約19:40–20:55從奧宮步行回貴船站，搭33號下山至貴船口，再搭叡電至出町柳；含步行、候車及換乘抓75分鐘。",
+          "end": "20:55",
+          "transportMode": "train"
         },
         {
           "id": "d06-s0-r69",
-          "start": "TBD",
+          "start": "20:55",
           "title": "京都 → 大阪・APA 肥後橋續住",
           "type": "transport",
           "location": "京都 → APA 大阪肥後橋站前 TOWER",
-          "note": "11/09–11/10 為另筆訂房，連同前五晚共住大阪六晚。"
+          "note": "約20:55–22:15從出町柳搭京阪回淀屋橋，再步行回APA肥後橋，抓80分鐘；11/09–11/10為另筆一晚住宿，連同原五晚共六晚。",
+          "end": "22:15",
+          "transportMode": "train"
         }
       ],
       "routeSummary": [
@@ -960,85 +1133,86 @@
         "label": "中之島・京都御苑・叡電紅葉・貴船點燈",
         "from": "大阪中之島",
         "to": "大阪",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "中之島到貴船夜景",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約11:00",
+            "arrive": "約13:30",
             "from": "大阪",
             "to": "中之島",
             "service": "中之島散步",
-            "hint": "上午行程。",
+            "hint": "中之島散步約2.5小時，之後前往淀屋橋。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-2",
             "mode": "event",
-            "depart": "中之島之後",
-            "arrive": "未記錄",
+            "depart": "約14:00",
+            "arrive": "約15:30",
             "from": "大阪",
             "to": "京都御苑",
             "service": "前往京都御苑",
-            "hint": "京都御苑後接續叡電。",
+            "hint": "京阪淀屋橋→出町柳，再步行至御苑，全段約75–95分鐘；御苑停留至約17:05。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-3",
             "mode": "train",
-            "depart": "京都御苑之後",
-            "arrive": "未記錄",
+            "depart": "約17:05",
+            "arrive": "約18:10",
             "from": "京都",
             "to": "貴船口",
             "service": "叡山電車紅葉隧道",
-            "hint": "搭車欣賞紅葉隧道。",
+            "hint": "御苑步行20–30分鐘至出町柳；約17:30接叡電，車程約30–35分鐘，經紅葉隧道到貴船口。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-4",
             "mode": "event",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約18:30",
+            "arrive": "約19:40",
             "from": "貴船本宮",
             "to": "貴船奧宮",
             "service": "貴船神社夜間點燈",
-            "hint": "本宮與奧宮皆已到訪。",
+            "hint": "貴船口巴士加步行約20分鐘後到本宮；本宮25分鐘→步行15分鐘→奧宮30分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-5",
-            "mode": "task",
-            "depart": "點燈行程後",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約19:40",
+            "arrive": "約22:15",
             "from": "貴船",
             "to": "大阪",
             "service": "下山返回大阪",
-            "hint": "實際末班車與轉乘時間未記錄。",
+            "hint": "下山與轉乘約75分鐘，20:55前後到出町柳；再約80分鐘回淀屋橋及APA。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-6",
             "mode": "stay",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約22:15",
+            "arrive": "約22:30",
             "from": "大阪",
             "to": "APA 肥後橋",
             "service": "APA 另訂第六晚",
-            "hint": "11/09–11/10 續住。",
+            "hint": "約22:15回APA，回房整理抓15分鐘；續住第六晚，翌日約10:00退房出發。",
             "status": "confirmed",
             "critical": false
           }
         ]
       },
-      "shortTitle": "京都紅葉"
+      "shortTitle": "京都紅葉",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d07",
@@ -1052,65 +1226,119 @@
       "items": [
         {
           "id": "d07-kuroshio",
-          "start": "TBD",
+          "start": "11:18",
           "title": "黑潮特急｜大阪 → 紀伊田邊",
           "type": "transport",
           "location": "大阪 → 紀伊田邊",
-          "note": "搭黑潮前往紀伊田邊；實際班次與時間未記錄。",
-          "transportMode": "train"
+          "note": "約10:00從APA退房出發，預留前往大阪站與候車時間。班表參考：黑潮9號11:18→13:35，車程2小時17分；抵達後保留轉乘與休息緩衝，接15:02巴士。",
+          "transportMode": "train",
+          "end": "13:35",
+          "externalLinks": [
+            {
+              "label": "JR黑潮9號：2026/11/10",
+              "url": "https://timetable.jr-odekake.net/train-timetable/144481?date=20261110"
+            }
+          ]
         },
         {
           "id": "d07-bus-shirahama",
-          "start": "TBD",
+          "start": "15:02",
           "title": "紀伊田邊 → 白濱・三段壁",
           "type": "transport",
           "location": "紀伊田邊 → 三段壁",
-          "note": "從紀伊田邊搭巴士前往白濱。",
-          "transportMode": "bus"
+          "note": "班表參考：明光巴士12號15:02→15:52，車程50分鐘；三段壁下車後再步行約5分鐘至洞窟入口。",
+          "transportMode": "bus",
+          "end": "15:52",
+          "externalLinks": [
+            {
+              "label": "明光巴士：田邊與白濱班表",
+              "url": "https://meikobus.jp/wp_meiko/wp-content/uploads/2026/02/medical.pdf"
+            }
+          ]
         },
         {
           "id": "d07-sandanbeki",
-          "start": "TBD",
+          "start": "16:00",
           "title": "三段壁洞窟",
           "type": "place",
           "location": "三段壁洞窟",
-          "note": "實際進入洞窟參觀。",
+          "note": "約16:00–16:20參觀三段壁洞窟，停留約20分鐘。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://sandanbeki.com/cave/"
             }
-          ]
+          ],
+          "end": "16:20",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約20分鐘",
+            "summary": "約16:20離開三段壁，沿町道步行至千疊敷，約16:40抵達。",
+            "sourceLinks": [
+              {
+                "label": "三段壁官方常見問題",
+                "url": "https://sandanbeki.com/faq/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d07-senjojiki",
-          "start": "TBD",
+          "start": "16:40",
           "title": "千疊敷看夕陽",
           "type": "place",
           "location": "千畳敷・白濱",
-          "note": "三段壁之後到千疊敷看夕陽。"
+          "note": "約16:40–17:00看海與夕陽，停留約20分鐘；17:00左右離開海岸，步行至千畳口站候車。",
+          "end": "17:00",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約5–10分鐘",
+            "summary": "約17:00出發往千畳口站，預留候車緩衝，搭17:17往紀伊田邊的巴士。"
+          }
         },
         {
           "id": "d07-tanabe",
-          "start": "TBD",
+          "start": "17:17",
           "title": "白濱 → 紀伊田邊",
           "type": "transport",
           "location": "白濱 → 紀伊田邊",
-          "note": "海岸行程結束後返回紀伊田邊。"
+          "note": "班表參考：千畳口17:17→紀伊田邊18:03，搭明光巴士11號，車程46分鐘。",
+          "end": "18:03",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約5–10分鐘",
+            "summary": "紀伊田邊站步行至Hotel Kii Tanabe，約18:15抵達。",
+            "sourceLinks": [
+              {
+                "label": "Hotel Kii Tanabe交通",
+                "url": "https://hotel-kiitanabe.com/access/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          },
+          "externalLinks": [
+            {
+              "label": "明光巴士：白濱回田邊班表",
+              "url": "https://meikobus.jp/wp_meiko/wp-content/uploads/2026/02/medical.pdf"
+            }
+          ],
+          "transportMode": "bus"
         },
         {
           "id": "d07-tanabe-hotel",
-          "start": "TBD",
+          "start": "18:15",
           "title": "入住 Hotel Kii Tanabe",
           "type": "stay",
           "location": "和歌山県田辺市高雄2-7-16",
-          "note": "11/10–11/11 住一晚，隔天搭 06:55 巴士前往熊野古道。",
+          "note": "約18:15抵達並辦理入住，抓20分鐘；11/10–11/11住一晚，隔天06:55搭巴士前往熊野古道。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://hotel-kiitanabe.com/"
             }
-          ]
+          ],
+          "end": "18:35"
         }
       ],
       "routeSummary": [
@@ -1124,73 +1352,74 @@
         "label": "紀伊田邊・三段壁洞窟・千疊敷夕陽",
         "from": "大阪",
         "to": "紀伊田邊",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "洞窟與海岸夕陽",
         "legs": [
           {
             "id": "leg-1",
             "mode": "train",
-            "depart": "未記錄",
-            "arrive": "未記錄",
+            "depart": "11:18",
+            "arrive": "13:35",
             "from": "大阪",
             "to": "紀伊田邊",
-            "service": "黑潮特急",
-            "hint": "實際車次與時間未記錄。",
+            "service": "黑潮9號",
+            "hint": "班表參考：黑潮9號，2小時17分；約10:00離開APA，先到大阪站候車。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-2",
             "mode": "bus",
-            "depart": "未記錄",
-            "arrive": "未記錄",
+            "depart": "15:02",
+            "arrive": "15:52",
             "from": "紀伊田邊",
             "to": "白濱・三段壁",
-            "service": "前往白濱的巴士",
-            "hint": "紀伊田邊轉巴士。",
+            "service": "明光巴士12號",
+            "hint": "班表參考：明光巴士12號，50分鐘；下車後步行約5分鐘至洞窟。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-3",
             "mode": "event",
-            "depart": "下午",
-            "arrive": "未記錄",
+            "depart": "約16:00",
+            "arrive": "約16:20",
             "from": "三段壁",
             "to": "三段壁洞窟",
             "service": "三段壁洞窟",
-            "hint": "已進入洞窟參觀。",
+            "hint": "洞窟參觀約20分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-4",
             "mode": "event",
-            "depart": "夕陽時段",
-            "arrive": "未記錄",
+            "depart": "約16:20",
+            "arrive": "約17:00",
             "from": "三段壁",
             "to": "千疊敷",
             "service": "千疊敷夕陽",
-            "hint": "之後返回紀伊田邊。",
+            "hint": "三段壁步行約20分鐘到千疊敷；約16:40–17:00看夕陽，再走到千畳口站。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-5",
             "mode": "stay",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "17:17",
+            "arrive": "約18:15",
             "from": "白濱",
             "to": "Hotel Kii Tanabe",
             "service": "返回紀伊田邊入住",
-            "hint": "11/10 住宿一晚。",
+            "hint": "千畳口17:17搭明光巴士11號，18:03到紀伊田邊（46分鐘），再步行約5–10分鐘到飯店。",
             "status": "confirmed",
             "critical": false
           }
         ]
       },
-      "shortTitle": "白濱海岸"
+      "shortTitle": "白濱海岸",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d08",
@@ -1206,12 +1435,13 @@
       "items": [
         {
           "id": "d08-s2-r43",
-          "start": "TBD",
+          "start": "06:35",
           "title": "Hotel Kii Tanabe → 紀伊田邊站",
           "type": "transport",
           "location": "Hotel Kii Tanabe → 紀伊田邊站",
-          "note": "清晨出發搭 06:55 巴士。",
-          "transportMode": "walk"
+          "note": "約06:35離開飯店，步行抓10分鐘，06:45前到站候車；飯店至車站官方步行約5–6分鐘。",
+          "transportMode": "walk",
+          "end": "06:45"
         },
         {
           "id": "d08-s2-r45",
@@ -1219,126 +1449,187 @@
           "title": "06:55 快速巴士｜紀伊田邊 → 發心門王子",
           "type": "transport",
           "location": "紀伊田邊站 → 發心門王子",
-          "note": "不可使用 ICOCA；當次可用現金或感應式信用卡。",
-          "transportMode": "bus"
+          "note": "2026秋季快速巴士06:55→08:54，車程1小時59分；不可使用ICOCA，當次可用現金或感應式信用卡。",
+          "transportMode": "bus",
+          "end": "08:54",
+          "externalLinks": [
+            {
+              "label": "2026秋季快速巴士班表",
+              "url": "https://www.tb-kumano.jp/en/wp-content/uploads/sites/2/2026/07/c5c8c28c6f27eed1cc35eb86792e7629.pdf"
+            }
+          ]
         },
         {
           "id": "d08-s2-r46",
-          "start": "TBD",
+          "start": "09:00",
           "title": "熊野古道｜發心門王子 → 伏拝茶屋 → 本宮",
           "type": "place",
           "location": "發心門王子 → 伏拝 → 熊野本宮大社",
-          "note": "步行中邊路約 7 公里，途經伏拝茶屋。",
+          "note": "約09:00–12:30走中邊路6.9公里，途經伏拝茶屋；純步行約2.5小時，加休息及拍照抓3.5小時。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://www.hongu.jp/kumanokodo/walk/hosshin/"
             }
-          ]
+          ],
+          "end": "12:30"
         },
         {
           "id": "d08-s2-r47",
-          "start": "TBD",
+          "start": "12:30",
           "title": "熊野本宮大社",
           "type": "place",
           "location": "熊野本宮大社",
-          "note": "古道步行後參拜本宮。"
+          "note": "約12:30–14:00參拜熊野本宮大社，連同周邊散步、休息抓約1.5小時。",
+          "end": "14:00",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約10分鐘",
+            "summary": "約14:00離開本宮，步行約500公尺至大齋原，約14:10抵達。",
+            "sourceLinks": [
+              {
+                "label": "熊野本宮觀光協會：大齋原",
+                "url": "https://www.hongu.jp/kumanokodo/hongu-taisya/ooyunohara/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d08-s2-r49",
-          "start": "TBD",
+          "start": "14:10",
           "title": "大齋原・大鳥居",
           "type": "place",
           "location": "大斎原",
-          "note": "參拜本宮後到大齋原。"
+          "note": "約14:10–14:35參觀大齋原與大鳥居，停留約25分鐘；離開後步行約3分鐘，14:40前到大齋原前巴士站候車，接14:46班次。",
+          "end": "14:35"
         },
         {
           "id": "d08-s2-r51",
-          "start": "TBD",
+          "start": "14:46",
           "title": "本宮地區 → 熊野速玉大社",
           "type": "transport",
           "location": "本宮・大齋原 → 熊野速玉大社",
-          "note": "搭巴士前往新宮方向，實際搭乘時刻未記錄。",
-          "transportMode": "bus"
+          "note": "班表參考：川丈線52號，大齋原前14:46→速玉大社前15:40，車程54分鐘。",
+          "transportMode": "bus",
+          "end": "15:40",
+          "externalLinks": [
+            {
+              "label": "2026川丈線官方班表",
+              "url": "https://kumanogobobus.nankai-nanki.jp/cms/wp-kumanogobobus/wp-content/uploads/%E2%80%BB2026R8.4.1-%E5%B7%9D%E4%B8%88%E7%B7%9A%EF%BC%88%E6%97%A5%E6%9C%AC%E8%AA%9E%EF%BC%89.pdf"
+            }
+          ]
         },
         {
           "id": "d08-s2-r52",
-          "start": "TBD",
+          "start": "15:45",
           "title": "熊野速玉大社",
           "type": "place",
           "location": "熊野速玉大社",
-          "note": "到訪速玉大社。",
+          "note": "約15:45–16:10參拜速玉大社，停留約25分鐘。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://kumanohayatama.jp/worship/"
             }
-          ]
+          ],
+          "end": "16:10",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約15分鐘",
+            "summary": "約16:10從速玉大社步行往新宮城跡，約16:25抵達；為市區步行預估。"
+          }
         },
         {
           "id": "d08-shingu-castle",
-          "start": "TBD",
+          "start": "16:25",
           "title": "新宮城跡",
           "type": "place",
           "location": "新宮城跡",
-          "note": "速玉大社之後到新宮城跡。"
+          "note": "約16:25–16:45逛新宮城跡，停留約20分鐘。",
+          "end": "16:45"
         },
         {
           "id": "d08-shingu-station",
-          "start": "TBD",
+          "start": "16:45",
           "title": "新宮城跡 → 新宮站",
           "type": "transport",
           "location": "新宮城跡 → JR 新宮站",
-          "note": "前往新宮站搭 JR。"
-        },
-        {
-          "id": "d08-shingu-katsuura-jr",
-          "start": "TBD",
-          "title": "JR｜新宮 → 紀伊勝浦",
-          "type": "transport",
-          "location": "JR 新宮站 → JR 紀伊勝浦站",
-          "note": "實際從新宮搭 JR 到紀伊勝浦，班次與時間未記錄。",
-          "transportMode": "train"
-        },
-        {
-          "id": "d08-s2-r55",
-          "start": "TBD",
-          "title": "紀伊勝浦站 → 勝浦港觀光棧橋",
-          "type": "transport",
-          "location": "紀伊勝浦站 → 勝浦港觀光棧橋",
-          "note": "到港口接續浦島飯店交通。",
+          "note": "約16:45出發，步行約10分鐘到新宮站，預留候車時間。",
+          "end": "16:55",
           "transportMode": "walk"
         },
         {
+          "id": "d08-shingu-katsuura-jr",
+          "start": "17:09",
+          "title": "JR｜新宮 → 紀伊勝浦",
+          "type": "transport",
+          "location": "JR 新宮站 → JR 紀伊勝浦站",
+          "note": "班表參考：JR普通2340M，新宮17:09→紀伊勝浦17:37，車程28分鐘；本趟此段實際搭乘JR。",
+          "transportMode": "train",
+          "end": "17:37",
+          "externalLinks": [
+            {
+              "label": "JR新宮→紀伊勝浦：2026/11/11",
+              "url": "https://timetable.jr-odekake.net/train-timetable/146481?date=20261111"
+            }
+          ]
+        },
+        {
+          "id": "d08-s2-r55",
+          "start": "17:40",
+          "title": "紀伊勝浦站 → 勝浦港觀光棧橋",
+          "type": "transport",
+          "location": "紀伊勝浦站 → 勝浦港觀光棧橋",
+          "note": "約17:40–17:50從車站走到勝浦港觀光棧橋，含行李移動抓10分鐘；官方步行約6分鐘。",
+          "transportMode": "walk",
+          "end": "17:50"
+        },
+        {
           "id": "d08-s2-r56",
-          "start": "TBD",
+          "start": "17:50",
           "title": "勝浦港 → 浦島飯店",
           "type": "transport",
           "location": "勝浦港 → 浦島飯店",
-          "note": "前往浦島飯店。",
-          "transportMode": "boat"
-        },
-        {
-          "id": "d08-s2-r57",
-          "start": "TBD",
-          "title": "入住浦島飯店",
-          "type": "stay",
-          "location": "ホテル浦島",
-          "note": "11/11–11/13 住宿兩晚。",
+          "note": "約17:50到碼頭等船，含等候及約5分鐘船程，抓20分鐘至浦島飯店；此時段為銜接估算。",
+          "transportMode": "boat",
+          "end": "18:10",
           "externalLinks": [
             {
-              "label": "原表官方參考",
+              "label": "浦島飯店官方接駁",
               "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
             }
           ]
         },
         {
+          "id": "d08-s2-r57",
+          "start": "18:10",
+          "title": "入住浦島飯店",
+          "type": "stay",
+          "location": "ホテル浦島",
+          "note": "約18:10–18:40辦理入住及放行李，抓30分鐘；11/11–11/13住兩晚。",
+          "externalLinks": [
+            {
+              "label": "原表官方參考",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
+            }
+          ],
+          "end": "18:40"
+        },
+        {
           "id": "d08-genbudo",
-          "start": "TBD",
+          "start": "20:00",
           "title": "夜泡玄武洞溫泉",
           "type": "place",
           "location": "ホテル浦島 玄武洞",
-          "note": "當晚在玄武洞泡湯。"
+          "note": "約20:00–21:00夜泡玄武洞，連同更衣與休息抓約1小時；官方晚間開放16:00–23:00。",
+          "end": "21:00",
+          "externalLinks": [
+            {
+              "label": "玄武洞官方營業時間",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+            }
+          ]
         }
       ],
       "routeSummary": [
@@ -1357,7 +1648,7 @@
         "label": "熊野古道・本宮・速玉・新宮城跡・浦島",
         "from": "紀伊田邊",
         "to": "浦島飯店",
-        "attention": "交通時間為當次紀錄，未記錄的班次保留空白。",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "06:55 巴士・7 km 古道・玄武洞",
         "legs": [
@@ -1365,71 +1656,71 @@
             "id": "leg-1",
             "mode": "bus",
             "depart": "06:55",
-            "arrive": "未記錄",
+            "arrive": "08:54",
             "from": "紀伊田邊站",
             "to": "發心門王子",
             "service": "快速巴士",
-            "hint": "當次可用現金／感應式信用卡，不可用 ICOCA。",
+            "hint": "2026秋季快速巴士，1小時59分；飯店約06:35出發，06:45前到站候車。",
             "status": "reference",
             "critical": true
           },
           {
             "id": "leg-2",
             "mode": "walk",
-            "depart": "抵達後",
-            "arrive": "未記錄",
+            "depart": "約09:00",
+            "arrive": "約12:30",
             "from": "發心門王子",
             "to": "熊野本宮大社",
             "service": "中邊路約7公里",
-            "hint": "途經伏拝茶屋，接續本宮與大齋原。",
+            "hint": "6.9公里，純步行約2.5小時，含伏拝茶屋休息抓3.5小時；本宮12:30–14:00、大齋原14:10–14:35。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-3",
             "mode": "bus",
-            "depart": "本宮・大齋原之後",
-            "arrive": "未記錄",
-            "from": "本宮地區",
+            "depart": "14:46",
+            "arrive": "15:40",
+            "from": "大齋原前",
             "to": "熊野速玉大社",
-            "service": "前往新宮方向",
-            "hint": "實際巴士時刻未記錄。",
+            "service": "川丈線52號",
+            "hint": "班表參考：大齋原前搭川丈線52號，54分鐘；大齋原離開後步行約3分鐘，14:40前到站候車。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-4",
             "mode": "event",
-            "depart": "下午",
-            "arrive": "未記錄",
+            "depart": "約15:45",
+            "arrive": "約16:45",
             "from": "熊野速玉大社",
             "to": "新宮城跡",
             "service": "速玉大社・新宮城跡",
-            "hint": "之後前往新宮站。",
+            "hint": "速玉參拜約25分鐘，步行約15分鐘，再逛新宮城跡約20分鐘；之後步行約10分鐘至車站。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-5",
             "mode": "train",
-            "depart": "未記錄",
-            "arrive": "未記錄",
+            "depart": "17:09",
+            "arrive": "17:37",
             "from": "新宮站",
             "to": "紀伊勝浦站",
-            "service": "JR 新宮 → 紀伊勝浦",
-            "hint": "實際搭乘 JR，班次未記錄。",
+            "service": "JR普通2340M",
+            "hint": "班表參考：JR普通2340M，28分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-6",
             "mode": "boat",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約17:50",
+            "arrive": "約18:10",
             "from": "勝浦港",
             "to": "浦島飯店",
             "service": "前往浦島入住",
-            "hint": "兩晚住宿，當晚夜泡玄武洞。",
+            "hint": "車站至碼頭步行抓10分鐘；等船加約5分鐘船程抓20分鐘；18:10–18:40辦入住，約20:00–21:00夜泡玄武洞。",
             "status": "reference",
             "critical": false
           }
@@ -1442,7 +1733,8 @@
           "leg-6"
         ]
       },
-      "shortTitle": "熊野古道"
+      "shortTitle": "熊野古道",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d09",
@@ -1457,27 +1749,43 @@
       "items": [
         {
           "id": "d09-morning-onsen",
-          "start": "TBD",
+          "start": "08:00",
           "title": "浦島飯店晨湯",
           "type": "place",
           "location": "ホテル浦島",
-          "note": "上午先泡溫泉。"
+          "note": "約08:00–09:15晨湯、梳洗與休息，抓1小時15分鐘；玄武洞上午開放05:00–12:00。",
+          "end": "09:15"
         },
         {
           "id": "d09-lawson-breakfast",
-          "start": "TBD",
+          "start": "09:15",
           "title": "Lawson 早餐",
           "type": "food",
           "location": "紀伊勝浦 Lawson",
-          "note": "泡湯後吃早餐。"
+          "note": "約09:15–10:00在飯店本館的Lawson吃早餐，抓45分鐘；館內店07:00–23:00營業。",
+          "end": "10:00",
+          "externalLinks": [
+            {
+              "label": "浦島館內Lawson",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
+            }
+          ]
         },
         {
           "id": "d09-ship",
-          "start": "TBD",
-          "title": "中午出發 → 紀伊勝浦站",
+          "start": "12:40",
+          "title": "中午接駁車出浦島 → 紀伊勝浦站",
           "type": "transport",
           "location": "浦島飯店 → 紀伊勝浦站",
-          "note": "中午左右出發，前往車站搭巴士。"
+          "note": "約12:40–13:20搭飯店接駁車至碼頭，再步行約6–10分鐘到紀伊勝浦站；含移動與緩衝抓40分鐘，13:30前到巴士站候車。中午接駁車可參考飯店12:40班次。",
+          "end": "13:20",
+          "transportMode": "bus",
+          "externalLinks": [
+            {
+              "label": "浦島官方接駁時段",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
+            }
+          ]
         },
         {
           "id": "d09-bus",
@@ -1485,64 +1793,90 @@
           "title": "巴士｜紀伊勝浦 → 大門坂",
           "type": "transport",
           "location": "紀伊勝浦站 → 大門坂",
-          "note": "搭 13:50 巴士前往大門坂。",
-          "transportMode": "bus"
+          "note": "13:50紀伊勝浦→14:08大門坂，車程18分鐘；13:50為當次搭乘紀錄，抵達時間採同班官方班表。",
+          "transportMode": "bus",
+          "end": "14:08",
+          "externalLinks": [
+            {
+              "label": "2026那智山巴士班表",
+              "url": "https://kumanogobobus.nankai-nanki.jp/cms/wp-kumanogobobus/wp-content/uploads/%E2%98%852026R8.4.1-%E9%82%A3%E6%99%BA%E5%B1%B1%E6%99%82%E5%88%BB%E8%A1%A8.pdf"
+            }
+          ]
         },
         {
           "id": "d09-daimonzaka",
-          "start": "TBD",
+          "start": "14:10",
           "title": "大門坂",
           "type": "place",
           "location": "大門坂",
-          "note": "由大門坂上山。"
+          "note": "約14:10–15:10走大門坂上山；純步行約35–40分鐘，含拍照與休息抓1小時。",
+          "end": "15:10"
         },
         {
           "id": "d09-nachi",
-          "start": "TBD",
+          "start": "15:10",
           "title": "熊野那智大社",
           "type": "place",
           "location": "熊野那智大社",
-          "note": "下午參拜那智大社。",
-          "mustGo": true
+          "note": "約15:10–15:35參拜熊野那智大社，停留約25分鐘。",
+          "mustGo": true,
+          "end": "15:35"
         },
         {
           "id": "d09-seigantoji",
-          "start": "TBD",
+          "start": "15:35",
           "title": "青岸渡寺・三重塔外觀",
           "type": "place",
           "location": "青岸渡寺・三重塔",
-          "note": "參拜青岸渡寺，欣賞三重塔外觀。"
+          "note": "約15:35–15:50參拜青岸渡寺、看三重塔外觀，停留約15分鐘；寺院在那智大社旁。",
+          "end": "15:50"
         },
         {
           "id": "d09-nachi-falls",
-          "start": "TBD",
+          "start": "15:50",
           "title": "那智瀑布・飛瀧神社",
           "type": "place",
           "location": "那智の滝・飛瀧神社",
-          "note": "接續瀑布與飛瀧神社。",
+          "note": "約15:50–16:20下行至那智瀑布・飛瀧神社：寺院到瀑布步行約15分鐘，再參拜與看瀑布約15分鐘。",
           "externalLinks": [
             {
               "label": "原表官方參考",
               "url": "https://kumanonachitaisha.or.jp/pavilion/waterfall/"
             }
-          ]
+          ],
+          "end": "16:20",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約5分鐘",
+            "summary": "約16:20離開瀑布，16:25前到巴士站候車。",
+            "sourceLinks": [
+              {
+                "label": "和歌山官方：那智步行路線",
+                "url": "https://www.wakayama-kanko.or.jp/courses/detail_34.html"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d09-return",
-          "start": "TBD",
+          "start": "16:32",
           "title": "那智瀑布前 → 紀伊勝浦",
           "type": "transport",
           "location": "那智の滝前 → 紀伊勝浦站",
-          "note": "約 16:32 搭回程巴士；這是當次搭乘的約略時間。",
-          "transportMode": "bus"
+          "note": "約16:32搭回程巴士，約17:00回到紀伊勝浦，車程約25分鐘。班表參考：瀑布前16:29→紀伊勝浦16:53；主表約16:32保留旅人當次搭乘時間。",
+          "transportMode": "bus",
+          "end": "17:00"
         },
         {
           "id": "d09-onsen",
-          "start": "TBD",
+          "start": "17:00",
           "title": "返回浦島飯店",
           "type": "stay",
           "location": "ホテル浦島",
-          "note": "返回浦島，住宿第二晚。"
+          "note": "約17:00–17:30，從車站步行約6–10分鐘到碼頭，再候船與搭船約5–20分鐘回浦島；17:30前後回飯店休息，續住第二晚。",
+          "end": "17:30",
+          "transportMode": "boat"
         }
       ],
       "routeSummary": [
@@ -1559,19 +1893,19 @@
         "label": "浦島晨湯・大門坂・那智山與瀑布",
         "from": "浦島飯店",
         "to": "浦島飯店",
-        "attention": "回程約 16:32 為當次搭乘紀錄，不作為未來固定班表。",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "13:50 巴士上那智山",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約08:00",
+            "arrive": "約10:00",
             "from": "浦島飯店",
             "to": "Lawson",
             "service": "晨湯・早餐",
-            "hint": "上午泡湯，Lawson 吃早餐，中午左右出發。",
+            "hint": "晨湯與梳洗約75分鐘，館內Lawson早餐約45分鐘；中午約12:40接駁車出飯店，13:20前後到紀伊勝浦。",
             "status": "reference",
             "critical": false
           },
@@ -1579,23 +1913,23 @@
             "id": "leg-2",
             "mode": "bus",
             "depart": "13:50",
-            "arrive": "未記錄",
+            "arrive": "14:08",
             "from": "紀伊勝浦站",
             "to": "大門坂",
             "service": "那智山方向巴士",
-            "hint": "從大門坂上山。",
+            "hint": "那智山方向巴士18分鐘；13:30前先到站候車。",
             "status": "reference",
             "critical": true
           },
           {
             "id": "leg-3",
             "mode": "walk",
-            "depart": "下午",
-            "arrive": "未記錄",
+            "depart": "約14:10",
+            "arrive": "約16:20",
             "from": "大門坂",
             "to": "那智瀑布",
             "service": "那智山參拜步行",
-            "hint": "那智大社 → 青岸渡寺 → 三重塔外觀 → 瀑布。",
+            "hint": "大門坂含休息60分鐘→那智大社25分鐘→青岸渡寺及塔外觀15分鐘→步行與瀑布30分鐘；16:25前到回程站。",
             "status": "reference",
             "critical": false
           },
@@ -1603,29 +1937,30 @@
             "id": "leg-4",
             "mode": "bus",
             "depart": "約16:32",
-            "arrive": "未記錄",
+            "arrive": "約17:00",
             "from": "那智瀑布前",
             "to": "紀伊勝浦",
             "service": "回程巴士",
-            "hint": "當次約略搭乘時間，照排時須另查班表。",
+            "hint": "回程車程約25分鐘；約16:32為旅人當次時間。官方參考為瀑布前16:29→紀伊勝浦16:53，提前16:25候車。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-5",
             "mode": "stay",
-            "depart": "回程後",
-            "arrive": "未記錄",
+            "depart": "約17:00",
+            "arrive": "約17:30",
             "from": "紀伊勝浦",
             "to": "浦島飯店",
             "service": "浦島第二晚",
-            "hint": "返回飯店。",
+            "hint": "步行到碼頭約6–10分鐘，候船及船程約5–20分鐘，合計抓30分鐘回浦島續住。",
             "status": "confirmed",
             "critical": false
           }
         ]
       },
-      "shortTitle": "那智山"
+      "shortTitle": "那智山",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d10",
@@ -1640,43 +1975,61 @@
       "items": [
         {
           "id": "d10-morning-onsen",
-          "start": "TBD",
+          "start": "07:00",
           "title": "浦島飯店晨湯",
           "type": "place",
           "location": "ホテル浦島",
-          "note": "早上泡溫泉。"
+          "note": "約07:00–08:00晨湯、梳洗，抓1小時。",
+          "end": "08:00"
         },
         {
           "id": "d10-breakfast",
-          "start": "TBD",
+          "start": "08:00",
           "title": "早餐",
           "type": "food",
           "location": "浦島飯店",
-          "note": "泡湯後吃早餐。"
+          "note": "約08:00–08:45吃早餐，抓45分鐘；飯店早餐時段為07:00–09:00。",
+          "end": "08:45"
         },
         {
           "id": "d10-checkout",
-          "start": "TBD",
+          "start": "09:30",
           "title": "浦島飯店退房",
           "type": "stay",
           "location": "ホテル浦島",
-          "note": "早餐後退房。"
+          "note": "約09:30–10:00整理行李及辦理退房，抓30分鐘；飯店規定10:00前退房。",
+          "end": "10:00",
+          "externalLinks": [
+            {
+              "label": "浦島入住與退房",
+              "url": "https://urashimaresortsandspa.jp/wakayama-hotelurashima/faq/"
+            }
+          ]
         },
         {
           "id": "d10-noroshiyama",
-          "start": "TBD",
+          "start": "10:00",
           "title": "狼煙山遊園",
           "type": "place",
           "location": "狼煙山遊園・那智勝浦",
-          "note": "退房後前往狼煙山。"
+          "note": "約10:00–11:30逛山上館的狼煙山遊園，散步與賞景抓1.5小時；Space Walker手扶梯單程約6分鐘。之後回本館取行李，準備中午接駁。",
+          "end": "11:30",
+          "externalLinks": [
+            {
+              "label": "浦島狼煙山與館內設施",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
+            }
+          ]
         },
         {
           "id": "d10-katsuura-station",
-          "start": "TBD",
+          "start": "12:00",
           "title": "狼煙山 → 紀伊勝浦站",
           "type": "transport",
           "location": "狼煙山 → 紀伊勝浦站",
-          "note": "接續 13:46 黑潮 26 號。"
+          "note": "約12:00–12:30搭飯店接駁車至碼頭，再步行約6–10分鐘到紀伊勝浦站，全段抓30分鐘；保留市區休息及候車緩衝，13:20前回JR站候車。",
+          "end": "12:30",
+          "transportMode": "bus"
         },
         {
           "id": "d10-train",
@@ -1684,34 +2037,67 @@
           "title": "黑潮 26 號｜紀伊勝浦 → 和歌山",
           "type": "transport",
           "location": "紀伊勝浦站 → 和歌山站",
-          "note": "13:46 出發，16:48 抵達和歌山。",
+          "note": "13:46搭黑潮26號，16:48抵達和歌山，車程3小時2分鐘。",
           "end": "16:48",
-          "transportMode": "train"
+          "transportMode": "train",
+          "transferAfter": {
+            "mode": "巴士／步行",
+            "duration": "約20–30分鐘",
+            "summary": "和歌山站前搭巴士至和歌山城前，車程約10分鐘；加出站與候車，約17:10到城外。",
+            "sourceLinks": [
+              {
+                "label": "和歌山城官方交通",
+                "url": "https://wakayamajo.jp/access/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d10-wakayama-castle",
-          "start": "TBD",
+          "start": "17:10",
           "title": "和歌山城外觀・公園",
           "type": "place",
           "location": "和歌山城",
-          "note": "到城外與公園散步，欣賞外觀。"
+          "note": "約17:10–18:30在和歌山城外圍與公園散步、欣賞外觀，停留約1小時20分鐘。",
+          "end": "18:30",
+          "transferAfter": {
+            "mode": "步行",
+            "duration": "約15–20分鐘",
+            "summary": "約18:30離開城外，步行至南海和歌山市站，約18:50到站，接19:10前後的列車。",
+            "sourceLinks": [
+              {
+                "label": "和歌山城官方交通",
+                "url": "https://wakayamajo.jp/access/"
+              }
+            ],
+            "checkedAt": "2026-11-16"
+          }
         },
         {
           "id": "d10-nankai-izumisano",
-          "start": "TBD",
+          "start": "19:10",
           "title": "南海｜和歌山市 → 泉佐野",
           "type": "transport",
           "location": "南海和歌山市站 → 泉佐野站",
-          "note": "和歌山行程後搭南海前往泉佐野。",
-          "transportMode": "train"
+          "note": "約19:10–19:45搭南海由和歌山市至泉佐野，車程抓約30–40分鐘。",
+          "transportMode": "train",
+          "end": "19:45"
         },
         {
           "id": "d10-hotel",
-          "start": "TBD",
+          "start": "19:50",
           "title": "入住 R Hotel Kansai Airport",
           "type": "stay",
           "location": "R Hotel Kansai Airport・泉佐野",
-          "note": "11/13–11/14 於泉佐野入住一晚。"
+          "note": "約19:50抵達R Hotel Kansai Airport，入住與放行李抓20分鐘；11/13–11/14住一晚。泉佐野站至飯店官方步行約1分鐘，攜行李與出站抓5分鐘。",
+          "end": "20:10",
+          "externalLinks": [
+            {
+              "label": "R Hotel Kansai Airport官方",
+              "url": "https://r-hotel.jp/ja/hotel/detail/31"
+            }
+          ]
         }
       ],
       "routeSummary": [
@@ -1727,19 +2113,19 @@
         "label": "浦島晨湯・狼煙山・和歌山城外觀・泉佐野",
         "from": "浦島飯店",
         "to": "泉佐野",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "黑潮26號・和歌山城外觀",
         "legs": [
           {
             "id": "leg-1",
             "mode": "event",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "depart": "約07:00",
+            "arrive": "約11:30",
             "from": "浦島飯店",
             "to": "狼煙山",
             "service": "晨湯・早餐・退房・狼煙山",
-            "hint": "依序完成後前往紀伊勝浦站。",
+            "hint": "晨湯60分鐘、早餐45分鐘，09:30整理行李、10:00前退房；狼煙山10:00–11:30。之後取行李，約12:00–12:30接駁至勝浦。",
             "status": "reference",
             "critical": false
           },
@@ -1751,49 +2137,50 @@
             "from": "紀伊勝浦",
             "to": "和歌山",
             "service": "黑潮26號",
-            "hint": "實際搭乘紀錄。",
+            "hint": "黑潮26號，3小時2分鐘；13:20前到紀伊勝浦站候車。",
             "status": "confirmed",
             "critical": true
           },
           {
             "id": "leg-3",
             "mode": "event",
-            "depart": "抵達和歌山後",
-            "arrive": "未記錄",
+            "depart": "約17:10",
+            "arrive": "約18:30",
             "from": "和歌山",
             "to": "和歌山城",
             "service": "和歌山城外觀・公園",
-            "hint": "參觀城外與公園。",
+            "hint": "和歌山站到城外含巴士與候車約20–30分鐘；城外與公園散步約80分鐘，再步行15–20分鐘到和歌山市站。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-4",
             "mode": "train",
-            "depart": "晚間",
-            "arrive": "未記錄",
+            "depart": "約19:10",
+            "arrive": "約19:45",
             "from": "南海和歌山市站",
             "to": "泉佐野",
             "service": "南海電車",
-            "hint": "前往機場周邊住宿地區。",
+            "hint": "南海和歌山市→泉佐野，車程約30–40分鐘。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-5",
             "mode": "stay",
-            "depart": "當晚",
-            "arrive": "未記錄",
+            "depart": "約19:45",
+            "arrive": "約20:10",
             "from": "泉佐野",
             "to": "R Hotel Kansai Airport",
             "service": "R Hotel 住宿一晚",
-            "hint": "11/13–11/14 已入住。",
+            "hint": "泉佐野出站與步行抓5分鐘，約19:50到R Hotel；入住抓20分鐘，住宿一晚。",
             "status": "confirmed",
             "critical": false
           }
         ]
       },
-      "shortTitle": "勝浦・和歌山"
+      "shortTitle": "勝浦・和歌山",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     },
     {
       "id": "d11",
@@ -1807,11 +2194,27 @@
       "items": [
         {
           "id": "d11-airport",
-          "start": "TBD",
+          "start": "08:15",
           "title": "泉佐野 → 關西機場",
           "type": "transport",
           "location": "泉佐野 → 關西國際機場",
-          "note": "早上前往關西機場；實際交通班次未記錄。"
+          "note": "約08:15離開R Hotel，含步行、南海列車與候車抓30–45分鐘，08:45–09:00抵關西機場第1航廈。泉佐野至機場車程約10分鐘；約09:00–10:45預留報到、安檢、出境與候機時間。",
+          "end": "09:00",
+          "transportMode": "train",
+          "externalLinks": [
+            {
+              "label": "南海機場交通",
+              "url": "https://www.nankai.co.jp/traffic/kix.html"
+            },
+            {
+              "label": "關西機場航空公司與航廈",
+              "url": "https://www.kansai-airport.or.jp/flight/airlines"
+            },
+            {
+              "label": "機場站至第1航廈",
+              "url": "https://www.kansai-airport.or.jp/faq/101"
+            }
+          ]
         },
         {
           "id": "d11-flight-kix",
@@ -1819,8 +2222,9 @@
           "title": "虎航 IT211：關西機場起飛",
           "type": "transport",
           "location": "關西國際機場 KIX",
-          "note": "11:30 為日本時間。",
-          "transportMode": "flight"
+          "note": "11:30日本時間起飛→13:50台灣時間抵達，飛行3小時20分鐘。起飛項目的時計為日本時間。",
+          "transportMode": "flight",
+          "end": "14:50"
         },
         {
           "id": "d11-flight-tpe",
@@ -1828,9 +2232,10 @@
           "title": "IT211 抵達桃園",
           "type": "transport",
           "location": "桃園國際機場 TPE",
-          "note": "13:50 為台灣時間。",
+          "note": "13:50台灣時間抵達桃園；接續入境與領行李可抓約50分鐘，約14:40再接地面交通。",
           "transportMode": "flight",
-          "timezone": "Asia/Taipei"
+          "timezone": "Asia/Taipei",
+          "end": "14:40"
         }
       ],
       "routeSummary": [
@@ -1842,37 +2247,38 @@
         "label": "泉佐野・關西機場・返台",
         "from": "泉佐野",
         "to": "桃園",
-        "attention": "",
+        "attention": "標「約」為含步行、候車或停留的建議排程；固定交通時刻為當次紀錄或2026班表參考。",
         "attentionLevel": "info",
         "callout": "IT211 返回桃園",
         "legs": [
           {
             "id": "leg-1",
-            "mode": "task",
-            "depart": "上午",
-            "arrive": "未記錄",
+            "mode": "train",
+            "depart": "約08:15",
+            "arrive": "約09:00",
             "from": "泉佐野",
             "to": "關西機場",
-            "service": "前往關西機場",
-            "hint": "實際交通班次未記錄。",
+            "service": "南海泉佐野→關西機場T1",
+            "hint": "R Hotel至泉佐野站步行抓5分鐘，南海列車約10分鐘，含候車與第1航廈移動共30–45分鐘；保留約2.5小時搭機緩衝。",
             "status": "reference",
             "critical": false
           },
           {
             "id": "leg-2",
             "mode": "flight",
-            "depart": "日本 11:30",
-            "arrive": "台灣 13:50",
+            "depart": "日本11:30",
+            "arrive": "台灣13:50",
             "from": "關西 KIX",
             "to": "桃園 TPE",
             "service": "台灣虎航 IT211",
-            "hint": "航班時間分別使用出發地與抵達地時區。",
+            "hint": "IT211，飛行3小時20分鐘；兩端為當地時間。",
             "status": "confirmed",
             "critical": true
           }
         ]
       },
-      "shortTitle": "返台"
+      "shortTitle": "返台",
+      "note": "依實走順序補成可照走排程；「約」為建議時段，列車與巴士時間為當次紀錄或2026年班表參考。"
     }
   ],
   "todos": [],
@@ -2046,10 +2452,10 @@
   ],
   "essentials": [
     {
-      "title": "實走分享版與時間讀法",
+      "title": "實走路線與照走時間表",
       "category": "guide",
       "dayDate": "2026-11-04",
-      "body": "本版依旅人逐日回報與更正整理。標示的精確時間保留當次活動／搭乘紀錄；其餘以順序或上午、下午、晚間呈現。再次出發時，依實際日期向官方核對班次、活動與營業資訊。"
+      "body": "依旅人實際走過的順序補上方便照排的大致時間。「約」為交通、候車、步行與停留估算；固定航班、活動與交通時間保留當次紀錄或2026官方班表。各段可按自己的步調調整，出發前依日期再核對班次及營業資訊。"
     },
     {
       "title": "大阪住宿共六晚",
@@ -2085,37 +2491,37 @@
       "title": "11/09 中之島到貴船夜景",
       "category": "place",
       "dayDate": "2026-11-09",
-      "body": "上午中之島，之後京都御苑、叡山電車紅葉隧道、貴船神社本宮及奧宮點燈，再返回大阪。實際下山與回大阪的班次未記錄。"
+      "body": "中之島約11:00–13:30，14:00前後搭京阪至京都；御苑15:30–17:05，步行至出町柳搭叡電紅葉隧道。貴船本宮約18:30–18:55，步行至奧宮約19:10–19:40；19:40下山，20:55前後到出町柳，約22:15回大阪APA。"
     },
     {
       "title": "11/10 紀伊田邊轉往白濱",
       "category": "transport",
       "dayDate": "2026-11-10",
-      "body": "大阪搭黑潮至紀伊田邊，再搭巴士去白濱；三段壁洞窟、千疊敷夕陽後返回紀伊田邊，住 Hotel Kii Tanabe 一晚。"
+      "body": "約10:00離開APA，班表參考黑潮9號11:18–13:35到紀伊田邊；15:02–15:52巴士到三段壁，洞窟約16:00–16:20，步行20分鐘到千疊敷看16:40–17:00夕陽。千畳口17:17–18:03巴士回田邊，約18:15入住Hotel Kii Tanabe。"
     },
     {
       "title": "11/11 06:55 巴士與熊野古道",
       "category": "transport",
       "dayDate": "2026-11-11",
-      "body": "06:55 紀伊田邊快速巴士到發心門王子；當次不可使用ICOCA，可付現金或感應式信用卡。古道約7km，途經伏拝茶屋，再到本宮、大齋原、速玉與新宮城跡；最後從新宮搭JR到紀伊勝浦。"
+      "body": "06:55–08:54快速巴士到發心門王子，當次不可用ICOCA，可付現金或感應信用卡。古道6.9km含伏拝休息抓3.5小時；本宮12:30–14:00、大齋原14:10–14:35。14:46–15:40巴士到速玉，接新宮城跡，再參考JR17:09–17:37到紀伊勝浦。"
     },
     {
       "title": "浦島飯店兩晚與玄武洞",
       "category": "stay",
       "dayDate": "2026-11-11",
-      "body": "11/11–11/13住浦島兩晚；11/11夜泡玄武洞。11/12、11/13早上也先泡湯再吃早餐。"
+      "body": "11/11–11/13住浦島兩晚；11/11約18:10入住、20:00–21:00玄武洞夜湯。11/12約08:00晨湯，09:15館內Lawson早餐；11/13約07:00晨湯、08:00早餐，10:00前退房。"
     },
     {
       "title": "11/12 午後那智山",
       "category": "transport",
       "dayDate": "2026-11-12",
-      "body": "上午泡湯、Lawson早餐，中午左右出發。13:50紀伊勝浦巴士→大門坂，走訪那智大社、青岸渡寺、三重塔外觀、那智瀑布；回程巴士約16:32。約16:32為當次搭乘紀錄，非未來固定班表。"
+      "body": "晨湯與Lawson早餐後，約12:40接駁車出飯店，13:50–14:08巴士到大門坂。大門坂14:10–15:10、那智大社15:10–15:35、青岸渡寺及三重塔外觀15:35–15:50、步行及瀑布15:50–16:20；16:25前候車，約16:32–17:00回紀伊勝浦，再於17:30前後回浦島。"
     },
     {
       "title": "11/13 勝浦・和歌山・泉佐野",
       "category": "transport",
       "dayDate": "2026-11-13",
-      "body": "晨湯、早餐、退房、狼煙山後，13:46黑潮26號→16:48和歌山；參觀和歌山城外觀與公園，再由南海和歌山市站前往泉佐野。"
+      "body": "約07:00晨湯、08:00早餐、09:30整理行李，10:00前退房；狼煙山10:00–11:30，取行李後約12:00–12:30接駁到勝浦。13:46–16:48黑潮26號到和歌山；城外與公園17:10–18:30，步行至和歌山市站，約19:10–19:45南海到泉佐野，19:50前後入住R Hotel。"
     },
     {
       "title": "最後一晚住宿｜R Hotel Kansai Airport",
@@ -2127,7 +2533,7 @@
       "title": "虎航 IT211：關西 → 桃園",
       "category": "transport",
       "dayDate": "2026-11-14",
-      "body": "日本11:30從關西機場起飛，台灣13:50抵達桃園。"
+      "body": "約08:15離開R Hotel，08:45–09:00到關西機場第1航廈，保留報到與出境緩衝。IT211日本11:30起飛，台灣13:50抵達桃園，飛行3小時20分鐘。"
     },
     {
       "title": "雙朝聖集章手冊｜免費",
@@ -2166,12 +2572,12 @@
     {
       "id": "source-snapshot",
       "title": "行程來源與時間讀法",
-      "body": "此為2026/11/04–11/14的11天10夜實走分享，依旅人逐日回報與更正同步至原Google Sheet的「11天10夜・分享版」。資料發布時間不代表重新查證交通班表；未記錄的實際時間保持浮動。Google Sheet：https://docs.google.com/spreadsheets/d/1CO_891wspexrJr8SeXrx_AHTNmjvDCuA0C4e9RE_x3Q/edit#gid=202611160"
+      "body": "此為2026/11/04–11/14的11天10夜實走路線，已補成方便別人照排的時間表。「約」表示依交通、步行及停留長度安排的建議時段；未標約的航班、活動及交通時刻為旅人當次回報或2026官方班表參考，不代表所有分鐘都是實際打卡時間。再次出發請依自己的日期核對交通與活動。Google Sheet：https://docs.google.com/spreadsheets/d/1CO_891wspexrJr8SeXrx_AHTNmjvDCuA0C4e9RE_x3Q/edit#gid=202611160"
     },
     {
       "id": "kumano-correction",
       "title": "11/11 實際路線",
-      "body": "06:55紀伊田邊巴士→發心門王子，古道約7km→本宮→大齋原→速玉→新宮城跡；最後從新宮搭JR到紀伊勝浦，入住浦島並夜泡玄武洞。"
+      "body": "06:55紀伊田邊快速巴士→08:54發心門王子；約09:00–12:30走古道6.9km→本宮12:30–14:00→大齋原14:10–14:35→14:46巴士→15:40速玉大社前→新宮城跡→JR17:09–17:37紀伊勝浦→約18:10浦島入住→約20:00–21:00玄武洞。列車及巴士為2026班表參考，景點時間為照排約數。"
     },
     {
       "id": "superseded",
@@ -2288,7 +2694,7 @@
         "address": "和歌山県田辺市本宮町本宮100-1",
         "dual": true,
         "nakahechi": true,
-        "note": "本宮參拜後可參考的領取／販售點；本趟未記錄是否在此領取。"
+        "note": "本宮參拜後可參考的領取／販售點；此列僅提供領取點資訊。"
       },
       {
         "id": "shingu",
@@ -2299,7 +2705,7 @@
         "address": "和歌山県新宮市徐福2-1-11",
         "dual": true,
         "nakahechi": true,
-        "note": "本趟曾到新宮站搭JR；未記錄是否在此領取手冊。"
+        "note": "本趟曾到新宮站搭JR；此處亦列為手冊領取參考點。"
       },
       {
         "id": "katsuura",
@@ -2310,7 +2716,7 @@
         "address": "和歌山県東牟婁郡那智勝浦町築地6-1-1",
         "dual": true,
         "nakahechi": true,
-        "note": "紀伊勝浦站的領取／販售參考點；本趟未記錄是否在此領取。"
+        "note": "紀伊勝浦站的領取／販售參考點；此列僅提供領取點資訊。"
       }
     ],
     "route": {
@@ -2407,5 +2813,296 @@
         "url": "https://www.sekaiisan-wakayama.jp/walk/ouinchou.html"
       }
     ]
-  }
+  },
+  "researchNotes": [
+    {
+      "title": "大阪市內與生駒交通",
+      "category": "大阪／生駒",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "南海：關西機場交通",
+          "url": "https://www.nankai.co.jp/traffic/kix.html"
+        },
+        {
+          "label": "APA肥後橋：交通",
+          "url": "https://www.apahotel.com/hotel/kansai/osaka/osakahigobashi-ekimae/"
+        },
+        {
+          "label": "大阪Metro：車站與轉乘",
+          "url": "https://subway.osakametro.co.jp/station_guide/index.php"
+        },
+        {
+          "label": "露天神社：交通",
+          "url": "https://tuyutenjin.com/access_map/"
+        },
+        {
+          "label": "大阪天滿宮：交通",
+          "url": "https://osakatemmangu.or.jp/access"
+        },
+        {
+          "label": "近鐵：生駒交通",
+          "url": "https://www.kintetsu.co.jp/life/area/ikoma.html"
+        },
+        {
+          "label": "近鐵：生駒纜車",
+          "url": "https://www.kintetsu.co.jp/senden/ikomaretro/"
+        },
+        {
+          "label": "奈良官方：寶山寺交通",
+          "url": "https://yamatoji.nara-kankou.or.jp/01shaji/02tera/02west_area/hozanji/access/"
+        }
+      ]
+    },
+    {
+      "title": "11/06 伊勢去程所需時間",
+      "category": "伊勢",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "近鐵：伊勢交通參考",
+          "url": "https://www.kintetsu.co.jp/senden/Railway/Ticket/mawaryanse/imgs/mawaryanse.pdf"
+        },
+        {
+          "label": "伊勢官方：交通指南",
+          "url": "https://ise-kanko.jp/focus/accesguide/"
+        },
+        {
+          "label": "北御堂：交通",
+          "url": "https://www.kitamido.or.jp/omairi/access-map/"
+        }
+      ]
+    },
+    {
+      "title": "11/07 服部綠地與豬名川轉乘",
+      "category": "大阪／花火",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "服部綠地：交通",
+          "url": "https://hattori-ryokuchi.com/access/"
+        },
+        {
+          "label": "2026 méli mélo市集",
+          "url": "https://hattori-ryokuchi.com/xo_event/meli-melo-osaka%E3%83%A1%E3%83%AA%E3%83%A1%E3%83%AD%E3%82%AA%E3%83%BC%E3%82%B5%E3%82%AB-2/"
+        },
+        {
+          "label": "阪急曽根往池田方向",
+          "url": "https://www.hankyu.co.jp/station/html/HK-44_ta_2_h.html"
+        },
+        {
+          "label": "2026豬名川花火官方",
+          "url": "https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kisetu/1024543.html"
+        }
+      ]
+    },
+    {
+      "title": "11/08 京都與太秦轉乘",
+      "category": "京都",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "京阪：特急一般車程參考",
+          "url": "https://www.keihan.co.jp/traffic/premiumcar/pdf/20250925a.pdf"
+        },
+        {
+          "label": "下鴨神社：交通",
+          "url": "https://www.shimogamo-jinja.or.jp/access/access.html"
+        },
+        {
+          "label": "伏見稻荷：交通",
+          "url": "https://inari.jp/access/"
+        },
+        {
+          "label": "2026太秦活動與交通",
+          "url": "https://eigamura.com/feature/yokai2026/"
+        },
+        {
+          "label": "京都官方：大阪至京都車程",
+          "url": "https://ja.kyoto.travel/feature/traffic2.php"
+        }
+      ]
+    },
+    {
+      "title": "11/09 御苑、叡電與貴船夜間交通",
+      "category": "京都",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "京都御苑：交通",
+          "url": "https://www.env.go.jp/garden/kyotogyoen/2_guide/access.html"
+        },
+        {
+          "label": "京都官方：貴船交通",
+          "url": "https://ja.kyoto.travel/feature/traffic/access.php?id=15"
+        },
+        {
+          "label": "2026叡電紅葉隧道點燈",
+          "url": "https://eizandensha.co.jp/event/detail2972/"
+        },
+        {
+          "label": "貴船神社：交通",
+          "url": "https://kifunejinja.jp/en/access/"
+        },
+        {
+          "label": "2026貴船33號夜間加班",
+          "url": "https://www.kyotobus.jp/news/2026/11/kibune2026a.html"
+        },
+        {
+          "label": "2026貴船神社點燈",
+          "url": "https://kifunejinja.jp/news/1729/"
+        }
+      ]
+    },
+    {
+      "title": "11/10 黑潮與白濱交通、參觀所需時間",
+      "category": "田邊／白濱",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "JR黑潮9號：2026/11/10",
+          "url": "https://timetable.jr-odekake.net/train-timetable/144481?date=20261110"
+        },
+        {
+          "label": "明光巴士：2026改點公告",
+          "url": "https://meikobus.jp/news/scheduledbus/4003/"
+        },
+        {
+          "label": "明光巴士：田邊與白濱班表",
+          "url": "https://meikobus.jp/wp_meiko/wp-content/uploads/2026/02/medical.pdf"
+        },
+        {
+          "label": "三段壁：參觀與步行所需時間",
+          "url": "https://sandanbeki.com/faq/"
+        },
+        {
+          "label": "國立天文台：和歌山市11月日落參考",
+          "url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s3111.html"
+        },
+        {
+          "label": "Hotel Kii Tanabe：步行交通",
+          "url": "https://hotel-kiitanabe.com/access/"
+        }
+      ]
+    },
+    {
+      "title": "11/11 熊野古道與新宮交通",
+      "category": "熊野",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "2026秋季熊野快速巴士公告",
+          "url": "https://www.tb-kumano.jp/en/2026/07/24/17684/"
+        },
+        {
+          "label": "2026秋季快速巴士班表",
+          "url": "https://www.tb-kumano.jp/en/wp-content/uploads/sites/2/2026/07/c5c8c28c6f27eed1cc35eb86792e7629.pdf"
+        },
+        {
+          "label": "本宮觀光協會：6.9km古道步行",
+          "url": "https://www.hongu.jp/kumanokodo/walk/hosshin/"
+        },
+        {
+          "label": "本宮觀光協會：大齋原",
+          "url": "https://www.hongu.jp/kumanokodo/hongu-taisya/ooyunohara/"
+        },
+        {
+          "label": "和歌山官方：大齋原站點交通",
+          "url": "https://www.wakayama-kanko.or.jp/spots/detail_478.html"
+        },
+        {
+          "label": "2026川丈線官方班表",
+          "url": "https://kumanogobobus.nankai-nanki.jp/cms/wp-kumanogobobus/wp-content/uploads/%E2%80%BB2026R8.4.1-%E5%B7%9D%E4%B8%88%E7%B7%9A%EF%BC%88%E6%97%A5%E6%9C%AC%E8%AA%9E%EF%BC%89.pdf"
+        },
+        {
+          "label": "南紀熊野地質公園：新宮城跡交通",
+          "url": "https://nankikumanogeo.jp/geosite/shingujoato/"
+        },
+        {
+          "label": "JR新宮→紀伊勝浦：2026/11/11",
+          "url": "https://timetable.jr-odekake.net/train-timetable/146481?date=20261111"
+        }
+      ]
+    },
+    {
+      "title": "浦島接駁、退房、館內設施與玄武洞",
+      "category": "浦島",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "浦島飯店：接駁與交通",
+          "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
+        },
+        {
+          "label": "浦島飯店：早餐及退房",
+          "url": "https://urashimaresortsandspa.jp/wakayama-hotelurashima/faq/"
+        },
+        {
+          "label": "浦島飯店：Lawson與狼煙山",
+          "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
+        },
+        {
+          "label": "玄武洞：營業時段",
+          "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+        }
+      ]
+    },
+    {
+      "title": "11/12 那智巴士與步行所需時間",
+      "category": "那智",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "2026那智山巴士班表",
+          "url": "https://kumanogobobus.nankai-nanki.jp/cms/wp-kumanogobobus/wp-content/uploads/%E2%98%852026R8.4.1-%E9%82%A3%E6%99%BA%E5%B1%B1%E6%99%82%E5%88%BB%E8%A1%A8.pdf"
+        },
+        {
+          "label": "和歌山官方：那智步行路線",
+          "url": "https://www.wakayama-kanko.or.jp/courses/detail_34.html"
+        }
+      ]
+    },
+    {
+      "title": "11/13 和歌山與泉佐野交通",
+      "category": "和歌山／泉佐野",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "和歌山城：交通",
+          "url": "https://wakayamajo.jp/access/"
+        },
+        {
+          "label": "南海：泉佐野及機場交通",
+          "url": "https://www.nankai.co.jp/traffic/kix.html"
+        },
+        {
+          "label": "R Hotel Kansai Airport官方",
+          "url": "https://r-hotel.jp/ja/hotel/detail/31"
+        }
+      ]
+    },
+    {
+      "title": "11/14 關西機場第1航廈交通",
+      "category": "機場",
+      "checkedAt": "2026-11-16",
+      "sourceLinks": [
+        {
+          "label": "南海：泉佐野及機場交通",
+          "url": "https://www.nankai.co.jp/traffic/kix.html"
+        },
+        {
+          "label": "R Hotel Kansai Airport官方",
+          "url": "https://r-hotel.jp/ja/hotel/detail/31"
+        },
+        {
+          "label": "關西機場：航空公司與航廈",
+          "url": "https://www.kansai-airport.or.jp/flight/airlines"
+        },
+        {
+          "label": "關西機場：車站至第1航廈",
+          "url": "https://www.kansai-airport.or.jp/faq/101"
+        }
+      ]
+    }
+  ]
 }

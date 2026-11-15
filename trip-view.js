@@ -26,7 +26,10 @@
   }
   function timeLabel(item) {
     if (!hasTimedStart(item)) {
-      return `<span class="timeline-time timeline-time--floating">${localized("時間未定", "Time TBD")}</span>`;
+      const label = typeof item.timeLabel === "string" && item.timeLabel.trim()
+        ? item.timeLabel.trim()
+        : localized("時間未定", "Time TBD");
+      return `<span class="timeline-time timeline-time--floating">${escapeHtml(label)}</span>`;
     }
     return `<time class="timeline-time" datetime="${escapeAttr(item.start)}">${escapeHtml(item.start)}</time>`;
   }

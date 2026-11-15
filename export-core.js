@@ -59,6 +59,7 @@
           title: safeText(item.title || item.location || "Planned stop"),
           start: parseClock(item.start) ? safeText(item.start).trim() : "",
           end: parseClock(item.end) ? safeText(item.end).trim() : "",
+          timeLabel: typeof item.timeLabel === "string" ? safeText(item.timeLabel).trim() : "",
           location: safeText(item.location || ""),
           note: safeText(item.note || ""),
           timezone: safeText(item.timezone || day.timezone || trip.timezone || "")
@@ -76,7 +77,7 @@
   }
 
   function itemMarkup(item, dayZone, lang) {
-    const when = item.start ? `${item.start}${item.end ? "–" + item.end : ""}` : (lang === "zh" ? "時間未定" : "Time TBD");
+    const when = item.start ? `${item.start}${item.end ? "–" + item.end : ""}` : (item.timeLabel || (lang === "zh" ? "時間未定" : "Time TBD"));
     const timeZone = item.timezone && item.timezone !== dayZone ? `<small class="zone">${html(item.timezone)}</small>` : "";
     return `<li class="itinerary-item">
       <span class="item-when">${html(when)}${timeZone}</span>
