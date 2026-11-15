@@ -385,7 +385,14 @@ function setView(view) {
 }
 
 function openMapFor(item) {
-  if (item?.id) state.selectedMapItemId = item.id;
+  if (item?.id) {
+    const entry = state.itemIdentity?.resolveUnique(item.id);
+    if (entry?.day?.date) {
+      state.selectedDate = entry.day.date;
+      TravelLiteStorage.set(tripKey("ui:selectedDate"), state.selectedDate);
+    }
+    state.selectedMapItemId = item.id;
+  }
   setView("map");
 }
 

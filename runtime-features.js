@@ -15,22 +15,15 @@
   const baseRenderTrip = renderTrip;
 
   function primaryCoordinate(items = []) {
-    const item = items.find((candidate) =>
-      Number.isFinite(Number(candidate?.lat)) && Number.isFinite(Number(candidate?.lng)));
+    const item = items.find(itemCoordinates);
     if (item) return {
-      lat: Number(item.lat),
-      lng: Number(item.lng),
-      label: item.title || item.location || "Trip",
+      ...itemCoordinates(item),
+      label: item.mapPointLabel || item.title || item.location || "Trip",
     };
 
     const center = state.data.trip.center;
-    if (Array.isArray(center) && center.length >= 2) {
-      return { lat: Number(center[0]), lng: Number(center[1]), label: state.data.trip.homeLabel || state.data.trip.title };
-    }
-    if (center && Number.isFinite(Number(center.lat)) && Number.isFinite(Number(center.lng))) {
-      return { lat: Number(center.lat), lng: Number(center.lng), label: state.data.trip.homeLabel || state.data.trip.title };
-    }
-    return null;
+    const point = itemCoordinates(Array.isArray(center) ? { lat: center[0], lng: center[1] } : center);
+    return point ? { ...point, label: state.data.trip.homeLabel || state.data.trip.title } : null;
   }
 
   function mapPreview(item, compact = false) {
@@ -50,8 +43,7 @@
     if (!item) return "";
     const open = googleMapsOpenUrl(item);
     const hasPlace = Boolean(
-      Number.isFinite(Number(item.lat)) && Number.isFinite(Number(item.lng))
-      || item.location || item.mapQuery
+      itemCoordinates(item) || item.location || item.mapQuery || item.googleQuery || item.mapPointLabel
     );
     return `<div class="action-row">
       ${hasPlace ? `<button class="button-link primary" type="button" data-map-item="${escapeAttr(item.id)}">Trip map</button>` : ""}
@@ -156,15 +148,41 @@
 
   function destroyMap() {
     if (!mapInstance) return;
-    try { mapInstance.remove(); } catch {}
+    const previous = mapInstance;
     mapInstance = null;
+    try { previous.remove(); } catch {}
   }
 
   function itemCoordinates(item) {
+    // Number(null), Number("") and Number(false) all equal zero. None is a
+    // published coordinate; accepting them creates a false point in the ocean.
+    const presentNumber = value => (typeof value === "number" ||
+      (typeof value === "string" && value.trim() !== "")) && Number.isFinite(Number(value));
+    if (!presentNumber(item?.lat) || !presentNumber(item?.lng)) return null;
     const lat = Number(item?.lat);
     const lng = Number(item?.lng);
-    return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
+    return Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? { lat, lng } : null;
   }
+
+  function mapFallback(container, selected, missingCoordinates = false) {
+    const zh = /^zh/i.test(state.data?.ui?.locale || "");
+    const url = selected ? googleMapsOpenUrl(selected) : "";
+    const heading = missingCoordinates
+      ? (zh ? "此日地點可從外部地圖查看" : "Open this day's stops in your map app")
+      : (zh ? "互動地圖暫時無法載入" : "Interactive map unavailable");
+    const message = missingCoordinates
+      ? (zh ? "已提供的地點名稱與地圖連結仍可使用。" : "Published place names and external map links remain available.")
+      : (zh ? "行程與地點資訊仍可使用，也可在 Google Maps 查看位置。" : "Trip details remain available. Open Google Maps for the selected place.");
+    container.innerHTML = `<div class="map-library-state map-library-fallback" role="status">
+      <span class="map-state-mark" aria-hidden="true">⌖</span>
+      <div><p class="eyebrow">${zh ? "地點位置" : "Spatial reference"}</p><strong>${heading}</strong><p>${message}</p>
+      ${url ? `<a class="button-link" href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${zh ? "在 Google Maps 開啟" : "Open Google Maps"} ↗</a>` : ""}</div>
+    </div>`;
+  }
+
+  // Shared by map handoffs and the disclosure that reveals a hidden canvas.
+  window.TravelLiteMap = Object.freeze({ coordinates: itemCoordinates,
+    resize: () => mapInstance?.resize() });
 
   async function initMap(items, selected) {
     const generation = ++mapInitGeneration;
@@ -174,11 +192,7 @@
 
     const mappable = items.filter(itemCoordinates);
     if (!mappable.length) {
-      const zh = /^zh/i.test(state.data?.ui?.locale || "");
-      container.innerHTML = `<div class="map-library-state map-library-fallback" role="status">
-        <span class="map-state-mark" aria-hidden="true">⌖</span>
-        <div><p class="eyebrow">${zh ? "地點位置" : "Spatial reference"}</p><strong>${zh ? "尚未標註精確座標" : "No mapped stops for this day"}</strong><p>${zh ? "原始資料未提供精確經緯度，請透過地點詳細資訊與 Google Maps 導航。" : "The itinerary still works normally. Use the stop details and map handoff below when available."}</p></div>
-      </div>`;
+      mapFallback(container, selected, true);
       return;
     }
 
@@ -187,14 +201,24 @@
       if (generation !== mapInitGeneration || !document.querySelector("#runtime-map") || state.view !== "map") return;
       const focus = itemCoordinates(selected) || itemCoordinates(mappable[0]);
 
-      mapInstance = new maplibregl.Map({
-        container: "runtime-map",
+      const map = mapInstance = new maplibregl.Map({
+        container,
         style: state.data.providers?.mapStyle || TravelLiteProviders.config().mapStyle,
         center: [focus.lng, focus.lat],
         zoom: mappable.length > 1 ? 11 : 14,
         attributionControl: true,
       });
-      mapInstance.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
+      // Style requests fail asynchronously, outside the constructor/import catch.
+      // Only initial failure replaces the canvas; later tile errors keep a usable map.
+      let loaded = false;
+      map.once("load", () => { loaded = true; });
+      map.on("error", (event) => {
+        if (loaded || generation !== mapInitGeneration || mapInstance !== map) return;
+        console.warn("Initial map unavailable", event.error);
+        destroyMap();
+        mapFallback(container, selected);
+      });
+      map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
 
       const bounds = new maplibregl.LngLatBounds();
       mappable.forEach((item) => {
@@ -203,11 +227,14 @@
 
         const el = document.createElement("button");
         const markerSelected = item.id === selected?.id;
+        const number = items.indexOf(item) + 1;
+        const pointLabel = item.mapPointLabel || item.location || item.title || "Trip stop";
         el.className = `map-marker ${markerSelected ? "active" : ""}`;
         el.type = "button";
-        el.textContent = item.start || "•";
-        el.title = item.title || item.location || "Trip stop";
-        el.setAttribute("aria-label", `${markerSelected ? "Selected stop: " : "Select stop: "}${item.title || item.location || "Trip stop"}`);
+        el.textContent = String(number);
+        el.style.zIndex = markerSelected ? "2" : "1";
+        el.title = `${number}. ${pointLabel}`;
+        el.setAttribute("aria-label", `${markerSelected ? "Selected stop: " : "Select stop: "}${number}. ${pointLabel}`);
         el.setAttribute("aria-pressed", markerSelected ? "true" : "false");
         if (state.itemIdentity?.isUnique(item.id)) {
           el.addEventListener("click", () => {
@@ -219,17 +246,15 @@
           el.setAttribute("aria-label", "Source item ID ambiguous: selection unavailable");
         }
 
-        new maplibregl.Marker({ element: el }).setLngLat([coord.lng, coord.lat]).addTo(mapInstance);
+        new maplibregl.Marker({ element: el }).setLngLat([coord.lng, coord.lat]).addTo(map);
       });
 
-      if (mappable.length > 1) mapInstance.fitBounds(bounds, { padding: 54, maxZoom: 14, duration: 0 });
+      if (mappable.length > 1) map.fitBounds(bounds, { padding: 54, maxZoom: 14, duration: 0 });
     } catch (error) {
       if (generation !== mapInitGeneration) return;
       console.warn("MapLibre unavailable", error);
-      container.innerHTML = `<div class="map-library-state map-library-fallback" role="status">
-        <span class="map-state-mark" aria-hidden="true">⌖</span>
-        <div><p class="eyebrow">Map fallback</p><strong>Interactive map unavailable</strong><p>Your planned stops and external map handoffs remain available.</p></div>
-      </div>`;
+      destroyMap();
+      mapFallback(container, selected);
     }
   }
 
@@ -254,7 +279,7 @@
     const placeChips = items.map((item) => {
       const active = selected === item; // Ambiguous ID-only routes never mark a stop selected.
       const unique = sourceSafe(item);
-      return `<button class="place-chip ${active ? "active" : ""}" type="button" ${unique ? `data-runtime-map-place="${escapeAttr(item.id)}"` : `disabled aria-label="Ambiguous published stop ID"`} aria-pressed="${active ? "true" : "false"}"><span>${escapeHtml(item.start || "")}</span>${escapeHtml(item.title)}</button>`;
+      return `<button class="place-chip ${active ? "active" : ""}" type="button" ${unique ? `data-runtime-map-place="${escapeAttr(item.id)}"` : `disabled aria-label="Ambiguous published stop ID"`} aria-pressed="${active ? "true" : "false"}"><span>${escapeHtml(item.start || item.timeLabel || "")}</span>${escapeHtml(item.title)}</button>`;
     }).join("");
 
     const googleUrl = selected ? googleMapsOpenUrl(selected) : "";
@@ -267,7 +292,7 @@
         <div class="map-stage">
           <div id="runtime-map" class="interactive-map" aria-label="Interactive trip map"><div class="map-library-state map-library-loading" role="status"><span class="map-state-mark" aria-hidden="true">⌖</span><div><p class="eyebrow">Spatial reference</p><strong>Loading planned stops…</strong><p>Trip details remain available while the map loads.</p></div></div></div>
         </div>
-        ${selected ? `<div class="selected-place-card map-selected-summary" data-surface-role="selected-stop" aria-label="Selected stop"><div><p class="eyebrow">Selected stop · ${escapeHtml(selected.start || "TBD")}</p><h3>${escapeHtml(selected.title || selected.location || "Place")}</h3><p>${escapeHtml(selected.location || "")}</p></div>${googleUrl ? `<a class="button-link map-secondary-handoff" href="${escapeAttr(googleUrl)}" target="_blank" rel="noreferrer">Navigation ↗</a>` : ""}</div>` : ""}
+        ${selected ? `<div class="selected-place-card map-selected-summary" data-surface-role="selected-stop" aria-label="Selected stop"><div><p class="eyebrow">Selected stop · ${escapeHtml(selected.start || selected.timeLabel || "")}</p><h3>${escapeHtml(selected.title || selected.location || "Place")}</h3><p>${escapeHtml(selected.location || "")}</p>${selected.mapPointLabel ? `<p>${/^zh/i.test(state.data?.ui?.locale || "") ? "定位點" : "Mapped point"}：${escapeHtml(selected.mapPointLabel)}</p>` : ""}</div>${googleUrl ? `<a class="button-link map-secondary-handoff" href="${escapeAttr(googleUrl)}" target="_blank" rel="noreferrer">Navigation ↗</a>` : ""}</div>` : ""}
       </section>`;
 
     root.querySelectorAll("[data-runtime-map-date]").forEach((button) => button.addEventListener("click", () => {

@@ -233,6 +233,14 @@ Rules:
 - provide `end` when possible so the Now reference window is more accurate
 - resolve `lat`/`lng` during vibe-time for real planned stops when practical
 
+### Map points and external navigation
+
+- `lat` / `lng` identify one published physical point. Both must be present, numeric and within latitude/longitude bounds; empty values are not zero coordinates.
+- `mapPointLabel` optionally names that point. For a transport item, identify the specific station, pier or other endpoint represented by its coordinates, rather than treating an entire route as one place.
+- `mapQuery` (or the higher-priority `googleQuery`) supplies a precise public place name/address for Google Maps. The fallback uses `mapPointLabel`, then `location`, then `title`; it does not combine activity wording with a location.
+- `mapsUrl` may supply a public HTTP(S) Google Maps search or directions link. The trip-specific `days[].mobility.legs[]` rows also accept `mapsUrl` for their external map action. No credentials or API key are required.
+- The embedded map shows known points in itinerary order. An external directions link does not provide route geometry to the embedded map or establish live transit service.
+
 ### Optional travel mode / curated highlights / illustrations
 
 For a genuinely source-supported leg, the item may include:

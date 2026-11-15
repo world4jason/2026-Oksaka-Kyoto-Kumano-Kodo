@@ -28,7 +28,7 @@
     "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
   })[c]);
   const mapHandoff = (name) =>
-    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || "") + " 日本");
+    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || ""));
   const icons = {
     train: '<path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M4 11h16M7 21l2-3m8 3-2-3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/>',
     subway: '<rect x="5" y="3" width="14" height="16" rx="3"/><path d="M5 10h14M8 22l3-3m5 3-3-3"/>',
@@ -88,9 +88,13 @@
   }
   function legRow(leg, i) {
     const query = (leg.mode === "stay" || leg.mode === "event") ? leg.to : leg.from;
-    const map = '<a class="tl-map-link" href="' + esc(mapHandoff(query)) +
-      '" target="_blank" rel="noopener noreferrer" aria-label="在 Google Maps 搜尋 ' +
-      esc(query) + '，非即時導航" title="Google Maps 地點搜尋">⌖</a>';
+    const suppliedMap = trustedPilgrimUrl(leg.mapsUrl);
+    const mapLabel = suppliedMap
+      ? '在 Google Maps 開啟 ' + leg.from + ' → ' + leg.to + '；非即時班表'
+      : '在 Google Maps 搜尋 ' + query + '；非即時班表';
+    const map = '<a class="tl-map-link" href="' + esc(suppliedMap || mapHandoff(query)) +
+      '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(mapLabel) +
+      '" title="' + (suppliedMap ? 'Google Maps 路線或地點' : 'Google Maps 地點搜尋') + ' · 非即時班表">⌖</a>';
     const hidden = leg.hint
       ? '<details class="tl-leg-extra"><summary aria-label="展開此段乘車細節" title="乘車細節">···</summary><p>' + esc(leg.hint) + '</p></details>'
       : "";
@@ -321,6 +325,8 @@
     scrollOnScreenChange(viewRoot.querySelector(".trip-day-view") ? "trip:" + state.selectedDate : "trip:overview");
   };
   renderMap = function visualTransportRender() {
+    const previousMap = viewRoot.querySelector(".tl-map-optional");
+    const openMap = previousMap ? previousMap.open : Boolean(state.selectedMapItemId);
     baseMap();
     const day = dayByDate(state.selectedDate) || state.data.days[0];
     const panel = viewRoot.querySelector(".runtime-map-panel");
@@ -329,13 +335,14 @@
     tabs.insertAdjacentHTML("afterend", board(day, "map"));
     const extra = document.createElement("details");
     extra.className = "tl-map-optional";
+    extra.open = openMap;
     extra.innerHTML = '<summary><strong>地圖與站點</strong><span>位置參考 · 非交通時刻</span><b>＋</b></summary>';
     panel.before(extra);
     extra.appendChild(panel);
     foldPublicationWarning();
     scrollOnScreenChange("map:" + day.date);
     extra.addEventListener("toggle", () => {
-      if (extra.open) requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
+      if (extra.open) requestAnimationFrame(() => window.TravelLiteMap?.resize());
     });
   };
   renderNow = function visualNowRender() {

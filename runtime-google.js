@@ -1,18 +1,29 @@
 /* Google Maps handoff adapter. SPDX-License-Identifier: AGPL-3.0-or-later */
 (() => {
+  const textValue = (value) => typeof value === "string" ? value.trim() : "";
+  function publicMapUrl(value) {
+    if (!textValue(value)) return "";
+    try {
+      const url = new URL(value);
+      return ["https:", "http:"].includes(url.protocol) && !url.username && !url.password ? url.href : "";
+    } catch { return ""; }
+  }
   function googleTextQuery(item) {
     if (!item) return "";
-    const text = item.googleQuery || item.mapQuery
-      || [item.title, item.location].filter(Boolean).join(", ")
-      || item.location || item.title;
+    // Prefer the published destination to an activity title such as
+    // "check in" or "A → B". A transport item may identify one concrete endpoint.
+    const text = [item.googleQuery, item.mapQuery, item.mapPointLabel, item.location, item.title]
+      .map(textValue).find(Boolean);
     if (text) return text;
-    if (item.lat != null && item.lng != null) return `${item.lat},${item.lng}`;
+    const point = window.TravelLiteMap?.coordinates(item);
+    if (point) return `${point.lat},${point.lng}`;
     return "";
   }
 
   googleMapsOpenUrl = function googleMapsReviewsUrl(item) {
     if (!item) return "";
-    if (item.mapsUrl) return item.mapsUrl;
+    const supplied = publicMapUrl(item.mapsUrl);
+    if (supplied) return supplied;
     const query = googleTextQuery(item);
     if (!query) return "";
     const params = new URLSearchParams({ api: "1", query });
@@ -31,7 +42,8 @@
 
   googleMapsEmbedUrl = function officialGoogleMapsEmbedUrl(item) {
     if (!item) return "";
-    if (item.mapEmbedUrl) return item.mapEmbedUrl;
+    const supplied = publicMapUrl(item.mapEmbedUrl);
+    if (supplied) return supplied;
     const key = state.data.providers?.googleMapsEmbedKey;
     const query = googleTextQuery(item);
     if (!key || !query) return "";
