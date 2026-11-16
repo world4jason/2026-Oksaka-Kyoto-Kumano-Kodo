@@ -253,7 +253,8 @@ For a genuinely source-supported leg, the item may include:
 }
 ```
 
-- `transportMode` must be an explicit `flight | drive | boat | train | bus | walk` known from the source. It displays a small label, not actual route optimization. Unknown modes are ignored.
+- `transportMode` must be an explicit `flight | drive | boat | train | subway | cable | bus | walk` known from the source. `subway` labels metro travel and `cable` labels a cable railway/funicular. It displays a small label, not actual route optimization. Unknown modes are ignored.
+- To show travel and visits together, insert `type: "transport"` items between visits in the published `days[].items` order, with the known mode, endpoints and reference times. Preserve existing visit IDs and links; do not repeat that same segment in `transferAfter`. The Trip day timeline remains visible, with its detailed transport board available afterwards as an optional reference.
 - `mustGo: true` is **editor-selected emphasis**, never automatically inferred from a famous stop, paid booking, or location. It is not a proof of a reservation. Avoid labeling tentative options as confirmed plans.
 - `illustration` is a **whitelisted decorative key**, not a URL. Allowed: `map`, `city`, `plane`, `car`, `train`, `boat`, `food`, `hotel`, `landmark`, `nature`, `sea`. It has no navigation/state meaning.
 

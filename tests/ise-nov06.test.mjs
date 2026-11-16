@@ -11,10 +11,10 @@ test("11/06 follows the actual Naiku, Futami and Mikimoto route", () => {
  assert.ok(!d.items.some(x=>x.title.includes("外宮")));
  assert.ok(src.includes("id=\"ise-primary\"")&&src.includes("id=\"ise-transit\""));
  assert.match(d.routeSummary.join(" → "), /內宮.*夫婦岩.*御木本珍珠島/);
- assert.ok(!d.items.some(x=>x.title.includes("鳥羽水族館")));
+ assert.ok(!d.items.some(x=>x.type==="place"&&x.title.includes("鳥羽水族館")));
 });
 test("Mikimoto entry, 15:30 ama performance and departure retain their distinct times", () => {
- const pearl = d.items.find(x=>x.title.includes("御木本珍珠島"));
+ const pearl = d.items.find(x=>x.id==="ise-pearl");
  assert.ok(pearl);
  assert.equal(pearl.start,"15:20");
  assert.equal(pearl.end,"16:20");

@@ -6,7 +6,7 @@ const data = JSON.parse(readFileSync(new URL("../trip.json", import.meta.url), "
 const days = data.days;
 const byDate = (date) => days.find((day) => day.date === date);
 const allLegs = days.flatMap((day) => day.mobility?.legs || []);
-const allowedModes = new Set(["train", "subway", "bus", "walk", "boat", "flight", "stay", "task", "event"]);
+const allowedModes = new Set(["train", "subway", "cable", "bus", "walk", "boat", "flight", "stay", "task", "event"]);
 const allowedStatuses = new Set(["confirmed", "estimate", "reference", "unconfirmed"]);
 test("Published trip is eleven-day, transport-first, unique and public-safe", () => {
   assert.equal(days.length, 11);
@@ -82,6 +82,28 @@ test("11/05 and 11/12 show the actual Osaka and afternoon Nachi itineraries", ()
   assert.ok(nachi.mobility.legs.some((leg) => leg.mode === "bus" && leg.depart === "13:50"));
   assert.ok(nachi.mobility.legs.some((leg) => leg.mode === "bus" && /16:32/.test(leg.depart)));
   assert.doesNotMatch(content, /只有11\/11錯過速玉/);
+});
+test("11/05 alternates the APA walk, Tsuyu visit, inter-shrine walk and Tenmangu visit", () => {
+  const items = byDate("2026-11-05").items;
+  const tsuyuIndex = items.findIndex(item => item.id === "d04-s0-r41");
+  const tenmanguIndex = items.findIndex(item => item.id === "d02-osaka-tenmangu");
+  assert.ok(tsuyuIndex > 0);
+  const firstWalk = items[tsuyuIndex - 1];
+  assert.equal(firstWalk.type, "transport");
+  assert.equal(firstWalk.transportMode, "walk");
+  assert.match(firstWalk.title, /APA.*露天神社/);
+  assert.equal(items[tsuyuIndex].type, "place");
+  assert.equal(tenmanguIndex, tsuyuIndex + 2, "a separate walking segment joins the two stable visit records");
+  assert.equal(items[tsuyuIndex + 1].type, "transport");
+  assert.equal(items[tsuyuIndex + 1].transportMode, "walk");
+  assert.match(items[tsuyuIndex + 1].title, /露天神社.*大阪天滿宮/);
+  assert.equal(items[tenmanguIndex].type, "place");
+  assert.ok(items.some(item => item.type === "transport" && item.transportMode === "subway"));
+  assert.ok(items.some(item => item.type === "transport" && item.transportMode === "cable"));
+  for (let index = 1; index < items.length; index++) {
+    assert.ok(items[index - 1].end <= items[index].start,
+      `${items[index - 1].id} overlaps the following ${items[index].id}`);
+  }
 });
 test("Offline shell keeps the transport board and published sources available", () => {
   const sw = readFileSync(new URL("../sw.js", import.meta.url), "utf8");

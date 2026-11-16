@@ -7,6 +7,8 @@
     drive: { zh: "自駕", en: "Drive", symbol: "▰" },
     boat: { zh: "搭船", en: "Boat", symbol: "≈" },
     train: { zh: "火車", en: "Train", symbol: "≋" },
+    subway: { zh: "地鐵", en: "Metro", symbol: "≋" },
+    cable: { zh: "纜車", en: "Cable car", symbol: "↗" },
     bus: { zh: "巴士", en: "Bus", symbol: "▰" },
     walk: { zh: "步行", en: "Walk", symbol: "↗" },
   });
@@ -257,7 +259,7 @@
       </section>`;
 
     const timelineView = `<section class="trip-timeline-section" aria-labelledby="trip-timeline-title">
-        <div class="trip-timeline-heading"><h2 id="trip-timeline-title" class="trip-timeline-title">${localized("每日時間軸", "Day timeline")}</h2><p>${localized("依原行程順序排列 · 未定時間保留彈性", "Published order · flexible times stay flexible")}</p></div>
+        <div class="trip-timeline-heading"><h2 id="trip-timeline-title" class="trip-timeline-title">${localized("每日時間軸", "Day timeline")}</h2><p>${localized("依行程順序串起移動與遊覽", "Travel and activities in published order")}</p></div>
         <ol class="timeline trip-v2-timeline composition-sequence" role="list" aria-labelledby="trip-timeline-title">${timeline}</ol>
         ${timeline ? "" : '<div class="empty-state"><p>No plans yet.</p></div>'}
       </section>`;

@@ -20,7 +20,7 @@
     document.body.classList.toggle("tl-route-screen", state.view === "trip" || state.view === "map");
   };
   const modeNames = {
-    train: "JR／鐵道", subway: "地鐵", bus: "巴士", walk: "步行",
+    train: "JR／鐵道", subway: "地鐵", cable: "纜車", bus: "巴士", walk: "步行",
     boat: "渡船", flight: "飛機", stay: "住宿", task: "準備", event: "活動"
   };
   const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
@@ -32,6 +32,7 @@
   const icons = {
     train: '<path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M4 11h16M7 21l2-3m8 3-2-3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/>',
     subway: '<rect x="5" y="3" width="14" height="16" rx="3"/><path d="M5 10h14M8 22l3-3m5 3-3-3"/>',
+    cable: '<path d="m3 20 18-8M5 23l17-8M6 18V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6M6 11h12M10 5v6M14 5v6"/>',
     bus: '<rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16M8 19v2m8-2v2M8 15h1m6 0h1"/>',
     walk: '<circle cx="13" cy="4" r="2"/><path d="m10 21 2-6-2-3-3 3-3 1m6-7 2 3 4 1 3 4m-7-5 3-3-1-3"/>',
     boat: '<path d="m3 13 9 3 9-3-3 6H6l-3-6Zm9-9v12m0-10 6 5h-6"/>',
@@ -52,7 +53,7 @@
     return day.date.slice(5).replace("-", "/") + " · 週" + weekdays[date.getUTCDay()];
   }
   function uniqueModes(legs) {
-    return [...new Set(legs.map((leg) => leg.mode).filter((m) => ["train","subway","bus","walk","boat","flight"].includes(m)))];
+    return [...new Set(legs.map((leg) => leg.mode).filter((m) => ["train","subway","cable","bus","walk","boat","flight"].includes(m)))];
   }
   function journeyStages(legs, stageLegIds) {
     if (legs.length < 2) return [];
@@ -298,24 +299,16 @@
     if (!layout || layout.querySelector(".tl-board")) return;
     const active = layout.querySelector('[data-trip-day].active');
     const day = dayByDate(active?.dataset.tripDay || state.selectedDate);
-    if (!day) return;
-    const nav = layout.querySelector(".trip-v2-tabs");
-    if (!nav) return;
-    nav.insertAdjacentHTML("afterend", board(day, "trip"));
-    layout.querySelector(".day-summary")?.remove();
-    layout.querySelector(".trip-route-summary")?.remove();
+    if (!day?.mobility) return;
     const section = layout.querySelector(".trip-timeline-section");
-    const extras = [...layout.querySelectorAll(".trip-alternatives")];
-    if (section) {
-      const deep = document.createElement("details");
-      deep.className = "tl-complete-itinerary";
-      deep.innerHTML = '<summary><span>完整行程與備註</span><small>' +
-        (day.items?.length || 0) + ' 個活動</small><b>＋</b></summary>';
-      section.before(deep);
-      deep.appendChild(section);
-      extras.forEach((ex) => deep.appendChild(ex));
-      if (window.location.hash.includes("/stop/")) deep.open = true;
-    }
+    if (!section) return;
+    // Travel segments and visits stay together in the visible source timeline.
+    // The detailed transport board is an optional reference after that sequence.
+    const details = document.createElement("details");
+    details.className = "tl-complete-itinerary";
+    details.innerHTML = '<summary><span>交通班次與備選</span><small>' +
+      (day.mobility.legs?.length || 0) + ' 段參考</small><b>＋</b></summary>' + board(day, "trip");
+    section.after(details);
   }
   renderTrip = function visualTripRender() {
     baseTrip();

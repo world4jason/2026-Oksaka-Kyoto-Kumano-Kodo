@@ -7,19 +7,28 @@
   ],
   "places": {
     "tpe": {
+      "placeKey": "tpe",
       "name": "臺灣桃園國際機場",
+      "kind": "airport",
+      "mapQuery": "臺灣桃園國際機場 桃園市大園區航站南路9號",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%20%E6%A1%83%E5%9C%92%E5%B8%82%E5%A4%A7%E5%9C%92%E5%8D%80%E8%88%AA%E7%AB%99%E5%8D%97%E8%B7%AF9%E8%99%9F",
       "lat": 25.0802778,
       "lng": 121.2322222,
       "mapPointLabel": "桃園國際機場（全機場參考點）",
       "precision": "airport_reference",
       "sourceUrl": "https://ais.caa.gov.tw/eaip/AIRAC%20AIP%20AMDT%2003-26_2026_08_06/eAIP/RC-AD%202%20RCTP%20%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9BTAIPEI-TAIWAN%20TAOYUAN%20INTL-zh-TW.html",
       "coordinateEvidence": "CAA eAIP AD 2.2 ARP 250449N 1211356E, converted from degrees/minutes/seconds; not a gate or terminal coordinate.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://travel.tycg.gov.tw/zh-tw/traffic/aviation"
       ]
     },
     "kix_station": {
+      "placeKey": "kix_station",
       "name": "関西空港駅",
+      "kind": "station",
+      "mapQuery": "関西空港駅 大阪府泉佐野市泉州空港北",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF%E9%A7%85%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B3%89%E4%BD%90%E9%87%8E%E5%B8%82%E6%B3%89%E5%B7%9E%E7%A9%BA%E6%B8%AF%E5%8C%97",
       "lat": 34.436125,
       "lng": 135.2438492,
       "mapPointLabel": "関西空港駅",
@@ -31,12 +40,18 @@
         "addressCode": "27213",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://www.kansai-airport.or.jp/faq/101"
       ]
     },
     "kix_airport": {
+      "placeKey": "kix_airport",
       "name": "関西国際空港",
+      "kind": "airport",
+      "mapQuery": "関西国際空港 第1ターミナル 大阪府",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%20%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%20%E5%A4%A7%E9%98%AA%E5%BA%9C",
       "lat": 34.4301091,
       "lng": 135.2303603,
       "mapPointLabel": "關西國際機場（全機場參考點）",
@@ -48,60 +63,96 @@
         "addressCode": "27362",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "機場範圍參照點；Google Maps 外連指定本趟使用的第1航廈。",
       "additionalSources": [
         "https://www.kansai-airport.or.jp/flight/airlines"
       ]
     },
     "apa": {
+      "placeKey": "apa",
       "name": "アパホテル〈大阪肥後橋駅前〉",
+      "kind": "stay",
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%91%E3%83%9B%E3%83%86%E3%83%AB%20%E5%A4%A7%E9%98%AA%E8%82%A5%E5%BE%8C%E6%A9%8B%E9%A7%85%E5%89%8D%20%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E5%8C%BA%E5%9C%9F%E4%BD%90%E5%A0%801-2-1",
       "lat": 34.6920961,
       "lng": 135.4953491,
       "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉",
       "precision": "venue",
       "sourceUrl": "https://map.apahotel.com/map/86",
       "coordinateEvidence": "Official APA map/86 contains Google Maps q=34.6920961,135.4953491.",
+      "checkedAt": "2026-11-16",
+      "address": "大阪市西区土佐堀1-2-1",
       "additionalSources": [
         "https://www.apahotel.com/hotel/kansai/osaka/osakahigobashi-ekimae/"
       ]
     },
     "ohatsu": {
+      "placeKey": "ohatsu",
       "name": "露天神社（お初天神）",
+      "kind": "place",
+      "mapQuery": "露天神社 お初天神 大阪市北区曾根崎2丁目5-4",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%9C%B2%E5%A4%A9%E7%A5%9E%E7%A4%BE%20%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%9B%BE%E6%A0%B9%E5%B4%8E2%E4%B8%81%E7%9B%AE5-4",
       "lat": 34.6992683,
       "lng": 135.5007629,
       "mapPointLabel": "露天神社（お初天神）",
       "precision": "venue",
       "sourceUrl": "https://tuyutenjin.com/access_map/",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16",
+      "address": "大阪市北区曾根崎2丁目5-4"
     },
     "tenmangu": {
+      "placeKey": "tenmangu",
       "name": "大阪天満宮",
+      "kind": "place",
+      "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A9%E7%A5%9E%E6%A9%8B2%E4%B8%81%E7%9B%AE1-8",
       "lat": 34.6960576,
       "lng": 135.5126556,
       "mapPointLabel": "大阪天満宮",
       "precision": "venue",
       "sourceUrl": "https://osakatemmangu.or.jp/access",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16",
+      "address": "大阪市北区天神橋2丁目1-8"
     },
     "hozanji": {
+      "placeKey": "hozanji",
       "name": "生駒聖天 宝山寺",
+      "kind": "place",
+      "mapQuery": "宝山寺 奈良県生駒市門前町1-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E5%B1%B1%E5%AF%BA%20%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E5%B8%82%E9%96%80%E5%89%8D%E7%94%BA1-1",
       "lat": 34.684643,
       "lng": 135.686549,
       "mapPointLabel": "生駒聖天 宝山寺",
       "precision": "venue",
       "sourceUrl": "https://yamatoji.nara-kankou.or.jp/01shaji/02tera/02west_area/hozanji/access/",
-      "coordinateEvidence": "Nara official tourism facility latitude/longitude and Google Maps daddr."
+      "coordinateEvidence": "Nara official tourism facility latitude/longitude and Google Maps daddr.",
+      "checkedAt": "2026-11-16",
+      "address": "奈良県生駒市門前町1-1"
     },
     "naiku": {
+      "placeKey": "naiku",
       "name": "伊勢神宮 内宮（皇大神宮）",
+      "kind": "place",
+      "mapQuery": "伊勢神宮 内宮 皇大神宮 三重県伊勢市宇治館町1",
+      "mapsUrl": "https://maps.google.com/?cid=17296468231710968999",
       "lat": 34.45501,
       "lng": 136.725793,
       "mapPointLabel": "伊勢神宮 内宮（皇大神宮）",
       "precision": "venue",
       "sourceUrl": "https://www.japan.travel/en/spot/1210/",
-      "coordinateEvidence": "JNTO primary spot map, data-locations idx=0 and embedded map q."
+      "coordinateEvidence": "JNTO primary spot map, data-locations idx=0 and embedded map q.",
+      "checkedAt": "2026-11-16",
+      "address": "三重県伊勢市宇治館町1"
     },
     "futami": {
+      "placeKey": "futami",
       "name": "二見興玉神社・夫婦岩",
+      "kind": "place",
+      "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E8%A6%8B%E8%88%88%E7%8E%89%E7%A5%9E%E7%A4%BE%20%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E5%8B%A2%E5%B8%82%E4%BA%8C%E8%A6%8B%E7%94%BA%E6%B1%9F575",
       "lat": 34.5092502,
       "lng": 136.7881279,
       "mapPointLabel": "二見興玉神社・夫婦岩",
@@ -112,40 +163,63 @@
         "name": "二見興玉神社",
         "kmlUrl": "https://www.google.com/maps/d/kml?mid=1h3zUkU2WoDYQAgJFlECMjYPvyvEQpgFf&forcekml=1",
         "coordinates": "136.7881279,34.5092502,0"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "address": "三重県伊勢市二見町江575"
     },
     "pearl": {
+      "placeKey": "pearl",
       "name": "ミキモト真珠島",
+      "kind": "place",
+      "mapQuery": "ミキモト真珠島 三重県鳥羽市鳥羽1丁目7-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%9F%E3%82%AD%E3%83%A2%E3%83%88%E7%9C%9F%E7%8F%A0%E5%B3%B6%20%E4%B8%89%E9%87%8D%E7%9C%8C%E9%B3%A5%E7%BE%BD%E5%B8%82%E9%B3%A5%E7%BE%BD1%E4%B8%81%E7%9B%AE7-1",
       "lat": 34.4835168,
       "lng": 136.8477084,
       "mapPointLabel": "ミキモト真珠島",
       "precision": "venue",
       "sourceUrl": "https://www.mikimoto-pearl-island.jp/",
-      "coordinateEvidence": "Official Wix businessLocationCoordinates latitude=34.4835168 longitude=136.8477084."
+      "coordinateEvidence": "Official Wix businessLocationCoordinates latitude=34.4835168 longitude=136.8477084.",
+      "checkedAt": "2026-11-16",
+      "address": "三重県鳥羽市鳥羽1丁目7-1"
     },
     "kitamido": {
+      "placeKey": "kitamido",
       "name": "北御堂（本願寺津村別院）",
+      "kind": "place",
+      "mapQuery": "北御堂 本願寺津村別院 大阪市中央区本町4丁目1-3",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E5%BE%A1%E5%A0%82%20%E6%9C%AC%E9%A1%98%E5%AF%BA%E6%B4%A5%E6%9D%91%E5%88%A5%E9%99%A2%20%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9C%AC%E7%94%BA4%E4%B8%81%E7%9B%AE1-3",
       "lat": 34.6850446,
       "lng": 135.4996097,
       "mapPointLabel": "北御堂（本願寺津村別院）",
       "precision": "venue",
       "sourceUrl": "https://www.kitamido.or.jp/omairi/access-map/",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16",
+      "address": "大阪市中央区本町4丁目1-3"
     },
     "midosuji": {
+      "placeKey": "midosuji",
       "name": "御堂筋燈飾散步區",
+      "kind": "route_area",
+      "mapQuery": "御堂筋 本町 大阪市中央区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%BE%A1%E5%A0%82%E7%AD%8B%20%E6%9C%AC%E7%94%BA%20%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA",
       "lat": 34.6850446,
       "lng": 135.4996097,
       "mapPointLabel": "北御堂側（御堂筋散步終點參考）",
       "precision": "route_endpoint_reference",
       "sourceUrl": "https://www.kitamido.or.jp/omairi/access-map/",
       "coordinateEvidence": "Reuses the confirmed north endpoint of this walking route, Kitamido; not a point representing the whole boulevard.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://hikari-kyoen.com/core/midosuji/"
       ]
     },
     "hattori_market": {
+      "placeKey": "hattori_market",
       "name": "服部緑地 méli mélo 市集",
+      "kind": "event_area",
+      "mapQuery": "服部緑地 東中央広場 円形花壇 大阪府豊中市",
+      "mapsUrl": "https://goo.gl/maps/tusYUE8zLb6nzyU16",
       "lat": 34.7767212,
       "lng": 135.4868738,
       "mapPointLabel": "服部綠地（市集在東中央廣場・円形花壇）",
@@ -156,63 +230,99 @@
         "resolvedUrl": "https://www.google.com/maps/place/%E6%9C%8D%E9%83%A8%E7%B7%91%E5%9C%B0/@34.7774405,135.4861935,18z/data=!4m6!3m5!1s0x6000e5285d34d759:0xbe22903495910b60!8m2!3d34.7767212!4d135.4868738!16zL20vMGZ3amRm?hl=ja&coh=164777&entry=tt&shorturl=1",
         "coordinateTokens": "!3d latitude / !4d longitude, not @ viewport center"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "官方公園地標參照點；市集攤位區使用精確 Google Maps 搜尋，不宣稱此點是攤位或入口。",
       "additionalSources": [
         "https://hattori-ryokuchi.com/xo_event/meli-melo-osaka%E3%83%A1%E3%83%AA%E3%83%A1%E3%83%AD%E3%82%AA%E3%83%BC%E3%82%B5%E3%82%AB-2/"
       ]
     },
     "inagawa": {
+      "placeKey": "inagawa",
       "name": "猪名川花火会場・池田側",
+      "kind": "event_area",
+      "mapQuery": "猪名川花火大会 猪名川河川敷 大阪府池田市桃園",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%8C%AA%E5%90%8D%E5%B7%9D%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E7%8C%AA%E5%90%8D%E5%B7%9D%E6%B2%B3%E5%B7%9D%E6%95%B7%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B1%A0%E7%94%B0%E5%B8%82%E6%A1%83%E5%9C%92",
       "lat": 34.820889,
       "lng": 135.418915,
       "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）",
       "precision": "district_reference",
       "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B1%A0%E7%94%B0%E5%B8%82%E6%A1%83%E5%9C%92",
       "coordinateEvidence": "GSI address search: 大阪府池田市桃園 district centroid. Official event page identifies 池田市桃園1丁目・2丁目河川敷 as the venue.",
+      "checkedAt": "2026-11-16",
+      "notes": "這是對外分享行程的會場區域定位，不表示當天的座位、看書位置或精確進場口。",
       "additionalSources": [
         "https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kisetu/1024543.html"
       ]
     },
     "shimogamo": {
+      "placeKey": "shimogamo",
       "name": "下鴨神社（賀茂御祖神社）",
+      "kind": "place",
+      "mapQuery": "下鴨神社 京都市左京区下鴨泉川町59",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E9%B4%A8%E7%A5%9E%E7%A4%BE%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E4%B8%8B%E9%B4%A8%E6%B3%89%E5%B7%9D%E7%94%BA59",
       "lat": 35.0394,
       "lng": 135.7724,
       "mapPointLabel": "下鴨神社（賀茂御祖神社）",
       "precision": "venue",
       "sourceUrl": "https://www.shimogamo-jinja.or.jp/access/access.html",
-      "coordinateEvidence": "Official shrine JSON-LD GeoCoordinates latitude 35.0394, longitude 135.7724."
+      "coordinateEvidence": "Official shrine JSON-LD GeoCoordinates latitude 35.0394, longitude 135.7724.",
+      "checkedAt": "2026-11-16",
+      "address": "京都市左京区下鴨泉川町59"
     },
     "fushimi": {
+      "placeKey": "fushimi",
       "name": "伏見稲荷大社",
+      "kind": "place",
+      "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
+      "mapsUrl": "https://maps.google.com/?cid=8870624639634301673",
       "lat": 34.9671402,
       "lng": 135.7726717,
       "mapPointLabel": "伏見稲荷大社",
       "precision": "venue",
       "sourceUrl": "https://faq.japan-travel.jnto.go.jp/en/spot/1128/",
       "coordinateEvidence": "JNTO primary spot map, idx=0.",
+      "checkedAt": "2026-11-16",
+      "address": "京都市伏見区深草薮之内町68",
       "additionalSources": [
         "https://inari.jp/access/"
       ]
     },
     "eigamura": {
+      "placeKey": "eigamura",
       "name": "東映太秦映画村",
+      "kind": "place",
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E6%98%A0%E5%A4%AA%E7%A7%A6%E6%98%A0%E7%94%BB%E6%9D%91%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8F%B3%E4%BA%AC%E5%8C%BA%E5%A4%AA%E7%A7%A6%E6%9D%B1%E8%9C%82%E5%B2%A1%E7%94%BA10",
       "lat": 35.0162763,
       "lng": 135.7078702,
       "mapPointLabel": "東映太秦映画村",
       "precision": "venue_address",
       "sourceUrl": "https://eigamura.com/feature/yokai2026/",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16",
+      "address": "京都市右京区太秦東蜂岡町10"
     },
     "nakanoshima": {
+      "placeKey": "nakanoshima",
       "name": "中之島地區",
+      "kind": "area",
+      "mapQuery": "中之島 大阪市北区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E4%B9%8B%E5%B3%B6%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA",
       "lat": 34.6917217,
       "lng": 135.4910214,
       "mapPointLabel": "大阪中之島（區域參考點）",
       "precision": "district_reference",
       "sourceUrl": "https://osaka-info.jp/experience/ja/osaka/spot/213",
-      "coordinateEvidence": "Osaka official tourism page iframe q=34.6917217,135.4910214."
+      "coordinateEvidence": "Osaka official tourism page iframe q=34.6917217,135.4910214.",
+      "checkedAt": "2026-11-16",
+      "notes": "使用者只確認中之島散步；不將此點解讀為已進入某座美術館或公園設施。"
     },
     "gyoen": {
+      "placeKey": "gyoen",
       "name": "京都御苑",
+      "kind": "park",
+      "mapQuery": "京都御苑 京都市上京区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E5%BE%A1%E8%8B%91%20%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%8A%E4%BA%AC%E5%8C%BA",
       "lat": 35.0233955,
       "lng": 135.7632002,
       "mapPointLabel": "京都御苑（園區參考點）",
@@ -224,37 +334,54 @@
         "addressCode": "26102",
         "dataSource": "5"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://www.env.go.jp/garden/kyotogyoen/2_guide/access.html",
         "https://fng.or.jp/kyoto/access/"
       ]
     },
     "kifune_hon": {
+      "placeKey": "kifune_hon",
       "name": "貴船神社 本宮",
+      "kind": "place",
+      "mapQuery": "貴船神社 本宮 京都市左京区鞍馬貴船町180",
+      "mapsUrl": "https://maps.google.com/?cid=2090262746651448459",
       "lat": 35.121848,
       "lng": 135.7629081,
       "mapPointLabel": "貴船神社 本宮",
       "precision": "venue",
       "sourceUrl": "https://www.japan.travel/en/spot/1117/",
       "coordinateEvidence": "JNTO primary spot map idx=0; avoids shrine access page parking-lot pins.",
+      "checkedAt": "2026-11-16",
+      "address": "京都市左京区鞍馬貴船町180",
       "additionalSources": [
         "https://kifunejinja.jp/en/access/"
       ]
     },
     "kifune_oku": {
+      "placeKey": "kifune_oku",
       "name": "貴船神社 奥宮",
+      "kind": "place",
+      "mapQuery": "貴船神社 奥宮 京都市左京区鞍馬貴船町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%B2%B4%E8%88%B9%E7%A5%9E%E7%A4%BE%20%E5%A5%A5%E5%AE%AE%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E9%9E%8D%E9%A6%AC%E8%B2%B4%E8%88%B9%E7%94%BA",
       "lat": 35.1283333,
       "lng": 135.7655833,
       "mapPointLabel": "貴船神社 奥宮",
       "precision": "venue",
       "sourceUrl": "https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=114",
       "coordinateEvidence": "Kyoto City official tourism map embed q=35.1283333333333,135.765583333333.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://kifunejinja.jp/info/"
       ]
     },
     "kiitanabe_hotel": {
+      "placeKey": "kiitanabe_hotel",
       "name": "HOTEL KIITANABE",
+      "kind": "stay",
+      "mapQuery": "HOTEL KIITANABE 和歌山県田辺市高雄2丁目7-16",
+      "mapsUrl": "https://goo.gl/maps/v7MDVvyJWVsCX2uU8",
       "lat": 33.7355737,
       "lng": 135.3820281,
       "mapPointLabel": "HOTEL KIITANABE",
@@ -264,10 +391,16 @@
         "type": "Official site Google Maps link resolved to feature coordinates",
         "resolvedUrl": "https://www.google.co.jp/maps/place/HOTEL+KIITANABE/@33.7333325,135.3566374,15z/data=!4m7!3m6!1s0x6007a7bb85d6b885:0xdd2f8a40c7ec1a1a!8m2!3d33.7355737!4d135.3820281!15sCg9IT1RFTCBLSUlUQU5BQkWSAQVob3RlbOABAA!16s%2Fg%2F11svfzjwbx?hl=ja&entry=tts&shorturl=1",
         "coordinateTokens": "!3d latitude / !4d longitude, not @ viewport center"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県田辺市高雄2丁目7-16"
     },
     "sandanbeki": {
+      "placeKey": "sandanbeki",
       "name": "三段壁洞窟",
+      "kind": "place",
+      "mapQuery": "三段壁洞窟 和歌山県西牟婁郡白浜町2927-52",
+      "mapsUrl": "https://goo.gl/maps/rLxMHm9Hn8p",
       "lat": 33.6659963,
       "lng": 135.3356616,
       "mapPointLabel": "三段壁洞窟",
@@ -276,61 +409,93 @@
       "coordinateEvidence": {
         "type": "Official site Google Maps shortlink feature coordinates",
         "resolvedUrl": "https://www.google.co.jp/maps/place/%E4%B8%89%E6%AE%B5%E5%A3%81%E6%B4%9E%E7%AA%9F/@33.6653534,135.3230445,15z/data=!4m5!3m4!1s0x0:0xb90876a96a95b98c!8m2!3d33.6659963!4d135.3356616?shorturl=1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県西牟婁郡白浜町2927-52"
     },
     "senjojiki": {
+      "placeKey": "senjojiki",
       "name": "千畳敷（白浜）",
+      "kind": "place",
+      "mapQuery": "千畳敷 和歌山県西牟婁郡白浜町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E7%95%B3%E6%95%B7%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E8%A5%BF%E7%89%9F%E5%A9%81%E9%83%A1%E7%99%BD%E6%B5%9C%E7%94%BA",
       "lat": 33.670701,
       "lng": 135.330458,
       "mapPointLabel": "千畳敷（白浜）",
       "precision": "scenic_area",
       "sourceUrl": "https://www.nankishirahama.jp/spot/531/",
-      "coordinateEvidence": "Shirahama Tourism official Google Maps destination=33.670701,135.330458."
+      "coordinateEvidence": "Shirahama Tourism official Google Maps destination=33.670701,135.330458.",
+      "checkedAt": "2026-11-16"
     },
     "hosshinmon_bus": {
+      "placeKey": "hosshinmon_bus",
       "name": "発心門王子バス停",
+      "kind": "bus_stop",
+      "mapQuery": "発心門王子 バス停 和歌山県田辺市本宮町三越",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BA%E5%BF%83%E9%96%80%E7%8E%8B%E5%AD%90%20%E3%83%90%E3%82%B9%E5%81%9C%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E4%B8%89%E8%B6%8A",
       "lat": 33.861114,
       "lng": 135.723774,
       "mapPointLabel": "発心門王子バス停",
       "precision": "venue",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_33.html",
-      "coordinateEvidence": "Wakayama Prefecture course data-marker-title 発心門王子バス停, data-marker-lat/lng. Distinct from shrine 300m away."
+      "coordinateEvidence": "Wakayama Prefecture course data-marker-title 発心門王子バス停, data-marker-lat/lng. Distinct from shrine 300m away.",
+      "checkedAt": "2026-11-16"
     },
     "hosshinmon": {
+      "placeKey": "hosshinmon",
       "name": "発心門王子",
+      "kind": "place",
+      "mapQuery": "発心門王子 和歌山県田辺市本宮町三越",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BA%E5%BF%83%E9%96%80%E7%8E%8B%E5%AD%90%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E4%B8%89%E8%B6%8A",
       "lat": 33.861761,
       "lng": 135.720693,
       "mapPointLabel": "発心門王子",
       "precision": "venue",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_33.html",
-      "coordinateEvidence": "Wakayama Prefecture course data-marker-title 発心門王子, data-marker-lat/lng."
+      "coordinateEvidence": "Wakayama Prefecture course data-marker-title 発心門王子, data-marker-lat/lng.",
+      "checkedAt": "2026-11-16"
     },
     "fushiogami": {
+      "placeKey": "fushiogami",
       "name": "伏拝茶屋付近・伏拝王子",
+      "kind": "place",
+      "mapQuery": "伏拝茶屋 和歌山県田辺市本宮町伏拝",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BC%8F%E6%8B%9D%E8%8C%B6%E5%B1%8B%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E4%BC%8F%E6%8B%9D",
       "lat": 33.86025,
       "lng": 135.756788,
       "mapPointLabel": "伏拝茶屋付近（伏拝王子一帶）",
       "precision": "vicinity",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_33.html",
       "coordinateEvidence": "Wakayama Prefecture official route marker for 伏拝王子; serves as vicinity reference, not the tea-house building.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://www.hongu.jp/kumanokodo/walk/hosshin/"
       ]
     },
     "hongu": {
+      "placeKey": "hongu",
       "name": "熊野本宮大社",
+      "kind": "place",
+      "mapQuery": "熊野本宮大社 和歌山県田辺市本宮町本宮1110",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E9%87%8E%E6%9C%AC%E5%AE%AE%E5%A4%A7%E7%A4%BE%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E6%9C%AC%E5%AE%AE1110",
       "lat": 33.8405706,
       "lng": 135.7734753,
       "mapPointLabel": "熊野本宮大社",
       "precision": "venue",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_33.html",
       "coordinateEvidence": "Wakayama Prefecture course data-marker-title 熊野本宮大社, data-marker-lat/lng.",
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県田辺市本宮町本宮1110",
       "additionalSources": [
         "https://www.kumano-area.jp/facility/566/"
       ]
     },
     "oyunohara": {
+      "placeKey": "oyunohara",
       "name": "大斎原・大鳥居",
+      "kind": "place",
+      "mapQuery": "大斎原 大鳥居 和歌山県田辺市本宮町本宮",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%96%8E%E5%8E%9F%20%E5%A4%A7%E9%B3%A5%E5%B1%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E6%9C%AC%E5%AE%AE",
       "lat": 33.8358156,
       "lng": 135.7755544,
       "mapPointLabel": "大齋原・大鳥居（入口地標）",
@@ -341,10 +506,16 @@
         "name": "熊野本宮大社大鳥居",
         "kmlUrl": "https://www.google.com/maps/d/kml?mid=17SF6d2JcRnjaWfsMr01EuqVXb5zyREu1&forcekml=1",
         "coordinates": "135.7755544,33.8358156,0"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "舊社地中央另有官方點 33.8344408,135.774392；本行程標示包含大鳥居，故採入口鳥居。"
     },
     "hayatama": {
+      "placeKey": "hayatama",
       "name": "熊野速玉大社",
+      "kind": "place",
+      "mapQuery": "熊野速玉大社 和歌山県新宮市新宮1",
+      "mapsUrl": "https://goo.gl/maps/MtCYwx8KcVL9dxuV9",
       "lat": 33.7322225,
       "lng": 135.9835101,
       "mapPointLabel": "熊野速玉大社",
@@ -354,33 +525,50 @@
         "type": "Official site Google Maps shortlink feature coordinates",
         "resolvedUrl": "https://www.google.com/maps/place/%E7%86%8A%E9%87%8E%E9%80%9F%E7%8E%89%E5%A4%A7%E7%A4%BE/@33.7277707,135.97698,16z/data=!4m7!3m6!1s0x60066ca6f2adb175:0x3150561d4c2919ba!8m2!3d33.7322225!4d135.9835101!15sCgzpgJ_njonlpKfnpL5aDyIN6YCf546JIOWkp-ekvpIBDXNoaW50b19zaHJpbmWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUlRNRFF5UXpKUlJSQULgAQA!16s%2Fm%2F04zvt3d?coh=164777&entry=tt&shorturl=1"
       },
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県新宮市新宮1",
       "additionalSources": [
         "https://kumanohayatama.jp/access/"
       ]
     },
     "shingu_castle": {
+      "placeKey": "shingu_castle",
       "name": "新宮城跡（丹鶴城跡）",
+      "kind": "place",
+      "mapQuery": "新宮城跡 丹鶴城跡 和歌山県新宮市丹鶴3丁目",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%AE%E5%9F%8E%E8%B7%A1%20%E4%B8%B9%E9%B6%B4%E5%9F%8E%E8%B7%A1%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E4%B8%B9%E9%B6%B43%E4%B8%81%E7%9B%AE",
       "lat": 33.7298965,
       "lng": 135.9924656,
       "mapPointLabel": "新宮城跡（丹鶴城跡）",
       "precision": "historic_site",
       "sourceUrl": "https://nankikumanogeo.jp/geosite/shingujoato/",
-      "coordinateEvidence": "Nanki Kumano Geopark official Google Maps directions destination=33.7298965,135.9924656."
+      "coordinateEvidence": "Nanki Kumano Geopark official Google Maps directions destination=33.7298965,135.9924656.",
+      "checkedAt": "2026-11-16"
     },
     "katsuura_pier": {
+      "placeKey": "katsuura_pier",
       "name": "勝浦港観光桟橋",
+      "kind": "pier",
+      "mapQuery": "勝浦港 観光桟橋 ホテル浦島 乗船場 和歌山県那智勝浦町勝浦",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8B%9D%E6%B5%A6%E6%B8%AF%20%E8%A6%B3%E5%85%89%E6%A1%9F%E6%A9%8B%20%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6%20%E4%B9%97%E8%88%B9%E5%A0%B4%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E5%8B%9D%E6%B5%A6",
       "lat": 33.6279735,
       "lng": 135.9455933,
       "mapPointLabel": "勝浦港觀光棧橋（浦島接駁船一帶）",
       "precision": "pier_area",
       "sourceUrl": "https://www.kumano-area.jp/facility/3509/",
       "coordinateEvidence": "Kumano-area official tourism map for the tourist pier operator; Urashima access page identifies this pier as ferry boarding location.",
+      "checkedAt": "2026-11-16",
+      "notes": "採觀光棧橋一帶定位，實際搭乘浦島接駁船須依現場乘船口指示。",
       "additionalSources": [
         "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
       ]
     },
     "urashima": {
+      "placeKey": "urashima",
       "name": "ホテル浦島",
+      "kind": "stay",
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapsUrl": "https://maps.app.goo.gl/8QdsME2w6qpQTZ6R7",
       "lat": 33.6253549,
       "lng": 135.9509604,
       "mapPointLabel": "ホテル浦島",
@@ -390,68 +578,102 @@
         "type": "Official site Google Maps link resolved to feature coordinates",
         "resolvedUrl": "https://www.google.com/maps/place/%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6/@33.6253593,135.9483855,17z/data=!3m1!4b1!4m9!3m8!1s0x60061685378daacb:0xb7ac9ca20a313b15!5m2!4m1!1i2!8m2!3d33.6253549!4d135.9509604!16s%2Fg%2F11b7xv3x3r?entry=tts&g_ep=EgoyMDI0MDcxMC4wKgBIAVAD",
         "coordinateTokens": "!3d latitude / !4d longitude, not @ viewport center"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県東牟婁郡那智勝浦町勝浦1165-2"
     },
     "genbudo": {
+      "placeKey": "genbudo",
       "name": "ホテル浦島 玄武洞",
+      "kind": "place",
+      "mapQuery": "ホテル浦島 玄武洞 和歌山県那智勝浦町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6%20%E7%8E%84%E6%AD%A6%E6%B4%9E%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA",
       "lat": 33.6253549,
       "lng": 135.9509604,
       "mapPointLabel": "浦島飯店（玄武洞位於館內）",
       "precision": "parent_property",
       "sourceUrl": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/",
       "coordinateEvidence": "Official Genbudo page uses the Hotel Urashima Google Maps location; no separately verified indoor bath coordinate.",
+      "checkedAt": "2026-11-16",
+      "notes": "館內設施共用飯店定位；不是玄武洞浴池、入口或樓層的精確座標。",
       "additionalSources": [
         "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/access/"
       ]
     },
     "daimonzaka": {
+      "placeKey": "daimonzaka",
       "name": "大門坂入口",
+      "kind": "place",
+      "mapQuery": "熊野古道 大門坂 入口 和歌山県那智勝浦町那智山",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93%20%E5%A4%A7%E9%96%80%E5%9D%82%20%E5%85%A5%E5%8F%A3%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B1",
       "lat": 33.671439,
       "lng": 135.899018,
       "mapPointLabel": "大門坂入口",
       "precision": "trail_entrance",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_34.html",
       "coordinateEvidence": "Wakayama Prefecture course explicit marker 大門坂入口, not the general slope midpoint.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://www.wakayama-kanko.or.jp/spots/detail_3254.html"
       ]
     },
     "nachi": {
+      "placeKey": "nachi",
       "name": "熊野那智大社",
+      "kind": "place",
+      "mapQuery": "熊野那智大社 和歌山県東牟婁郡那智勝浦町那智山1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E9%87%8E%E9%82%A3%E6%99%BA%E5%A4%A7%E7%A4%BE%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%9D%B1%E7%89%9F%E5%A9%81%E9%83%A1%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B11",
       "lat": 33.6688052,
       "lng": 135.8898601,
       "mapPointLabel": "熊野那智大社",
       "precision": "venue",
       "sourceUrl": "https://kumanonachitaisha.or.jp/access/",
-      "coordinateEvidence": "Shrine official Google Maps directions link !1d135.8898601 !2d33.6688052, confirmed by prefecture course nearby marker."
+      "coordinateEvidence": "Shrine official Google Maps directions link !1d135.8898601 !2d33.6688052, confirmed by prefecture course nearby marker.",
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県東牟婁郡那智勝浦町那智山1"
     },
     "seigantoji": {
+      "placeKey": "seigantoji",
       "name": "那智山青岸渡寺",
+      "kind": "place",
+      "mapQuery": "青岸渡寺 三重塔 和歌山県那智勝浦町那智山8",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E5%B2%B8%E6%B8%A1%E5%AF%BA%20%E4%B8%89%E9%87%8D%E5%A1%94%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B18",
       "lat": 33.6691482,
       "lng": 135.889849,
       "mapPointLabel": "青岸渡寺（三重塔外觀在附近）",
       "precision": "venue",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_34.html",
       "coordinateEvidence": "Wakayama Prefecture course explicit marker 那智山青岸渡寺.",
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県東牟婁郡那智勝浦町那智山8",
       "additionalSources": [
         "https://seigantoji.or.jp/services/",
         "https://www.japan.travel/en/spot/971/"
       ]
     },
     "nachi_falls": {
+      "placeKey": "nachi_falls",
       "name": "那智の滝・飛瀧神社",
+      "kind": "place",
+      "mapQuery": "飛瀧神社 那智の滝 和歌山県那智勝浦町那智山",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A3%9B%E7%80%A7%E7%A5%9E%E7%A4%BE%20%E9%82%A3%E6%99%BA%E3%81%AE%E6%BB%9D%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B1",
       "lat": 33.673765,
       "lng": 135.8881652,
       "mapPointLabel": "那智の滝・飛瀧神社",
       "precision": "shrine_viewing_area",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/courses/detail_34.html",
       "coordinateEvidence": "Wakayama Prefecture course explicit marker 那智の滝; visitor shrine/viewing area rather than falling-water cliff coordinates.",
+      "checkedAt": "2026-11-16",
       "additionalSources": [
         "https://kumanonachitaisha.or.jp/pavilion/waterfall/"
       ]
     },
     "noroshiyama": {
+      "placeKey": "noroshiyama",
       "name": "狼煙山遊園",
+      "kind": "park",
+      "mapQuery": "狼煙山遊園 ホテル浦島 和歌山県那智勝浦町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%8B%BC%E7%85%99%E5%B1%B1%E9%81%8A%E5%9C%92%20%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA",
       "lat": 33.6215854,
       "lng": 135.9522244,
       "mapPointLabel": "狼煙山（山上館・遊園區域）",
@@ -463,21 +685,34 @@
         "addressCode": "30421",
         "dataSource": "4"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "山頂一帶區域定位；Google Maps 目的地指定飯店狼煙山遊園。",
       "additionalSources": [
         "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
       ]
     },
     "wakayama_castle": {
+      "placeKey": "wakayama_castle",
       "name": "和歌山城公園・城外圍",
+      "kind": "park",
+      "mapQuery": "和歌山城公園 和歌山県和歌山市一番丁3",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%9F%8E%E5%85%AC%E5%9C%92%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E4%B8%80%E7%95%AA%E4%B8%813",
       "lat": 34.227656,
       "lng": 135.171511,
       "mapPointLabel": "和歌山城公園（外圍散步區域）",
       "precision": "park_reference",
       "sourceUrl": "https://www.wakayama-kanko.or.jp/spots/detail_661.html",
-      "coordinateEvidence": "Wakayama Prefecture official spot map q=34.227656,135.171511."
+      "coordinateEvidence": "Wakayama Prefecture official spot map q=34.227656,135.171511.",
+      "checkedAt": "2026-11-16",
+      "address": "和歌山県和歌山市一番丁3",
+      "notes": "地圖以城址地標定位；此行僅逛外圍、公園，不表示進入天守。"
     },
     "rhotel": {
+      "placeKey": "rhotel",
       "name": "R Hotel Kansai Airport",
+      "kind": "stay",
+      "mapQuery": "R Hotel Kansai Airport 大阪府泉佐野市若宮町5-3",
+      "mapsUrl": "https://maps.app.goo.gl/Tvreehan5pm4HMdx9",
       "lat": 34.4117342,
       "lng": 135.3161727,
       "mapPointLabel": "R Hotel Kansai Airport",
@@ -487,19 +722,32 @@
         "type": "Official site Google Maps link resolved to feature coordinates",
         "resolvedUrl": "https://www.google.com/maps/place/R+Hotel+Kansai+Airport%EF%BC%88%E3%82%A2%E3%83%BC%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E9%96%A2%E8%A5%BF%E3%82%A8%E3%82%A2%E3%83%9D%E3%83%BC%E3%83%88%EF%BC%89/@34.4117342,135.307418,15z/data=!4m10!3m9!1s0x6000c9765106f245:0x3714bf35e0bbed66!5m2!4m1!1i2!8m2!3d34.4117342!4d135.3161727!15sCg5yLWhvdGVsIGthbnNhaZIBBWhvdGVs4AEA!16s%2Fg%2F11l5s3fbj0?entry=tts",
         "coordinateTokens": "!3d latitude / !4d longitude, not @ viewport center"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "address": "大阪府泉佐野市若宮町5-3"
     },
     "umayaro": {
+      "placeKey": "umayaro",
       "name": "馬肉料理専門店 馬野郎",
+      "kind": "food",
+      "mapQuery": "馬肉料理専門店 馬野郎 京都市中京区紙屋町368-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A6%AC%E8%82%89%E6%96%99%E7%90%86%E5%B0%82%E9%96%80%E5%BA%97%20%E9%A6%AC%E9%87%8E%E9%83%8E%20%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E7%B4%99%E5%B1%8B%E7%94%BA368-1",
       "lat": 35.0047976,
       "lng": 135.7702968,
       "mapPointLabel": "馬肉料理専門店 馬野郎",
       "precision": "venue",
       "sourceUrl": "https://page.line.me/576omvij",
-      "coordinateEvidence": "Root researched official LINE page Google Maps search link; same coordinates supplied by parent agent."
+      "coordinateEvidence": "Root researched official LINE page Google Maps search link; same coordinates supplied by parent agent.",
+      "checkedAt": "2026-11-16",
+      "address": "京都市中京区四条木屋町上ル紙屋町368-1",
+      "notes": "此點由 root 提供，本代理未重複研究。"
     },
     "osaka_station": {
+      "placeKey": "osaka_station",
       "name": "大阪駅",
+      "kind": "station",
+      "mapQuery": "大阪駅 JR 大阪府大阪市北区梅田",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E9%A7%85%20JR%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0",
       "lat": 34.7025416,
       "lng": 135.4935954,
       "mapPointLabel": "大阪駅",
@@ -510,10 +758,16 @@
         "matchedTitle": "大阪駅",
         "addressCode": "27127",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "osaka_namba_station": {
+      "placeKey": "osaka_namba_station",
       "name": "大阪難波駅",
+      "kind": "station",
+      "mapQuery": "大阪難波駅 近鉄 阪神 大阪市中央区難波4丁目",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E9%9B%A3%E6%B3%A2%E9%A7%85%20%E8%BF%91%E9%89%84%20%E9%98%AA%E7%A5%9E%20%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E9%9B%A3%E6%B3%A24%E4%B8%81%E7%9B%AE",
       "lat": 34.666999,
       "lng": 135.498374,
       "mapPointLabel": "大阪難波駅",
@@ -524,10 +778,16 @@
         "matchedTitle": "大阪難波駅",
         "addressCode": "27128",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "toba_station": {
+      "placeKey": "toba_station",
       "name": "鳥羽駅",
+      "kind": "station",
+      "mapQuery": "近鉄鳥羽駅 三重県鳥羽市鳥羽1丁目",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%BF%91%E9%89%84%E9%B3%A5%E7%BE%BD%E9%A7%85%20%E4%B8%89%E9%87%8D%E7%9C%8C%E9%B3%A5%E7%BE%BD%E5%B8%82%E9%B3%A5%E7%BE%BD1%E4%B8%81%E7%9B%AE",
       "lat": 34.487015,
       "lng": 136.8425705,
       "mapPointLabel": "鳥羽駅",
@@ -538,10 +798,16 @@
         "matchedTitle": "鳥羽駅",
         "addressCode": "24211",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "kifuneguchi_station": {
+      "placeKey": "kifuneguchi_station",
       "name": "貴船口駅",
+      "kind": "station",
+      "mapQuery": "貴船口駅 叡山電車 京都市左京区鞍馬貴船町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%B2%B4%E8%88%B9%E5%8F%A3%E9%A7%85%20%E5%8F%A1%E5%B1%B1%E9%9B%BB%E8%BB%8A%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E9%9E%8D%E9%A6%AC%E8%B2%B4%E8%88%B9%E7%94%BA",
       "lat": 35.1082877,
       "lng": 135.7637357,
       "mapPointLabel": "貴船口駅",
@@ -552,10 +818,16 @@
         "matchedTitle": "貴船口駅",
         "addressCode": "26103",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "kiitanabe_station": {
+      "placeKey": "kiitanabe_station",
       "name": "紀伊田辺駅",
+      "kind": "station",
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%B4%80%E4%BC%8A%E7%94%B0%E8%BE%BA%E9%A7%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%B9%8A1-24",
       "lat": 33.7336532,
       "lng": 135.3840848,
       "mapPointLabel": "紀伊田辺駅",
@@ -567,12 +839,18 @@
         "addressCode": "30206",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://eki.jr-odekake.net/top?id=0622067"
       ]
     },
     "shingu_station": {
+      "placeKey": "shingu_station",
       "name": "新宮駅",
+      "kind": "station",
+      "mapQuery": "新宮駅 和歌山県新宮市徐福2丁目1-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%AE%E9%A7%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E5%BE%90%E7%A6%8F2%E4%B8%81%E7%9B%AE1-1",
       "lat": 33.7243978,
       "lng": 135.9943682,
       "mapPointLabel": "新宮駅",
@@ -584,12 +862,18 @@
         "addressCode": "30207",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://eki.jr-odekake.net/top?id=0622038"
       ]
     },
     "katsuura_station": {
+      "placeKey": "katsuura_station",
       "name": "紀伊勝浦駅",
+      "kind": "station",
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%B4%80%E4%BC%8A%E5%8B%9D%E6%B5%A6%E9%A7%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E7%AF%89%E5%9C%B06%E4%B8%81%E7%9B%AE1-1",
       "lat": 33.6277153,
       "lng": 135.9415371,
       "mapPointLabel": "紀伊勝浦駅",
@@ -601,12 +885,18 @@
         "addressCode": "30421",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://eki.jr-odekake.net/premises?id=0622045"
       ]
     },
     "wakayama_station": {
+      "placeKey": "wakayama_station",
       "name": "和歌山駅",
+      "kind": "station",
+      "mapQuery": "JR和歌山駅 和歌山県和歌山市美園町5-61",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=JR%E5%92%8C%E6%AD%8C%E5%B1%B1%E9%A7%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E7%BE%8E%E5%9C%92%E7%94%BA5-61",
       "lat": 34.2322077,
       "lng": 135.1921514,
       "mapPointLabel": "和歌山駅",
@@ -618,12 +908,18 @@
         "addressCode": "30201",
         "dataSource": "1"
       },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。",
       "additionalSources": [
         "https://eki.jr-odekake.net/top?id=0622091"
       ]
     },
     "wakayamashi_station": {
+      "placeKey": "wakayamashi_station",
       "name": "和歌山市駅",
+      "kind": "station",
+      "mapQuery": "南海和歌山市駅 和歌山県和歌山市東蔵前丁",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%B5%B7%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E9%A7%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E6%9D%B1%E8%94%B5%E5%89%8D%E4%B8%81",
       "lat": 34.2394372,
       "lng": 135.1661385,
       "mapPointLabel": "和歌山市駅",
@@ -634,10 +930,16 @@
         "matchedTitle": "和歌山市駅",
         "addressCode": "30201",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "ikeda_station": {
+      "placeKey": "ikeda_station",
       "name": "池田駅",
+      "kind": "station",
+      "mapQuery": "阪急池田駅 大阪府池田市栄町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%98%AA%E6%80%A5%E6%B1%A0%E7%94%B0%E9%A7%85%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B1%A0%E7%94%B0%E5%B8%82%E6%A0%84%E7%94%BA",
       "lat": 34.8217418,
       "lng": 135.4258695,
       "mapPointLabel": "池田駅",
@@ -648,10 +950,16 @@
         "matchedTitle": "池田駅",
         "addressCode": "27204",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "sone_station": {
+      "placeKey": "sone_station",
       "name": "曽根駅",
+      "kind": "station",
+      "mapQuery": "阪急曽根駅 大阪府豊中市曽根東町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%98%AA%E6%80%A5%E6%9B%BD%E6%A0%B9%E9%A7%85%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E8%B1%8A%E4%B8%AD%E5%B8%82%E6%9B%BD%E6%A0%B9%E6%9D%B1%E7%94%BA",
       "lat": 34.7712365,
       "lng": 135.4677557,
       "mapPointLabel": "曽根駅",
@@ -662,10 +970,16 @@
         "matchedTitle": "曽根駅",
         "addressCode": "27203",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "ikoma_station": {
+      "placeKey": "ikoma_station",
       "name": "生駒駅",
+      "kind": "station",
+      "mapQuery": "生駒駅 奈良県生駒市元町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%94%9F%E9%A7%92%E9%A7%85%20%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E5%B8%82%E5%85%83%E7%94%BA",
       "lat": 34.6930544,
       "lng": 135.6979206,
       "mapPointLabel": "生駒駅",
@@ -676,10 +990,16 @@
         "matchedTitle": "生駒駅",
         "addressCode": "29209",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "higobashi_station": {
+      "placeKey": "higobashi_station",
       "name": "肥後橋駅",
+      "kind": "station",
+      "mapQuery": "肥後橋駅 大阪市西区江戸堀",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%82%A5%E5%BE%8C%E6%A9%8B%E9%A7%85%20%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%B1%9F%E6%88%B8%E5%A0%80",
       "lat": 34.6912646,
       "lng": 135.4963895,
       "mapPointLabel": "肥後橋駅",
@@ -690,113 +1010,1740 @@
         "matchedTitle": "肥後橋駅",
         "addressCode": "27106",
         "dataSource": "1"
-      }
+      },
+      "checkedAt": "2026-11-16",
+      "notes": "國土地理院站名參照點，用於區域地圖；外連依正式站名開啟 Google Maps，不用此點判定月台或出入口。"
     },
     "izumisano_station": {
+      "placeKey": "izumisano_station",
       "name": "泉佐野駅",
+      "kind": "station",
+      "mapQuery": "泉佐野駅 大阪府泉佐野市上町3丁目11-41",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B3%89%E4%BD%90%E9%87%8E%E9%A7%85%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B3%89%E4%BD%90%E9%87%8E%E5%B8%82%E4%B8%8A%E7%94%BA3%E4%B8%81%E7%9B%AE11-41",
       "lat": 34.4112609,
       "lng": 135.3172818,
       "mapPointLabel": "泉佐野駅",
       "precision": "venue",
       "sourceUrl": "https://www.nankai.co.jp/traffic/station/izumisano.html",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16"
     },
     "demachiyanagi_station": {
+      "placeKey": "demachiyanagi_station",
       "name": "出町柳駅",
+      "kind": "station",
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%87%BA%E7%94%BA%E6%9F%B3%E9%A7%85%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E7%94%B0%E4%B8%AD%E4%B8%8A%E6%9F%B3%E7%94%BA32-1",
       "lat": 35.0304996,
       "lng": 135.7732283,
       "mapPointLabel": "出町柳駅",
       "precision": "venue",
       "sourceUrl": "https://www.keihan.co.jp/traffic/station/180/visiting.html",
-      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected."
+      "coordinateEvidence": "Feature coordinates in Google Maps embed response linked by this official page; viewport coordinates were rejected.",
+      "checkedAt": "2026-11-16"
+    },
+    "minamimorimachi": {
+      "id": "minamimorimachi",
+      "name": "南森町站",
+      "nameJa": "南森町駅",
+      "stationCodes": [
+        "T21",
+        "K13"
+      ],
+      "mapQuery": "南森町駅 Osaka Metro 大阪市北区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%A3%AE%E7%94%BA%E9%A7%85%20Osaka%20Metro%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA",
+      "checkedAt": "2026-11-16",
+      "lat": 34.697549,
+      "lng": 135.510864,
+      "coordinateType": "official_station_map_reference_point",
+      "coordinateSource": "Osaka Metro 官方站頁連出的 Google Maps q 參數",
+      "sourceUrl": "https://subway.osakametro.co.jp/station_guide/T/t21/map.php",
+      "sourceMapUrl": "https://maps.google.co.jp/maps?f=q&hl=ja&geocode=&q=34.697549,135.510864&ie=UTF8&ll=34.697549,135.510864&z=18",
+      "verification": "已從官方頁面實際讀取 href；解析 q，並與 Google Maps 連結 ll 相同值核對。",
+      "note": "官方車站周邊地圖代表點，非指定出入口或精確月台點。",
+      "mapPointLabel": "南森町站"
+    },
+    "tanimachi4chome": {
+      "id": "tanimachi4chome",
+      "name": "谷町四丁目站",
+      "nameJa": "谷町四丁目駅",
+      "stationCodes": [
+        "T23",
+        "C18"
+      ],
+      "mapQuery": "谷町四丁目駅 Osaka Metro 大阪市中央区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%B0%B7%E7%94%BA%E5%9B%9B%E4%B8%81%E7%9B%AE%E9%A7%85%20Osaka%20Metro%20%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA",
+      "checkedAt": "2026-11-16",
+      "lat": 34.682107,
+      "lng": 135.517253,
+      "coordinateType": "official_station_map_reference_point",
+      "coordinateSource": "Osaka Metro 官方站頁連出的 Google Maps q 參數",
+      "sourceUrl": "https://subway.osakametro.co.jp/station_guide/T/t23/map.php",
+      "sourceMapUrl": "https://maps.google.co.jp/maps?f=q&hl=ja&geocode=&q=34.682107,135.517253&ie=UTF8&ll=34.682107,135.517253&z=18",
+      "verification": "已從官方頁面實際讀取 href；解析 q，並與 Google Maps 連結 ll 相同值核對。",
+      "note": "官方車站周邊地圖代表點，非指定出入口或精確月台點。",
+      "mapPointLabel": "谷町四丁目站"
+    },
+    "toriimae": {
+      "id": "toriimae",
+      "name": "鳥居前站",
+      "nameJa": "鳥居前駅",
+      "stationCodes": [
+        "Y17"
+      ],
+      "mapQuery": "鳥居前駅 近鉄生駒ケーブル 奈良県生駒市",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%B3%A5%E5%B1%85%E5%89%8D%E9%A7%85%20%E8%BF%91%E9%89%84%E7%94%9F%E9%A7%92%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB%20%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E5%B8%82",
+      "checkedAt": "2026-11-16",
+      "lat": 34.692269,
+      "lng": 135.696225,
+      "coordinateType": "government_named_station_point",
+      "coordinateSource": "日本國土地理院 AddressSearch，同名車站且行政區29209（生駒市）",
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%B3%A5%E5%B1%85%E5%89%8D%E9%A7%85",
+      "sourceFeature": {
+        "geometry": {
+          "coordinates": [
+            135.69622545,
+            34.6922692486111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "29209",
+          "title": "鳥居前駅",
+          "dataSource": "1"
+        }
+      },
+      "verification": "直接讀取公開 JSON 回應；按完整站名及生駒市行政代碼篩選，未使用同名地方。",
+      "identitySourceUrl": "https://www.kintetsu.co.jp/station/",
+      "note": "車站代表點，非指定出入口。",
+      "mapPointLabel": "鳥居前站"
+    },
+    "hozanji_cable": {
+      "id": "hozanji_cable",
+      "name": "寶山寺纜車站",
+      "nameJa": "宝山寺駅",
+      "stationCodes": [
+        "Y18"
+      ],
+      "mapQuery": "宝山寺駅 生駒ケーブル 奈良県生駒市",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E5%B1%B1%E5%AF%BA%E9%A7%85%20%E7%94%9F%E9%A7%92%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB%20%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E5%B8%82",
+      "checkedAt": "2026-11-16",
+      "lat": 34.685913,
+      "lng": 135.689294,
+      "coordinateType": "government_named_station_point",
+      "coordinateSource": "日本國土地理院 AddressSearch，同名車站且行政區29209（生駒市）",
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%AE%9D%E5%B1%B1%E5%AF%BA%E9%A7%85",
+      "sourceFeature": {
+        "geometry": {
+          "coordinates": [
+            135.689293621389,
+            34.6859125997222
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "29209",
+          "title": "宝山寺駅",
+          "dataSource": "1"
+        }
+      },
+      "verification": "直接讀取公開 JSON 回應；按完整站名及生駒市行政代碼篩選，未使用同名地方。",
+      "identitySourceUrl": "https://www.kintetsu.co.jp/station/",
+      "note": "車站代表點，非指定出入口。此為生駒纜車寶山寺站，不是寶山寺寺院；兩者應保留獨立地圖點。",
+      "mapPointLabel": "寶山寺纜車站"
+    },
+    "hommachi": {
+      "id": "hommachi",
+      "name": "本町站（四つ橋線側）",
+      "nameJa": "本町駅",
+      "stationCodes": [
+        "C16",
+        "Y13",
+        "M18"
+      ],
+      "mapQuery": "本町駅 四つ橋線 大阪市",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E7%94%BA%E9%A7%85%20%E5%9B%9B%E3%81%A4%E6%A9%8B%E7%B7%9A%20%E5%A4%A7%E9%98%AA%E5%B8%82",
+      "checkedAt": "2026-11-16",
+      "lat": 34.682007,
+      "lng": 135.498627,
+      "coordinateType": "official_station_map_reference_point",
+      "coordinateSource": "Osaka Metro 官方站頁連出的 Google Maps q 參數",
+      "sourceUrl": "https://subway.osakametro.co.jp/station_guide/Y/y13/map.php",
+      "sourceMapUrl": "https://maps.google.co.jp/maps?f=q&hl=ja&geocode=&q=34.682007 ,135.498627&ie=UTF8&ll=34.682007 ,135.498627&z=18",
+      "verification": "已從官方頁面實際讀取 href；解析 q，並與 Google Maps 連結 ll 相同值核對。",
+      "note": "官方車站周邊地圖代表點，非指定出入口或精確月台點。採四つ橋線 Y13 官方頁，對應中央線轉四つ橋線；不是四ツ橋站 Y14。",
+      "mapPointLabel": "本町站（四つ橋線側）"
+    },
+    "gion_shijo_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "車站代表點；不代表指定出入口、閘口或月台。外連以正式站名導航。",
+      "placeKey": "gion_shijo_station",
+      "name": "祇園四条駅",
+      "stationCode": "KH39",
+      "mapQuery": "祇園四条駅 京阪 京都市東山区",
+      "mapsUrl": "https://maps.google.com/?cid=8563910284852107286",
+      "lat": 35.0033014,
+      "lng": 135.7719122,
+      "sourceUrl": "https://www.keihan.co.jp/traffic/station/162/visiting.html",
+      "coordinateEvidence": {
+        "type": "operator_official_station_page_embedded_google_named_place_feature",
+        "featureId": "0x600108c01e8534ab:0x76d91f07d0ec9816",
+        "featureTitle": "〒605-0801 京都府京都市東山区宮川筋１丁目 祇園四条駅",
+        "featureCoordinates": [
+          35.0033014,
+          135.7719122
+        ],
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6536.428183161597!2d135.7705226!3d35.0013455!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108c01e8534ab%3A0x76d91f07d0ec9816!2z56WH5ZyS5Zub5p2h6aeF!5e0!3m2!1sja!2sjp!4v1721287664432!5m2!1sja!2sjp",
+        "method": "從官方嵌入地圖回應內具有站名、地點ID和座標的同一地點記錄擷取；不採embed網址的視窗中心。"
+      },
+      "mapPointLabel": "祇園四条駅"
+    },
+    "yodoyabashi_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "車站代表點；不代表指定出入口、閘口或月台。外連以正式站名導航。",
+      "placeKey": "yodoyabashi_station",
+      "name": "淀屋橋駅（京阪）",
+      "stationCode": "KH01",
+      "mapQuery": "淀屋橋駅 京阪 大阪市中央区北浜3丁目",
+      "mapsUrl": "https://maps.google.com/?cid=10195243223379283014",
+      "lat": 34.6922614,
+      "lng": 135.501053,
+      "sourceUrl": "https://www.keihan.co.jp/traffic/station/010/visiting.html",
+      "coordinateEvidence": {
+        "type": "operator_official_station_page_embedded_google_named_place_feature",
+        "featureId": "0x6000e6e66c48ad31:0x8d7cc7b1e83b0c46",
+        "featureTitle": "〒541-0041 大阪府大阪市中央区北浜３丁目１−２５ 淀屋橋駅",
+        "featureCoordinates": [
+          34.6922614,
+          135.501053
+        ],
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3280.4957238918364!2d135.5012486!3d34.6926746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6e66c48ad31%3A0x8d7cc7b1e83b0c46!2z5reA5bGL5qmL6aeF!5e0!3m2!1sja!2sjp!4v1721287234430!5m2!1sja!2sjp",
+        "method": "從官方嵌入地圖回應內具有站名、地點ID和座標的同一地點記錄擷取；不採embed網址的視窗中心。"
+      },
+      "mapPointLabel": "淀屋橋駅（京阪）"
+    },
+    "nankai_namba_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "車站代表點；不代表指定出入口、閘口或月台。外連以正式站名導航。",
+      "placeKey": "nankai_namba_station",
+      "name": "南海なんば駅",
+      "stationCode": "NK01",
+      "mapQuery": "南海なんば駅 大阪市中央区難波5丁目",
+      "mapsUrl": "https://maps.google.com/?cid=8943465899133420071",
+      "lat": 34.6629331,
+      "lng": 135.5022953,
+      "sourceUrl": "https://www.nankai.co.jp/traffic/station/namba.html",
+      "coordinateEvidence": {
+        "type": "operator_official_station_page_embedded_google_named_place_feature",
+        "featureId": "0x6000e76b8b59d3a5:0x7c1d92d9caaac227",
+        "featureTitle": "〒542-8503 大阪府大阪市中央区難波５丁目1番60号 なんば駅",
+        "featureCoordinates": [
+          34.6629331,
+          135.5022953
+        ],
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6563.348164018826!2d135.50667236499618!3d34.662933!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7c1d92d9caaac227!2z44Gq44KT44Gw6aeF!5e0!3m2!1sja!2sjp!4v1655348808197!5m2!1sja!2sjp",
+        "method": "從官方嵌入地圖回應內具有站名、地點ID和座標的同一地點記錄擷取；不採embed網址的視窗中心。"
+      },
+      "notes": "NK01南海なんば；與近鐵／阪神大阪難波站及JR難波站不同。",
+      "mapPointLabel": "南海なんば駅"
+    },
+    "hankyu_osaka_umeda_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "車站代表點；不代表指定出入口、閘口或月台。外連以正式站名導航。",
+      "placeKey": "hankyu_osaka_umeda_station",
+      "name": "大阪梅田駅（阪急）",
+      "stationCode": "HK01",
+      "mapQuery": "阪急大阪梅田駅 大阪市北区芝田1丁目",
+      "mapsUrl": "https://maps.google.com/?cid=5167625629365035715",
+      "lat": 34.7050271,
+      "lng": 135.4984269,
+      "sourceUrl": "https://www.hankyu.co.jp/station/umeda.html",
+      "coordinateEvidence": {
+        "type": "operator_official_station_page_embedded_google_named_place_feature",
+        "featureId": "0x6000e6918dc9e10d:0x47b718217281e2c3",
+        "featureTitle": "〒530-0012 大阪府大阪市北区芝田１丁目１ 大阪梅田駅",
+        "featureCoordinates": [
+          34.7050271,
+          135.4984269
+        ],
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.006060490935!2d135.49623821507626!3d34.70502708043328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f4!3m3!1m2!1s0x6000e6918dc9e10d%3A0x47b718217281e2c3!2z5aSn6Ziq5qKF55Sw6aeF!5e0!3m2!1sja!2sjp!4v1674804408222!5m2!1sja!2sjp",
+        "method": "從官方嵌入地圖回應內具有站名、地點ID和座標的同一地點記錄擷取；不採embed網址的視窗中心。"
+      },
+      "notes": "HK01阪急大阪梅田；不是阪神大阪梅田、Metro梅田或JR大阪站。",
+      "mapPointLabel": "大阪梅田駅（阪急）"
+    },
+    "ryokuchi_koen_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "國土地理院地名參照點，僅作車站區域地圖；不以此點判定月台、出入口或營運公司。",
+      "placeKey": "ryokuchi_koen_station",
+      "name": "緑地公園駅",
+      "mapQuery": "緑地公園駅 北大阪急行 大阪府豊中市",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%B7%91%E5%9C%B0%E5%85%AC%E5%9C%92%E9%A7%85%20%E5%8C%97%E5%A4%A7%E9%98%AA%E6%80%A5%E8%A1%8C%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E8%B1%8A%E4%B8%AD%E5%B8%82",
+      "lat": 34.7748553,
+      "lng": 135.4955179,
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%B7%91%E5%9C%B0%E5%85%AC%E5%9C%92%E9%A7%85",
+      "coordinateEvidence": {
+        "type": "GSI_public_geographic_name_point",
+        "matchedTitle": "緑地公園駅",
+        "addressCode": "27203",
+        "dataSource": "1",
+        "sourceFeature": {
+          "geometry": {
+            "coordinates": [
+              135.495517895556,
+              34.7748552863889
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "27203",
+            "title": "緑地公園駅",
+            "dataSource": "1"
+          }
+        },
+        "sameNameAreaMatches": 1
+      },
+      "notes": "北大阪急行車站，供服部緑地行程使用。",
+      "mapPointLabel": "緑地公園駅"
+    },
+    "hanazono_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "國土地理院地名參照點，僅作車站區域地圖；不以此點判定月台、出入口或營運公司。",
+      "placeKey": "hanazono_station",
+      "name": "花園駅",
+      "mapQuery": "花園駅 JR嵯峨野線 京都市右京区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E5%9C%92%E9%A7%85%20JR%E5%B5%AF%E5%B3%A8%E9%87%8E%E7%B7%9A%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8F%B3%E4%BA%AC%E5%8C%BA",
+      "lat": 35.0185463,
+      "lng": 135.7177232,
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%8A%B1%E5%9C%92%E9%A7%85",
+      "coordinateEvidence": {
+        "type": "GSI_public_geographic_name_point",
+        "matchedTitle": "花園駅",
+        "addressCode": "26108",
+        "dataSource": "1",
+        "sourceFeature": {
+          "geometry": {
+            "coordinates": [
+              135.717723222222,
+              35.0185463333333
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "26108",
+            "title": "花園駅",
+            "dataSource": "1"
+          }
+        },
+        "sameNameAreaMatches": 1
+      },
+      "notes": "按京都市右京區代碼26108篩選，排除香川縣高松市同名車站。",
+      "mapPointLabel": "花園駅"
+    },
+    "inari_jr_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "國土地理院地名參照點，僅作車站區域地圖；不以此點判定月台、出入口或營運公司。",
+      "placeKey": "inari_jr_station",
+      "name": "稲荷駅（JR）",
+      "mapQuery": "稲荷駅 JR奈良線 京都市伏見区",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A8%B2%E8%8D%B7%E9%A7%85%20JR%E5%A5%88%E8%89%AF%E7%B7%9A%20%E4%BA%AC%E9%83%BD%E5%B8%82%E4%BC%8F%E8%A6%8B%E5%8C%BA",
+      "lat": 34.9668268,
+      "lng": 135.7706651,
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%A8%B2%E8%8D%B7%E9%A7%85",
+      "coordinateEvidence": {
+        "type": "GSI_public_geographic_name_point",
+        "matchedTitle": "稲荷駅",
+        "addressCode": "26109",
+        "dataSource": "1",
+        "sourceFeature": {
+          "geometry": {
+            "coordinates": [
+              135.770665089722,
+              34.9668268486111
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "26109",
+            "title": "稲荷駅",
+            "dataSource": "1"
+          }
+        },
+        "sameNameAreaMatches": 1
+      },
+      "notes": "JR稲荷站；與京阪伏見稲荷站是不同車站。",
+      "mapPointLabel": "稲荷駅（JR）"
+    },
+    "iseshi_station": {
+      "checkedAt": "2026-11-16",
+      "kind": "station",
+      "precision": "station_area",
+      "precisionNote": "國土地理院地名參照點，僅作車站區域地圖；不以此點判定月台、出入口或營運公司。",
+      "placeKey": "iseshi_station",
+      "name": "伊勢市駅",
+      "mapQuery": "伊勢市駅 近鉄 三重県伊勢市",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E5%8B%A2%E5%B8%82%E9%A7%85%20%E8%BF%91%E9%89%84%20%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E5%8B%A2%E5%B8%82",
+      "lat": 34.4914153,
+      "lng": 136.709571,
+      "sourceUrl": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BC%8A%E5%8B%A2%E5%B8%82%E9%A7%85",
+      "coordinateEvidence": {
+        "type": "GSI_public_geographic_name_point",
+        "matchedTitle": "伊勢市駅",
+        "addressCode": "24203",
+        "dataSource": "1",
+        "sourceFeature": {
+          "geometry": {
+            "coordinates": [
+              136.709570972222,
+              34.4914152777778
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "24203",
+            "title": "伊勢市駅",
+            "dataSource": "1"
+          }
+        },
+        "sameNameAreaMatches": 2
+      },
+      "notes": "近鐵與JR共站之站區參照。原GSI記錄未註明公司，採第一個同名站區點，不宣稱為近鐵月台或北口。",
+      "mapPointLabel": "伊勢市駅"
+    },
+    "senjoguchi_bus": {
+      "placeKey": "senjoguchi_bus",
+      "name": "千畳口 バス停",
+      "kind": "bus_stop",
+      "stopCode": "s-21",
+      "mapQuery": "千畳口 バス停 明光バス 和歌山県白浜町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E7%95%B3%E5%8F%A3%20%E3%83%90%E3%82%B9%E5%81%9C%20%E6%98%8E%E5%85%89%E3%83%90%E3%82%B9%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%99%BD%E6%B5%9C%E7%94%BA",
+      "lat": 33.6710556,
+      "lng": 135.3341667,
+      "sourceUrl": "https://meikobus.jp/highway/osaka/#page5",
+      "coordinateEvidence": {
+        "type": "operator_official_stop_map_coordinate_marker",
+        "modalId": "page5",
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d415.05793629931907!2d135.3339968!3d33.6710609!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQwJzE1LjgiTiAxMzXCsDIwJzAzLjAiRQ!5e0!3m2!1sja!2sjp!4v1585222166879!5m2!1sja!2sjp",
+        "markerDmsLabel": "33°40'15.8\"N 135°20'03.0\"E",
+        "method": "官方巴士乗り場地圖的座標標記文字（DMS）轉成十進位度；未採地圖視窗中心。",
+        "stopDiagramUrl": "https://meikobus.jp/common/img/highway/busstops5.svg"
+      },
+      "precision": "bus_stop_area",
+      "precisionNote": "官方停靠站區標記；原頁為高速巴士乗り場案內，未將此點認定為一般路線特定行車方向的獨立站牌。",
+      "checkedAt": "2026-11-16",
+      "notes": "與同名觀光景點分開，供交通段端點使用。",
+      "mapPointLabel": "千畳口 バス停"
+    },
+    "sandanbeki_bus": {
+      "placeKey": "sandanbeki_bus",
+      "name": "三段壁 バス停",
+      "kind": "bus_stop",
+      "stopCode": "s-24",
+      "mapQuery": "三段壁 バス停 明光バス 和歌山県白浜町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E6%AE%B5%E5%A3%81%20%E3%83%90%E3%82%B9%E5%81%9C%20%E6%98%8E%E5%85%89%E3%83%90%E3%82%B9%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%99%BD%E6%B5%9C%E7%94%BA",
+      "lat": 33.6664167,
+      "lng": 135.3368056,
+      "sourceUrl": "https://meikobus.jp/highway/osaka/#page4",
+      "coordinateEvidence": {
+        "type": "operator_official_stop_map_coordinate_marker",
+        "modalId": "page4",
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d415.08067910563994!2d135.3365242!3d33.666348!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM5JzU5LjEiTiAxMzXCsDIwJzEyLjUiRQ!5e0!3m2!1sja!2sjp!4v1585222140102!5m2!1sja!2sjp",
+        "markerDmsLabel": "33°39'59.1\"N 135°20'12.5\"E",
+        "method": "官方巴士乗り場地圖的座標標記文字（DMS）轉成十進位度；未採地圖視窗中心。",
+        "stopDiagramUrl": "https://meikobus.jp/common/img/highway/busstops4.svg"
+      },
+      "precision": "bus_stop_area",
+      "precisionNote": "官方停靠站區標記；原頁為高速巴士乗り場案內，未將此點認定為一般路線特定行車方向的獨立站牌。",
+      "checkedAt": "2026-11-16",
+      "notes": "與同名觀光景點分開，供交通段端點使用。",
+      "mapPointLabel": "三段壁 バス停"
+    },
+    "fushimi_inari_station": {
+      "placeKey": "fushimi_inari_station",
+      "name": "伏見稲荷駅（京阪）",
+      "kind": "station",
+      "stationCode": "KH34",
+      "mapQuery": "伏見稲荷駅 京阪 京都市伏見区深草一ノ坪町",
+      "mapsUrl": "https://maps.google.com/?cid=4052349761068891854",
+      "lat": 34.9687187,
+      "lng": 135.7693455,
+      "sourceUrl": "https://www.keihan.co.jp/traffic/station/151/visiting.html",
+      "coordinateEvidence": {
+        "type": "operator_official_station_page_embedded_google_named_place_feature",
+        "featureId": "0x60010f404571c627:0x383cd6a32e267ece",
+        "featureTitle": "〒612-0012 京都府京都市伏見区深草一ノ坪町伏見稲荷駅",
+        "featureCoordinates": [
+          34.9687187,
+          135.7693455
+        ],
+        "sourceEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6539.225763066103!2d135.7664181!3d34.9663102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f404571c627%3A0x383cd6a32e267ece!2z5LyP6KaL56iy6I236aeF!5e0!3m2!1sja!2sjp!4v1721287620960!5m2!1sja!2sjp",
+        "method": "從官方嵌入地圖具名車站記錄擷取，不採視窗中心。"
+      },
+      "precision": "station_area",
+      "precisionNote": "京阪車站代表點，非指定方向閘口或月台。",
+      "checkedAt": "2026-11-16",
+      "notes": "與JR稲荷站分開。",
+      "mapPointLabel": "伏見稲荷駅（京阪）"
+    },
+    "kifune_bus": {
+      "placeKey": "kifune_bus",
+      "name": "貴船 バス停（京都バス33号終点）",
+      "kind": "bus_stop",
+      "operator": "京都バス",
+      "stopId": "6292_1",
+      "mapQuery": "貴船 バス停 京都バス33 京都市左京区鞍馬貴船町",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%B2%B4%E8%88%B9%20%E3%83%90%E3%82%B9%E5%81%9C%20%E4%BA%AC%E9%83%BD%E3%83%90%E3%82%B933%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E9%9E%8D%E9%A6%AC%E8%B2%B4%E8%88%B9%E7%94%BA",
+      "lat": 35.118832,
+      "lng": 135.762393,
+      "sourceUrl": "https://www.kyotobus.jp/route/timetable/schedule.html?stop_id=6292_1",
+      "coordinateEvidence": {
+        "type": "operator_official_published_stop_record",
+        "stopId": "6292_1",
+        "matchedName": "貴船",
+        "stopLat": "35.118832",
+        "stopLon": "135.762393",
+        "method": "直接讀取京都巴士官方站頁公開內嵌JSON中的同一stop_id、stop_name、stop_lat、stop_lon記錄。"
+      },
+      "precision": "operator_stop_point",
+      "precisionNote": "京都巴士指定停留所點位；不是叡電貴船口站、貴船口巴士站、貴船神社或白天臨時停留所。",
+      "checkedAt": "2026-11-16",
+      "notes": "2026-11-07至11-24，16:30以後使用此正常貴船停留所。首班至16:23改用約300公尺手前的貴船臨時停留所6404_1；D6晚間適用正常貴船點。",
+      "serviceValiditySourceUrl": "https://www.kyotobus.jp/news/2026/11/kibune2026a.html",
+      "serviceValiditySourceRef": "turn127view1",
+      "mapPointLabel": "貴船 バス停（京都バス33号終点）"
     }
   },
-  "itemPoints": {
-    "d01-flight-depart": "tpe",
-    "d01-flight-arrive": "kix_airport",
-    "d01-airport-osaka": "apa",
-    "d01-apa": "apa",
-    "d04-s0-r41": "ohatsu",
-    "d02-osaka-tenmangu": "tenmangu",
-    "d02-shopping-street-lunch": "tenmangu",
-    "d02-hozanji": "hozanji",
-    "d02-osaka-return": "apa",
-    "ise-outbound": "naiku",
-    "ise-naiku": "naiku",
-    "ise-can-futami": "futami",
-    "ise-futami": "futami",
-    "ise-can-toba": "pearl",
-    "ise-pearl": "pearl",
-    "ise-toba-walk": "toba_station",
-    "ise-toba-vista": "osaka_namba_station",
-    "d03-s0-r40": "midosuji",
-    "d03-kitamido": "kitamido",
-    "ise-apa-return": "apa",
-    "d04-s0-r43": "hattori_market",
-    "d04-s0-r44": "inagawa",
-    "d04-s0-r45": "inagawa",
-    "d04-s0-r46": "inagawa",
-    "d04-s0-r47": "apa",
-    "d05-s0-r48": "shimogamo",
-    "d05-s0-r49": "fushimi",
-    "d05-s0-r50": "fushimi",
-    "d05-fushimi-hitaki": "fushimi",
-    "d05-s0-r51": "eigamura",
-    "d05-s0-r52": "eigamura",
-    "d05-s0-r53": "eigamura",
-    "d05-s0-r54": "eigamura",
-    "d05-s0-r56": "apa",
-    "d06-nakanoshima": "nakanoshima",
-    "d06-s0-r65": "gyoen",
-    "d06-kyoto-gyoen": "gyoen",
-    "d06-s0-r66": "kifuneguchi_station",
-    "d06-s0-r67": "kifune_hon",
-    "d06-s0-r68": "demachiyanagi_station",
-    "d06-umayaro-transfer": "umayaro",
-    "d06-umayaro": "umayaro",
-    "d06-s0-r69": "apa",
-    "d07-apa-luggage": "apa",
-    "d07-kuroshio": "kiitanabe_station",
-    "d07-bus-shirahama": "sandanbeki",
-    "d07-sandanbeki": "sandanbeki",
-    "d07-senjojiki": "senjojiki",
-    "d07-tanabe": "kiitanabe_station",
-    "d07-tanabe-hotel": "kiitanabe_hotel",
-    "d08-s2-r43": "kiitanabe_station",
-    "d08-s2-r45": "hosshinmon_bus",
-    "d08-s2-r46": "hosshinmon",
-    "d08-s2-r47": "hongu",
-    "d08-s2-r49": "oyunohara",
-    "d08-s2-r51": "hayatama",
-    "d08-s2-r52": "hayatama",
-    "d08-shingu-castle": "shingu_castle",
-    "d08-shingu-station": "shingu_station",
-    "d08-shingu-katsuura-jr": "katsuura_station",
-    "d08-s2-r55": "katsuura_pier",
-    "d08-s2-r56": "urashima",
-    "d08-s2-r57": "urashima",
-    "d08-genbudo": "genbudo",
-    "d09-morning-onsen": "urashima",
-    "d09-lawson-breakfast": "urashima",
-    "d09-ship": "katsuura_station",
-    "d09-bus": "daimonzaka",
-    "d09-daimonzaka": "daimonzaka",
-    "d09-nachi": "nachi",
-    "d09-seigantoji": "seigantoji",
-    "d09-nachi-falls": "nachi_falls",
-    "d09-return": "katsuura_station",
-    "d09-onsen": "urashima",
-    "d10-morning-onsen": "urashima",
-    "d10-breakfast": "urashima",
-    "d10-checkout": "urashima",
-    "d10-noroshiyama": "noroshiyama",
-    "d10-katsuura-station": "katsuura_station",
-    "d10-train": "wakayama_station",
-    "d10-wakayama-castle": "wakayama_castle",
-    "d10-nankai-izumisano": "izumisano_station",
-    "d10-hotel": "rhotel",
-    "d11-airport": "kix_station",
-    "d11-flight-kix": "kix_airport",
-    "d11-flight-tpe": "tpe"
-  }
+  "itemPoints": [
+    {
+      "id": "d01-flight-depart",
+      "lat": 25.0802778,
+      "lng": 121.2322222,
+      "mapQuery": "臺灣桃園國際機場 桃園市大園區航站南路9號",
+      "mapPointLabel": "桃園國際機場（全機場參考點）（起飛機場）"
+    },
+    {
+      "id": "d01-flight-arrive",
+      "lat": 34.4301091,
+      "lng": 135.2303603,
+      "mapQuery": "関西国際空港 第1ターミナル 大阪府",
+      "mapPointLabel": "關西國際機場（全機場參考點）"
+    },
+    {
+      "id": "d01-terminal-station-walk",
+      "lat": 34.436125,
+      "lng": 135.2438492,
+      "mapQuery": "関西空港駅 大阪府泉佐野市泉州空港北",
+      "mapPointLabel": "関西空港駅（此段終點）"
+    },
+    {
+      "id": "d01-airport-osaka",
+      "lat": 34.6912646,
+      "lng": 135.4963895,
+      "mapQuery": "肥後橋駅 大阪市西区江戸堀",
+      "mapPointLabel": "肥後橋駅（此段終點）"
+    },
+    {
+      "id": "d01-higobashi-apa-walk",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "d01-apa",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉"
+    },
+    {
+      "id": "d02-apa-ohatsu-walk",
+      "lat": 34.6992683,
+      "lng": 135.5007629,
+      "mapQuery": "露天神社 お初天神 大阪市北区曾根崎2丁目5-4",
+      "mapPointLabel": "露天神社（お初天神）（此段終點）"
+    },
+    {
+      "id": "d04-s0-r41",
+      "lat": 34.6992683,
+      "lng": 135.5007629,
+      "mapQuery": "露天神社 お初天神 大阪市北区曾根崎2丁目5-4",
+      "mapPointLabel": "露天神社（お初天神）"
+    },
+    {
+      "id": "d02-ohatsu-tenmangu-walk",
+      "lat": 34.6960576,
+      "lng": 135.5126556,
+      "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
+      "mapPointLabel": "大阪天満宮（此段終點）"
+    },
+    {
+      "id": "d02-osaka-tenmangu",
+      "lat": 34.6960576,
+      "lng": 135.5126556,
+      "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
+      "mapPointLabel": "大阪天満宮"
+    },
+    {
+      "id": "d02-tenmangu-shopping-walk",
+      "lat": 34.6960576,
+      "lng": 135.5126556,
+      "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
+      "mapPointLabel": "大阪天滿宮附近商業街（區域參照）"
+    },
+    {
+      "id": "d02-shopping-street-lunch",
+      "lat": 34.6960576,
+      "lng": 135.5126556,
+      "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
+      "mapPointLabel": "大阪天滿宮附近商業街（區域參照）"
+    },
+    {
+      "id": "d02-shopping-minamimorimachi-walk",
+      "lat": 34.697549,
+      "lng": 135.510864,
+      "mapQuery": "南森町駅 Osaka Metro 大阪市北区",
+      "mapPointLabel": "南森町站（此段終點）"
+    },
+    {
+      "id": "d02-tanimachi-subway",
+      "lat": 34.682107,
+      "lng": 135.517253,
+      "mapQuery": "谷町四丁目駅 Osaka Metro 大阪市中央区",
+      "mapPointLabel": "谷町四丁目站（此段終點）"
+    },
+    {
+      "id": "d02-keihanna-ikoma",
+      "lat": 34.6930544,
+      "lng": 135.6979206,
+      "mapQuery": "生駒駅 奈良県生駒市元町",
+      "mapPointLabel": "生駒駅（此段終點）"
+    },
+    {
+      "id": "d02-ikoma-toriimae-walk",
+      "lat": 34.692269,
+      "lng": 135.696225,
+      "mapQuery": "鳥居前駅 近鉄生駒ケーブル 奈良県生駒市",
+      "mapPointLabel": "鳥居前站（此段終點）"
+    },
+    {
+      "id": "d02-toriimae-ticket-wait",
+      "lat": 34.692269,
+      "lng": 135.696225,
+      "mapQuery": "鳥居前駅 近鉄生駒ケーブル 奈良県生駒市",
+      "mapPointLabel": "鳥居前站"
+    },
+    {
+      "id": "d02-ikoma-cable-up",
+      "lat": 34.685913,
+      "lng": 135.689294,
+      "mapQuery": "宝山寺駅 生駒ケーブル 奈良県生駒市",
+      "mapPointLabel": "寶山寺纜車站（此段終點）"
+    },
+    {
+      "id": "d02-cable-station-hozanji-walk",
+      "lat": 34.684643,
+      "lng": 135.686549,
+      "mapQuery": "宝山寺 奈良県生駒市門前町1-1",
+      "mapPointLabel": "生駒聖天 宝山寺（此段終點）"
+    },
+    {
+      "id": "d02-hozanji",
+      "lat": 34.684643,
+      "lng": 135.686549,
+      "mapQuery": "宝山寺 奈良県生駒市門前町1-1",
+      "mapPointLabel": "生駒聖天 宝山寺"
+    },
+    {
+      "id": "d02-hozanji-station-walk",
+      "lat": 34.685913,
+      "lng": 135.689294,
+      "mapQuery": "宝山寺駅 生駒ケーブル 奈良県生駒市",
+      "mapPointLabel": "寶山寺纜車站（此段終點）"
+    },
+    {
+      "id": "d02-ikoma-cable-down",
+      "lat": 34.692269,
+      "lng": 135.696225,
+      "mapQuery": "鳥居前駅 近鉄生駒ケーブル 奈良県生駒市",
+      "mapPointLabel": "鳥居前站（此段終點）"
+    },
+    {
+      "id": "d02-toriimae-ikoma-walk",
+      "lat": 34.6930544,
+      "lng": 135.6979206,
+      "mapQuery": "生駒駅 奈良県生駒市元町",
+      "mapPointLabel": "生駒駅（此段終點）"
+    },
+    {
+      "id": "d02-osaka-return",
+      "lat": 34.6912646,
+      "lng": 135.4963895,
+      "mapQuery": "肥後橋駅 大阪市西区江戸堀",
+      "mapPointLabel": "肥後橋駅（此段終點）"
+    },
+    {
+      "id": "d02-higobashi-apa-walk",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "ise-outbound",
+      "lat": 34.45501,
+      "lng": 136.725793,
+      "mapQuery": "伊勢神宮 内宮 皇大神宮 三重県伊勢市宇治館町1",
+      "mapPointLabel": "伊勢神宮 内宮（皇大神宮）（此段終點）"
+    },
+    {
+      "id": "ise-naiku",
+      "lat": 34.45501,
+      "lng": 136.725793,
+      "mapQuery": "伊勢神宮 内宮 皇大神宮 三重県伊勢市宇治館町1",
+      "mapPointLabel": "伊勢神宮 内宮（皇大神宮）"
+    },
+    {
+      "id": "ise-naiku-busstop-walk",
+      "lat": 34.45501,
+      "lng": 136.725793,
+      "mapQuery": "伊勢神宮 内宮 皇大神宮 三重県伊勢市宇治館町1",
+      "mapPointLabel": "伊勢神宮內宮入口區域（站牌位置請開 Google 地圖）"
+    },
+    {
+      "id": "ise-can-futami",
+      "lat": 34.5092502,
+      "lng": 136.7881279,
+      "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
+      "mapPointLabel": "二見興玉神社・夫婦岩區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "ise-futami-approach-walk",
+      "lat": 34.5092502,
+      "lng": 136.7881279,
+      "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
+      "mapPointLabel": "二見興玉神社・夫婦岩（此段終點）"
+    },
+    {
+      "id": "ise-futami",
+      "lat": 34.5092502,
+      "lng": 136.7881279,
+      "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
+      "mapPointLabel": "二見興玉神社・夫婦岩"
+    },
+    {
+      "id": "ise-futami-busstop-walk",
+      "lat": 34.5092502,
+      "lng": 136.7881279,
+      "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
+      "mapPointLabel": "二見興玉神社・夫婦岩區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "ise-can-toba",
+      "lat": 34.4835168,
+      "lng": 136.8477084,
+      "mapQuery": "ミキモト真珠島 三重県鳥羽市鳥羽1丁目7-1",
+      "mapPointLabel": "御木本珍珠島區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "ise-pearl-entrance-walk",
+      "lat": 34.4835168,
+      "lng": 136.8477084,
+      "mapQuery": "ミキモト真珠島 三重県鳥羽市鳥羽1丁目7-1",
+      "mapPointLabel": "ミキモト真珠島（此段終點）"
+    },
+    {
+      "id": "ise-pearl",
+      "lat": 34.4835168,
+      "lng": 136.8477084,
+      "mapQuery": "ミキモト真珠島 三重県鳥羽市鳥羽1丁目7-1",
+      "mapPointLabel": "ミキモト真珠島"
+    },
+    {
+      "id": "ise-toba-walk",
+      "lat": 34.487015,
+      "lng": 136.8425705,
+      "mapQuery": "近鉄鳥羽駅 三重県鳥羽市鳥羽1丁目",
+      "mapPointLabel": "鳥羽駅（此段終點）"
+    },
+    {
+      "id": "ise-toba-vista",
+      "lat": 34.666999,
+      "lng": 135.498374,
+      "mapQuery": "大阪難波駅 近鉄 阪神 大阪市中央区難波4丁目",
+      "mapPointLabel": "大阪難波駅（此段終點）"
+    },
+    {
+      "id": "ise-namba-midosuji-walk",
+      "lat": 34.666999,
+      "lng": 135.498374,
+      "mapQuery": "大阪難波駅 近鉄 阪神 大阪市中央区難波4丁目",
+      "mapPointLabel": "大阪難波站（御堂筋散步起點）"
+    },
+    {
+      "id": "d03-s0-r40",
+      "lat": 34.6850446,
+      "lng": 135.4996097,
+      "mapQuery": "御堂筋 本町 大阪市中央区",
+      "mapPointLabel": "北御堂側（御堂筋散步終點參考）"
+    },
+    {
+      "id": "ise-midosuji-kitamido-walk",
+      "lat": 34.6850446,
+      "lng": 135.4996097,
+      "mapQuery": "北御堂 本願寺津村別院 大阪市中央区本町4丁目1-3",
+      "mapPointLabel": "北御堂（本願寺津村別院）（此段終點）"
+    },
+    {
+      "id": "d03-kitamido",
+      "lat": 34.6850446,
+      "lng": 135.4996097,
+      "mapQuery": "北御堂 本願寺津村別院 大阪市中央区本町4丁目1-3",
+      "mapPointLabel": "北御堂（本願寺津村別院）"
+    },
+    {
+      "id": "ise-apa-return",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "d04-apa-yodoyabashi-walk",
+      "lat": 34.6922614,
+      "lng": 135.501053,
+      "mapQuery": "淀屋橋駅 京阪 大阪市中央区北浜3丁目",
+      "mapPointLabel": "淀屋橋駅（京阪）（此段終點）"
+    },
+    {
+      "id": "d04-ryokuchi-subway",
+      "lat": 34.7748553,
+      "lng": 135.4955179,
+      "mapQuery": "緑地公園駅 北大阪急行 大阪府豊中市",
+      "mapPointLabel": "緑地公園駅（此段終點）"
+    },
+    {
+      "id": "d04-market-approach-walk",
+      "lat": 34.7767212,
+      "lng": 135.4868738,
+      "mapQuery": "服部緑地 東中央広場 円形花壇 大阪府豊中市",
+      "mapPointLabel": "服部綠地（市集在東中央廣場・円形花壇）（此段終點）"
+    },
+    {
+      "id": "d04-s0-r43",
+      "lat": 34.7767212,
+      "lng": 135.4868738,
+      "mapQuery": "服部緑地 東中央広場 円形花壇 大阪府豊中市",
+      "mapPointLabel": "服部綠地（市集在東中央廣場・円形花壇）"
+    },
+    {
+      "id": "d04-market-sone-walk",
+      "lat": 34.7712365,
+      "lng": 135.4677557,
+      "mapQuery": "阪急曽根駅 大阪府豊中市曽根東町",
+      "mapPointLabel": "曽根駅（此段終點）"
+    },
+    {
+      "id": "d04-s0-r44",
+      "lat": 34.8217418,
+      "lng": 135.4258695,
+      "mapQuery": "阪急池田駅 大阪府池田市栄町",
+      "mapPointLabel": "池田駅（此段終點）"
+    },
+    {
+      "id": "d04-ikeda-inagawa-walk",
+      "lat": 34.820889,
+      "lng": 135.418915,
+      "mapQuery": "猪名川花火大会 猪名川河川敷 大阪府池田市桃園",
+      "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）（此段終點）"
+    },
+    {
+      "id": "d04-s0-r45",
+      "lat": 34.820889,
+      "lng": 135.418915,
+      "mapQuery": "猪名川花火大会 猪名川河川敷 大阪府池田市桃園",
+      "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）"
+    },
+    {
+      "id": "d04-s0-r46",
+      "lat": 34.820889,
+      "lng": 135.418915,
+      "mapQuery": "猪名川花火大会 猪名川河川敷 大阪府池田市桃園",
+      "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）"
+    },
+    {
+      "id": "d04-inagawa-ikeda-walk",
+      "lat": 34.8217418,
+      "lng": 135.4258695,
+      "mapQuery": "阪急池田駅 大阪府池田市栄町",
+      "mapPointLabel": "池田駅（此段終點）"
+    },
+    {
+      "id": "d04-s0-r47",
+      "lat": 34.7050271,
+      "lng": 135.4984269,
+      "mapQuery": "阪急大阪梅田駅 大阪市北区芝田1丁目",
+      "mapPointLabel": "大阪梅田駅（阪急）（此段終點）"
+    },
+    {
+      "id": "d04-umeda-apa-walk",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "d05-apa-yodoyabashi-walk",
+      "lat": 34.6922614,
+      "lng": 135.501053,
+      "mapQuery": "淀屋橋駅 京阪 大阪市中央区北浜3丁目",
+      "mapPointLabel": "淀屋橋駅（京阪）（此段終點）"
+    },
+    {
+      "id": "d05-keihan-demachiyanagi",
+      "lat": 35.0304996,
+      "lng": 135.7732283,
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapPointLabel": "出町柳駅（此段終點）"
+    },
+    {
+      "id": "d05-demachiyanagi-shimogamo-walk",
+      "lat": 35.0394,
+      "lng": 135.7724,
+      "mapQuery": "下鴨神社 京都市左京区下鴨泉川町59",
+      "mapPointLabel": "下鴨神社（賀茂御祖神社）（此段終點）"
+    },
+    {
+      "id": "d05-s0-r48",
+      "lat": 35.0394,
+      "lng": 135.7724,
+      "mapQuery": "下鴨神社 京都市左京区下鴨泉川町59",
+      "mapPointLabel": "下鴨神社（賀茂御祖神社）"
+    },
+    {
+      "id": "d05-shimogamo-station-walk",
+      "lat": 35.0304996,
+      "lng": 135.7732283,
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapPointLabel": "出町柳駅（此段終點）"
+    },
+    {
+      "id": "d05-s0-r49",
+      "lat": 34.9687187,
+      "lng": 135.7693455,
+      "mapQuery": "伏見稲荷駅 京阪 京都市伏見区深草一ノ坪町",
+      "mapPointLabel": "伏見稲荷駅（京阪）（此段終點）"
+    },
+    {
+      "id": "d05-fushimi-approach-walk",
+      "lat": 34.9671402,
+      "lng": 135.7726717,
+      "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
+      "mapPointLabel": "伏見稲荷大社（此段終點）"
+    },
+    {
+      "id": "d05-fushimi-visit",
+      "lat": 34.9671402,
+      "lng": 135.7726717,
+      "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
+      "mapPointLabel": "伏見稲荷大社"
+    },
+    {
+      "id": "d05-s0-r50",
+      "lat": 34.9671402,
+      "lng": 135.7726717,
+      "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
+      "mapPointLabel": "伏見稲荷大社"
+    },
+    {
+      "id": "d05-fushimi-hitaki",
+      "lat": 34.9671402,
+      "lng": 135.7726717,
+      "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
+      "mapPointLabel": "伏見稲荷大社"
+    },
+    {
+      "id": "d05-fushimi-jr-walk",
+      "lat": 34.9668268,
+      "lng": 135.7706651,
+      "mapQuery": "稲荷駅 JR奈良線 京都市伏見区",
+      "mapPointLabel": "稲荷駅（JR）（此段終點）"
+    },
+    {
+      "id": "d05-s0-r51",
+      "lat": 35.0185463,
+      "lng": 135.7177232,
+      "mapQuery": "花園駅 JR嵯峨野線 京都市右京区",
+      "mapPointLabel": "花園駅（此段終點）"
+    },
+    {
+      "id": "d05-hanazono-eigamura-walk",
+      "lat": 35.0162763,
+      "lng": 135.7078702,
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapPointLabel": "東映太秦映画村（此段終點）"
+    },
+    {
+      "id": "d05-s0-r52",
+      "lat": 35.0162763,
+      "lng": 135.7078702,
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapPointLabel": "東映太秦映画村"
+    },
+    {
+      "id": "d05-s0-r53",
+      "lat": 35.0162763,
+      "lng": 135.7078702,
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapPointLabel": "東映太秦映画村"
+    },
+    {
+      "id": "d05-eigamura-break",
+      "lat": 35.0162763,
+      "lng": 135.7078702,
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapPointLabel": "東映太秦映画村"
+    },
+    {
+      "id": "d05-s0-r54",
+      "lat": 35.0162763,
+      "lng": 135.7078702,
+      "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
+      "mapPointLabel": "東映太秦映画村"
+    },
+    {
+      "id": "d05-eigamura-hanazono-walk",
+      "lat": 35.0185463,
+      "lng": 135.7177232,
+      "mapQuery": "花園駅 JR嵯峨野線 京都市右京区",
+      "mapPointLabel": "花園駅（此段終點）"
+    },
+    {
+      "id": "d05-s0-r56",
+      "lat": 34.7025416,
+      "lng": 135.4935954,
+      "mapQuery": "大阪駅 JR 大阪府大阪市北区梅田",
+      "mapPointLabel": "大阪駅（此段終點）"
+    },
+    {
+      "id": "d05-osaka-apa-walk",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "d06-apa-nakanoshima-walk",
+      "lat": 34.6917217,
+      "lng": 135.4910214,
+      "mapQuery": "中之島 大阪市北区",
+      "mapPointLabel": "大阪中之島（區域參考點）（此段終點）"
+    },
+    {
+      "id": "d06-nakanoshima",
+      "lat": 34.6917217,
+      "lng": 135.4910214,
+      "mapQuery": "中之島 大阪市北区",
+      "mapPointLabel": "大阪中之島（區域參考點）"
+    },
+    {
+      "id": "d06-nakanoshima-yodoyabashi-walk",
+      "lat": 34.6922614,
+      "lng": 135.501053,
+      "mapQuery": "淀屋橋駅 京阪 大阪市中央区北浜3丁目",
+      "mapPointLabel": "淀屋橋駅（京阪）（此段終點）"
+    },
+    {
+      "id": "d06-s0-r65",
+      "lat": 35.0304996,
+      "lng": 135.7732283,
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapPointLabel": "出町柳駅（此段終點）"
+    },
+    {
+      "id": "d06-demachiyanagi-gyoen-walk",
+      "lat": 35.0233955,
+      "lng": 135.7632002,
+      "mapQuery": "京都御苑 京都市上京区",
+      "mapPointLabel": "京都御苑（園區參考點）（此段終點）"
+    },
+    {
+      "id": "d06-kyoto-gyoen",
+      "lat": 35.0233955,
+      "lng": 135.7632002,
+      "mapQuery": "京都御苑 京都市上京区",
+      "mapPointLabel": "京都御苑（園區參考點）"
+    },
+    {
+      "id": "d06-gyoen-demachiyanagi-walk",
+      "lat": 35.0304996,
+      "lng": 135.7732283,
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapPointLabel": "出町柳駅（此段終點）"
+    },
+    {
+      "id": "d06-s0-r66",
+      "lat": 35.1082877,
+      "lng": 135.7637357,
+      "mapQuery": "貴船口駅 叡山電車 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船口駅（此段終點）"
+    },
+    {
+      "id": "d06-kifuneguchi-bus",
+      "lat": 35.118832,
+      "lng": 135.762393,
+      "mapQuery": "貴船 バス停 京都バス33 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船 バス停（京都バス33号終点）（此段終點）"
+    },
+    {
+      "id": "d06-kifune-bus-hon-walk",
+      "lat": 35.121848,
+      "lng": 135.7629081,
+      "mapQuery": "貴船神社 本宮 京都市左京区鞍馬貴船町180",
+      "mapPointLabel": "貴船神社 本宮（此段終點）"
+    },
+    {
+      "id": "d06-s0-r67",
+      "lat": 35.121848,
+      "lng": 135.7629081,
+      "mapQuery": "貴船神社 本宮 京都市左京区鞍馬貴船町180",
+      "mapPointLabel": "貴船神社 本宮"
+    },
+    {
+      "id": "d06-kifune-hon-oku-walk",
+      "lat": 35.1283333,
+      "lng": 135.7655833,
+      "mapQuery": "貴船神社 奥宮 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船神社 奥宮（此段終點）"
+    },
+    {
+      "id": "d06-kifune-okunomiya",
+      "lat": 35.1283333,
+      "lng": 135.7655833,
+      "mapQuery": "貴船神社 奥宮 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船神社 奥宮"
+    },
+    {
+      "id": "d06-oku-busstop-walk",
+      "lat": 35.118832,
+      "lng": 135.762393,
+      "mapQuery": "貴船 バス停 京都バス33 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船 バス停（京都バス33号終点）（此段終點）"
+    },
+    {
+      "id": "d06-kifune-return-bus",
+      "lat": 35.1082877,
+      "lng": 135.7637357,
+      "mapQuery": "貴船口駅 叡山電車 京都市左京区鞍馬貴船町",
+      "mapPointLabel": "貴船口駅（此段終點）"
+    },
+    {
+      "id": "d06-s0-r68",
+      "lat": 35.0304996,
+      "lng": 135.7732283,
+      "mapQuery": "出町柳駅 京都市左京区田中上柳町32-1",
+      "mapPointLabel": "出町柳駅（此段終點）"
+    },
+    {
+      "id": "d06-umayaro-transfer",
+      "lat": 35.0033014,
+      "lng": 135.7719122,
+      "mapQuery": "祇園四条駅 京阪 京都市東山区",
+      "mapPointLabel": "祇園四条駅（此段終點）"
+    },
+    {
+      "id": "d06-gionshijo-umayaro-walk",
+      "lat": 35.0047976,
+      "lng": 135.7702968,
+      "mapQuery": "馬肉料理専門店 馬野郎 京都市中京区紙屋町368-1",
+      "mapPointLabel": "馬肉料理専門店 馬野郎（此段終點）"
+    },
+    {
+      "id": "d06-umayaro",
+      "lat": 35.0047976,
+      "lng": 135.7702968,
+      "mapQuery": "馬肉料理専門店 馬野郎 京都市中京区紙屋町368-1",
+      "mapPointLabel": "馬肉料理専門店 馬野郎"
+    },
+    {
+      "id": "d06-umayaro-gionshijo-walk",
+      "lat": 35.0033014,
+      "lng": 135.7719122,
+      "mapQuery": "祇園四条駅 京阪 京都市東山区",
+      "mapPointLabel": "祇園四条駅（此段終點）"
+    },
+    {
+      "id": "d06-s0-r69",
+      "lat": 34.6922614,
+      "lng": 135.501053,
+      "mapQuery": "淀屋橋駅 京阪 大阪市中央区北浜3丁目",
+      "mapPointLabel": "淀屋橋駅（京阪）（此段終點）"
+    },
+    {
+      "id": "d06-yodoyabashi-apa-walk",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉（此段終點）"
+    },
+    {
+      "id": "d07-apa-luggage",
+      "lat": 34.6920961,
+      "lng": 135.4953491,
+      "mapQuery": "アパホテル 大阪肥後橋駅前 大阪市西区土佐堀1-2-1",
+      "mapPointLabel": "アパホテル〈大阪肥後橋駅前〉"
+    },
+    {
+      "id": "d07-apa-osaka-walk",
+      "lat": 34.7025416,
+      "lng": 135.4935954,
+      "mapQuery": "大阪駅 JR 大阪府大阪市北区梅田",
+      "mapPointLabel": "大阪駅（此段終點）"
+    },
+    {
+      "id": "d07-osaka-train-wait",
+      "lat": 34.7025416,
+      "lng": 135.4935954,
+      "mapQuery": "大阪駅 JR 大阪府大阪市北区梅田",
+      "mapPointLabel": "大阪駅"
+    },
+    {
+      "id": "d07-kuroshio",
+      "lat": 33.7336532,
+      "lng": 135.3840848,
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapPointLabel": "紀伊田辺駅（此段終點）"
+    },
+    {
+      "id": "d07-tanabe-transfer-break",
+      "lat": 33.7336532,
+      "lng": 135.3840848,
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapPointLabel": "紀伊田辺駅"
+    },
+    {
+      "id": "d07-tanabe-busstop-walk",
+      "lat": 33.7336532,
+      "lng": 135.3840848,
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapPointLabel": "紀伊田辺駅（此段終點）"
+    },
+    {
+      "id": "d07-bus-shirahama",
+      "lat": 33.6664167,
+      "lng": 135.3368056,
+      "mapQuery": "三段壁 バス停 明光バス 和歌山県白浜町",
+      "mapPointLabel": "三段壁 バス停（此段終點）"
+    },
+    {
+      "id": "d07-sandanbeki-approach-walk",
+      "lat": 33.6659963,
+      "lng": 135.3356616,
+      "mapQuery": "三段壁洞窟 和歌山県西牟婁郡白浜町2927-52",
+      "mapPointLabel": "三段壁洞窟（此段終點）"
+    },
+    {
+      "id": "d07-sandanbeki",
+      "lat": 33.6659963,
+      "lng": 135.3356616,
+      "mapQuery": "三段壁洞窟 和歌山県西牟婁郡白浜町2927-52",
+      "mapPointLabel": "三段壁洞窟"
+    },
+    {
+      "id": "d07-sandanbeki-senjojiki-walk",
+      "lat": 33.670701,
+      "lng": 135.330458,
+      "mapQuery": "千畳敷 和歌山県西牟婁郡白浜町",
+      "mapPointLabel": "千畳敷（白浜）（此段終點）"
+    },
+    {
+      "id": "d07-senjojiki",
+      "lat": 33.670701,
+      "lng": 135.330458,
+      "mapQuery": "千畳敷 和歌山県西牟婁郡白浜町",
+      "mapPointLabel": "千畳敷（白浜）"
+    },
+    {
+      "id": "d07-senjojiki-busstop-walk",
+      "lat": 33.6710556,
+      "lng": 135.3341667,
+      "mapQuery": "千畳口 バス停 明光バス 和歌山県白浜町",
+      "mapPointLabel": "千畳口 バス停（此段終點）"
+    },
+    {
+      "id": "d07-tanabe",
+      "lat": 33.7336532,
+      "lng": 135.3840848,
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapPointLabel": "紀伊田辺駅（此段終點）"
+    },
+    {
+      "id": "d07-tanabe-hotel-walk",
+      "lat": 33.7355737,
+      "lng": 135.3820281,
+      "mapQuery": "HOTEL KIITANABE 和歌山県田辺市高雄2丁目7-16",
+      "mapPointLabel": "HOTEL KIITANABE（此段終點）"
+    },
+    {
+      "id": "d07-tanabe-hotel",
+      "lat": 33.7355737,
+      "lng": 135.3820281,
+      "mapQuery": "HOTEL KIITANABE 和歌山県田辺市高雄2丁目7-16",
+      "mapPointLabel": "HOTEL KIITANABE"
+    },
+    {
+      "id": "d08-s2-r43",
+      "lat": 33.7336532,
+      "lng": 135.3840848,
+      "mapQuery": "紀伊田辺駅 和歌山県田辺市湊1-24",
+      "mapPointLabel": "紀伊田辺駅（此段終點）"
+    },
+    {
+      "id": "d08-s2-r45",
+      "lat": 33.861114,
+      "lng": 135.723774,
+      "mapQuery": "発心門王子 バス停 和歌山県田辺市本宮町三越",
+      "mapPointLabel": "発心門王子バス停（此段終點）"
+    },
+    {
+      "id": "d08-hosshinmon-approach-walk",
+      "lat": 33.861761,
+      "lng": 135.720693,
+      "mapQuery": "発心門王子 和歌山県田辺市本宮町三越",
+      "mapPointLabel": "発心門王子（此段終點）"
+    },
+    {
+      "id": "d08-s2-r46",
+      "lat": 33.861761,
+      "lng": 135.720693,
+      "mapQuery": "発心門王子 和歌山県田辺市本宮町三越",
+      "mapPointLabel": "発心門王子"
+    },
+    {
+      "id": "d08-s2-r47",
+      "lat": 33.8405706,
+      "lng": 135.7734753,
+      "mapQuery": "熊野本宮大社 和歌山県田辺市本宮町本宮1110",
+      "mapPointLabel": "熊野本宮大社"
+    },
+    {
+      "id": "d08-hongu-oyunohara-walk",
+      "lat": 33.8358156,
+      "lng": 135.7755544,
+      "mapQuery": "大斎原 大鳥居 和歌山県田辺市本宮町本宮",
+      "mapPointLabel": "大齋原・大鳥居（入口地標）（此段終點）"
+    },
+    {
+      "id": "d08-s2-r49",
+      "lat": 33.8358156,
+      "lng": 135.7755544,
+      "mapQuery": "大斎原 大鳥居 和歌山県田辺市本宮町本宮",
+      "mapPointLabel": "大齋原・大鳥居（入口地標）"
+    },
+    {
+      "id": "d08-oyunohara-busstop-walk",
+      "lat": 33.8358156,
+      "lng": 135.7755544,
+      "mapQuery": "大斎原 大鳥居 和歌山県田辺市本宮町本宮",
+      "mapPointLabel": "大齋原區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "d08-s2-r51",
+      "lat": 33.7322225,
+      "lng": 135.9835101,
+      "mapQuery": "熊野速玉大社 和歌山県新宮市新宮1",
+      "mapPointLabel": "熊野速玉大社區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "d08-hayatama-approach-walk",
+      "lat": 33.7322225,
+      "lng": 135.9835101,
+      "mapQuery": "熊野速玉大社 和歌山県新宮市新宮1",
+      "mapPointLabel": "熊野速玉大社（此段終點）"
+    },
+    {
+      "id": "d08-s2-r52",
+      "lat": 33.7322225,
+      "lng": 135.9835101,
+      "mapQuery": "熊野速玉大社 和歌山県新宮市新宮1",
+      "mapPointLabel": "熊野速玉大社"
+    },
+    {
+      "id": "d08-hayatama-castle-walk",
+      "lat": 33.7298965,
+      "lng": 135.9924656,
+      "mapQuery": "新宮城跡 丹鶴城跡 和歌山県新宮市丹鶴3丁目",
+      "mapPointLabel": "新宮城跡（丹鶴城跡）（此段終點）"
+    },
+    {
+      "id": "d08-shingu-castle",
+      "lat": 33.7298965,
+      "lng": 135.9924656,
+      "mapQuery": "新宮城跡 丹鶴城跡 和歌山県新宮市丹鶴3丁目",
+      "mapPointLabel": "新宮城跡（丹鶴城跡）"
+    },
+    {
+      "id": "d08-shingu-station",
+      "lat": 33.7243978,
+      "lng": 135.9943682,
+      "mapQuery": "新宮駅 和歌山県新宮市徐福2丁目1-1",
+      "mapPointLabel": "新宮駅（此段終點）"
+    },
+    {
+      "id": "d08-shingu-katsuura-jr",
+      "lat": 33.6277153,
+      "lng": 135.9415371,
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapPointLabel": "紀伊勝浦駅（此段終點）"
+    },
+    {
+      "id": "d08-s2-r55",
+      "lat": 33.6279735,
+      "lng": 135.9455933,
+      "mapQuery": "勝浦港 観光桟橋 ホテル浦島 乗船場 和歌山県那智勝浦町勝浦",
+      "mapPointLabel": "勝浦港觀光棧橋（浦島接駁船一帶）（此段終點）"
+    },
+    {
+      "id": "d08-s2-r56",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島（此段終點）"
+    },
+    {
+      "id": "d08-s2-r57",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d08-room-genbudo-walk",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 玄武洞 和歌山県那智勝浦町",
+      "mapPointLabel": "浦島飯店（玄武洞位於館內）（此段終點）"
+    },
+    {
+      "id": "d08-genbudo",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 玄武洞 和歌山県那智勝浦町",
+      "mapPointLabel": "浦島飯店（玄武洞位於館內）"
+    },
+    {
+      "id": "d09-morning-onsen",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d09-onsen-lawson-walk",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "浦島飯店本館 Lawson（館內）"
+    },
+    {
+      "id": "d09-lawson-breakfast",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "浦島飯店本館 Lawson（館內）"
+    },
+    {
+      "id": "d09-ship",
+      "lat": 33.6279735,
+      "lng": 135.9455933,
+      "mapQuery": "勝浦港 観光桟橋 ホテル浦島 乗船場 和歌山県那智勝浦町勝浦",
+      "mapPointLabel": "勝浦港觀光棧橋（浦島接駁船一帶）（此段終點）"
+    },
+    {
+      "id": "d09-pier-katsuura-walk",
+      "lat": 33.6277153,
+      "lng": 135.9415371,
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapPointLabel": "紀伊勝浦駅（此段終點）"
+    },
+    {
+      "id": "d09-bus",
+      "lat": 33.671439,
+      "lng": 135.899018,
+      "mapQuery": "熊野古道 大門坂 入口 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "大門坂入口區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "d09-daimonzaka-approach-walk",
+      "lat": 33.671439,
+      "lng": 135.899018,
+      "mapQuery": "熊野古道 大門坂 入口 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "大門坂入口（此段終點）"
+    },
+    {
+      "id": "d09-daimonzaka",
+      "lat": 33.671439,
+      "lng": 135.899018,
+      "mapQuery": "熊野古道 大門坂 入口 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "大門坂入口"
+    },
+    {
+      "id": "d09-nachi",
+      "lat": 33.6688052,
+      "lng": 135.8898601,
+      "mapQuery": "熊野那智大社 和歌山県東牟婁郡那智勝浦町那智山1",
+      "mapPointLabel": "熊野那智大社"
+    },
+    {
+      "id": "d09-nachi-seigantoji-walk",
+      "lat": 33.6691482,
+      "lng": 135.889849,
+      "mapQuery": "青岸渡寺 三重塔 和歌山県那智勝浦町那智山8",
+      "mapPointLabel": "青岸渡寺（三重塔外觀在附近）（此段終點）"
+    },
+    {
+      "id": "d09-seigantoji",
+      "lat": 33.6691482,
+      "lng": 135.889849,
+      "mapQuery": "青岸渡寺 三重塔 和歌山県那智勝浦町那智山8",
+      "mapPointLabel": "青岸渡寺（三重塔外觀在附近）"
+    },
+    {
+      "id": "d09-seigantoji-falls-walk",
+      "lat": 33.673765,
+      "lng": 135.8881652,
+      "mapQuery": "飛瀧神社 那智の滝 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "那智の滝・飛瀧神社（此段終點）"
+    },
+    {
+      "id": "d09-nachi-falls",
+      "lat": 33.673765,
+      "lng": 135.8881652,
+      "mapQuery": "飛瀧神社 那智の滝 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "那智の滝・飛瀧神社"
+    },
+    {
+      "id": "d09-falls-busstop-walk",
+      "lat": 33.673765,
+      "lng": 135.8881652,
+      "mapQuery": "飛瀧神社 那智の滝 和歌山県那智勝浦町那智山",
+      "mapPointLabel": "那智瀑布區域（巴士站請開 Google 地圖）"
+    },
+    {
+      "id": "d09-return",
+      "lat": 33.6277153,
+      "lng": 135.9415371,
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapPointLabel": "紀伊勝浦駅（此段終點）"
+    },
+    {
+      "id": "d09-katsuura-pier-walk",
+      "lat": 33.6279735,
+      "lng": 135.9455933,
+      "mapQuery": "勝浦港 観光桟橋 ホテル浦島 乗船場 和歌山県那智勝浦町勝浦",
+      "mapPointLabel": "勝浦港觀光棧橋（浦島接駁船一帶）（此段終點）"
+    },
+    {
+      "id": "d09-urashima-return-boat",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島（此段終點）"
+    },
+    {
+      "id": "d09-onsen",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d10-morning-onsen",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d10-onsen-breakfast-walk",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島（此段終點）"
+    },
+    {
+      "id": "d10-breakfast",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d10-checkout",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島"
+    },
+    {
+      "id": "d10-urashima-noroshiyama-walk",
+      "lat": 33.6215854,
+      "lng": 135.9522244,
+      "mapQuery": "狼煙山遊園 ホテル浦島 和歌山県那智勝浦町",
+      "mapPointLabel": "狼煙山（山上館・遊園區域）（此段終點）"
+    },
+    {
+      "id": "d10-noroshiyama",
+      "lat": 33.6215854,
+      "lng": 135.9522244,
+      "mapQuery": "狼煙山遊園 ホテル浦島 和歌山県那智勝浦町",
+      "mapPointLabel": "狼煙山（山上館・遊園區域）"
+    },
+    {
+      "id": "d10-noroshiyama-lobby-walk",
+      "lat": 33.6253549,
+      "lng": 135.9509604,
+      "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+      "mapPointLabel": "ホテル浦島（此段終點）"
+    },
+    {
+      "id": "d10-katsuura-station",
+      "lat": 33.6279735,
+      "lng": 135.9455933,
+      "mapQuery": "勝浦港 観光桟橋 ホテル浦島 乗船場 和歌山県那智勝浦町勝浦",
+      "mapPointLabel": "勝浦港觀光棧橋（浦島接駁船一帶）（此段終點）"
+    },
+    {
+      "id": "d10-pier-katsuura-walk",
+      "lat": 33.6277153,
+      "lng": 135.9415371,
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapPointLabel": "紀伊勝浦駅（此段終點）"
+    },
+    {
+      "id": "d10-katsuura-free-time",
+      "lat": 33.6277153,
+      "lng": 135.9415371,
+      "mapQuery": "紀伊勝浦駅 和歌山県那智勝浦町築地6丁目1-1",
+      "mapPointLabel": "紀伊勝浦駅"
+    },
+    {
+      "id": "d10-train",
+      "lat": 34.2322077,
+      "lng": 135.1921514,
+      "mapQuery": "JR和歌山駅 和歌山県和歌山市美園町5-61",
+      "mapPointLabel": "和歌山駅（此段終點）"
+    },
+    {
+      "id": "d10-wakayama-castle-bus",
+      "lat": 34.227656,
+      "lng": 135.171511,
+      "mapQuery": "和歌山城公園 和歌山県和歌山市一番丁3",
+      "mapPointLabel": "和歌山城公園（下車後遊覽區域）"
+    },
+    {
+      "id": "d10-wakayama-castle",
+      "lat": 34.227656,
+      "lng": 135.171511,
+      "mapQuery": "和歌山城公園 和歌山県和歌山市一番丁3",
+      "mapPointLabel": "和歌山城公園（外圍散步區域）"
+    },
+    {
+      "id": "d10-castle-wakayamashi-walk",
+      "lat": 34.2394372,
+      "lng": 135.1661385,
+      "mapQuery": "南海和歌山市駅 和歌山県和歌山市東蔵前丁",
+      "mapPointLabel": "和歌山市駅（此段終點）"
+    },
+    {
+      "id": "d10-nankai-izumisano",
+      "lat": 34.4112609,
+      "lng": 135.3172818,
+      "mapQuery": "泉佐野駅 大阪府泉佐野市上町3丁目11-41",
+      "mapPointLabel": "泉佐野駅（此段終點）"
+    },
+    {
+      "id": "d10-izumisano-rhotel-walk",
+      "lat": 34.4117342,
+      "lng": 135.3161727,
+      "mapQuery": "R Hotel Kansai Airport 大阪府泉佐野市若宮町5-3",
+      "mapPointLabel": "R Hotel Kansai Airport（此段終點）"
+    },
+    {
+      "id": "d10-hotel",
+      "lat": 34.4117342,
+      "lng": 135.3161727,
+      "mapQuery": "R Hotel Kansai Airport 大阪府泉佐野市若宮町5-3",
+      "mapPointLabel": "R Hotel Kansai Airport"
+    },
+    {
+      "id": "d11-rhotel-checkout",
+      "lat": 34.4117342,
+      "lng": 135.3161727,
+      "mapQuery": "R Hotel Kansai Airport 大阪府泉佐野市若宮町5-3",
+      "mapPointLabel": "R Hotel Kansai Airport"
+    },
+    {
+      "id": "d11-rhotel-izumisano-walk",
+      "lat": 34.4112609,
+      "lng": 135.3172818,
+      "mapQuery": "泉佐野駅 大阪府泉佐野市上町3丁目11-41",
+      "mapPointLabel": "泉佐野駅（此段終點）"
+    },
+    {
+      "id": "d11-airport",
+      "lat": 34.436125,
+      "lng": 135.2438492,
+      "mapQuery": "関西空港駅 大阪府泉佐野市泉州空港北",
+      "mapPointLabel": "関西空港駅（此段終點）"
+    },
+    {
+      "id": "d11-station-terminal-walk",
+      "lat": 34.4301091,
+      "lng": 135.2303603,
+      "mapQuery": "関西国際空港 第1ターミナル 大阪府",
+      "mapPointLabel": "關西國際機場（全機場參考點）（此段終點）"
+    },
+    {
+      "id": "d11-airport-procedures",
+      "lat": 34.4301091,
+      "lng": 135.2303603,
+      "mapQuery": "関西国際空港 第1ターミナル 大阪府",
+      "mapPointLabel": "關西國際機場（全機場參考點）"
+    },
+    {
+      "id": "d11-flight-kix",
+      "lat": 34.4301091,
+      "lng": 135.2303603,
+      "mapQuery": "関西国際空港 第1ターミナル 大阪府",
+      "mapPointLabel": "關西國際機場（全機場參考點）（起飛機場）"
+    },
+    {
+      "id": "d11-flight-tpe",
+      "lat": 25.0802778,
+      "lng": 121.2322222,
+      "mapQuery": "臺灣桃園國際機場 桃園市大園區航站南路9號",
+      "mapPointLabel": "桃園國際機場（全機場參考點）"
+    }
+  ]
 }
