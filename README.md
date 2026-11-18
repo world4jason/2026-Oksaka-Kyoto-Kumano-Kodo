@@ -13,7 +13,7 @@
 
 ## 日期、天氣與航班摘要
 
-Trip / Transport / Places 使用同一條橫向日期天氣卡列，有有效 Open-Meteo 預報才顯示天氣；無有效預報仍能選擇日期。保留總覽、今天與跳至日期。Trip Overview 根據既有航班 Timeline 顯示去回程卡片；Transport 顯示對應航班的詳情，不新增另一份航班時刻表。
+Trip / Transport / Places 使用同一條橫向日期天氣卡列，過去日期查 Open-Meteo 的歷史模式天氣（近 92 天採 past_days，較早日期採 Archive），未來日期顯示有效預報；若資料沒有回傳，卡片仍保持乾淨的日期／行程主題、不顯示假天氣或破折號，也能正常選日期。保留總覽、今天與跳至日期。Trip Overview 根據既有航班 Timeline 顯示去回程卡片；Transport 顯示對應航班的詳情，不新增另一份航班時刻表。
 
 ## 11 天路線總覽
 
