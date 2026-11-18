@@ -14,3 +14,7 @@
 ## Acceptance when changing Kansai UI
 
 Run `npm run test:uiux` and `npm run test:timeline`, then the relevant Kansai chronology/transport/pilgrimage/visual tests, and record PASS / FAIL / NOT RUN. A change to the generic product rules belongs in Template `docs/UIUX.md` first and should be synchronized to this copy; do not fork the invariant silently.
+
+## Date / weather / flights (P1)
+
+Inherit the universal horizontal Weather Date Strip. No fabricated weather for past dates. The canonical IT212 and IT211 flight items project to overview and Transport cards. Preserve cross-zone Tokyo/Taipei arrival times and omit private PNR data.
