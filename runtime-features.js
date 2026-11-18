@@ -197,7 +197,7 @@
       ? (zh ? "已提供的地點名稱與地圖連結仍可使用。" : "Published place names and external map links remain available.")
       : (zh ? "行程與地點資訊仍可使用，也可在 Google Maps 查看位置。" : "Trip details remain available. Open Google Maps for the selected place.");
     container.innerHTML = `<div class="map-library-state map-library-fallback" role="status">
-      <span class="map-state-mark" aria-hidden="true">⌖</span>
+      <span class="map-state-mark" aria-hidden="true">${(window.TravelLiteIcons?.svg?.("map-pin") || "")}</span>
       <div><p class="eyebrow">${zh ? "地點位置" : "Spatial reference"}</p><strong>${heading}</strong><p>${message}</p>
       ${url ? `<a class="button-link" href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${zh ? "在 Google Maps 開啟" : "Open Google Maps"} ↗</a>` : ""}</div>
     </div>`;
@@ -363,7 +363,7 @@
         <div class="map-heading"><div><p class="eyebrow">Spatial reference</p><h2>${escapeHtml(selectedDay?.title || "Trip map")}</h2><p class="map-heading-copy">Planned stops only · select a stop for context</p></div>${googleUrl ? `<a class="button-link map-primary-handoff" href="${escapeAttr(googleUrl)}" target="_blank" rel="noreferrer">Open in Maps ↗</a>` : ""}</div>
         ${placeChips ? `<div class="place-chips" aria-label="Planned stops">${placeChips}</div>` : ""}
         <div class="map-stage">
-          <div id="runtime-map" class="interactive-map" aria-label="Interactive trip map"><div class="map-library-state map-library-loading" role="status"><span class="map-state-mark" aria-hidden="true">⌖</span><div><p class="eyebrow">Spatial reference</p><strong>Loading planned stops…</strong><p>Trip details remain available while the map loads.</p></div></div></div>
+          <div id="runtime-map" class="interactive-map" aria-label="Interactive trip map"><div class="map-library-state map-library-loading" role="status"><span class="map-state-mark" aria-hidden="true">${(window.TravelLiteIcons?.svg?.("map-pin") || "")}</span><div><p class="eyebrow">Spatial reference</p><strong>Loading planned stops…</strong><p>Trip details remain available while the map loads.</p></div></div></div>
         </div>
         ${selected ? `<div class="selected-place-card map-selected-summary" data-surface-role="selected-stop" aria-label="Selected stop"><div><p class="eyebrow">Selected stop · ${escapeHtml(selected.start || selected.timeLabel || "")}</p><h3>${escapeHtml(selected.title || selected.location || "Place")}</h3><p>${escapeHtml(selected.location || "")}</p>${selected.mapPointLabel ? `<p>${/^zh/i.test(state.data?.ui?.locale || "") ? "定位點" : "Mapped point"}：${escapeHtml(selected.mapPointLabel)}</p>` : ""}</div>${googleUrl ? `<a class="button-link map-secondary-handoff" href="${escapeAttr(googleUrl)}" target="_blank" rel="noreferrer">Navigation ↗</a>` : ""}</div>` : ""}
       </section>`;
