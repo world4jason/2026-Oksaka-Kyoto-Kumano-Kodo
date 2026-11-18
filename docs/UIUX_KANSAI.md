@@ -22,3 +22,7 @@ Inherit the universal horizontal Weather Date Strip. No fabricated weather for p
 ## Historical weather in day cards (P1)
 
 Kansai's November 2026 dates must display source-backed **historical weather** (recent Forecast API `past_days`, older journeys Historical Weather API), never an invented forecast or uniform weather glyph. If API data is unavailable, preserve a polished date/day/title-only card; itinerary and navigation remain usable. Historical weather is a model estimate, not exact observed conditions.
+
+## Semantic transport icons and card text safe insets (P1.7)
+
+Use the upstream `docs/UIUX.md` P1.7 across both the generic Trip UI and Kansai Journey Board. Train, subway, funicular, map links and tickets must use the shared allowlisted `ui-icons.js` semantic SVGs, not missing-font glyphs. Every framed card must maintain at least 12 CSS px of actual rendered text-to-border inset at 320, 390 and 1100px and 200% zoom. For Kansai road/rail stops the inline Google Maps link uses a map-pin SVG. Run `npm run lint:uiux` and `npm run test:uiux:geometry`; tests are not a substitute for actual visual acceptance.
