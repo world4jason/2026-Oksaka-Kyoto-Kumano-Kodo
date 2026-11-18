@@ -30,3 +30,7 @@ Use the upstream `docs/UIUX.md` P1.7 across both the generic Trip UI and Kansai 
 ## Combined Journeys / direct Maps directions (P0)
 
 The source 11-day itinerary retains every individual, timed `type:transport` Leg. Consecutive walking/rail/metro/boat transfer Legs in one door-to-door move are projected into a single Trip Timeline Journey. The Journey title links to Google Maps directions when both endpoint names are explicit; all original IDs, clock times and transfer details remain in `<details>`. UI does not rewrite source data or infer live schedules. Walking uses footprints. Include desktop horizontal clipping/long Japanese station names in the browser geometry gate.
+
+## Map Workspace role geometry (P1.9)
+
+Kansai follows the identical `docs/UIUX.md` P1.9 frame/inset contract as Template. Each framed Style Pack declares its own nonzero `--ui-map-workspace-padding` (>=12px, preferably clamp(16px,1.5vw,24px)) next to its border; the source-independent `surface-contract.css` consumes both with border-box sizing. Editorial/Risograph/Vintage remain deliberately unframed. Agent MUST run `npm run lint:map-insets` and `npm run test:map-insets:browser` before claiming the desktop Transport map card no longer clips.

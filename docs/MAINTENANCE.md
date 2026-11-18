@@ -19,10 +19,10 @@ Do not rely on opening `index.html` directly with `file://`; the app fetches `tr
 **Before generating or modifying trip UI/UX:** read [`UIUX.md`](./UIUX.md) via `AGENTS.md` and run both publishing gates. UI/UX P0 rules must remain valid across themes and trip forks; a text-only test does not substitute for visual QA.
 
 ```bash
-npm run lint:uiux
+npm run lint:uiux  # includes lint:map-insets
 npm run test:uiux
 npm run test:timeline
-npm run test:uiux:geometry
+npm run test:uiux:geometry  # includes test:map-insets:browser
 ```
 
 
@@ -454,3 +454,9 @@ Before merge, review for:
 - human-facing setup or feature change → update root `README.md`
 
 Do not add one-off review notes or historical discussion documents to the template root. Use issues/PR history for that context.
+
+### Map frame/padding and CI note
+
+**Always** pair `--ui-map-workspace-frame` with `--ui-map-workspace-padding` on the same Style Pack `.runtime-map-panel` rule. Frame means >=12px padding on each side; intentionally open Editorial/Risograph/Vintage have both tokens zero. Execute `npm run lint:map-insets` and `npm run test:map-insets:browser`, as required by `docs/UIUX.md` P1.9 and local `STYLE_SURFACE_CONTRACT.md`. Browser tests are NOT replaced by passing static lint.
+
+This repository has no `package-lock.json`; CI therefore uses `npm install --no-package-lock --ignore-scripts`, not `npm ci`, then explicitly installs Chromium. Unrelated pre-step runner failure remains tracked in Template Issue #135.
