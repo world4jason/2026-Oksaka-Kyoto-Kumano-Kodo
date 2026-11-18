@@ -1,5 +1,7 @@
 # 2026 大阪・京都・熊野古道｜11 天 10 夜分享版
 
+> **Mandatory:** [Chronological Itinerary Timeline + Time-blocked Schedule](docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md). Every known visit, transport segment, meal and activity is one independent chronological time-range block. See `AGENTS.md`; run `npm run test:timeline` before publishing.
+
 這是一份依實際走訪順序整理的關西旅行計畫，日期為 **2026/11/04–11/14，共 11 天 10 夜**。前六晚以大阪肥後橋為據點，玩大阪、伊勢鳥羽與京都；後半段走白濱、熊野古道和那智山，最後經和歌山、泉佐野返台。
 
 - [直接開啟行程網站](https://world4jason.github.io/2026-Oksaka-Kyoto-Kumano-Kodo/)
