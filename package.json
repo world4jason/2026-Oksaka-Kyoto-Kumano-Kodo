@@ -6,6 +6,7 @@
     "test:integrity": "node scripts/check-item-ids.mjs trip.json",
     "serve": "python3 -m http.server 8000",
     "test:transport": "node --test tests/transport-data.test.mjs",
-    "test:pilgrimage": "node --test tests/pilgrimage.test.mjs"
+    "test:pilgrimage": "node --test tests/pilgrimage.test.mjs",
+    "test:timeline": "node --test tests/chronological-timeline.test.mjs && node scripts/check-chronological-timeline.mjs trip.json"
   }
 }
