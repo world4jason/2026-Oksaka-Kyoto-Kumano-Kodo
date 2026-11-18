@@ -18,3 +18,7 @@ Run `npm run test:uiux` and `npm run test:timeline`, then the relevant Kansai ch
 ## Date / weather / flights (P1)
 
 Inherit the universal horizontal Weather Date Strip. No fabricated weather for past dates. The canonical IT212 and IT211 flight items project to overview and Transport cards. Preserve cross-zone Tokyo/Taipei arrival times and omit private PNR data.
+
+## Historical weather in day cards (P1)
+
+Kansai's November 2026 dates must display source-backed **historical weather** (recent Forecast API `past_days`, older journeys Historical Weather API), never an invented forecast or uniform weather glyph. If API data is unavailable, preserve a polished date/day/title-only card; itinerary and navigation remain usable. Historical weather is a model estimate, not exact observed conditions.
