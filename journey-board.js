@@ -30,7 +30,7 @@
   const mapHandoff = (name) =>
     "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || ""));
   function icon(mode) {
-    return window.TravelLiteIcons?.svg?.(mode);
+    return (window.TravelLiteIcons?.svg?.(mode) || "");
   }
   function dayByDate(date) {
     return state.data?.days?.find((day) => day.date === date);
@@ -82,7 +82,7 @@
       : '在 Google Maps 搜尋 ' + query + '；非即時班表';
     const map = '<a class="tl-map-link" href="' + esc(suppliedMap || mapHandoff(query)) +
       '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(mapLabel) +
-      '" title="' + (suppliedMap ? 'Google Maps 路線或地點' : 'Google Maps 地點搜尋') + ' · 非即時班表">' + window.TravelLiteIcons?.svg?.("map-pin") + '</a>';
+      '" title="' + (suppliedMap ? 'Google Maps 路線或地點' : 'Google Maps 地點搜尋') + ' · 非即時班表">' + (window.TravelLiteIcons?.svg?.("map-pin") || "") + '</a>';
     const hidden = leg.hint
       ? '<details class="tl-leg-extra"><summary aria-label="展開此段乘車細節" title="乘車細節">···</summary><p>' + esc(leg.hint) + '</p></details>'
       : "";
@@ -162,7 +162,7 @@
         '<small>' + esc(primary.where) + ' · ' + esc(primary.hours) + '</small></div>' +
         '<a href="' + esc(mapHandoff(primary.local + " " + primary.address)) +
         '" target="_blank" rel="noopener noreferrer" aria-label="Google Maps 搜尋田邊市觀光中心">' +
-         window.TravelLiteIcons?.svg?.("map-pin") + '</a></div>' +
+         (window.TravelLiteIcons?.svg?.("map-pin") || "") + '</a></div>' +
       '<p class="tl-credential-risk">' + esc(p.pickupDeadline.risk) + '</p>' +
       '<details class="tl-credential-details"><summary>兩種手冊／5 處領取點 <b>＋</b></summary>' +
         '<div class="tl-credential-kinds">' + booking + '</div>' +
