@@ -3,7 +3,7 @@
 // shell/runtime, and activating one cannot delete the other's cache.
 const CACHE_PREFIX = "travel-lite:" + new URL(self.registration.scope).pathname
   .replace(/[^a-z0-9]/gi, "-") + ":";
-const CACHE = CACHE_PREFIX + "shell-v70-uiux-icon-inset";
+const CACHE = CACHE_PREFIX + "shell-v71-journey-transfer-route";
 const RUNTIME_CACHE = CACHE_PREFIX + "runtime-v1";
 const scopeUrl = (path) => new URL(path, self.registration.scope).href;
 const INDEX = scopeUrl("./index.html");
@@ -42,9 +42,10 @@ const CORE = [
   "./bootstrap.js",
   "./storage.js",
   "./item-identity.js",
-  "./ui-icons.js?v=20261118-icons-v1",
+  "./ui-icons.js?v=20261118-journey-v1",
+  "./journey-groups.js?v=20261118-journey-v1",
   "./app.js?v=20261118-icons-v1",
-  "./trip-view.js?v=20261118-icons-v1",
+  "./trip-view.js?v=20261118-journey-v1",
   "./runtime-providers.js?v=20261118-history-v2",
   "./runtime-features.js?v=20261118-icons-v1",
   "./runtime-handoff.js",
@@ -71,6 +72,7 @@ const CORE = [
   "./date-navigation.css?v=20261118-history-v2",
   "./flight-overview.css?v=20261118-weatherstrip-v1",
   "./uiux-guard.css?v=20261118-inset-v1",
+  "./journey-groups.css?v=20261118-journey-v1",
   "./assets/storybook/hero.svg",
   "./assets/storybook/map.svg",
   "./assets/storybook/city.svg",
