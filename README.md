@@ -1,12 +1,13 @@
 # 2026 大阪・京都・熊野古道｜11 天 10 夜分享版
 
-> **Mandatory:** [Chronological Itinerary Timeline + Time-blocked Schedule](docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md). Every known visit, transport segment, meal and activity is one independent chronological time-range block. See `AGENTS.md`; run `npm run test:timeline` before publishing.
+> **Mandatory UI/UX contract:** [docs/UIUX.md](docs/UIUX.md) (P0/P1/P2), with [Chronological Timeline details](docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md). `AGENTS.md` requires every inheriting Agent to read it first. Validate with `npm run test:uiux` and `npm run test:timeline` before release.
 
 這是一份依實際走訪順序整理的關西旅行計畫，日期為 **2026/11/04–11/14，共 11 天 10 夜**。前六晚以大阪肥後橋為據點，玩大阪、伊勢鳥羽與京都；後半段走白濱、熊野古道和那智山，最後經和歌山、泉佐野返台。
 
 - [直接開啟行程網站](https://world4jason.github.io/2026-Oksaka-Kyoto-Kumano-Kodo/)
 - [Google Sheet 分享版](https://docs.google.com/spreadsheets/d/1CO_891wspexrJr8SeXrx_AHTNmjvDCuA0C4e9RE_x3Q/edit#gid=202611160)
 - [完整時間表與官方參考](./reference.html)
+- [關西專屬 UI/UX 補充](./docs/UIUX_KANSAI.md)
 
 > 依實走順序整理成可照排的時間計畫，每段按「交通 → 景點／活動 → 下一段交通」排列；交通包含步行、地鐵、鐵路、巴士、纜車與船。「約」是補齊的交通與停留估計，「班表參考」供照排與換班使用。日本境內採日本時間，航班各端採當地時間；換日期出發時，再確認活動日與班次。
 
