@@ -26,3 +26,7 @@ Kansai's November 2026 dates must display source-backed **historical weather** (
 ## Semantic transport icons and card text safe insets (P1.7)
 
 Use the upstream `docs/UIUX.md` P1.7 across both the generic Trip UI and Kansai Journey Board. Train, subway, funicular, map links and tickets must use the shared allowlisted `ui-icons.js` semantic SVGs, not missing-font glyphs. Every framed card must maintain at least 12 CSS px of actual rendered text-to-border inset at 320, 390 and 1100px and 200% zoom. For Kansai road/rail stops the inline Google Maps link uses a map-pin SVG. Run `npm run lint:uiux` and `npm run test:uiux:geometry`; tests are not a substitute for actual visual acceptance.
+
+## Combined Journeys / direct Maps directions (P0)
+
+The source 11-day itinerary retains every individual, timed `type:transport` Leg. Consecutive walking/rail/metro/boat transfer Legs in one door-to-door move are projected into a single Trip Timeline Journey. The Journey title links to Google Maps directions when both endpoint names are explicit; all original IDs, clock times and transfer details remain in `<details>`. UI does not rewrite source data or infer live schedules. Walking uses footprints. Include desktop horizontal clipping/long Japanese station names in the browser geometry gate.
