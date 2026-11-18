@@ -3,7 +3,7 @@
 // shell/runtime, and activating one cannot delete the other's cache.
 const CACHE_PREFIX = "travel-lite:" + new URL(self.registration.scope).pathname
   .replace(/[^a-z0-9]/gi, "-") + ":";
-const CACHE = CACHE_PREFIX + "shell-v66-sequential-timeline";
+const CACHE = CACHE_PREFIX + "shell-v68-weather-date-flight";
 const RUNTIME_CACHE = CACHE_PREFIX + "runtime-v1";
 const scopeUrl = (path) => new URL(path, self.registration.scope).href;
 const INDEX = scopeUrl("./index.html");
@@ -13,7 +13,7 @@ const CORE = [
   "./styles.css",
   "./runtime.css?v=20261116-timeline-v7",
   "./desktop-theme.css",
-  "./trip-view.css",
+  "./trip-view.css?v=20261118-chronological-v1",
   "./responsive-shell.css",
   "./companion-ux.css",
   "./places-view.css",
@@ -43,7 +43,7 @@ const CORE = [
   "./storage.js",
   "./item-identity.js",
   "./app.js?v=20261116-timeline-v7",
-  "./trip-view.js?v=20261116-timeline-v7",
+  "./trip-view.js?v=20261118-chronological-v1",
   "./runtime-providers.js",
   "./runtime-features.js?v=20261116-timeline-v7",
   "./runtime-handoff.js",
@@ -64,9 +64,11 @@ const CORE = [
   "./export-ui.js",
   "./trip.json",
   "./journey-board.js?v=20261116-timeline-v7",
-  "./date-navigation.js",
+  "./date-navigation.js?v=20261118-weatherstrip-v1",
+  "./flight-overview.js?v=20261118-weatherstrip-v1",
   "./journey-board.css",
-  "./date-navigation.css",
+  "./date-navigation.css?v=20261118-weatherstrip-v1",
+  "./flight-overview.css?v=20261118-weatherstrip-v1",
   "./assets/storybook/hero.svg",
   "./assets/storybook/map.svg",
   "./assets/storybook/city.svg",
