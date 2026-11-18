@@ -45,7 +45,7 @@
       "id": "ise-ama",
       "dateLabel": "11/06",
       "title": "伊勢・鳥羽海女實演",
-      "icon": "✦",
+      "icon": "sparkles",
       "status": "must",
       "note": "內宮、夫婦岩、珍珠島；觀看15:30海女實演，16:35搭Vista Car回大阪。"
     },
@@ -53,7 +53,7 @@
       "id": "fireworks",
       "dateLabel": "11/07",
       "title": "豬名川花火大會",
-      "icon": "✦",
+      "icon": "sparkles",
       "status": "must",
       "note": "上午服部綠地市集，下午河岸看書，18:00–18:30看花火。"
     },
@@ -61,7 +61,7 @@
       "id": "hyakki",
       "dateLabel": "11/08",
       "title": "太秦百鬼夜行",
-      "icon": "✦",
+      "icon": "sparkles",
       "status": "must",
       "note": "上午下鴨，下午伏見稻荷13:00及14:00，晚間太秦17:30及19:30兩場。"
     },
@@ -69,7 +69,7 @@
       "id": "kifune",
       "dateLabel": "11/09",
       "title": "貴船神社紅葉點燈",
-      "icon": "✧",
+      "icon": "sparkles",
       "status": "must",
       "note": "中之島、京都御苑、叡電紅葉隧道；貴船本宮與奧宮點燈後，吃京都馬野郎再回大阪。"
     },
@@ -77,7 +77,7 @@
       "id": "kumano",
       "dateLabel": "11/11",
       "title": "熊野古道・本宮・速玉・新宮城跡",
-      "icon": "✧",
+      "icon": "sparkles",
       "status": "must",
       "note": "發心門王子步行約7km，接續本宮、大齋原、速玉與城跡；新宮搭JR到紀伊勝浦。"
     }
@@ -101,7 +101,16 @@
           "location": "桃園國際機場 → 關西國際機場",
           "note": "16:25（台灣）→19:40（日本）｜飛行 2 小時 15 分；兩端有 1 小時時差。",
           "transportMode": "flight",
-          "flight": {"number":"IT212","origin":{"code":"TPE"},"destination":{"code":"KIX"},"arrivalTimezone":"Asia/Tokyo"},
+          "flight": {
+            "number": "IT212",
+            "origin": {
+              "code": "TPE"
+            },
+            "destination": {
+              "code": "KIX"
+            },
+            "arrivalTimezone": "Asia/Tokyo"
+          },
           "timezone": "Asia/Taipei",
           "end": "18:40",
           "lat": 25.0802778,
@@ -5685,7 +5694,16 @@
           "location": "關西國際機場 → 桃園國際機場",
           "note": "11:30（日本）→13:50（台灣）｜飛行 3 小時 20 分；抵達顯示台灣當地時間 13:50。",
           "transportMode": "flight",
-          "flight": {"number":"IT211","origin":{"code":"KIX"},"destination":{"code":"TPE"},"arrivalTimezone":"Asia/Taipei"},
+          "flight": {
+            "number": "IT211",
+            "origin": {
+              "code": "KIX"
+            },
+            "destination": {
+              "code": "TPE"
+            },
+            "arrivalTimezone": "Asia/Taipei"
+          },
           "end": "14:50",
           "lat": 34.4301091,
           "lng": 135.2303603,

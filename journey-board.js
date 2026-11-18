@@ -29,21 +29,8 @@
   })[c]);
   const mapHandoff = (name) =>
     "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || ""));
-  const icons = {
-    train: '<path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M4 11h16M7 21l2-3m8 3-2-3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/>',
-    subway: '<rect x="5" y="3" width="14" height="16" rx="3"/><path d="M5 10h14M8 22l3-3m5 3-3-3"/>',
-    cable: '<path d="m3 20 18-8M5 23l17-8M6 18V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6M6 11h12M10 5v6M14 5v6"/>',
-    bus: '<rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16M8 19v2m8-2v2M8 15h1m6 0h1"/>',
-    walk: '<circle cx="13" cy="4" r="2"/><path d="m10 21 2-6-2-3-3 3-3 1m6-7 2 3 4 1 3 4m-7-5 3-3-1-3"/>',
-    boat: '<path d="m3 13 9 3 9-3-3 6H6l-3-6Zm9-9v12m0-10 6 5h-6"/>',
-    flight: '<path d="m22 2-9 20-3-8-8-3L22 2Zm-12 12 5-5"/>',
-    stay: '<path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M3 9h18M8 21v-7h8v7"/>',
-    task: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/>',
-    event: '<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/>'
-  };
   function icon(mode) {
-    return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      (icons[mode] || icons.train) + '</svg>';
+    return window.TravelLiteIcons.svg(mode);
   }
   function dayByDate(date) {
     return state.data?.days?.find((day) => day.date === date);
@@ -95,7 +82,7 @@
       : '在 Google Maps 搜尋 ' + query + '；非即時班表';
     const map = '<a class="tl-map-link" href="' + esc(suppliedMap || mapHandoff(query)) +
       '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(mapLabel) +
-      '" title="' + (suppliedMap ? 'Google Maps 路線或地點' : 'Google Maps 地點搜尋') + ' · 非即時班表">⌖</a>';
+      '" title="' + (suppliedMap ? 'Google Maps 路線或地點' : 'Google Maps 地點搜尋') + ' · 非即時班表">' + window.TravelLiteIcons.svg("map-pin") + '</a>';
     const hidden = leg.hint
       ? '<details class="tl-leg-extra"><summary aria-label="展開此段乘車細節" title="乘車細節">···</summary><p>' + esc(leg.hint) + '</p></details>'
       : "";
@@ -174,7 +161,8 @@
         '</strong><small>11/10 關門</small></div><div><strong>' + esc(primary.name) + '</strong>' +
         '<small>' + esc(primary.where) + ' · ' + esc(primary.hours) + '</small></div>' +
         '<a href="' + esc(mapHandoff(primary.local + " " + primary.address)) +
-        '" target="_blank" rel="noopener noreferrer" aria-label="Google Maps 搜尋田邊市觀光中心">⌖</a></div>' +
+        '" target="_blank" rel="noopener noreferrer" aria-label="Google Maps 搜尋田邊市觀光中心">' +
+         window.TravelLiteIcons.svg("map-pin") + '</a></div>' +
       '<p class="tl-credential-risk">' + esc(p.pickupDeadline.risk) + '</p>' +
       '<details class="tl-credential-details"><summary>兩種手冊／5 處領取點 <b>＋</b></summary>' +
         '<div class="tl-credential-kinds">' + booking + '</div>' +
