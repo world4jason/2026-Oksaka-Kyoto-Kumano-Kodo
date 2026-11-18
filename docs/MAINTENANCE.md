@@ -243,6 +243,19 @@ Verify:
 - `transferAfter` appears between the correct stops and disappears cleanly when absent
 - a dense item still scans well on mobile
 
+## Shared Date Navigator regression (Issue #129)
+
+- Trip / Transport / Places must use the same mobile Date Navigator component;
+  check 3 / 11 / 32-day fixtures and all three routes at 320/390px plus desktop.
+- `ui:selectedDate` is the only date truth. `places:mode` persists All/Day only;
+  migrate old `places:date` without picking a second independent date.
+- Trip Overview and Places All remain different view-specific modes; Transport
+  has no whole-trip Overview. A chosen day follows all Day-mode views.
+- Verify `#trip/overview`, `#trip/day/DATE`, `#map/day/DATE/stop/ID`, `#places`,
+  `#places/day/DATE`, `#places/item/ID`, `#check`, Back/Forward and offline.
+- 15 Style IDs, 200% text, keyboard-native select, no duplicate visible controls;
+  the three-distinct-human, three-round review gate stays NOT RUN until verified.
+
 ## Responsive-shell review
 
 Responsive changes must be tested across all three compositions, not just one phone and one desktop.
@@ -455,8 +468,14 @@ Before merge, review for:
 
 Do not add one-off review notes or historical discussion documents to the template root. Use issues/PR history for that context.
 
-### Map frame/padding and CI note
+### GitHub Actions dependency note
 
-**Always** pair `--ui-map-workspace-frame` with `--ui-map-workspace-padding` on the same Style Pack `.runtime-map-panel` rule. Frame means >=12px padding on each side; intentionally open Editorial/Risograph/Vintage have both tokens zero. Execute `npm run lint:map-insets` and `npm run test:map-insets:browser`, as required by `docs/UIUX.md` P1.9 and local `STYLE_SURFACE_CONTRACT.md`. Browser tests are NOT replaced by passing static lint.
+The repository intentionally has no `package-lock.json`. CI therefore uses `npm install --no-package-lock --ignore-scripts`, not `npm ci` (which requires an existing lockfile), and explicitly installs Chromium. This does not resolve GitHub runner failures with `steps:null`; see Issue #135. The paired map frame lint and Chromium geometry checks must still run before claiming UI acceptance.
 
-This repository has no `package-lock.json`; CI therefore uses `npm install --no-package-lock --ignore-scripts`, not `npm ci`, then explicitly installs Chromium. Unrelated pre-step runner failure remains tracked in Template Issue #135.
+## Storybook Timeline and quiet-copy regression (P1.10)
+
+A decorative Style Pack may not override the single-column Storybook card with a shared three-column Journey grid. Generic explanatory day notes are not part of the default timeline surface. Run `npm run test:trip-layout` (static + failure injection), `npm run test:trip-layout:browser` (Storybook actual computed columns and readable width at 320/390/980/1100px + 200% root text), and full `npm run test:uiux:geometry` before release. Do not label browser checks PASS if they did not execute.
+
+## Storybook timeline and information economy (UIUX P1.10)
+
+Never override every Style Pack's Timeline column tracks from a Journey module. Storybook time-over-content cards remain one column. Default Trip/Now surfaces omit generic explanatory notes and use short weather attribution. After related changes run `npm run test:trip-layout` and `npm run test:trip-layout:browser` at 320/390/980/1100px plus 200% text. Do not report browser PASS if only source inspection was possible.

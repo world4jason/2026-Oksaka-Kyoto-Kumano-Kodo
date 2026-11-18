@@ -3,7 +3,7 @@
 // shell/runtime, and activating one cannot delete the other's cache.
 const CACHE_PREFIX = "travel-lite:" + new URL(self.registration.scope).pathname
   .replace(/[^a-z0-9]/gi, "-") + ":";
-const CACHE = CACHE_PREFIX + "shell-v73-map-role-cascade";
+const CACHE = CACHE_PREFIX + "shell-v75-storybook-quiet-grid";
 const RUNTIME_CACHE = CACHE_PREFIX + "runtime-v1";
 const scopeUrl = (path) => new URL(path, self.registration.scope).href;
 const INDEX = scopeUrl("./index.html");
@@ -45,7 +45,7 @@ const CORE = [
   "./ui-icons.js?v=20261118-journey-v1",
   "./journey-groups.js?v=20261118-journey-v1",
   "./app.js?v=20261118-icons-v1",
-  "./trip-view.js?v=20261118-journey-v1",
+  "./trip-view.js?v=20261119-trip-grid-v2",
   "./runtime-providers.js?v=20261118-history-v2",
   "./runtime-features.js?v=20261118-icons-v1",
   "./runtime-handoff.js",
@@ -57,7 +57,7 @@ const CORE = [
   "./companion-ux.js",
   "./timezone.js",
   "./long-trip-nav.js",
-  "./today-brief.js",
+  "./today-brief.js?v=20261119-trip-grid-v2",
   "./journey-trust.js",
   "./journey-transit.js",
   "./storybook-motion.js",
@@ -66,13 +66,13 @@ const CORE = [
   "./export-ui.js",
   "./trip.json",
   "./journey-board.js?v=20261118-icons-v1",
-  "./date-navigation.js?v=20261118-history-v2",
+  "./date-navigation.js?v=20261119-trip-grid-v2",
   "./flight-overview.js?v=20261118-weatherstrip-v1",
   "./journey-board.css",
   "./date-navigation.css?v=20261118-history-v2",
   "./flight-overview.css?v=20261118-weatherstrip-v1",
   "./uiux-guard.css?v=20261118-inset-v1",
-  "./journey-groups.css?v=20261118-journey-v1",
+  "./journey-groups.css?v=20261119-trip-grid-v2",
   "./assets/storybook/hero.svg",
   "./assets/storybook/map.svg",
   "./assets/storybook/city.svg",

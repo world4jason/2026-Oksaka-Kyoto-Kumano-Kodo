@@ -34,3 +34,7 @@ The source 11-day itinerary retains every individual, timed `type:transport` Leg
 ## Map Workspace role geometry (P1.9)
 
 Kansai follows the identical `docs/UIUX.md` P1.9 frame/inset contract as Template. Each framed Style Pack declares its own nonzero `--ui-map-workspace-padding` (>=12px, preferably clamp(16px,1.5vw,24px)) next to its border; the source-independent `surface-contract.css` consumes both with border-box sizing. Editorial/Risograph/Vintage remain deliberately unframed. Agent MUST run `npm run lint:map-insets` and `npm run test:map-insets:browser` before claiming the desktop Transport map card no longer clips.
+
+## Quiet day summaries and readable Storybook cards (P1.10)
+
+For the Kansai source, all repeated generic day notes about itinerary chronology have been removed. The 173 original source items, times, IDs, trip reminders, research and practical cautions remain intact. Storybook's mobile time-over-content cards must remain a single-column layout with full-width text. A Journey style stylesheet must never override the active Style Pack's grid tracks. See `docs/UIUX.md` P1.10.
