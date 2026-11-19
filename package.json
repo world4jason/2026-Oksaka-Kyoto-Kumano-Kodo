@@ -22,7 +22,11 @@
     "test:places-curation": "node --test tests/places-curation.test.mjs",
     "test:places-curation:browser": "playwright test tests/places-curation.spec.mjs --project=chromium",
     "test:overview": "node --test tests/overview-contract.test.mjs",
-    "test:overview:browser": "playwright test tests/overview-compact.spec.mjs --project=chromium"
+    "test:overview:browser": "playwright test tests/overview-compact.spec.mjs --project=chromium",
+    "artwork:plan": "node scripts/illustrate-places.mjs plan",
+    "artwork:generate": "node scripts/illustrate-places.mjs generate",
+    "artwork:apply": "node scripts/illustrate-places.mjs apply",
+    "test:artwork": "node --test tests/artwork-pipeline.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"
