@@ -8,7 +8,7 @@
     "updatedAt": "2026-11-16T02:09:35Z",
     "revision": "kansai-2026-11-16-sequential-timeline-v7",
     "accent": "#426354",
-    "themeColor": "#0b1020",
+    "themeColor": "#f5f6f2",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
     "center": {
       "lat": 34.5,
@@ -21,7 +21,7 @@
   },
   "ui": {
     "defaultView": "trip",
-    "theme": "system",
+    "theme": "light",
     "visualStyle": "vintage-watercolor",
     "locale": "zh-TW",
     "bottomNav": [
