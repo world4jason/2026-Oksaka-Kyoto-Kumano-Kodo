@@ -246,41 +246,22 @@
     notice.before(fold);
     fold.appendChild(notice);
   }
+  // Overview layout and navigation are now owned by the shared Template.
+  // Keep only the short, source-published Kansai mobility cues; do not rewrite
+  // the hero/card markup, because that bypasses shared layout contracts.
   function enhanceOverview() {
-    const layout = viewRoot.querySelector(".trip-overview-view");
-    if (!layout) return;
-    const hero = layout.querySelector(".trip-overview-hero");
-    if (hero) {
-      hero.classList.add("tl-overview-hero");
-      hero.innerHTML = '<div class="tl-cover-top"><span>KANSAI · 2026</span><span>11.04 — 11.14</span></div>' +
-        '<div class="tl-cover-path"><span>大阪</span><i aria-hidden="true">━</i><span>京都</span><i aria-hidden="true">━</i><span>熊野</span></div>' +
-        '<div class="tl-cover-bottom"><strong>11 <span>DAYS</span></strong>' +
-        '<strong>10 <span>NIGHTS</span></strong></div>';
-    }
-    layout.querySelectorAll(".trip-overview-day").forEach((button) => {
+    if (!viewRoot.querySelector(".trip-overview-view")) return;
+    viewRoot.querySelectorAll(".trip-overview-compact-day[data-trip-day]").forEach((button) => {
       const day = dayByDate(button.dataset.tripDay);
-      if (!day || !day.mobility) return;
-      const m = day.mobility, idx = state.data.days.indexOf(day) + 1;
-      const dayModes = uniqueModes(m.legs || []).slice(0,3).map(icon).join("");
-      button.classList.add("tl-overview-card");
-      button.innerHTML = '<span class="tl-day-index">' +
-        '<small>' + esc(dateLabel(day).slice(0,5)) + '</small><strong>' +
-        String(idx).padStart(2,"0") + '</strong></span>' +
-        '<span class="tl-day-info"><strong>' + esc(m.label) + '</strong>' +
-        '<small>' + esc(m.from) + ' <span aria-hidden="true">→</span> ' + esc(m.to) + '</small></span>' +
-        '<span class="tl-day-signals"><span class="tl-day-modes" aria-hidden="true">' + dayModes + '</span>' +
-        '<span class="tl-day-cue ' + (m.attentionLevel === 'danger' ? 'tl-cue-pending' : '') +
-        '">' + esc(m.callout || '') + '</span></span>' +
-        '<span class="tl-day-chevron" aria-hidden="true">›</span>';
+      const cue = typeof day?.mobility?.callout === "string"
+        ? day.mobility.callout.trim() : "";
+      const signals = button.querySelector(".trip-compact-day-signals");
+      if (!cue || !signals || signals.querySelector("small")) return;
+      const note = document.createElement("small");
+      note.textContent = cue;
+      if (day.mobility?.attentionLevel === "danger") note.classList.add("tl-cue-pending");
+      signals.appendChild(note);
     });
-    const extras = [...layout.querySelectorAll(".trip-overview-section")];
-    if (extras.length) {
-      const details = document.createElement("details");
-      details.className = "tl-extra-overview";
-      details.innerHTML = '<summary>景點亮點與備選 <span>＋</span></summary>';
-      extras[0].before(details);
-      extras.forEach((node) => details.appendChild(node));
-    }
   }
   function enhanceDay() {
     const layout = viewRoot.querySelector(".trip-day-view");
