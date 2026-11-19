@@ -94,3 +94,10 @@ test("Places cards use place nouns rather than scheduled-action descriptions",()
    assert.doesNotMatch(place.title,/參拜|散步|看夕陽|夜間點燈|入村|梳洗|泡湯|等候祭事|步行上山/,place.id);
  }
 });
+
+test("Places supports a separate venueName without rewriting Trip activity titles",()=>{
+ assert.match(placesSource,/function displayPlaceName\(item\)/);
+ assert.match(placesSource,/typeof item\?\.venueName === "string"/);
+ assert.match(placesSource,/escapeHtml\(displayPlaceName\(item\)\)/);
+ assert.doesNotMatch(placesSource,/<span class="places-card-title">\$\{escapeHtml\(item\.title\)\}/);
+});
