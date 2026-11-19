@@ -5,8 +5,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-19T13:19:40.657Z",
-    "revision": "kansai-2026-11-19-caves-photos-v2",
+    "updatedAt": "2026-11-20T00:57:00+08:00",
+    "revision": "kansai-2026-11-20-curated-cover-pilot",
     "accent": "#426354",
     "themeColor": "#f5f6f2",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -17,6 +17,23 @@
     "publication": {
       "state": "draft",
       "humanGate": "not-run"
+    },
+    "overviewArtwork": {
+      "subjectIds": [
+        "d04-s0-r46",
+        "d05-s0-r54",
+        "d08-s2-r46",
+        "d09-morning-onsen"
+      ],
+      "images": [
+        {
+          "src": "./assets/overview/osaka-four-memories-watercolor.avif",
+          "alt": "復古水彩旅程記憶拼貼：豬名川煙火、太秦百鬼夜行、熊野古道杉林石階、臨海洞窟溫泉。此為藝術插畫，非實景照片。",
+          "styleId": "vintage-watercolor",
+          "fit": "contain",
+          "focalPoint": "center"
+        }
+      ]
     }
   },
   "ui": {
