@@ -1,0 +1,72 @@
+{
+  "style": "vintage-watercolor",
+  "scenes": [
+    {
+      "slug": "meotoiwa",
+      "title": "二見興玉神社・夫婦岩",
+      "itemIds": [
+        "ise-futami"
+      ],
+      "photo": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meotoiwa.jpg?width=900",
+        "page": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg",
+        "credit": "Marubatsu / Wikimedia Commons",
+        "license": "Public domain",
+        "alt": "海面上由注連繩相連的夫婦岩"
+      },
+      "preserve": [
+        "Two natural sea stacks of unequal size, the taller one to the left and the smaller one to the right",
+        "A thick sacred shimenawa rope spans between the rocks; retain its visible connection, height and sag",
+        "A small torii on the larger rock; blue open sea, wave texture and distant horizon"
+      ],
+      "reviewStatus": "pending",
+      "reviewedBy": "",
+      "artworkLicense": ""
+    },
+    {
+      "slug": "fushimi-torii",
+      "title": "伏見稻荷大社・千本鳥居",
+      "itemIds": [
+        "d05-fushimi-visit"
+      ],
+      "photo": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fushimi_Inari_Shrine_August_2019.jpg?width=900",
+        "page": "https://commons.wikimedia.org/wiki/File:Fushimi_Inari_Shrine_August_2019.jpg",
+        "credit": "Sizableframe / Wikimedia Commons",
+        "license": "CC0 1.0",
+        "alt": "伏見稻荷大社朱紅千本鳥居通道"
+      },
+      "preserve": [
+        "A strongly centered passage receding into the distance under many closely repeated vermilion torii",
+        "Dark bases of the torii posts and a visible stone path down the middle",
+        "Trees and subtle daylight visible around the outer edge; no invented readable Japanese writing"
+      ],
+      "reviewStatus": "pending",
+      "reviewedBy": "",
+      "artworkLicense": ""
+    },
+    {
+      "slug": "nachi-pagoda-falls",
+      "title": "青岸渡寺三重塔與那智瀑布",
+      "itemIds": [
+        "d09-seigantoji",
+        "d09-nachi-falls"
+      ],
+      "photo": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg?width=900",
+        "page": "https://commons.wikimedia.org/wiki/File:Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg",
+        "credit": "Naokijp / Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "alt": "青岸渡寺朱紅三重塔與右側那智瀑布"
+      },
+      "preserve": [
+        "The vermilion three-story pagoda is LEFT of center in the foreground; keep all three roof tiers and their proportions",
+        "A tall narrow white Nachi waterfall descends from forested cliffs on the RIGHT in the background",
+        "Green mountain forest, dark stone cliff, and accurate relative scale and spatial separation of pagoda and falls"
+      ],
+      "reviewStatus": "pending",
+      "reviewedBy": "",
+      "artworkLicense": "CC BY-SA 4.0"
+    }
+  ]
+}
