@@ -31,7 +31,7 @@
 ## Existing Kansai reading patterns
 
 - This repo contains an 11-day Osaka / Kyoto / Kumano itinerary with interleaved transport, places, food, stays and events in `days[].items[]`. **The complete Chronological Time-blocked Timeline stays visible on Trip Day.**
-- The Kansai `journey-board.js` / `.css` adds a compact itinerary summary, critical transfer steps, alternatives and day overview; it is a **secondary projection** of the published trip and must never replace or collapse the source timeline.
+- The Kansai `journey-board.js` / `.css` adds critical transfer steps, alternatives and source-backed day callouts only. The **shared Template owns the Compact Overview DOM and layout**; Kansai may not overwrite its hero or day cards. The transport board is a secondary projection and must never replace or collapse the source timeline.
 - Transport may show a travel-step board first and let users expand maps / stop details. Keep historical deep links and station search links, and never treat a static reference time as live transit.
 - Kumano stamp/credential cards are special-purpose optional components, shown only with valid trip source data and relevant dates. They do not create a new primary tab or alter itinerary item order.
 - Japan/Taiwan flights require correct IANA timezones for local labels and actual chronological comparisons; do not compare local HH:MM strings across zones.
@@ -63,8 +63,18 @@ Kansai follows the identical `docs/UIUX.md` P1.9 frame/inset contract as Templat
 
 ## Quiet day summaries and readable Storybook cards (P1.10)
 
-For the Kansai source, all repeated generic day notes about itinerary chronology have been removed. The 173 original source items, times, IDs, trip reminders, research and practical cautions remain intact. Storybook's mobile time-over-content cards must remain a single-column layout with full-width text. A Journey style stylesheet must never override the active Style Pack's grid tracks. See `docs/UIUX.md` P1.10.
+For the Kansai source, all repeated generic day notes about itinerary chronology have been removed. The 173 original source items, times, IDs, trip reminders, research and practical cautions remain intact; two untimed return baths were added as new entries, bringing the schedule to 175. Storybook's mobile time-over-content cards must remain a single-column layout with full-width text. A Journey style stylesheet must never override the active Style Pack's grid tracks. See `docs/UIUX.md` P1.10.
 
 ## Curated sightseeing directory (P1.11)
 
-The 11-day Osaka/Kyoto/Kumano source keeps every one of its 173 chronological items. Seven incorrectly venue-typed source items (waiting on the Inagawa riverbank, a film-park rest, ordinary morning baths, and event-only light shows/market) are now `break` or `event`. They remain in Trip but are not attractions. All 27 true venue `place` items have concise venue-specific `infoCard.summary` and first-party source links; five photo placements have verified Commons source pages, author/credit and license fields. Never copy unauthorised official-site photos or turn every mapped activity into a Place.
+The 11-day Osaka/Kyoto/Kumano source keeps every one of its 173 original chronological items plus two untimed cave-bath entries (175 items total). Seven incorrectly venue-typed source items (waiting on the Inagawa riverbank, a film-park rest, ordinary morning baths, and event-only light shows/market) are now `break` or `event`. They remain in Trip but are not attractions. All 28 true venue `place` items (including distinct Hotel Urashima 忘歸洞) have concise venue-specific `infoCard.summary` and source links; 26 place photos have Wikimedia Commons source pages, author/credit and verifiable rights. No unauthorised hotel photo should be substituted for 玄武洞 or 狼煙山. Never copy unauthorised official-site photos or turn every mapped activity into a Place.
+
+## Hotel Urashima cave-bath exception / 浦島洞窟溫泉
+
+The named and researched **忘歸洞（ホテル浦島）** is a curated visitor destination in Places, separately identified from **玄武洞（ホテル浦島）**. The daily visits remain in Trip's source-ordered Timeline. Repeated personal bathing is a `break` and does not create duplicate Places cards.
+
+- **11/11 evening:** 玄武洞 (source item `d08-genbudo`).
+- **11/12 morning:** 忘歸洞 (`d09-morning-onsen`, a curated venue with independent guide and license-backed photo); **evening:** 玄武洞 (`d09-evening-genbudo`, untimed).
+- **11/13 morning:** 忘歸洞 (`d10-morning-onsen`) → breakfast (`d10-breakfast`) → 玄武洞 (`d10-post-breakfast-genbudo`, untimed) → checkout (`d10-checkout`).
+
+The two new repeated-bath entries have `start: TBD`, never fabricated clock times. For Places, use the venue's name rather than action verbs such as 參拜、散步、等候、泡湯; actions and timestamps belong in Trip. Use correctly attributed, licensed venue photography only. Run `npm run test:places-curation`, `npm run test:timeline`, `npm run test:overview` and the relevant browser suites before claiming visual acceptance.
