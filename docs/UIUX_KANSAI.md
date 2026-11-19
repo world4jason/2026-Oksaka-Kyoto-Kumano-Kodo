@@ -78,3 +78,8 @@ The named and researched **忘歸洞（ホテル浦島）** is a curated visitor
 - **11/13 morning:** 忘歸洞 (`d10-morning-onsen`) → breakfast (`d10-breakfast`) → 玄武洞 (`d10-post-breakfast-genbudo`, untimed) → checkout (`d10-checkout`).
 
 The two new repeated-bath entries have `start: TBD`, never fabricated clock times. For Places, use the venue's name rather than action verbs such as 參拜、散步、等候、泡湯; actions and timestamps belong in Trip. Use correctly attributed, licensed venue photography only. Run `npm run test:places-curation`, `npm run test:timeline`, `npm run test:overview` and the relevant browser suites before claiming visual acceptance.
+
+
+## Owner-curated Osaka Overview art pilot (2026-11-20)
+
+The four user-selected representative experiences are `d04-s0-r46` (Inagawa fireworks, event), `d05-s0-r54` (Uzumasa Hyakki Yagyo, event), `d08-s2-r46` (Kumano Kodo Nakahechi, place), and `d09-morning-onsen` (Urashima Bokido cave bath, place). These are **cover artwork subjects**, not extra Places items, route changes or proof the four scenes occurred simultaneously. Vintage Watercolor art is a memory montage, not a faithful photograph. The artwork must remain hidden in other themes without compatible variants. Run the shared Overview + PWA tests and owner visual QA before merging.
