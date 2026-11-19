@@ -5,8 +5,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-16T02:09:35Z",
-    "revision": "kansai-2026-11-16-sequential-timeline-v7",
+    "updatedAt": "2026-11-19T13:19:40.657Z",
+    "revision": "kansai-2026-11-19-cave-baths-v1",
     "accent": "#426354",
     "themeColor": "#f5f6f2",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -311,7 +311,7 @@
         {
           "id": "d04-s0-r41",
           "start": "09:30",
-          "title": "露天神社參拜",
+          "title": "露天神社（お初天神）",
           "type": "place",
           "location": "露天神社（お初天神）",
           "note": "約 09:30–10:00｜停留約 30 分鐘。",
@@ -364,7 +364,7 @@
         {
           "id": "d02-osaka-tenmangu",
           "start": "10:30",
-          "title": "大阪天滿宮參拜",
+          "title": "大阪天滿宮",
           "type": "place",
           "location": "大阪天滿宮",
           "note": "約 10:30–11:25｜停留約 55 分鐘。",
@@ -636,7 +636,7 @@
         {
           "id": "d02-hozanji",
           "start": "13:55",
-          "title": "生駒聖天／寶山寺參拜、散步",
+          "title": "生駒聖天・寶山寺",
           "type": "place",
           "location": "生駒山 寶山寺",
           "note": "約 13:55–15:45｜停留約 1 小時 50 分，含周邊散步與休息。",
@@ -1128,7 +1128,7 @@
         {
           "id": "ise-naiku",
           "start": "11:00",
-          "title": "伊勢神宮內宮參拜、周邊散步",
+          "title": "伊勢神宮・內宮",
           "type": "place",
           "location": "伊勢神宮 內宮（皇大神宮）",
           "note": "約 11:00–13:15｜停留約 2 小時 15 分。",
@@ -1237,7 +1237,7 @@
         {
           "id": "ise-futami",
           "start": "14:05",
-          "title": "二見興玉神社、夫婦岩",
+          "title": "二見興玉神社・夫婦岩",
           "type": "place",
           "location": "二見興玉神社・夫婦岩",
           "note": "約 14:05–14:35｜參拜、看海約 30 分鐘。",
@@ -1383,7 +1383,7 @@
         {
           "id": "ise-pearl",
           "start": "15:20",
-          "title": "御木本珍珠島・15:30 海女表演",
+          "title": "御木本珍珠島",
           "type": "place",
           "location": "ミキモト真珠島",
           "note": "15:20–16:20；15:30 海女表演｜停留 1 小時，觀看 15:30 場次。",
@@ -2210,7 +2210,7 @@
         {
           "id": "d05-s0-r48",
           "start": "09:30",
-          "title": "下鴨神社參拜、散步",
+          "title": "下鴨神社",
           "type": "place",
           "location": "下鴨神社",
           "note": "約 09:30–11:00｜停留約 1 小時 30 分。",
@@ -2284,7 +2284,7 @@
         },
         {
           "id": "d05-fushimi-visit",
-          "title": "伏見稻荷大社參拜、等候祭事",
+          "title": "伏見稻荷大社",
           "type": "place",
           "start": "12:00",
           "end": "13:00",
@@ -2403,7 +2403,7 @@
         {
           "id": "d05-s0-r52",
           "start": "17:00",
-          "title": "太秦映畫村夜間入村",
+          "title": "東映太秦映畫村",
           "type": "place",
           "location": "太秦映画村",
           "note": "約 17:00–17:25｜入園、散步並前往表演區，抓約 25 分鐘。",
@@ -2733,7 +2733,7 @@
         {
           "id": "d06-nakanoshima",
           "start": "11:00",
-          "title": "中之島散步",
+          "title": "中之島",
           "type": "place",
           "location": "大阪 中之島",
           "note": "約 11:00–13:30｜停留約 2 小時 30 分；前後留自由休息時間。",
@@ -2801,7 +2801,7 @@
         {
           "id": "d06-kyoto-gyoen",
           "start": "15:30",
-          "title": "京都御苑散步",
+          "title": "京都御苑",
           "type": "place",
           "location": "京都御苑",
           "note": "約 15:30–17:05｜停留約 1 小時 35 分。",
@@ -2908,7 +2908,7 @@
         {
           "id": "d06-s0-r67",
           "start": "18:30",
-          "title": "貴船神社本宮夜間點燈",
+          "title": "貴船神社・本宮",
           "type": "place",
           "location": "貴船神社 本宮・奧宮",
           "note": "約 18:30–18:55｜參拜、拍照約 25 分鐘。",
@@ -2961,7 +2961,7 @@
         },
         {
           "id": "d06-kifune-okunomiya",
-          "title": "貴船神社奧宮夜間點燈",
+          "title": "貴船神社・奧宮",
           "type": "place",
           "start": "19:10",
           "end": "19:40",
@@ -3705,7 +3705,7 @@
         {
           "id": "d07-senjojiki",
           "start": "16:40",
-          "title": "千疊敷看夕陽",
+          "title": "千疊敷",
           "type": "place",
           "location": "千畳敷・白濱",
           "note": "約 16:40–17:00｜停留約 20 分鐘；此季節夕陽時段抓約 17:00。",
@@ -4082,7 +4082,7 @@
         {
           "id": "d08-s2-r46",
           "start": "09:00",
-          "title": "熊野古道：發心門王子 → 伏拜茶屋 → 熊野本宮大社",
+          "title": "熊野古道・中邊路（發心門王子—伏拜茶屋）",
           "type": "place",
           "location": "發心門王子 → 伏拝 → 熊野本宮大社",
           "note": "約 09:00–12:30｜約 6.9 公里；步行、拍照及伏拜茶屋休息合計約 3 小時 30 分。",
@@ -4120,7 +4120,7 @@
         {
           "id": "d08-s2-r47",
           "start": "12:30",
-          "title": "熊野本宮大社參拜、休息",
+          "title": "熊野本宮大社",
           "type": "place",
           "location": "熊野本宮大社",
           "note": "約 12:30–14:00｜停留約 1 小時 30 分。",
@@ -4164,7 +4164,7 @@
         {
           "id": "d08-s2-r49",
           "start": "14:10",
-          "title": "大齋原、大鳥居參拜與散步",
+          "title": "大齋原・大鳥居",
           "type": "place",
           "location": "大斎原",
           "note": "約 14:10–14:35｜停留約 25 分鐘。",
@@ -4279,7 +4279,7 @@
         {
           "id": "d08-s2-r52",
           "start": "15:45",
-          "title": "熊野速玉大社參拜",
+          "title": "熊野速玉大社",
           "type": "place",
           "location": "熊野速玉大社",
           "note": "約 15:45–16:10｜停留約 25 分鐘。",
@@ -4324,7 +4324,7 @@
         {
           "id": "d08-shingu-castle",
           "start": "16:25",
-          "title": "新宮城跡散步",
+          "title": "新宮城跡",
           "type": "place",
           "location": "新宮城跡",
           "note": "約 16:25–16:45｜停留約 20 分鐘。",
@@ -4533,7 +4533,7 @@
         {
           "id": "d08-genbudo",
           "start": "20:00",
-          "title": "玄武洞溫泉",
+          "title": "玄武洞（ホテル浦島）",
           "type": "place",
           "location": "ホテル浦島 玄武洞",
           "note": "約 20:00–21:00｜泡湯約 1 小時。",
@@ -4799,16 +4799,37 @@
         {
           "id": "d09-morning-onsen",
           "start": "08:00",
-          "title": "浦島飯店早上泡湯、梳洗",
-          "type": "break",
-          "location": "ホテル浦島",
-          "note": "約 08:00–09:10｜泡湯、梳洗約 70 分鐘，之後前往館內 Lawson。",
+          "title": "忘歸洞（ホテル浦島）",
+          "type": "place",
+          "location": "ホテル浦島 本館・忘帰洞",
+          "note": "08:00–09:10 為原行程估計時段；第二天早晨於忘歸洞泡湯、梳洗後前往早餐。",
           "end": "09:10",
           "lat": 33.6253549,
           "lng": 135.9509604,
-          "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
+          "mapQuery": "ホテル浦島 忘帰洞 和歌山県那智勝浦町",
           "mapsUrl": "https://maps.app.goo.gl/8QdsME2w6qpQTZ6R7",
-          "mapPointLabel": "ホテル浦島"
+          "mapPointLabel": "浦島飯店（忘歸洞位於本館內）",
+          "infoCard": {
+            "summary": "忘歸洞是浦島飯店本館內、面向太平洋的大型天然海蝕洞窟溫泉。飯店介紹其名稱源於紀州德川家族來訪時讚賞舒適得令人忘記歸途；男女浴場按上午與下午交換。實際開放與海象限制請依飯店公告。",
+            "sourceLinks": [
+              {
+                "label": "忘歸洞・飯店官方介紹",
+                "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/bohkido/"
+              }
+            ],
+            "officialSite": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/bohkido/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bokido_of_Hotel_Urashima01o4592.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Bokido_of_Hotel_Urashima01o4592.jpg",
+            "imageCredit": "663highland / Wikimedia Commons",
+            "imageLicense": "CC BY 2.5",
+            "imageAlt": "浦島飯店忘歸洞的天然洞窟溫泉與太平洋開口"
+          },
+          "externalLinks": [
+            {
+              "label": "忘歸洞官方資訊",
+              "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/bohkido/"
+            }
+          ]
         },
         {
           "id": "d09-onsen-lawson-walk",
@@ -4948,7 +4969,7 @@
         {
           "id": "d09-daimonzaka",
           "start": "14:10",
-          "title": "大門坂步行上山",
+          "title": "大門坂",
           "type": "place",
           "location": "大門坂",
           "note": "約 14:10–15:10｜沿古道上山，步行與拍照合計約 1 小時。",
@@ -4972,7 +4993,7 @@
         {
           "id": "d09-nachi",
           "start": "15:10",
-          "title": "熊野那智大社參拜",
+          "title": "熊野那智大社",
           "type": "place",
           "location": "熊野那智大社",
           "note": "約 15:10–15:35｜停留約 25 分鐘。",
@@ -5011,7 +5032,7 @@
         {
           "id": "d09-seigantoji",
           "start": "15:36",
-          "title": "青岸渡寺、三重塔外觀",
+          "title": "青岸渡寺・三重塔",
           "type": "place",
           "location": "青岸渡寺・三重塔",
           "note": "約 15:36–15:50｜連前段步行合計約 15 分鐘；三重塔看外觀。",
@@ -5054,7 +5075,7 @@
         {
           "id": "d09-nachi-falls",
           "start": "16:05",
-          "title": "那智瀑布／飛瀧神社",
+          "title": "那智瀑布・飛瀧神社",
           "type": "place",
           "location": "那智の滝・飛瀧神社",
           "note": "約 16:05–16:20｜參拜與看瀑布約 15 分鐘。",
@@ -5195,6 +5216,21 @@
           "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
           "mapsUrl": "https://maps.app.goo.gl/8QdsME2w6qpQTZ6R7",
           "mapPointLabel": "ホテル浦島"
+        },
+        {
+          "id": "d09-evening-genbudo",
+          "start": "TBD",
+          "timeLabel": "晚間（時間未記錄）",
+          "title": "玄武洞溫泉",
+          "type": "break",
+          "location": "ホテル浦島 玄武洞",
+          "note": "第二晚再泡玄武洞；實際入場時間未記錄。",
+          "externalLinks": [
+            {
+              "label": "玄武洞官方資訊",
+              "url": "https://urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+            }
+          ]
         }
       ],
       "routeSummary": [
@@ -5388,10 +5424,10 @@
         {
           "id": "d10-morning-onsen",
           "start": "07:00",
-          "title": "浦島飯店早上泡湯",
+          "title": "忘歸洞溫泉",
           "type": "break",
-          "location": "ホテル浦島",
-          "note": "約 07:00–07:55｜泡湯約 55 分鐘，接著前往早餐區。",
+          "location": "ホテル浦島 本館・忘帰洞",
+          "note": "07:00–07:55 為原行程估計時段；第三天清晨於忘歸洞泡湯，接著吃早餐。",
           "end": "07:55",
           "lat": 33.6253549,
           "lng": 135.9509604,
@@ -5427,6 +5463,21 @@
           "mapQuery": "ホテル浦島 和歌山県東牟婁郡那智勝浦町勝浦1165-2",
           "mapsUrl": "https://maps.app.goo.gl/8QdsME2w6qpQTZ6R7",
           "mapPointLabel": "ホテル浦島"
+        },
+        {
+          "id": "d10-post-breakfast-genbudo",
+          "start": "TBD",
+          "timeLabel": "早餐後（時間未記錄）",
+          "title": "玄武洞溫泉",
+          "type": "break",
+          "location": "ホテル浦島 玄武洞",
+          "note": "第三天早餐後到玄武洞，接著辦理退房；確切時段未記錄。",
+          "externalLinks": [
+            {
+              "label": "玄武洞官方資訊",
+              "url": "https://urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+            }
+          ]
         },
         {
           "id": "d10-checkout",
@@ -5466,7 +5517,7 @@
         {
           "id": "d10-noroshiyama",
           "start": "10:10",
-          "title": "狼煙山遊園、山上館周邊散步",
+          "title": "狼煙山遊園",
           "type": "place",
           "location": "狼煙山遊園・那智勝浦",
           "note": "約 10:10–11:30｜散步約 80 分鐘；連上山接續合計約 90 分鐘。",
@@ -5619,7 +5670,7 @@
         {
           "id": "d10-wakayama-castle",
           "start": "17:10",
-          "title": "和歌山城外圍、公園散步",
+          "title": "和歌山城",
           "type": "place",
           "location": "和歌山城",
           "note": "約 17:10–18:30｜停留約 80 分鐘，參觀範圍為外圍與公園。",
