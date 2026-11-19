@@ -334,7 +334,17 @@
           "lng": 135.5007629,
           "mapQuery": "露天神社 お初天神 大阪市北区曾根崎2丁目5-4",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%9C%B2%E5%A4%A9%E7%A5%9E%E7%A4%BE%20%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%9B%BE%E6%A0%B9%E5%B4%8E2%E4%B8%81%E7%9B%AE5-4",
-          "mapPointLabel": "露天神社（お初天神）"
+          "mapPointLabel": "露天神社（お初天神）",
+          "infoCard": {
+            "summary": "大阪梅田的古老神社，因近松門左衛門《曾根崎心中》故事而有「お初天神」之名；境內與結緣祈願及大阪庶民文化息息相關。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://tuyutenjin.com/shrine/"
+              }
+            ],
+            "officialSite": "https://tuyutenjin.com/shrine/"
+          }
         },
         {
           "id": "d02-ohatsu-tenmangu-walk",
@@ -363,7 +373,22 @@
           "lng": 135.5126556,
           "mapQuery": "大阪天満宮 大阪市北区天神橋2丁目1-8",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A9%E7%A5%9E%E6%A9%8B2%E4%B8%81%E7%9B%AE1-8",
-          "mapPointLabel": "大阪天満宮"
+          "mapPointLabel": "大阪天満宮",
+          "infoCard": {
+            "summary": "奉祀學問之神菅原道真的大阪重要天滿宮，也是天神祭的信仰中心。留意本殿建築、繪馬與天滿一帶的歷史街區。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://osakatemmangu.or.jp/about"
+              }
+            ],
+            "officialSite": "https://osakatemmangu.or.jp/about",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Tenmangu_Shrine_2026.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Osaka_Tenmangu_Shrine_2026.jpg",
+            "imageCredit": "Sakai Yayoi / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "大阪天滿宮境內神社建築"
+          }
         },
         {
           "id": "d02-tenmangu-shopping-walk",
@@ -620,7 +645,17 @@
           "lng": 135.686549,
           "mapQuery": "宝山寺 奈良県生駒市門前町1-1",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E5%B1%B1%E5%AF%BA%20%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E5%B8%82%E9%96%80%E5%89%8D%E7%94%BA1-1",
-          "mapPointLabel": "生駒聖天 宝山寺"
+          "mapPointLabel": "生駒聖天 宝山寺",
+          "infoCard": {
+            "summary": "位於生駒山坡的真言律宗寺院，以「生駒聖天」和商業祈願聞名。寺後方的般若窟岩壁與石階參道是主要景觀。",
+            "sourceLinks": [
+              {
+                "label": "寺院官網",
+                "url": "https://www.hozanji.com/"
+              }
+            ],
+            "officialSite": "https://www.hozanji.com/"
+          }
         },
         {
           "id": "d02-hozanji-station-walk",
@@ -1108,7 +1143,17 @@
           "lng": 136.725793,
           "mapQuery": "伊勢神宮 内宮 皇大神宮 三重県伊勢市宇治館町1",
           "mapsUrl": "https://maps.google.com/?cid=17296468231710968999",
-          "mapPointLabel": "伊勢神宮 内宮（皇大神宮）"
+          "mapPointLabel": "伊勢神宮 内宮（皇大神宮）",
+          "infoCard": {
+            "summary": "伊勢神宮內宮正式稱「皇大神宮」，奉祀天照大御神；沿宇治橋、五十鈴川與神宮林前往正宮，體驗伊勢參宮的路線。",
+            "sourceLinks": [
+              {
+                "label": "神宮官網",
+                "url": "https://www.isejingu.or.jp/about/naiku/"
+              }
+            ],
+            "officialSite": "https://www.isejingu.or.jp/about/naiku/"
+          }
         },
         {
           "id": "ise-naiku-busstop-walk",
@@ -1207,7 +1252,17 @@
           "lng": 136.7881279,
           "mapQuery": "二見興玉神社 三重県伊勢市二見町江575",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E8%A6%8B%E8%88%88%E7%8E%89%E7%A5%9E%E7%A4%BE%20%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E5%8B%A2%E5%B8%82%E4%BA%8C%E8%A6%8B%E7%94%BA%E6%B1%9F575",
-          "mapPointLabel": "二見興玉神社・夫婦岩"
+          "mapPointLabel": "二見興玉神社・夫婦岩",
+          "infoCard": {
+            "summary": "二見興玉神社以海邊的夫婦岩聞名，兩塊岩石之間以大注連繩相連，象徵神域的入口，也是傳統伊勢參宮前的淨身信仰地。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://futamiokitamajinja.or.jp/about/"
+              }
+            ],
+            "officialSite": "https://futamiokitamajinja.or.jp/about/"
+          }
         },
         {
           "id": "ise-futami-busstop-walk",
@@ -1366,7 +1421,17 @@
               ],
               "checkedAt": "2026-11-16"
             }
-          ]
+          ],
+          "infoCard": {
+            "summary": "御木本幸吉於鳥羽推動養殖珍珠，這座小島設有珍珠博物館、紀念館及傳統海女潛水示範，是認識伊勢志摩珍珠產業的代表景點。",
+            "sourceLinks": [
+              {
+                "label": "景點官網",
+                "url": "https://www.mikimoto-pearl-island.jp/"
+              }
+            ],
+            "officialSite": "https://www.mikimoto-pearl-island.jp/"
+          }
         },
         {
           "id": "ise-toba-walk",
@@ -1458,7 +1523,7 @@
           "id": "d03-s0-r40",
           "start": "18:55",
           "title": "御堂筋燈飾散步（難波往本町）",
-          "type": "place",
+          "type": "event",
           "location": "御堂筋・大阪",
           "note": "約 18:55–19:40｜邊走邊看燈飾、拍照約 45 分鐘；接著步行到北御堂。",
           "externalLinks": [
@@ -1494,7 +1559,7 @@
           "id": "d03-kitamido",
           "start": "19:45",
           "title": "北御堂光影秀",
-          "type": "place",
+          "type": "event",
           "location": "北御堂・大阪",
           "note": "約 19:45–20:10｜觀看約 20 分鐘，含等候抓 25 分鐘。",
           "end": "20:10",
@@ -1781,7 +1846,7 @@
           "id": "d04-s0-r43",
           "start": "11:00",
           "title": "服部綠地 méli mélo 市集",
-          "type": "place",
+          "type": "event",
           "location": "服部綠地・大阪豊中",
           "note": "約 11:00–14:00｜逛約 3 小時；當日市集 11:00 開始。14:00 離開前往豬名川。",
           "externalLinks": [
@@ -1860,7 +1925,7 @@
           "id": "d04-s0-r45",
           "start": "15:15",
           "title": "豬名川河岸看書、等待花火",
-          "type": "place",
+          "type": "break",
           "location": "豬名川河岸",
           "note": "約 15:15–17:50｜約 2.5–3 小時，保留找位置與休息時間。",
           "end": "17:50",
@@ -1883,7 +1948,13 @@
           "lng": 135.418915,
           "mapQuery": "猪名川花火大会 猪名川河川敷 大阪府池田市桃園",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%8C%AA%E5%90%8D%E5%B7%9D%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E7%8C%AA%E5%90%8D%E5%B7%9D%E6%B2%B3%E5%B7%9D%E6%95%B7%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%B1%A0%E7%94%B0%E5%B8%82%E6%A1%83%E5%9C%92",
-          "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）"
+          "mapPointLabel": "豬名川河岸・池田側（桃園地區參考）",
+          "externalLinks": [
+            {
+              "label": "川西市｜第77回豬名川花火大會",
+              "url": "https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kisetu/1024543.html"
+            }
+          ]
         },
         {
           "id": "d04-inagawa-ikeda-walk",
@@ -2154,7 +2225,17 @@
           "lng": 135.7724,
           "mapQuery": "下鴨神社 京都市左京区下鴨泉川町59",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E9%B4%A8%E7%A5%9E%E7%A4%BE%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E4%B8%8B%E9%B4%A8%E6%B3%89%E5%B7%9D%E7%94%BA59",
-          "mapPointLabel": "下鴨神社（賀茂御祖神社）"
+          "mapPointLabel": "下鴨神社（賀茂御祖神社）",
+          "infoCard": {
+            "summary": "下鴨神社正式名稱「賀茂御祖神社」，為京都重要古社與世界文化遺產；境內的糺之森保存古老林蔭，適合步行參拜。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://www.shimogamo-jinja.or.jp/about"
+              }
+            ],
+            "officialSite": "https://www.shimogamo-jinja.or.jp/about"
+          }
         },
         {
           "id": "d05-shimogamo-station-walk",
@@ -2213,7 +2294,22 @@
           "lng": 135.7726717,
           "mapQuery": "伏見稲荷大社 京都市伏見区深草薮之内町68",
           "mapsUrl": "https://maps.google.com/?cid=8870624639634301673",
-          "mapPointLabel": "伏見稲荷大社"
+          "mapPointLabel": "伏見稲荷大社",
+          "infoCard": {
+            "summary": "伏見稻荷大社是日本各地稻荷神社的總本宮，以稻荷山、朱紅鳥居與商業繁盛信仰聞名。參拜與火焚祭應視為不同的行程活動。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://inari.jp/about/"
+              }
+            ],
+            "officialSite": "https://inari.jp/about/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fushimi_Inari_Shrine_August_2019.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Fushimi_Inari_Shrine_August_2019.jpg",
+            "imageCredit": "Sizableframe / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "伏見稻荷大社千本鳥居參道"
+          }
         },
         {
           "id": "d05-s0-r50",
@@ -2322,7 +2418,17 @@
           "lng": 135.7078702,
           "mapQuery": "東映太秦映画村 京都市右京区太秦東蜂岡町10",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E6%98%A0%E5%A4%AA%E7%A7%A6%E6%98%A0%E7%94%BB%E6%9D%91%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8F%B3%E4%BA%AC%E5%8C%BA%E5%A4%AA%E7%A7%A6%E6%9D%B1%E8%9C%82%E5%B2%A1%E7%94%BA10",
-          "mapPointLabel": "東映太秦映画村"
+          "mapPointLabel": "東映太秦映画村",
+          "infoCard": {
+            "summary": "太秦映畫村以江戶街景、時代劇拍攝文化及主題表演為特色；本次夜間入村與百鬼夜行表演屬同一園區的不同時段活動。",
+            "sourceLinks": [
+              {
+                "label": "園區官網",
+                "url": "https://zh-tw.eigamura.com/"
+              }
+            ],
+            "officialSite": "https://zh-tw.eigamura.com/"
+          }
         },
         {
           "id": "d05-s0-r53",
@@ -2341,7 +2447,7 @@
         {
           "id": "d05-eigamura-break",
           "title": "太秦映畫村園內散步、休息",
-          "type": "place",
+          "type": "break",
           "start": "18:00",
           "end": "19:30",
           "note": "約 18:00–19:30｜兩場表演之間留約 1 小時 30 分；館內短程步行併入此段。",
@@ -2636,7 +2742,16 @@
           "lng": 135.4910214,
           "mapQuery": "中之島 大阪市北区",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E4%B9%8B%E5%B3%B6%20%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA",
-          "mapPointLabel": "大阪中之島（區域參考點）"
+          "mapPointLabel": "大阪中之島（區域參考點）",
+          "infoCard": {
+            "summary": "大阪中之島公園位於堂島川與土佐堀川之間，是大阪早期都市公園之一；水岸步道、玫瑰園與周邊近代建築是散步重點。",
+            "sourceLinks": [
+              {
+                "label": "大阪市公園介紹",
+                "url": "https://parksgreenery.city.osaka.lg.jp/article/parks-nakanoshima/"
+              }
+            ]
+          }
         },
         {
           "id": "d06-nakanoshima-yodoyabashi-walk",
@@ -2701,7 +2816,16 @@
               "label": "京都御苑官方交通",
               "url": "https://www.env.go.jp/garden/kyotogyoen/2_guide/access.html"
             }
-          ]
+          ],
+          "infoCard": {
+            "summary": "京都御苑環繞京都御所，原為公家宅邸聚集的區域，現為開放的國民公園；苑內有歷史遺構、林蔭與季節花木。",
+            "sourceLinks": [
+              {
+                "label": "環境省官方介紹",
+                "url": "https://www.env.go.jp/garden/kyotogyoen/1_intro/index.html"
+              }
+            ]
+          }
         },
         {
           "id": "d06-gyoen-demachiyanagi-walk",
@@ -2808,7 +2932,17 @@
           "lng": 135.7629081,
           "mapQuery": "貴船神社 本宮 京都市左京区鞍馬貴船町180",
           "mapsUrl": "https://maps.google.com/?cid=2090262746651448459",
-          "mapPointLabel": "貴船神社 本宮"
+          "mapPointLabel": "貴船神社 本宮",
+          "infoCard": {
+            "summary": "貴船神社奉祀掌管水的神明；本宮沿參道石階而上，紅燈籠與山林溪谷是此地鮮明的景觀。夜間點燈屬限定活動。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://kifunejinja.jp/"
+              }
+            ],
+            "officialSite": "https://kifunejinja.jp/"
+          }
         },
         {
           "id": "d06-kifune-hon-oku-walk",
@@ -2837,7 +2971,17 @@
           "lng": 135.7655833,
           "mapQuery": "貴船神社 奥宮 京都市左京区鞍馬貴船町",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E8%B2%B4%E8%88%B9%E7%A5%9E%E7%A4%BE%20%E5%A5%A5%E5%AE%AE%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E9%9E%8D%E9%A6%AC%E8%B2%B4%E8%88%B9%E7%94%BA",
-          "mapPointLabel": "貴船神社 奥宮"
+          "mapPointLabel": "貴船神社 奥宮",
+          "infoCard": {
+            "summary": "貴船神社奧宮是相傳的舊鎮座地，位於本宮上游的幽靜森林中。與本宮同屬貴船神社，但應保留各自的參拜停留時段。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://kifunejinja.jp/"
+              }
+            ],
+            "officialSite": "https://kifunejinja.jp/"
+          }
         },
         {
           "id": "d06-oku-busstop-walk",
@@ -3531,7 +3675,17 @@
           "lng": 135.3356616,
           "mapQuery": "三段壁洞窟 和歌山県西牟婁郡白浜町2927-52",
           "mapsUrl": "https://goo.gl/maps/rLxMHm9Hn8p",
-          "mapPointLabel": "三段壁洞窟"
+          "mapPointLabel": "三段壁洞窟",
+          "infoCard": {
+            "summary": "三段壁是南紀白濱沿岸的高聳海蝕斷崖，洞窟可搭電梯進入，欣賞海浪拍打岩壁的景象；熊野水軍藏船故事為當地傳說。",
+            "sourceLinks": [
+              {
+                "label": "洞窟官網",
+                "url": "https://sandanbeki.com/cave/"
+              }
+            ],
+            "officialSite": "https://sandanbeki.com/cave/"
+          }
         },
         {
           "id": "d07-sandanbeki-senjojiki-walk",
@@ -3560,7 +3714,16 @@
           "lng": 135.330458,
           "mapQuery": "千畳敷 和歌山県西牟婁郡白浜町",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E7%95%B3%E6%95%B7%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E8%A5%BF%E7%89%9F%E5%A9%81%E9%83%A1%E7%99%BD%E6%B5%9C%E7%94%BA",
-          "mapPointLabel": "千畳敷（白浜）"
+          "mapPointLabel": "千畳敷（白浜）",
+          "infoCard": {
+            "summary": "白濱千疊敷是由砂岩長期受海浪侵蝕而成的寬闊岩盤，層疊地形延伸向太平洋，以海岸線和夕陽景觀著稱。",
+            "sourceLinks": [
+              {
+                "label": "和歌山縣官方觀光",
+                "url": "https://www.wakayama-kanko.or.jp/spots/detail_484.html"
+              }
+            ]
+          }
         },
         {
           "id": "d07-senjojiki-busstop-walk",
@@ -3943,7 +4106,16 @@
           "mapQuery": "発心門王子 和歌山県田辺市本宮町三越",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BA%E5%BF%83%E9%96%80%E7%8E%8B%E5%AD%90%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E4%B8%89%E8%B6%8A",
           "mapPointLabel": "発心門王子",
-          "transportMode": "walk"
+          "transportMode": "walk",
+          "infoCard": {
+            "summary": "熊野古道中邊路連接山中村落與熊野本宮大社。本次自發心門王子經伏拜一帶走向本宮，途中可留意王子社、石碑與山村景色。",
+            "sourceLinks": [
+              {
+                "label": "熊野本宮觀光協會",
+                "url": "https://www.hongu.jp/kumanokodo/walk/hosshin/"
+              }
+            ]
+          }
         },
         {
           "id": "d08-s2-r47",
@@ -3963,7 +4135,16 @@
               "label": "熊野本宮觀光協會：大齋原",
               "url": "https://www.hongu.jp/kumanokodo/hongu-taisya/ooyunohara/"
             }
-          ]
+          ],
+          "infoCard": {
+            "summary": "熊野本宮大社為熊野三山之一，現在的社殿位於杉林石階上方；明治時期大洪水後，未受損的社殿自舊社地大齋原遷至此處。",
+            "sourceLinks": [
+              {
+                "label": "和歌山縣官方觀光",
+                "url": "https://www.wakayama-kanko.or.jp/spots/detail_462.html"
+              }
+            ]
+          }
         },
         {
           "id": "d08-hongu-oyunohara-walk",
@@ -3992,7 +4173,21 @@
           "lng": 135.7755544,
           "mapQuery": "大斎原 大鳥居 和歌山県田辺市本宮町本宮",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%96%8E%E5%8E%9F%20%E5%A4%A7%E9%B3%A5%E5%B1%85%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%9C%AC%E5%AE%AE%E7%94%BA%E6%9C%AC%E5%AE%AE",
-          "mapPointLabel": "大齋原・大鳥居（入口地標）"
+          "mapPointLabel": "大齋原・大鳥居（入口地標）",
+          "infoCard": {
+            "summary": "大齋原是熊野本宮大社的舊社地，1889 年洪水後多數社殿遷移；如今可見巨大的鳥居與象徵舊神域的林地。",
+            "sourceLinks": [
+              {
+                "label": "熊野本宮觀光協會",
+                "url": "https://www.hongu.jp/kumanokodo/hongu-taisya/ooyunohara/"
+              }
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_at_Oyunohara_01.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Torii_at_Oyunohara_01.jpg",
+            "imageCredit": "Douglas Perkins / Wikimedia Commons",
+            "imageLicense": "CC BY 4.0",
+            "imageAlt": "熊野本宮大社舊社地大齋原的大鳥居"
+          }
         },
         {
           "id": "d08-oyunohara-busstop-walk",
@@ -4099,7 +4294,17 @@
           "lng": 135.9835101,
           "mapQuery": "熊野速玉大社 和歌山県新宮市新宮1",
           "mapsUrl": "https://goo.gl/maps/MtCYwx8KcVL9dxuV9",
-          "mapPointLabel": "熊野速玉大社"
+          "mapPointLabel": "熊野速玉大社",
+          "infoCard": {
+            "summary": "熊野速玉大社是熊野三山之一，位於新宮市；境內的古老梛樹、熊野神寶與熊野牛王寶印反映其宗教與地方文化。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://kumanohayatama.jp/"
+              }
+            ],
+            "officialSite": "https://kumanohayatama.jp/"
+          }
         },
         {
           "id": "d08-hayatama-castle-walk",
@@ -4128,7 +4333,16 @@
           "lng": 135.9924656,
           "mapQuery": "新宮城跡 丹鶴城跡 和歌山県新宮市丹鶴3丁目",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%AE%E5%9F%8E%E8%B7%A1%20%E4%B8%B9%E9%B6%B4%E5%9F%8E%E8%B7%A1%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E4%B8%B9%E9%B6%B43%E4%B8%81%E7%9B%AE",
-          "mapPointLabel": "新宮城跡（丹鶴城跡）"
+          "mapPointLabel": "新宮城跡（丹鶴城跡）",
+          "infoCard": {
+            "summary": "新宮城跡又稱丹鶴城跡，保留石垣與本丸遺跡；登高能眺望熊野川、熊野大橋及新宮市區。",
+            "sourceLinks": [
+              {
+                "label": "新宮市觀光協會",
+                "url": "https://www.shinguu.jp/spots/detail/a0004"
+              }
+            ]
+          }
         },
         {
           "id": "d08-shingu-station",
@@ -4334,7 +4548,17 @@
           "lng": 135.9509604,
           "mapQuery": "ホテル浦島 玄武洞 和歌山県那智勝浦町",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6%20%E7%8E%84%E6%AD%A6%E6%B4%9E%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA",
-          "mapPointLabel": "浦島飯店（玄武洞位於館內）"
+          "mapPointLabel": "浦島飯店（玄武洞位於館內）",
+          "infoCard": {
+            "summary": "飯店浦島的玄武洞是依天然海岸洞窟設置的溫泉設施，能在岩壁環繞下感受太平洋海浪。開放與男女浴場安排以飯店公告為準。",
+            "sourceLinks": [
+              {
+                "label": "飯店官網",
+                "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+              }
+            ],
+            "officialSite": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/spa/genbudo/"
+          }
         }
       ],
       "routeSummary": [
@@ -4576,7 +4800,7 @@
           "id": "d09-morning-onsen",
           "start": "08:00",
           "title": "浦島飯店早上泡湯、梳洗",
-          "type": "place",
+          "type": "break",
           "location": "ホテル浦島",
           "note": "約 08:00–09:10｜泡湯、梳洗約 70 分鐘，之後前往館內 Lawson。",
           "end": "09:10",
@@ -4734,7 +4958,16 @@
           "mapQuery": "熊野古道 大門坂 入口 和歌山県那智勝浦町那智山",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93%20%E5%A4%A7%E9%96%80%E5%9D%82%20%E5%85%A5%E5%8F%A3%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B1",
           "mapPointLabel": "大門坂入口",
-          "transportMode": "walk"
+          "transportMode": "walk",
+          "infoCard": {
+            "summary": "大門坂為熊野古道通往那智山的重要石板路段，杉林與古老石階呈現紀伊山地的參詣氛圍；步行上坡後可接那智大社與青岸渡寺。",
+            "sourceLinks": [
+              {
+                "label": "和歌山縣官方路線",
+                "url": "https://www.wakayama-kanko.or.jp/courses/detail_34.html"
+              }
+            ]
+          }
         },
         {
           "id": "d09-nachi",
@@ -4749,7 +4982,16 @@
           "lng": 135.8898601,
           "mapQuery": "熊野那智大社 和歌山県東牟婁郡那智勝浦町那智山1",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E9%87%8E%E9%82%A3%E6%99%BA%E5%A4%A7%E7%A4%BE%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%9D%B1%E7%89%9F%E5%A9%81%E9%83%A1%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B11",
-          "mapPointLabel": "熊野那智大社"
+          "mapPointLabel": "熊野那智大社",
+          "infoCard": {
+            "summary": "熊野那智大社與那智瀑布信仰密切相關，是熊野三山之一；朱紅社殿、山中階梯與附近的青岸渡寺構成那智山的參拜核心。",
+            "sourceLinks": [
+              {
+                "label": "和歌山縣官方觀光",
+                "url": "https://www.wakayama-kanko.or.jp/spots/detail_482.html"
+              }
+            ]
+          }
         },
         {
           "id": "d09-nachi-seigantoji-walk",
@@ -4778,7 +5020,21 @@
           "lng": 135.889849,
           "mapQuery": "青岸渡寺 三重塔 和歌山県那智勝浦町那智山8",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E5%B2%B8%E6%B8%A1%E5%AF%BA%20%E4%B8%89%E9%87%8D%E5%A1%94%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B18",
-          "mapPointLabel": "青岸渡寺（三重塔外觀在附近）"
+          "mapPointLabel": "青岸渡寺（三重塔外觀在附近）",
+          "infoCard": {
+            "summary": "青岸渡寺是西國三十三所第一番札所，與熊野那智大社相鄰；三重塔與遠方那智瀑布同框，是最具代表性的那智山景觀。",
+            "sourceLinks": [
+              {
+                "label": "和歌山縣官方觀光",
+                "url": "https://www.wakayama-kanko.or.jp/spots/detail_501.html"
+              }
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg",
+            "imageCredit": "Naokijp / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "青岸渡寺三重塔與那智瀑布"
+          }
         },
         {
           "id": "d09-seigantoji-falls-walk",
@@ -4817,7 +5073,22 @@
           "lng": 135.8881652,
           "mapQuery": "飛瀧神社 那智の滝 和歌山県那智勝浦町那智山",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A3%9B%E7%80%A7%E7%A5%9E%E7%A4%BE%20%E9%82%A3%E6%99%BA%E3%81%AE%E6%BB%9D%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA%E9%82%A3%E6%99%BA%E5%B1%B1",
-          "mapPointLabel": "那智の滝・飛瀧神社"
+          "mapPointLabel": "那智の滝・飛瀧神社",
+          "infoCard": {
+            "summary": "那智瀑布是熊野信仰中的重要聖地，飛瀧神社位於瀑布附近；可沿參道到觀瀑位置，遠望高聳瀑布與山林。",
+            "sourceLinks": [
+              {
+                "label": "神社官網",
+                "url": "https://kumanonachitaisha.or.jp/pavilion/waterfall/"
+              }
+            ],
+            "officialSite": "https://kumanonachitaisha.or.jp/pavilion/waterfall/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Three-storied_Pagoda_of_Seiganto-ji_and_Nachi_Falls_201808.jpg",
+            "imageCredit": "Naokijp / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "那智瀑布及附近的青岸渡寺三重塔"
+          }
         },
         {
           "id": "d09-falls-busstop-walk",
@@ -5118,7 +5389,7 @@
           "id": "d10-morning-onsen",
           "start": "07:00",
           "title": "浦島飯店早上泡湯",
-          "type": "place",
+          "type": "break",
           "location": "ホテル浦島",
           "note": "約 07:00–07:55｜泡湯約 55 分鐘，接著前往早餐區。",
           "end": "07:55",
@@ -5210,7 +5481,17 @@
           "lng": 135.9522244,
           "mapQuery": "狼煙山遊園 ホテル浦島 和歌山県那智勝浦町",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%8B%BC%E7%85%99%E5%B1%B1%E9%81%8A%E5%9C%92%20%E3%83%9B%E3%83%86%E3%83%AB%E6%B5%A6%E5%B3%B6%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E9%82%A3%E6%99%BA%E5%8B%9D%E6%B5%A6%E7%94%BA",
-          "mapPointLabel": "狼煙山（山上館・遊園區域）"
+          "mapPointLabel": "狼煙山（山上館・遊園區域）",
+          "infoCard": {
+            "summary": "狼煙山遊園位於浦島飯店山上館附近，從高處能俯瞰勝浦灣與紀伊山地海岸景色，是館區內的散步與觀景地。",
+            "sourceLinks": [
+              {
+                "label": "飯店官網",
+                "url": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
+              }
+            ],
+            "officialSite": "https://www.urashimaresortsandspa.jp/wakayama-hotelurashima/facilities/"
+          }
         },
         {
           "id": "d10-noroshiyama-lobby-walk",
@@ -5353,7 +5634,17 @@
               "label": "和歌山城官方交通",
               "url": "https://wakayamajo.jp/access/"
             }
-          ]
+          ],
+          "infoCard": {
+            "summary": "和歌山城曾是紀州德川家的重要城郭，現存公園內可見石垣、岡口門與御橋廊下；白色天守閣為戰後重建。",
+            "sourceLinks": [
+              {
+                "label": "和歌山城官網",
+                "url": "https://wakayamajo.jp/"
+              }
+            ],
+            "officialSite": "https://wakayamajo.jp/"
+          }
         },
         {
           "id": "d10-castle-wakayamashi-walk",
