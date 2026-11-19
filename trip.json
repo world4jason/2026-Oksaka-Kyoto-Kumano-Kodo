@@ -6,7 +6,7 @@
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
     "updatedAt": "2026-11-19T13:19:40.657Z",
-    "revision": "kansai-2026-11-19-cave-baths-v1",
+    "revision": "kansai-2026-11-19-caves-photos-v2",
     "accent": "#426354",
     "themeColor": "#f5f6f2",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -343,7 +343,12 @@
                 "url": "https://tuyutenjin.com/shrine/"
               }
             ],
-            "officialSite": "https://tuyutenjin.com/shrine/"
+            "officialSite": "https://tuyutenjin.com/shrine/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tsuyuno-tenjinsha_03.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Tsuyuno-tenjinsha_03.jpg",
+            "imageCredit": "Higa4 / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "露天神社的神社建築與境內景觀"
           }
         },
         {
@@ -654,7 +659,12 @@
                 "url": "https://www.hozanji.com/"
               }
             ],
-            "officialSite": "https://www.hozanji.com/"
+            "officialSite": "https://www.hozanji.com/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hozan-ji.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Hozan-ji.jpg",
+            "imageCredit": "Mass Ave 975 / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 3.0",
+            "imageAlt": "奈良生駒寶山寺的寺院建築"
           }
         },
         {
@@ -1152,7 +1162,12 @@
                 "url": "https://www.isejingu.or.jp/about/naiku/"
               }
             ],
-            "officialSite": "https://www.isejingu.or.jp/about/naiku/"
+            "officialSite": "https://www.isejingu.or.jp/about/naiku/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ise_Jingu_02.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Ise_Jingu_02.jpg",
+            "imageCredit": "Douglas Perkins / Wikimedia Commons",
+            "imageLicense": "CC BY 4.0",
+            "imageAlt": "伊勢神宮內宮境內"
           }
         },
         {
@@ -1261,7 +1276,12 @@
                 "url": "https://futamiokitamajinja.or.jp/about/"
               }
             ],
-            "officialSite": "https://futamiokitamajinja.or.jp/about/"
+            "officialSite": "https://futamiokitamajinja.or.jp/about/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Meotoiwa.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Meotoiwa.jpg",
+            "imageCredit": "Marubatsu / Wikimedia Commons",
+            "imageLicense": "Public domain",
+            "imageAlt": "二見浦夫婦岩與注連繩"
           }
         },
         {
@@ -1430,7 +1450,12 @@
                 "url": "https://www.mikimoto-pearl-island.jp/"
               }
             ],
-            "officialSite": "https://www.mikimoto-pearl-island.jp/"
+            "officialSite": "https://www.mikimoto-pearl-island.jp/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Mikimoto_Pearl_Island.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:View_of_Mikimoto_Pearl_Island.jpg",
+            "imageCredit": "Aguhiyorifan20 / Wikimedia Commons",
+            "imageLicense": "CC BY 4.0",
+            "imageAlt": "鳥羽御木本珍珠島的海上景觀"
           }
         },
         {
@@ -2234,7 +2259,12 @@
                 "url": "https://www.shimogamo-jinja.or.jp/about"
               }
             ],
-            "officialSite": "https://www.shimogamo-jinja.or.jp/about"
+            "officialSite": "https://www.shimogamo-jinja.or.jp/about",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimogamo_Shrine%2C_Kyoto.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Shimogamo_Shrine%2C_Kyoto.jpg",
+            "imageCredit": "ChubbyWimbus / Wikimedia Commons",
+            "imageLicense": "Public domain",
+            "imageAlt": "京都下鴨神社境內"
           }
         },
         {
@@ -2427,7 +2457,12 @@
                 "url": "https://zh-tw.eigamura.com/"
               }
             ],
-            "officialSite": "https://zh-tw.eigamura.com/"
+            "officialSite": "https://zh-tw.eigamura.com/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eigamura_set.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Eigamura_set.jpg",
+            "imageCredit": "Japanexperterna.se / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 3.0",
+            "imageAlt": "東映太秦映畫村的電影場景街道"
           }
         },
         {
@@ -2750,7 +2785,12 @@
                 "label": "大阪市公園介紹",
                 "url": "https://parksgreenery.city.osaka.lg.jp/article/parks-nakanoshima/"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Nakanoshima_2026_yoru_01.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Osaka_Nakanoshima_2026_yoru_01.jpg",
+            "imageCredit": "Sakai Yayoi / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "大阪中之島夜間河岸街景"
           }
         },
         {
@@ -2824,7 +2864,12 @@
                 "label": "環境省官方介紹",
                 "url": "https://www.env.go.jp/garden/kyotogyoen/1_intro/index.html"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyoto-gyoen_Sakaimachi-gomon.JPG?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Kyoto-gyoen_Sakaimachi-gomon.JPG",
+            "imageCredit": "Saigen Jiro / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "京都御苑堺町御門"
           }
         },
         {
@@ -2941,7 +2986,12 @@
                 "url": "https://kifunejinja.jp/"
               }
             ],
-            "officialSite": "https://kifunejinja.jp/"
+            "officialSite": "https://kifunejinja.jp/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kifune-jinja_Shint%C3%B4_Shrine_-_Stone_steps.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Kifune-jinja_Shint%C3%B4_Shrine_-_Stone_steps.jpg",
+            "imageCredit": "Yanajin33 / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "京都貴船神社本宮參道石階與燈籠"
           }
         },
         {
@@ -2980,7 +3030,12 @@
                 "url": "https://kifunejinja.jp/"
               }
             ],
-            "officialSite": "https://kifunejinja.jp/"
+            "officialSite": "https://kifunejinja.jp/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kifune-jinja_okumiya-torii.jpeg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Kifune-jinja_okumiya-torii.jpeg",
+            "imageCredit": "nnh / Wikimedia Commons",
+            "imageLicense": "Public domain",
+            "imageAlt": "貴船神社奧宮的鳥居"
           }
         },
         {
@@ -3684,7 +3739,12 @@
                 "url": "https://sandanbeki.com/cave/"
               }
             ],
-            "officialSite": "https://sandanbeki.com/cave/"
+            "officialSite": "https://sandanbeki.com/cave/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%89%E6%AE%B5%E5%A3%81%E6%B4%9E%E7%AA%9F%E3%83%BB%E7%89%9F%E5%A9%81%E5%A4%A7%E5%BC%81%E8%B2%A1%E5%A4%A9_%E8%A5%BF%E7%89%9F%E5%A9%81%E9%83%A1%E7%99%BD%E6%B5%9C%E7%94%BA_Sandan-beki_cave_and_Muro-dai-benzaiten_shrine_2014.1.04_-_panoramio.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:%E4%B8%89%E6%AE%B5%E5%A3%81%E6%B4%9E%E7%AA%9F%E3%83%BB%E7%89%9F%E5%A9%81%E5%A4%A7%E5%BC%81%E8%B2%A1%E5%A4%A9_%E8%A5%BF%E7%89%9F%E5%A9%81%E9%83%A1%E7%99%BD%E6%B5%9C%E7%94%BA_Sandan-beki_cave_and_Muro-dai-benzaiten_shrine_2014.1.04_-_panoramio.jpg",
+            "imageCredit": "Nankou Oronain / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 3.0",
+            "imageAlt": "三段壁洞窟內的牟婁大弁財天與岩壁"
           }
         },
         {
@@ -3722,7 +3782,12 @@
                 "label": "和歌山縣官方觀光",
                 "url": "https://www.wakayama-kanko.or.jp/spots/detail_484.html"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Senjojiki_(Shirahama)_20210724-1.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Senjojiki_(Shirahama)_20210724-1.jpg",
+            "imageCredit": "Suicasmo / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "白濱千疊敷海岸岩層"
           }
         },
         {
@@ -4114,7 +4179,12 @@
                 "label": "熊野本宮觀光協會",
                 "url": "https://www.hongu.jp/kumanokodo/walk/hosshin/"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kumano_Kodo_pilgrimage_route_Nakahechi_From_Hosshinmon-Oji_To_KumanoHongu-Taisha_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E4%B8%AD%E8%BE%BA%E8%B7%AF_%E7%99%BA%E5%BF%83%E9%96%80%E7%8E%8B%E5%AD%90%EF%BD%9E%E7%86%8A%E9%87%8E%E6%9C%AC%E5%AE%AE%E5%A4%A7%E7%A4%BE38.JPG?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Kumano_Kodo_pilgrimage_route_Nakahechi_From_Hosshinmon-Oji_To_KumanoHongu-Taisha_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E4%B8%AD%E8%BE%BA%E8%B7%AF_%E7%99%BA%E5%BF%83%E9%96%80%E7%8E%8B%E5%AD%90%EF%BD%9E%E7%86%8A%E9%87%8E%E6%9C%AC%E5%AE%AE%E5%A4%A7%E7%A4%BE38.JPG",
+            "imageCredit": "Nekosuki / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "熊野古道中邊路發心門王子至本宮大社段"
           }
         },
         {
@@ -4143,7 +4213,12 @@
                 "label": "和歌山縣官方觀光",
                 "url": "https://www.wakayama-kanko.or.jp/spots/detail_462.html"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inside_the_Kumano_Hongu_Taisha.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Inside_the_Kumano_Hongu_Taisha.jpg",
+            "imageCredit": "顔なし / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 2.0",
+            "imageAlt": "熊野本宮大社境內"
           }
         },
         {
@@ -4303,7 +4378,12 @@
                 "url": "https://kumanohayatama.jp/"
               }
             ],
-            "officialSite": "https://kumanohayatama.jp/"
+            "officialSite": "https://kumanohayatama.jp/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kumanohayatama-taisha12s5s4200.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Kumanohayatama-taisha12s5s4200.jpg",
+            "imageCredit": "663highland / Wikimedia Commons",
+            "imageLicense": "CC BY 2.5",
+            "imageAlt": "熊野速玉大社社殿"
           }
         },
         {
@@ -4341,7 +4421,12 @@
                 "label": "新宮市觀光協會",
                 "url": "https://www.shinguu.jp/spots/detail/a0004"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/171008_Shingu_Castle_Shingu_Wakayama_pref_Japan03s3.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:171008_Shingu_Castle_Shingu_Wakayama_pref_Japan03s3.jpg",
+            "imageCredit": "663highland / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "新宮城跡石垣與周邊景觀"
           }
         },
         {
@@ -4987,7 +5072,12 @@
                 "label": "和歌山縣官方路線",
                 "url": "https://www.wakayama-kanko.or.jp/courses/detail_34.html"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Daimonzaka-e.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Daimonzaka-e.jpg",
+            "imageCredit": "AIR ISLAND / Wikimedia Commons",
+            "imageLicense": "CC BY-SA 4.0",
+            "imageAlt": "熊野古道大門坂入口"
           }
         },
         {
@@ -5011,7 +5101,12 @@
                 "label": "和歌山縣官方觀光",
                 "url": "https://www.wakayama-kanko.or.jp/spots/detail_482.html"
               }
-            ]
+            ],
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/KumanoNachiTaisha.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:KumanoNachiTaisha.jpg",
+            "imageCredit": "Fg2 / Wikimedia Commons",
+            "imageLicense": "Public domain",
+            "imageAlt": "熊野那智大社社殿"
           }
         },
         {
@@ -5694,7 +5789,12 @@
                 "url": "https://wakayamajo.jp/"
               }
             ],
-            "officialSite": "https://wakayamajo.jp/"
+            "officialSite": "https://wakayamajo.jp/",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wakayama_Castle%2C_Tenshu_and_Ohashi-rouka.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Wakayama_Castle%2C_Tenshu_and_Ohashi-rouka.jpg",
+            "imageCredit": "Saigen Jiro / Wikimedia Commons",
+            "imageLicense": "CC0 1.0",
+            "imageAlt": "和歌山城天守與御橋廊下"
           }
         },
         {
