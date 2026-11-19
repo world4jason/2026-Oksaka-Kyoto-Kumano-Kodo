@@ -2,6 +2,32 @@
 
 > This file adds **only trip-specific presentation details** to [UIUX.md](./UIUX.md). It cannot relax P0/P1. If conflicts arise, follow `docs/UIUX.md` and fix this file.
 
+
+## Page-by-page applicability / 關西版頁面規範映射
+
+在此 Repo 修改 UI 前必須先閱讀 [通用 P0/P1/P2 契約](./UIUX.md) 與 [SHARED](./uiux/SHARED.md)，依頁面再讀下列規範。這些規範與 Template **共用同一份內容**；本檔只記錄關西資料特殊處理，不建立另一套 UX 原則。
+
+| 關西站頁面／元件 | 強制參考 | 這趟旅程特別應驗證的場景 |
+| --- | --- | --- |
+| 現在 / Now | [NOW.md](./uiux/NOW.md) | 依已發布時間的上一站／排定此刻／下一站；不把已走過日期當成 GPS 當下 |
+| 行程 / Trip | [TRIP.md](./uiux/TRIP.md) | 大阪→伊勢→京都→白濱→熊野→和歌山，步行與鐵路轉乘合併成完整 A→B Journey；活動與等候保留 Timeline |
+| 交通 / Transport | [TRANSPORT.md](./uiux/TRANSPORT.md) | 近鐵直通線、熊野巴士／JR、纜車、船與機場交通的原始 Leg，精確起終點 Google Maps；desktop Map Workspace 不能切邊 |
+| 景點 / Places | [PLACES.md](./uiux/PLACES.md) | 只納真正有介紹價值的神社、古道、寺院、景觀／博物館；**豬名川看書候場 ≠ 景點、煙火 ≠ 景點**；提供介紹／官方來源／合法授權照片 |
+| 更多 / More | [MORE.md](./uiux/MORE.md) | 相關旅行準備、原始票券／參拜資訊及樣式偏好，保持 read-only 和本機狀態 |
+| 日期與天氣 / shared | [WEATHER.md](./uiux/WEATHER.md) | 2026/11/04–11/14 按**每一天地區**取得過去模型天氣，不以大阪代表熊野／伊勢／京都，資料缺失時只保留日期卡 |
+| 全站 Shell / responsive | [SHARED.md](./uiux/SHARED.md) | 手機 320/390、桌面 1024/1280/1440/1920 與 200% 字體，長日文站名及 map/transfer 卡安全內距 |
+
+**關西資料細節（不得覆蓋上游契約）：**
+
+- 這是 **11 天**的來源行程。只有明確發布的時間與地點可顯示為事實；已確認的班表與「約／班表參考」需區分，不可因整理版面將估計值升級成實搭證據。
+- D4「豬名川河岸看書、等待花火」屬 **break**，D4 煙火屬 **event**。其他市集、演出、照明活動、飯店日常泡湯與表演間休息亦須依 Schema 分類，不得因有座標和 Maps URL 就進 Places。真正景點要有 venue-specific `infoCard.summary`、可驗證官方來源；圖片需合法授權及署名。
+- 日本境內使用 **Asia/Tokyo**，台灣起降航班要正確使用 **Asia/Taipei** 的起／迄顯示。時序以絕對時刻比較；不要把兩地 HH:MM 字面直接排序，也不要憑時區計算杜撰航班資訊。
+- 天氣依當日明確 `days[].weatherLocation` 或既有來源座標選地區；例如大阪、京都、伊勢／鳥羽、田邊／白濱、熊野本宮、勝浦／那智與和歌山之間可能移動，不能顯示首日大阪天氣當作全程。**過去 92 天**可使用 Forecast API `past_days`，更早使用 Historical Weather API/reanalysis；歷史是模式估計而非現場觀測。沒有可信地點／資料時不顯示假溫度或假雲。
+- Trip Day 的完整 timeline 必須始終可見；Transport 整趟轉乘是可展開的同一次 Journey。Google Maps 直接帶 A→B；地鐵、JR、纜車、步行使用不同的語意 SVG（步行雙腳印）。不以 `overflow:hidden`、縮字或負 margin 掩飾桌面切邊。
+- **不要在行程卡補上「依實走順序串起交通與遊覽…」等碎碎念小標。** 保留真正會影響選車、到站、入場、天候與安全的關鍵資訊。
+
+**驗收：** 通用 `npm run test:uiux`、`npm run test:timeline`、`npm run lint:uiux`、`npm run test:journey`、`npm run test:places-curation`、`npm run test:trip-widgets`；更動 UI/CSS 時加跑 `npm run test:uiux:geometry`、`npm run test:journey:browser`、`npm run test:map-insets:browser`、`npm run test:trip-layout:browser`、`npm run test:places-curation:browser`。必須報告 PASS / FAIL / NOT RUN，不得以文件更新或 CSS 靜態存在宣稱已修好畫面。
+
 ## Existing Kansai reading patterns
 
 - This repo contains an 11-day Osaka / Kyoto / Kumano itinerary with interleaved transport, places, food, stays and events in `days[].items[]`. **The complete Chronological Time-blocked Timeline stays visible on Trip Day.**
