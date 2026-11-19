@@ -38,3 +38,7 @@ Kansai follows the identical `docs/UIUX.md` P1.9 frame/inset contract as Templat
 ## Quiet day summaries and readable Storybook cards (P1.10)
 
 For the Kansai source, all repeated generic day notes about itinerary chronology have been removed. The 173 original source items, times, IDs, trip reminders, research and practical cautions remain intact. Storybook's mobile time-over-content cards must remain a single-column layout with full-width text. A Journey style stylesheet must never override the active Style Pack's grid tracks. See `docs/UIUX.md` P1.10.
+
+## Curated sightseeing directory (P1.11)
+
+The 11-day Osaka/Kyoto/Kumano source keeps every one of its 173 chronological items. Seven incorrectly venue-typed source items (waiting on the Inagawa riverbank, a film-park rest, ordinary morning baths, and event-only light shows/market) are now `break` or `event`. They remain in Trip but are not attractions. All 27 true venue `place` items have concise venue-specific `infoCard.summary` and first-party source links; five photo placements have verified Commons source pages, author/credit and license fields. Never copy unauthorised official-site photos or turn every mapped activity into a Place.

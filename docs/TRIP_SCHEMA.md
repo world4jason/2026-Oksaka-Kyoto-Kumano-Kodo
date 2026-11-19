@@ -221,7 +221,7 @@ Every known-time source transport **leg**, visit, meal or event has its own `day
 
 - `journeyId` (optional stable string), `journeyStart: true`, `journeyEnd: true` explicitly separate adjacent but different A→B journeys. Otherwise, consecutive source `type: transport` items until the next place/food/stay/event form one display Journey.
 - Source Leg `from` and `to` (or `route: {from,to}`) should be verified place names. The UI may read an unambiguous published `A → B` title. For a complete Journey with verified endpoints, form `https://www.google.com/maps/dir/?api=1&origin=...&destination=...&travelmode=transit|walking|driving` using URL encoding. No GPS coordinates or API key required. No inferred via-points or live ETA.
-- All original Leg IDs, order, times, notes and source URLs remain in expandable transport detail. No duplicate canonical `mobility.legs` timetable.
+- All original Leg IDs, order, times, notes and source URLs remain in the expandable transport detail. No duplicate canonical `mobility.legs` timetable.
 
 ## Itinerary item
 
@@ -245,17 +245,8 @@ Rules:
 
 - use stable IDs
 - timed starts use local trip time in `HH:MM`
-- an untimed item may supply a plain-text `timeLabel` such as `上午` for the Trip timeline, context rows, and printed itinerary; it remains floating and never participates in current-item calculations. Valid `HH:MM` starts take precedence over this display label.
 - provide `end` when possible so the Now reference window is more accurate
 - resolve `lat`/`lng` during vibe-time for real planned stops when practical
-
-### Map points and external navigation
-
-- `lat` / `lng` identify one published physical point. Both must be present, numeric and within latitude/longitude bounds; empty values are not zero coordinates.
-- `mapPointLabel` optionally names that point. For a transport item, identify the specific station, pier or other endpoint represented by its coordinates, rather than treating an entire route as one place.
-- `mapQuery` (or the higher-priority `googleQuery`) supplies a precise public place name/address for Google Maps. The fallback uses `mapPointLabel`, then `location`, then `title`; it does not combine activity wording with a location.
-- `mapsUrl` may supply a public HTTP(S) Google Maps search or directions link. The trip-specific `days[].mobility.legs[]` rows also accept `mapsUrl` for their external map action. No credentials or API key are required.
-- The embedded map shows known points in itinerary order. An external directions link does not provide route geometry to the embedded map or establish live transit service.
 
 ### Optional travel mode / curated highlights / illustrations
 
@@ -269,8 +260,7 @@ For a genuinely source-supported leg, the item may include:
 }
 ```
 
-- `transportMode` must be an explicit `flight | drive | boat | train | subway | cable | bus | walk` known from the source. `subway` labels metro travel and `cable` labels a cable railway/funicular. It displays a small label, not actual route optimization. Unknown modes are ignored.
-- To show travel and visits together, insert `type: "transport"` items between visits in the published `days[].items` order, with the known mode, endpoints and reference times. Preserve existing visit IDs and links; do not repeat that same segment in `transferAfter`. The Trip day timeline remains visible, with its detailed transport board available afterwards as an optional reference.
+- `transportMode` must be an explicit `flight | drive | boat | train | bus | walk` known from the source. It displays a small label, not actual route optimization. Unknown modes are ignored.
 - `mustGo: true` is **editor-selected emphasis**, never automatically inferred from a famous stop, paid booking, or location. It is not a proof of a reservation. Avoid labeling tentative options as confirmed plans.
 - `illustration` is a **whitelisted decorative key**, not a URL. Allowed: `map`, `city`, `plane`, `car`, `train`, `boat`, `food`, `hotel`, `landmark`, `nature`, `sea`. It has no navigation/state meaning.
 
@@ -379,6 +369,14 @@ For lightweight nearby/ad-hoc search, link out instead of adding a discovery pro
 
 The runtime scopes the search around the selected/planned stop when possible. In the Trip timeline these live under secondary-action overflow rather than as full-size buttons.
 
+## Place vs event vs break — publishing semantics
+
+- `type: "place"` means a **real destination worth a guide**, not a scheduled action. A venue/attraction must have independent identity and may carry a curated `infoCard`. Unknown facts must not be fabricated.
+- `type: "event"` is an actual time-bound festival, market, ceremony or performance; it remains on the main Timeline, not in the Places catalogue.
+- `type: "break"` is waiting for fireworks, reading at a riverside, resting or routine hotel bathing; it remains a scheduled Time-block, **not a place**. Keep the `location` and coordinates as transportation context without changing the category.
+- Generic `food`, `transport`, `stay` and activities with coordinates do not automatically qualify. Only explicitly researched named `restaurant` venues may enter Places; a `mapQuery` is not a category.
+- Prefer a short, venue-specific, sourced `infoCard.summary` and `infoCard.sourceLinks` for each public `place`. `infoCard.officialSite` is reserved for the venue's own website, not a government tourism listing. Images must be rights-cleared, accessible and credited. `item.note` is itinerary timing/practical info, never a substitute guide.
+
 ## Static place context: `infoCard`
 
 Use this for stable background researched by the LLM/agent before deployment:
@@ -390,7 +388,12 @@ Use this for stable background researched by the LLM/agent before deployment:
     "title": "Senso-ji",
     "summary": "Short context useful while visiting.",
     "facts": ["A useful historical fact.", "A useful visit-context fact."],
-    "image": "https://...",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Example.jpg?width=900",
+    "imageAlt": "Short factual image description",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Example.jpg",
+    "imageCredit": "Photographer / Wikimedia Commons",
+    "imageLicense": "CC BY 4.0",
+    "officialSite": "https://the-venue.example/",
     "sourceLinks": [
       { "label": "Wikipedia", "url": "https://..." },
       { "label": "Official site", "url": "https://..." }
@@ -477,10 +480,12 @@ values migrate in-memory and never delete personal checklist state.
 
 Places route policy (#111): `#places` represents All days, `#places/day/YYYY-MM-DD`
 represents a validated published day filter, and `#places/item/ITEM_ID` is
-an ID-only detail route subject to #109 uniqueness validation. The date
-filter is device-only and stored under `<trip.id>:places:date`; it never edits
-published `trip.json` or changes Trip/Transport selectedDate just because
-someone filters Places. Clicking list/date/detail uses browser history entries
+an ID-only detail route subject to #109 uniqueness validation. The date filter is device-only. Since Issue #129 the Places local key
+`<trip.id>:places:mode` stores only `all`/`day`; an explicit Places day filter
+updates the shared `<trip.id>:ui:selectedDate` also used by Trip/Transport.
+The old `<trip.id>:places:date` is read **only to migrate All/Day mode** and
+must never become a second selected-day truth. Neither selection edits
+published `trip.json` or synchronizes to other travellers. Clicking list/date/detail uses browser history entries
 so native Back/Forward replays published source facts; page reload and direct
 date links restore valid selection. Invalid dates fall back to All days.
 Direct detail links override the visible list while retaining the stored

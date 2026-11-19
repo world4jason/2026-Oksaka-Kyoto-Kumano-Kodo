@@ -414,3 +414,7 @@ npm run test:integrity -- trip.json
 ## 授權與來源
 
 保留原始 [LICENSE](./LICENSE)、[NOTICE.md](./NOTICE.md)、上游檔案內授權與版權聲明。原程式來源為 [world4jason/Travel-lite-Template](https://github.com/world4jason/Travel-lite-Template)，依適用 AGPL-3.0-or-later 或個別上游檔案授權。2026-11-04 加入獨立行程資料與參考頁；2026-11-16 依旅後確認內容整理分享版，並補入可照排的交通與停留時間、交通前後班及已查證的地圖定位；同步修復地圖選點與展開顯示。原始 Excel 的私人訂房識別資料不納入公開內容。
+
+## 景點指南與分類
+
+Places 只列真正的神社、寺院、古道、名勝與獨立景點，不再把「豬名川河岸看書、等待花火」這種休息／候場或單次市集、演出當成景點。27 個景點有短介紹與場館／官方觀光來源，其中 5 個加入有授權來源及攝影者資訊的圖片。原始 173 筆逐日行程仍完整保留；請參閱 `docs/UIUX.md` P1.11。

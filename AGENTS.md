@@ -3,10 +3,10 @@
 ## P0 — Mandatory UI/UX preflight / Agent 必須先讀
 
 **在任何新行程建立、Template 繼承、UI、Timeline、Trip 資料、導航、CSS、Style Pack 或互動修改之前，Agent MUST 實際開啟並完整閱讀 [`docs/UIUX.md`](docs/UIUX.md)。** 不能只看 README、工具摘要或既有 Issue。再按工作範圍閱讀 [`docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md`](docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md)、[`docs/TRIP_SCHEMA.md`](docs/TRIP_SCHEMA.md) 和其中引用的細節規格。
-**Kansai additionally:** MUST read [`docs/UIUX_KANSAI.md`](docs/UIUX_KANSAI.md)；旅行專屬需求不得放寬通用 P0/P1。
 
 - **Hierarchy:** `docs/UIUX.md` 是 UI/UX Single Source of Truth，優先序 **P0 Immutable > P1 Required > P2 Flexible**；任何主題、Agent 習慣、行程資料或局部 UI 改動都不得私自推翻 P0。
-- **P0 reminder:** Trip Day 永遠顯示 Chronological Itinerary Timeline + Time-blocked Schedule；景點、餐飲、活動與一次完整起點→終點交通 Journey 是主軸同層時段。連續步行／搭車／轉乘的原始 `days[].items[]` Leg/ID/時間保持獨立來源，但主 Timeline 投影為一張可展開的交通卡。已確認兩端時提供 Google Maps 起終點路線連結，不捏造中繼站、時刻或即時導航狀態。步行使用腳印 SVG。
+- **P0 reminder:** Trip Day 永遠顯示 Chronological Itinerary Timeline + Time-blocked Schedule；景點、餐飲、活動與一次完整起點→終點交通 Journey 是主軸同層時段。連續步行／搭車／轉乘的原始 `days[].items[]` Leg/ID/時間保持獨立來源，但主 Timeline 投影為一張可展開的交通卡。兩端已確認時提供 Google Maps 路線連結，不捏造中繼站、時刻或即時導航狀態。步行使用腳印 SVG。
+- **Places gate:** `type: place` means a researched destination; never classify a personal waiting/reading/rest block or fireworks performance as a tourist attraction merely because it has coordinates. Require sourced `infoCard` guide and licensed/attributed photos where available. Read `docs/UIUX.md` P1.11 and run `npm run test:places-curation` + `npm run test:places-curation:browser` before changing Places or generating a new trip.
 - **Implementation gate:** 先比對變更與 `docs/UIUX.md` 的 P0/P1 合約；若衝突，停止該方案並修正。新增／變更 UX 規則時，先更新 `docs/UIUX.md` 與相關測試，再改程式，不要在 `AGENTS.md` 或 Style Pack 複製互相矛盾的定義。
 - **Validation gate:** 必須跑 `npm run lint:uiux`（含 `lint:map-insets`） + `npm run test:uiux` + `npm run test:timeline` + `npm run test:journey` + `npm run test:uiux:geometry`（含 `test:map-insets:browser`） + `npm run test:journey:browser`，涉及畫面再跑對應 Browser / Style Pack / PWA 驗收；如實列出 **PASS / FAIL / NOT RUN**。未修復 P0 失敗不可聲稱完成、合併或正式上線；PR 先保持 Draft。
 - **Inheritance gate:** 由本 Repo 產生新旅行站時，必須將此強制入口、`docs/UIUX.md`、Timeline Contract、Schema 及適用測試一起帶入，除非 Owner 明確批准更高層級的規格變動。
@@ -160,8 +160,11 @@ See [`docs/SOURCE_NORMALIZATION.md`](./docs/SOURCE_NORMALIZATION.md).
 The canonical tab navigation is Now/Trip/Transport/Places/More.
 For Places navigation changes (#111), preserve its browser history contract:
 `#places` All days; `#places/day/DATE` explicit source-backed day filter;
-`#places/item/ID` unique-only detail. Filter choice stays this-device,
-per-trip and does not change Trip's selected day until explicit handoff.
+`#places/item/ID` unique-only detail. Filter mode stays this-device/per-trip: Places All is independent from
+Trip Overview, but an explicit Places day selection updates the single shared
+Trip/Transport/Places `state.selectedDate`. Valid selected-day handoffs follow
+that date; no view may retain a second independent selected-date value.
+See docs/DATE_NAVIGATION_PDCA_129.md. This supersedes the old #111-only rule.
 Native Back/Forward, reload, long-trip select, legacy #map/#check and
 #109 fail-closed ambiguity must pass real Chromium tests. No sixth tab.
 Transport uses the MapLibre map with old #map links and no invented
@@ -330,7 +333,6 @@ Follow the repeatable review checklist in [`docs/MAINTENANCE.md`](./docs/MAINTEN
 - agent entry / mandatory preflight → `AGENTS.md`
 - canonical UI/UX P0/P1/P2 contract → `docs/UIUX.md`
 - detailed canonical timeline behavior → `docs/CHRONOLOGICAL_TIMELINE_CONTRACT.md`
-- Kansai-only UI extension → `docs/UIUX_KANSAI.md`
 - architecture/scope → `docs/ARCHITECTURE.md`
 - day-of interaction contract → `docs/COMPANION_UX.md`
 - trip data contract → `docs/TRIP_SCHEMA.md`
