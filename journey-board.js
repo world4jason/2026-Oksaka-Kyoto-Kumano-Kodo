@@ -237,15 +237,6 @@
       '<footer class="tl-board-foot"><span>行程快照 · 非即時交通</span>' + referenceLink + '</footer>' +
       '</section>';
   }
-  function foldPublicationWarning() {
-    const notice = viewRoot.querySelector(".trip-trust-notice");
-    if (!notice || notice.closest(".tl-trust-fold")) return;
-    const fold = document.createElement("details");
-    fold.className = "tl-trust-fold";
-    fold.innerHTML = '<summary><strong>行程草稿 · 班次待核對</strong><span>說明 ＋</span></summary>';
-    notice.before(fold);
-    fold.appendChild(notice);
-  }
   // Overview layout and navigation are now owned by the shared Template.
   // Keep only the short, source-published Kansai mobility cues; do not rewrite
   // the hero/card markup, because that bypasses shared layout contracts.
@@ -283,7 +274,6 @@
     baseTrip();
     enhanceOverview();
     enhanceDay();
-    foldPublicationWarning();
     scrollOnScreenChange(viewRoot.querySelector(".trip-day-view") ? "trip:" + state.selectedDate : "trip:overview");
   };
   renderMap = function visualTransportRender() {
@@ -304,7 +294,6 @@
     extra.innerHTML = '<summary><strong>地圖與站點</strong><span>位置參考 · 非交通時刻</span><b>＋</b></summary>';
     panel.before(extra);
     extra.appendChild(panel);
-    foldPublicationWarning();
     scrollOnScreenChange("map:" + day.date);
     extra.addEventListener("toggle", () => {
       if (extra.open) requestAnimationFrame(() => window.TravelLiteMap?.resize());
@@ -312,7 +301,6 @@
   };
   renderNow = function visualNowRender() {
     baseNow();
-    foldPublicationWarning();
     scrollOnScreenChange("now");
     const today = zonedNow(state.data?.trip?.timezone || "Asia/Tokyo").date;
     const day = dayByDate(today);
