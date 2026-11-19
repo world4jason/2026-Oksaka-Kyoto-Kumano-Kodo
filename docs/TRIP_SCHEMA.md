@@ -100,7 +100,7 @@ Website `vintage-watercolor` is a released, bounded, optional built-in Style Pac
 ```json
 {
   "defaultView": "now",
-  "theme": "system",
+  "theme": "light",
   "visualStyle": "editorial",
   "locale": "zh-TW",
   "labels": {
@@ -189,6 +189,10 @@ Keep this section small. It is an overview/decision aid, not a recommendation fe
 A day may supply an `illustration` key (for example `"city"` or `"boat"`) **only for Storybook's decorative image**. The base view ignores this artwork hint. Omitted or invalid values use a generic local icon. All icon keys are whitelisted in `storybook-decor.js`; never supply arbitrary URLs or CSS from itinerary data.
 
 ### Route summary
+- Optional `day.shortTitle` is a shorter *published* title for the compact Overview, if the full title is long; do not invent one in the browser.
+- Optional `day.overviewCue` is a source-backed concise operational note for the compact Overview (for example a confirmed activity start or critical reservation reminder). It is not a second schedule and is omitted when unavailable.
+- Compact Overview automatically renders actual transport mode icons from `days[].items[]`. `mobility` is *not* required. Item counts mean itinerary entries, not tourist stops. Style Packs do not insert large generic trip illustration in this surface.
+
 
 `routeSummary` is optional. If omitted, the Trip view derives a simple route from item titles. Use it when a shorter human-friendly route is more useful than raw stop names.
 
@@ -222,6 +226,20 @@ Every known-time source transport **leg**, visit, meal or event has its own `day
 - `journeyId` (optional stable string), `journeyStart: true`, `journeyEnd: true` explicitly separate adjacent but different A→B journeys. Otherwise, consecutive source `type: transport` items until the next place/food/stay/event form one display Journey.
 - Source Leg `from` and `to` (or `route: {from,to}`) should be verified place names. The UI may read an unambiguous published `A → B` title. For a complete Journey with verified endpoints, form `https://www.google.com/maps/dir/?api=1&origin=...&destination=...&travelmode=transit|walking|driving` using URL encoding. No GPS coordinates or API key required. No inferred via-points or live ETA.
 - All original Leg IDs, order, times, notes and source URLs remain in the expandable transport detail. No duplicate canonical `mobility.legs` timetable.
+
+### Optional curated venue name (Places only)
+
+A planned visit's chronological `title` may describe an activity (e.g., `伏見稻荷大社參拜`); Places should instead display a concise researched location name. For independently researched `type: place|attraction|museum|landmark|nature|sight` items, an optional **source-authored** `venueName` stores that place name. `places-view.js` uses `venueName || title` for the Places index/detail headings, but the complete Trip Timeline preserves `title` (including actions), stable ID and timing. Do not invent a venue name from unverified itinerary text or remove words heuristically.
+
+```json
+{
+  "id": "visit-shrine",
+  "type": "place",
+  "title": "伏見稻荷大社參拜、等候祭事",
+  "venueName": "伏見稻荷大社",
+  "infoCard": { "summary": "...", "sourceLinks": [] }
+}
+```
 
 ## Itinerary item
 
