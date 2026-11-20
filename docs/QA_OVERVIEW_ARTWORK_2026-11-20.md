@@ -25,3 +25,10 @@ Branch: `feat/osaka-curated-overview-artwork-20261120`; Draft PR #22. This is a 
 ## Gate
 
 Required before merge: diagnose CI, run the actual Node + Playwright suites in a working browser environment, check offline image loading/asset paths, review the owner's subject fit and responsive layout, then explicitly sign off. The original `main` remains unchanged.
+
+## Follow-up — owner removed GH Actions and requested all Style Pack illustrations
+
+- The sole tracked `.github/workflows/chronological-timeline.yml` has been deleted from `main` in Template, Osaka and Xinjiang, and from the active Template/Osaka artwork PR branches. Old failed workflow runs remain historical entries; **there is no active tracked repository workflow** for these branches.
+- Osaka now has 15 bound Style Pack variants: one original full watercolor image plus 14 atlas cells. Local atlas Git blob SHA 3023bc0c1a94b21db828eedd1686f3394a79fa16 matched exported binary exactly. Direct runtime/style/source checks 13/13 passed.
+- The complete generated artwork ZIP and 15-style visual contact sheet were delivered in the ChatGPT conversation; the repo stores a compressed AVIF atlas for web use. The atlas is a derived raster preview, not fifteen independent source-photo edits.
+- Required manual Node/Chromium/browser and human visual acceptance remain **NOT RUN/PENDING**, not PASS. Removing CI is not equivalent to passing QA; direct source checks are a narrower gate.
