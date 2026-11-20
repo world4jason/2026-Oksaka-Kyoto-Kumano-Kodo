@@ -5,8 +5,8 @@
     "startDate": "2026-11-04",
     "endDate": "2026-11-14",
     "timezone": "Asia/Tokyo",
-    "updatedAt": "2026-11-20T00:57:00+08:00",
-    "revision": "kansai-2026-11-20-curated-cover-pilot",
+    "updatedAt": "2026-11-20T10:34:00+08:00",
+    "revision": "kansai-2026-11-20-15-style-cover-art-pilot",
     "accent": "#426354",
     "themeColor": "#f5f6f2",
     "homeLabel": "Osaka · Kyoto · Kumano, Japan",
@@ -28,10 +28,122 @@
       ],
       "images": [
         {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "editorial 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "editorial",
+          "atlasSlice": 0,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "storybook 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "storybook",
+          "atlasSlice": 1,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "candy 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "candy",
+          "atlasSlice": 2,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "risograph 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "risograph",
+          "atlasSlice": 3,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "paper-collage 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "paper-collage",
+          "atlasSlice": 4,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "naive-city 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "naive-city",
+          "atlasSlice": 5,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "taiwan-poster 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "taiwan-poster",
+          "atlasSlice": 6,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "field-stamp 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "field-stamp",
+          "atlasSlice": 7,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "quiet-linocut 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "quiet-linocut",
+          "atlasSlice": 8,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "doodle-memory-grid 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "doodle-memory-grid",
+          "atlasSlice": 9,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "crayon-journal 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "crayon-journal",
+          "atlasSlice": 10,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "painterly-editorial 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "painterly-editorial",
+          "atlasSlice": 11,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "geometric-print 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "geometric-print",
+          "atlasSlice": 12,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
+          "src": "./assets/overview/osaka-15-styles-atlas.avif",
+          "alt": "quiet-acrylic 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
+          "styleId": "quiet-acrylic",
+          "atlasSlice": 13,
+          "fit": "cover",
+          "focalPoint": "center"
+        },
+        {
           "src": "./assets/overview/osaka-four-memories-watercolor.avif",
-          "alt": "復古水彩旅程記憶拼貼：豬名川煙火、太秦百鬼夜行、熊野古道杉林石階、臨海洞窟溫泉。此為藝術插畫，非實景照片。",
+          "alt": "vintage-watercolor 風格的藝術化旅行記憶拼貼：豬名川花火、太秦百鬼夜行、熊野古道杉林步道、浦島飯店洞窟溫泉；不是同一地點的實景合照。",
           "styleId": "vintage-watercolor",
-          "fit": "contain",
+          "fit": "cover",
           "focalPoint": "center"
         }
       ]
