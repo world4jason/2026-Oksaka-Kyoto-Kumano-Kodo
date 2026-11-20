@@ -146,7 +146,8 @@
           "fit": "cover",
           "focalPoint": "center"
         }
-      ]
+      ],
+      "qaStatus": "pending"
     }
   },
   "ui": {
