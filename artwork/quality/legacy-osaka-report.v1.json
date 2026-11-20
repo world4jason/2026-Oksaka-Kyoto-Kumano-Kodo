@@ -1,0 +1,461 @@
+{
+  "schema": "independent-cover-verification.v1",
+  "status": "FAIL",
+  "qualityPromise": "Tests process evidence and independent review; stochastic visual quality cannot be guaranteed by prompt alone.",
+  "globalErrors": [],
+  "styles": [
+    {
+      "styleId": "editorial",
+      "status": "FAIL",
+      "failures": [
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/source-editorial.png",
+        "sha256": "0d0935f9b1ce8d29f2a4f774526bb05108e11cf7580b5da08d926b81d140e47f",
+        "bytes": 3467222,
+        "width": 1672,
+        "height": 941,
+        "format": "PNG"
+      },
+      "published": {
+        "path": "assets/overview/editorial.avif",
+        "sha256": "8776106d51236b2380aba36e8500dea144203e01e89dee837dd4cc8b3d737b35",
+        "bytes": 18976,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "storybook",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/storybook.webp",
+        "sha256": "b60d2907dc32263c07416d1993a3bf07ee800f59eb039019055a5df9c9efb6a4",
+        "bytes": 40930,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/storybook.avif",
+        "sha256": "f508146a41fdb199461c3981cd4ed98d068f46601a305c88ccd0da86ba541d11",
+        "bytes": 9267,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "candy",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/candy.webp",
+        "sha256": "7ea0ca857fa0be53d882f9f95064fe42a8c35242bd5406240b1a71dab5dcba44",
+        "bytes": 20066,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/candy.avif",
+        "sha256": "f0249350ba49881aafe8891714747045272fda528848a3b17c96690b7807bef7",
+        "bytes": 6481,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "risograph",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/risograph.webp",
+        "sha256": "f1362d5ad59042b132f8e189dffba37dc1ed48e3dc26ff1cac4a795b12824885",
+        "bytes": 46492,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/risograph.avif",
+        "sha256": "57865e63b8c0f0c1d13870553e1d24151afe9e3e1e3a7b128f62bf68c26f06d9",
+        "bytes": 10145,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "paper-collage",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/paper-collage.webp",
+        "sha256": "f1aa4b38e470b84245f378b8689513fdf67c2764720400ffd4d47275bab79d8f",
+        "bytes": 32876,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/paper-collage.avif",
+        "sha256": "9a0ffefac802934ec8033cb40006b4771cba35632cb3c38eb2a057c20f8c201f",
+        "bytes": 8379,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "naive-city",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/naive-city.webp",
+        "sha256": "0a13ebb5e7a66b06694f37280e2ef8f2ac205eecb62f7cd55c246639e613d265",
+        "bytes": 37932,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/naive-city.avif",
+        "sha256": "7310db012eb9ffbb8ede95c6750856bd7ff3e88e1f0471c14fc4bec8bb714303",
+        "bytes": 9424,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "taiwan-poster",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/taiwan-poster.webp",
+        "sha256": "a696d4b33bb3cb3441fc573bf522516f9e937949c9e0ff4666bbcb751216bf49",
+        "bytes": 31354,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/taiwan-poster.avif",
+        "sha256": "1ad28be156918ce17bd9d9e3c6954b7595693e3fa9b973030603e08f4cda68fa",
+        "bytes": 8818,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "field-stamp",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/field-stamp.webp",
+        "sha256": "1d8d48be260cd4fe9b2859bb8e6f9af1ec53fe4254c8b275dd3aa7faccb4c17f",
+        "bytes": 28340,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/field-stamp.avif",
+        "sha256": "03526a0a5470480be42e5d314a1ba7f31a2d5996ebb53137bc41c42baee05a70",
+        "bytes": 6881,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "quiet-linocut",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/quiet-linocut.webp",
+        "sha256": "3fc6a042df84826f3d856775819ce803aee5a98ea94c1234f7c9c12d8230a172",
+        "bytes": 36604,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/quiet-linocut.avif",
+        "sha256": "79d7940a97c138188a4f362f177a8b27565f88399b14d530232609148cd5c189",
+        "bytes": 9049,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "doodle-memory-grid",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/doodle-memory-grid.webp",
+        "sha256": "4f04cf7ddfe0f6d243b8e31f029e8fc85360c7d3a31dc600cbe991102b467005",
+        "bytes": 31698,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/doodle-memory-grid.avif",
+        "sha256": "5c1ee1067692b9397fdb10ea9deff231a8424c0187a810ef992df05a6ec87846",
+        "bytes": 7607,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "crayon-journal",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/crayon-journal.webp",
+        "sha256": "175461b1a1c1c2743989c97c9d554301e588b506a5649220d38ea1495dff9451",
+        "bytes": 27454,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/crayon-journal.avif",
+        "sha256": "8b92f56fd823e99a061f1edcabc93c1fafa6534c32eb8adbd6ed7e2c0e803e35",
+        "bytes": 6888,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "painterly-editorial",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/painterly-editorial.webp",
+        "sha256": "747a8787a7f45130d4676e32ff3e38e32c091717e39d4acb87541493fd855a8a",
+        "bytes": 31684,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/painterly-editorial.avif",
+        "sha256": "36a38b646629c73bcd8233bddce7bb8737d28830b7b488532eb9abf984b0f6f8",
+        "bytes": 8235,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "geometric-print",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/geometric-print.webp",
+        "sha256": "c0ac7248eac76ab4f30ffc76979acb2e1fb67c81ec92f2a22f6c7096116aa07a",
+        "bytes": 18760,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/geometric-print.avif",
+        "sha256": "b8a8a421533b1f5e6f2917962a2871b3e2fdc3d1729116355440a76201d5f4ac",
+        "bytes": 6030,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "quiet-acrylic",
+      "status": "FAIL",
+      "failures": [
+        "E_ATLAS_CROP_NOT_INDEPENDENT",
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_NATIVE_RESOLUTION",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/quiet-acrylic.webp",
+        "sha256": "0c9306679dadfd4356cf3939fe5982ccbea418e37dc697e0a7f60b2269a7eeee",
+        "bytes": 9168,
+        "width": 960,
+        "height": 405,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/quiet-acrylic.avif",
+        "sha256": "faa8873851c757c3bda3bbd739a417e604f483a2e3922c0bb4c8f80e132e430a",
+        "bytes": 2500,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    },
+    {
+      "styleId": "vintage-watercolor",
+      "status": "FAIL",
+      "failures": [
+        "E_INDEPENDENT_GENERATION_UNPROVEN",
+        "E_GENERATION_RECEIPT_MISSING"
+      ],
+      "pending": [
+        "P_INDEPENDENT_VISUAL_JUDGE_NOT_RUN",
+        "P_HUMAN_REVIEW_NOT_RUN"
+      ],
+      "native": {
+        "path": "artwork/generated/source-vintage-watercolor.webp",
+        "sha256": "1e0ec14628a9762009ffe709e67725e3c0a3cad0e5ab36f83de7c853610a667a",
+        "bytes": 457084,
+        "width": 1672,
+        "height": 941,
+        "format": "WEBP"
+      },
+      "published": {
+        "path": "assets/overview/vintage-watercolor.avif",
+        "sha256": "13e5d36ba14d3dafaa183a8de5d5e01523b5c530a4fe7ba1f4b40f398bcdb307",
+        "bytes": 17033,
+        "width": 960,
+        "height": 405,
+        "format": "AVIF"
+      }
+    }
+  ],
+  "counts": {
+    "PASS": 0,
+    "PENDING": 0,
+    "FAIL": 15
+  },
+  "releaseAllowed": false,
+  "mode": "RELEASE"
+}
