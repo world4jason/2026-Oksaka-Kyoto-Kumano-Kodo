@@ -38,3 +38,13 @@
 
 - `npm run test:timeline`, `npm run test:journey`, `npm run test:trip-layout`, `npm run test:uiux`; with UI/style changes also `npm run test:journey:browser`, `npm run test:trip-layout:browser` and `npm run test:uiux:geometry`.
 - Test a multi-leg Japan rail transfer, walk-only Journey, back-to-back separate Journeys, event/break in-between, unknown leg time, cross-border flight, long Japanese stations, Storybook 200% and desktop clipping. Verify A→B Maps URL and per-leg disclosure are accurate.
+
+
+
+### Independent artwork release gate
+
+Owner-selected source items stay unchanged. Every Style Pack preview cover has separately versioned medium, composition and quality rubric. `qaStatus=pending` is preview-only (`?previewArtwork=1`); only `tools/artwork/publish-approved-covers.mjs` may promote individually generated 1536×864 sources after independent verification and human approval. An atlas crop is not independent output. The absence of approved images must preserve the clean compact Overview and every day's navigation.
+
+## Optional owner-curated Overview artwork
+
+Use only explicitly selected true itinerary IDs via the offline `tools/overview-artwork-picker.html`. Events and breaks may represent the journey even though they are not Places. The source-backed, reviewed 1–3 images appear below the compact Overview identity, not a generic giant hero or a second Timeline. Keep source rights, truthful alt, style fallback and the 178px cap. No browser image generation, new nav tab or editable published itinerary.
