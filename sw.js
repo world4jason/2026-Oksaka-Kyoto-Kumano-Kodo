@@ -3,7 +3,7 @@
 // shell/runtime, and activating one cannot delete the other's cache.
 const CACHE_PREFIX = "travel-lite:" + new URL(self.registration.scope).pathname
   .replace(/[^a-z0-9]/gi, "-") + ":";
-const CACHE = CACHE_PREFIX + "shell-v83-kansai-overview-artwork";
+const CACHE = CACHE_PREFIX + "shell-v84-kansai-overview-artwork-15styles";
 const RUNTIME_CACHE = CACHE_PREFIX + "runtime-v1";
 const scopeUrl = (path) => new URL(path, self.registration.scope).href;
 const INDEX = scopeUrl("./index.html");
@@ -67,6 +67,7 @@ const CORE = [
   "./export-ui.js",
   "./trip.json",
   "./assets/overview/osaka-four-memories-watercolor.avif",
+  "./assets/overview/osaka-15-styles-atlas.avif",
   "./journey-board.js?v=20261120-no-draft-fold-v1",
   "./date-navigation.js?v=20261119-trip-grid-v2",
   "./flight-overview.js?v=20261118-weatherstrip-v1",
